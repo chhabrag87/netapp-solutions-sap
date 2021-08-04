@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana-dr-anf_anf_cross-region_replication_with_sap_hana_overview.html
+permalink: backup/saphana-dr-anf_anf_cross-region_replication_with_sap_hana_overview.html
 keywords: application, agnostic, information, azure, sap, hana
 summary: Application agnostic information on Cross- Region Replication can be found at the following location.
 ---

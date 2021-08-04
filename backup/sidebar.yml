@@ -1,0 +1,56 @@
+section: backup
+title: Backup
+entries:
+  - title: SAP HANA Disaster Recovery with Azure NetApp Files
+    url: /ent-apps-db/saphana-dr-anf_data_protection_overview_overview.html
+    type: solutions
+    entries:
+      - title: Disaster recovery solution comparison
+        url: /ent-apps-db/saphana-dr-anf_disaster_recovery_solution_comparison.html
+      - title: ANF Cross-Region Replication with SAP HANA
+        url: /ent-apps-db/saphana-dr-anf_anf_cross-region_replication_with_sap_hana_overview.html
+        entries:
+          - title: Configuration options for Cross-Region Replication with SAP HANA
+            url: /ent-apps-db/saphana-dr-anf_configuration_options_for_cross-region_replication_with_sap_hana.html
+          - title: Requirements and best practices
+            url: /ent-apps-db/saphana-dr-anf_requirements_and_best_practices.html
+          - title: Lab setup
+            url: /ent-apps-db/saphana-dr-anf_lab_setup.html
+          - title: Configuration steps for ANF Cross-Region Replication
+            url: /ent-apps-db/saphana-dr-anf_configuration_steps_for_anf_cross-region_replication.html
+          - title: Monitoring ANF Cross-Region Replication
+            url: /ent-apps-db/saphana-dr-anf_monitoring_anf_cross-region_replication.html
+      - title: Disaster recovery testing
+        url: /ent-apps-db/saphana-dr-anf_disaster_recovery_testing_overview.html
+        entries:
+          - title: Prepare the target host
+            url: /ent-apps-db/saphana-dr-anf_prepare_the_target_host.html
+          - title: Create new volumes based on snapshot backups at the disaster recovery site
+            url: /ent-apps-db/saphana-dr-anf_create_new_volumes_based_on_snapshot_backups_at_the_disaster_recovery_site.html
+          - title: Mount the new volumes at the target host
+            url: /ent-apps-db/saphana-dr-anf_mount_the_new_volumes_at_the_target_host.html
+          - title: HANA database recovery
+            url: /ent-apps-db/saphana-dr-anf_hana_database_recovery.html
+      - title: Disaster recovery failover
+        url: /ent-apps-db/saphana-dr-anf_disaster_recovery_failover_overview.html
+        entries:
+          - title: Prepare the target host
+            url: /ent-apps-db/saphana-dr-anf_prepare_the_target_host_01.html
+          - title: Break and delete replication peering
+            url: /ent-apps-db/saphana-dr-anf_break_and_delete_replication_peering.html
+          - title: Mount the volumes at the target host
+            url: /ent-apps-db/saphana-dr-anf_mount_the_volumes_at_the_target_host.html
+          - title: HANA database recovery
+            url: /ent-apps-db/saphana-dr-anf_hana_database_recovery_01.html
+  - title: SAP HANA Backup and Recovery with SnapCenter
+    url: https://www.netapp.com/us/media/tr-4614.pdf
+  - title: SAP HANA Disaster Recovery with Storage Replication
+    url: https://www.netapp.com/us/media/tr-4646.pdf
+  - title: SAP HANA System Replication, Backup and Recovery with SnapCenter
+    url: https://www.netapp.com/us/media/tr-4719.pdf
+  - title: SAP HANA Backup and Recovery Using Snap Creator
+    url: https://www.netapp.com/us/media/tr-4313.pdf
+  - title: SAP HANA Backup and Recovery Using NetApp Storage and Commvault Software
+    url: https://www.netapp.com/us/media/tr-4711.pdf
+  - title: SAP HANA on NetApp All SAN Array - Modern SAN, Data Protection, and Disaster   Recovery
+    url: https://www.netapp.com/us/media/nva-1147-design.pdf
