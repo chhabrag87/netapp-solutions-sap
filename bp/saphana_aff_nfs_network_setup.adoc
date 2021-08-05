@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana_aff_nfs_network_setup.html
+permalink: bp/saphana_aff_nfs_network_setup.html
 keywords: network, setup, nic, nfs, lacp, ifgroup, jumbo frames, vmxnet3, mtu
 summary: This section describes the dedicated storage network setup for SAP HANA hosts.
 ---

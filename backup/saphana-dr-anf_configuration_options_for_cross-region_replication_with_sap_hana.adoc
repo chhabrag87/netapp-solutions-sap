@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana-dr-anf_configuration_options_for_cross-region_replication_with_sap_hana.html
+permalink: backup/saphana-dr-anf_configuration_options_for_cross-region_replication_with_sap_hana.html
 keywords: configuration, options, cross, region, replication, sap, hana, azure
 summary: The following figure shows the volume replication relationships for an SAP HANA system using ANF Cross-Region Replication.
 ---

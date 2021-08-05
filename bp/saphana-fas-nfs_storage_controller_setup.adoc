@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana-fas-nfs_storage_controller_setup.html
+permalink: bp/saphana-fas-nfs_storage_controller_setup.html
 keywords: storage, controller, setup, efficiency, fabricpool, disk, shelf, aggregate, configuration, hdd, nfs, nfsv3, nfsv4, sap, hana, host, systems
 summary: This section describes the configuration of the NetApp storage system. You must complete the primary installation and setup according to the corresponding ONTAP setup and configuration guides.
 ---

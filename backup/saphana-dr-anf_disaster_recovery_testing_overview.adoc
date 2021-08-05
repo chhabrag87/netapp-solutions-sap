@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana-dr-anf_disaster_recovery_testing_overview.html
+permalink: backup/saphana-dr-anf_disaster_recovery_testing_overview.html
 keywords: disaster, recovery, strategy, workflow, testing, internal, documentation
 summary: To implement an effective disaster recovery strategy, you must test the required workflow. Testing demonstrates whether the strategy works and whether the internal documentation is sufficient, and it also allows administrators to train on the required procedures.
 ---

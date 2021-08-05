@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana_fas_fc_architecture.html
+permalink: bp/saphana_fas_fc_architecture.html
 keywords: architecture, sap, hana, backup, storage, replication, snapmirror, metrocluster
 summary: SAP HANA hosts are connected to the storage controllers using a redundant FCP infrastructure and multipath software.
 ---

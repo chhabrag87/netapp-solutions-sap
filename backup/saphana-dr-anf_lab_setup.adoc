@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana-dr-anf_lab_setup.html
+permalink: backup/saphana-dr-anf_lab_setup.html
 keywords: lab, setup, solution, validation, sap, hana, single, host, system, microsoft, azacsnap, snapshot
 summary: Solution validation has been performed with an SAP HANA single-host system. The Microsoft AzAcSnap Snapshot backup tool for ANF has been used to configure HANA application-consistent Snapshot backups.
 ---

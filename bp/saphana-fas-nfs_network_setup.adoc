@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana-fas-nfs_network_setup.html
+permalink: bp/saphana-fas-nfs_network_setup.html
 keywords: network, setup, vmware, sap, hana, storage, hosts
 summary: Use the following guidelines when configuring the network.
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana_aff_nfs_sap_hana_software_installation.html
+permalink: bp/saphana_aff_nfs_sap_hana_software_installation.html
 keywords: single host, multiple host, software, installation, hdbclm, addhosts
 summary: This section describes how to configure a system for the installation of SAP HANA software on single-host and multiple-host systems.
 ---

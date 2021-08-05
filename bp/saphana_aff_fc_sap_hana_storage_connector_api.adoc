@@ -1,6 +1,6 @@
----
+bp---
 sidebar: sidebar
-permalink: ent-apps-db/saphana_aff_fc_sap_hana_storage_connector_api.html
+permalink: bp/saphana_aff_fc_sap_hana_storage_connector_api.html
 keywords: api, failover, ha, high availability
 summary: A storage connector is required only in multiple-host environments that have failover capabilities. In multiple-host setups, SAP HANA provides high-availability functionality so that an SAP HANA database host can fail over to a standby host. In this case, the LUNs of the failed host are accessed and used by the standby host.
 ---

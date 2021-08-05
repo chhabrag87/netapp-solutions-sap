@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana-dr-anf_monitoring_anf_cross-region_replication.html
+permalink: backup/saphana-dr-anf_monitoring_anf_cross-region_replication.html
 keywords: replicated, snapshot, backups, status, monitoring, anf, cross, region
 summary: The following three screenshots show the replication status for the data, log backup, and shared volumes.
 ---

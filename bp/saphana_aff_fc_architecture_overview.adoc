@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: saphana_aff_fc_architecture_overview.html
+permalink: bp/saphana_aff_fc_architecture_overview.html
 keywords:
 summary:
 ---
@@ -37,5 +37,3 @@ image:saphana_aff_fc_image3.png[Error: Missing Graphic Image]
 Independently of which deployed AFF system, the SAP HANA landscape can also be scaled by adding any of the certified storage controllers to meet the desired node density, as shown in the following figure.
 
 image:saphana_aff_fc_image4.png[Error: Missing Graphic Image]
-
-

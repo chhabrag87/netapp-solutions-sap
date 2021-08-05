@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana-dr-anf_create_new_volumes_based_on_snapshot_backups_at_the_disaster_recovery_site.html
+permalink: backup/saphana-dr-anf_create_new_volumes_based_on_snapshot_backups_at_the_disaster_recovery_site.html
 keywords: create, new, volumes, snapshot, backups, disaster, recovery, site
 summary: Depending on the disaster recovery setup (with or without log backup replication), two or three new volumes based on snapshot backups must be created.
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana_aff_nfs_storage_controller_setup.html
+permalink: bp/saphana_aff_nfs_storage_controller_setup.html
 keywords: storage, controller, efficiency, volume encryption, quality of service, qos, fabricpool, DS224C, svm, configuration
 summary: This section describes the configuration of the NetApp storage system. You must complete the primary installation and setup according to the corresponding ONTAP setup and configuration guides.
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: saphana_aff_fc_sap_hana_using_vmware_vsphere.html
+permalink: bp/saphana_aff_fc_sap_hana_using_vmware_vsphere.html
 keywords:
 summary:
 ---

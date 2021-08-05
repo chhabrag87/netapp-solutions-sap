@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana-dr-anf_disaster_recovery_failover.html
+permalink: backup/saphana-dr-anf_disaster_recovery_failover.html
 keywords:
 summary:
 ---

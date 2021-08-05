@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana-dr-anf_prepare_the_target_host_01.html
+permalink: backup/saphana-dr-anf_prepare_the_target_host_01.html
 keywords: prepare, target, host, sap, hana, azure, log, volume, users, ports, configure, file, system
 summary: This section describes the preparation steps required at the server that is used for the disaster recovery failover.
 ---

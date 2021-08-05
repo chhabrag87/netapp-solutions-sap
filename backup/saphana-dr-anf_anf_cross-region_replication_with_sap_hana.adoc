@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana-dr-anf_anf_cross-region_replication_with_sap_hana.html
+permalink: backup/saphana-dr-anf_anf_cross-region_replication_with_sap_hana.html
 keywords:
 summary:
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana_fas_fc_storage_sizing.html
+permalink: bp/saphana_fas_fc_storage_sizing.html
 keywords: performance, considerations, hard, disk, solid, state, drives, mixed, workloads, capacity, configuration, storage, sizing
 summary: The following section provides an overview of performance and capacity considerations for sizing a storage system for SAP HANA.
 ---

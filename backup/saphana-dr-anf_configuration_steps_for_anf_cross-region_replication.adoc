@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana-dr-anf_configuration_steps_for_anf_cross-region_replication.html
+permalink: backup/saphana-dr-anf_configuration_steps_for_anf_cross-region_replication.html
 keywords: configuration, steps, anf, cross, region, replication, preparation,
 summary: A few preparation steps must be performed at the disaster recovery site before volume replication can be configured.
 ---

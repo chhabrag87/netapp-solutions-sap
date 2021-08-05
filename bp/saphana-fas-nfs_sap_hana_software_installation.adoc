@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana-fas-nfs_sap_hana_software_installation.html
+permalink: bp/saphana-fas-nfs_sap_hana_software_installation.html
 keywords: sap, hana, software, installation, single, multiple, system, host
 summary: The following are requirements for software installation for SAP HANA.
 ---

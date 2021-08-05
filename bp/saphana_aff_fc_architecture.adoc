@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana_aff_fc_architecture.html
+permalink: bp/saphana_aff_fc_architecture.html
 keywords: FCP, fibre channel, fiber channel, configuration,
 summary:
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana-dr-anf_disaster_recovery_solution_comparison.html
+permalink: backup/saphana-dr-anf_disaster_recovery_solution_comparison.html
 keywords: sap, hana, system, replication, data, memory, disaster, recovery, solutions, azure
 summary: A comprehensive disaster recovery solution must enable customers to recover from a complete failure of the primary site.
 ---

@@ -1,0 +1,14 @@
+---
+layout: astra
+sidebar: sidebar
+permalink: index.html
+lead: NetApp solutions for SAP are a set of strategic and technology capabilities that emphasize the NetApp portfolio of products and services to support our customers' most critical business needs.
+summary: NetApp Solutions for SAP are a set of strategic and technology capabilities that emphasize the NetApp portfolio of products and services to support our customers' most critical business needs.
+---
+
+= NetApp Solutions for SAP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/

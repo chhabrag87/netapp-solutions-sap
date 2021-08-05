@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ent-apps-db/saphana-dr-anf_requirements_and_best_practices.html
+permalink: backup/saphana-dr-anf_requirements_and_best_practices.html
 keywords: requirements, best, practices, microsoft, azure, virtual, machine, vm
 summary: Microsoft Azure does not guarantee the availability of a specific virtual machine (VM) type upon creation or when starting a deallocated VM.
 ---
