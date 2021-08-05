@@ -1,4 +1,4 @@
-bp---
+---
 sidebar: sidebar
 permalink: bp/saphana_aff_fc_sap_hana_storage_connector_api.html
 keywords: api, failover, ha, high availability
