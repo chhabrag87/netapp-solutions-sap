@@ -1,7 +1,7 @@
 sidebar:
   entries:
     - title: SAP Solutions
-      url: /index.html
+      url: /SAP-index.html
     - section: bp
     - section: backup
     - section: lifecycle
