@@ -1,0 +1,7 @@
+section: lifecycle
+title: Lifecycle
+entries:
+  - title: Automating SAP System Copies Using the SnapCenter SAP HANA Plug-In
+    url: https://www.netapp.com/us/media/tr-4667.pdf
+  - title: Integrating NetApp Storage with SAP Landscape Management
+    url: https://www.netapp.com/us/media/tr-4018.pdf
