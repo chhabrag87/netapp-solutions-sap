@@ -2,13 +2,21 @@
 layout: astra
 sidebar: sidebar
 permalink: index.html
-lead: NetApp solutions for SAP are a set of strategic and technology capabilities that emphasize the NetApp portfolio of products and services to support our customers' most critical business needs.
-summary: NetApp Solutions for SAP are a set of strategic and technology capabilities that emphasize the NetApp portfolio of products and services to support our customers' most critical business needs.
+summary: Collection of SAP business application and SAP HANA database solutions
+keywords: netapp, solutions, SAP, HANA
 ---
 
-= NetApp Solutions for SAP
+= SAP Business Application and SAP HANA Database Solutions
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
+:table-stripes: odd
 :imagesdir: ./media/
+
+NetApp has an extensive collection of technical reports, validated designs, and solution briefs for SAP and SAP HANA. They are organized into the following four categories and can be expanded from the sidebar on the left for more information.
+
+* Best practices
+* backup, restore, and disaster recovery
+* Lifecycle management
+* Solution briefs
