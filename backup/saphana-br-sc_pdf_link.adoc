@@ -1,0 +1,19 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-br-sc_pdf_link.html
+keywords: tr-4614, pdf, sap, hana, backup, recovery, snapcenter
+summary: The technical report TR-4614 provides best practices for SAP HANA data protection with NetApp SnapCenter. This document covers SnapCenter concepts, configuration recommendations, and operation workflows, including configuration, backup operations, and restore and recovery operations.
+---
+
+= TR-4614: SAP HANA backup and recovery with SnapCenter
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+Nils Bauer, NetApp
+
+TR-4616 is an overview of the options for disaster recovery protection for SAP HANA. It includes detailed setup information and a use case description of a three-site disaster recovery solution based on synchronous and asynchronous NetApp SnapMirror storage replication. The described solution uses NetApp SnapCenter with the SAP HANA plug-in to manage database consistency.
+
+link:https://www.netapp.com/us/media/tr-4614.pdf[https://www.netapp.com/us/media/tr-4614.pdf]
