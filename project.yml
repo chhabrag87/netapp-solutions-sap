@@ -14,32 +14,32 @@ homepage:
     - title: Best Practices
       links:
         - title: "What's New"
-          url: aimda-whatsnew.html
+          url: sap-bp-whatsnew.html
         - title: "Videos and Demos"
-          url: aimda-videos.html
+          url: sap-bp-videos.html
         - title: "Blogs"
-          url: aimda-blogs.html
+          url: sa-bp-blogs.html
 
     - title: Backup, Restore, and Disaster Recovery
       links:
         - title: "What's New"
-          url: hc-whatsnew.html
+          url: sap-dr-whatsnew.html
         - title: "Videos and Demos"
-          url: hc-videos.html
+          url: sap-dr-videos.html
         - title: "Blogs"
-          url: hc-blogs.html
+          url: sap-dr-blogs.html
 
     - title: Solution Briefs
       links:
         - title: "What's New"
-          url: appsdb-whatsnew.html
+          url: sap-sb-whatsnew.html
         - title: "Videos and Demos"
-          url: appsdb-videos.html
+          url: sap-sb-videos.html
 
     - title: Lifecycle Management
       links:
         - title: "What's New"
-          url: dpsec-whatsnew.html
+          url: sap-lcm-whatsnew.html
 
     - title: Other NetApp Solutions
       links:
