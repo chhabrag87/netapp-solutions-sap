@@ -9,7 +9,7 @@ sidebar:
     - title: NetApp Solutions
       url: https://docs.netapp.com/us-en/netapp-solutions/
 
-homepage:
+# homepage:
 #  tiles:
 #    - title: Best Practices
 #      links:
