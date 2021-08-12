@@ -1,5 +1,5 @@
 section: backup
-title: Backup
+title: Backup, Restore and Disaster Recovery
 entries:
   - title: SAP HANA Disaster Recovery with Azure NetApp Files
     type: solutions
