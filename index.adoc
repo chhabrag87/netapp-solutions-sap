@@ -1,5 +1,4 @@
 ---
-layout: astra
 sidebar: sidebar
 permalink: index.html
 summary: Collection of SAP business application and SAP HANA database solutions
