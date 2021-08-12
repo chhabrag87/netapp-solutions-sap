@@ -6,7 +6,7 @@ sidebar:
     - section: backup
     - section: lifecycle
     - section: briefs
-    - section: NetApp Solutions
+    - title: NetApp Solutions
       url: https://docs.netapp.com/us-en/netapp-solutions/
 
 homepage:
