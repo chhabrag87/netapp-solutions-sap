@@ -10,7 +10,7 @@ sidebar:
       url: https://docs.netapp.com/us-en/netapp-solutions/
 
 homepage:
-//  tiles:
+  tiles:
 //    - title: Best Practices
 //      links:
 //        - title: "What's New"
