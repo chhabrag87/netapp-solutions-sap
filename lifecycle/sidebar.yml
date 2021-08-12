@@ -1,5 +1,5 @@
 section: lifecycle
-title: Lifecycle
+title: Lifecycle Management
 entries:
   - title: Automating SAP System Copies Using the SnapCenter SAP HANA Plug-In
     url: https://www.netapp.com/us/media/tr-4667.pdf

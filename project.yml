@@ -12,46 +12,34 @@ homepage:
     - title: Best Practices
       links:
         - title: "What's New"
-          summary: Check out the latest AI and Modern Data Analytics solutions
           url: aimda-whatsnew.html
-        - title: "NetApp Data Science toolkit"
-          summary: Data management toolkit for data scientists and engineers
-          url: https://github.com/NetApp/netapp-data-science-toolkit
         - title: "Videos and Demos"
-          summary: Short videos / demos for AI and Modern Data Analytics features
           url: aimda-videos.html
         - title: "Blogs"
-          summary: Technical blogs highlighting AI and Modern Data Analytics features
           url: aimda-blogs.html
 
     - title: Backup, Restore, and Disaster Recovery
       links:
         - title: "What's New"
-          summary: Check out the latest Hybrid Cloud, Virtual Desktop and Containers solutions
           url: hc-whatsnew.html
         - title: "Videos and Demos"
-          summary: Short videos / demos for Hybrid Cloud, Virtualization and Containers features
           url: hc-videos.html
         - title: "Blogs"
-          summary: Technical blogs highlighting Hybrid Cloud, Virtualization and Containers features
           url: hc-blogs.html
 
     - title: Solution Briefs
       links:
         - title: "What's New"
-          summary: Check out the latest Business Applications & Enterprise Database solutions
           url: appsdb-whatsnew.html
         - title: "Videos and Demos"
-          summary: Short videos / demos for Business Applications & Enterprise Database features
           url: appsdb-videos.html
 
     - title: Lifecycle management
       links:
         - title: "What's New"
-          summary: Check out the latest Data Protection & Security solutions
           url: dpsec-whatsnew.html
 
     - title: Other NetApp Solutions
       links:
-        - title: NetApp provides a wide variety of solutions documetation for many business needs.
+        - title: NetApp Solutions Content Library
           url: https://docs.netapp.com/us-en/netapp-solutions/

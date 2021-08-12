@@ -14,9 +14,6 @@ keywords: netapp, solutions, SAP, HANA
 :table-stripes: odd
 :imagesdir: ./media/
 
-NetApp has an extensive collection of technical reports, validated designs, and solution briefs for SAP and SAP HANA. They are organized into the following four categories and can be expanded from the sidebar on the left for more information.
+[.lead]
 
-* Best practices
-* backup, restore, and disaster recovery
-* Lifecycle management
-* Solution briefs
+NetApp has an extensive collection of technical reports, validated designs, and solution briefs for SAP and SAP HANA. They are organized into the following four categories and can be expanded from the sidebar on the left for more information.
