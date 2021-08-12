@@ -12,6 +12,7 @@ summary:
 :linkattrs:
 :imagesdir: ./../media/
 
+link:saphana_fas_fc_where_to_find_additional_information.html[Previous: Where to find additional information.]
 
 The following technical changes have been made to this solution since its original publication.
 

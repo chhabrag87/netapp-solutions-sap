@@ -25,7 +25,7 @@ entries:
       - title: Disaster recovery testing
         entries:
           - title: Disaster recovery testing overview
-            url: /backup/hana-dr-anf_disaster_recovery_testing_overview.html
+            url: /backup/saphana-dr-anf_disaster_recovery_testing_overview.html
           - title: Prepare the target host
             url: /backup/saphana-dr-anf_prepare_the_target_host.html
           - title: Create new volumes based on snapshot backups at the disaster recovery site
@@ -46,6 +46,8 @@ entries:
             url: /backup/saphana-dr-anf_mount_the_volumes_at_the_target_host.html
           - title: HANA database recovery
             url: /backup/saphana-dr-anf_hana_database_recovery_01.html
+      - title: Update history
+        url: /backup/saphana-dr-anf_update_history.html
   - title: SAP HANA Backup and Recovery with SnapCenter
     url: /backup/saphana-br-sc_pdf_link.html
   - title: SAP HANA Disaster Recovery with Storage Replication
