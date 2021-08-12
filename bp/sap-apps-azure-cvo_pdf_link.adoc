@@ -18,5 +18,4 @@ Will Bratton, Geert van Teylingen, Microsoft
 
 TR-4757 provides best practices for using Azure NetApp Files for SAP Applications and SAP HANA deployments. It also details the different use cases from SAP shared file systems This document provides best practices for leveraging NetApp Cloud Volumes ONTAP for SAP Applications and SAP HANA deployments. It includes different use cases from SAP shared file systems and specific performance considerations with SAP HANA on Cloud Volumes ONTAP.
 
-
-link:https://www.netapp.com/us/media/tr-4746.pdf[https://www.netapp.com/us/media/tr-4746.pdf]
+link:https://www.netapp.com/pdf.html?item=/media/17126-tr4757pdf.pdf[https://www.netapp.com/pdf.html?item=/media/17126-tr4757pdf.pdf]

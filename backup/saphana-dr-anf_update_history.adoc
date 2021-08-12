@@ -12,6 +12,7 @@ summary:
 :linkattrs:
 :imagesdir: ./../media/
 
+link:saphana-dr-anf_hana_database_recovery_01.html[Previous: HANA database recovery.]
 
 The following technical changes have been made to this solution since its original publication.
 

@@ -17,4 +17,4 @@ Will Bratton, Ralf Klahr, Amish Patel, Juergen Thomas Microsoft
 
 TR-4746 provides best practices for using Azure NetApp Files for SAP Applications and SAP HANA deployments. It also details the different use cases from SAP shared file systems to full SAP HANA deployments and specific performance, data protection, and migration considerations with SAP HANA on Azure NetApp Files.
 
-link:https://www.netapp.com/us/media/tr-44746.pdf[https://www.netapp.com/us/media/tr-4746.pdf]
+link:https://www.netapp.com/pdf.html?item=/media/17152-tr4746.pdf[https://www.netapp.com/pdf.html?item=/media/17152-tr4746.pdf]
