@@ -1,0 +1,22 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-san_pdf_link.html
+keywords: nva-1147, pdf, sap, hana, disaster, recovery, data protection, dr, snapmirror, snapcenter, commvault
+summary: This NetApp Verified Architecture covers modernizing SAP systems and operations for SAP HANA on NetApp All SAN Array (ASA) storage systems with Brocade FC SAN Fabric. It includes backup and recovery, disaster recovery, and data protection.
+---
+
+= NVA-1147-DESIGN: SAP HANA on NetApp All SAN Array - Modern SAN, Data Protection, and Disaster Recovery
+
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+Nils Bauer, Roland Wartenberg, Darryl Clinkscales, Daniel Hohman, Marco Schöen, Steve Botkin, Michael Peppers, Vidula Aiyer, Steve Collins, Pavan Jhamnani, Lee Dorrier, NetApp
+Jim Zucchero, Naem Saafein, Ph.D., Broadcom Brocade
+
+This NetApp Verified Architecture covers modernizing SAP systems and operations for SAP HANA on NetApp All SAN Array (ASA) storage systems with Brocade FC SAN Fabric. It includes backup and recovery, disaster recovery, and data protection. The solution leverages NetApp SnapCenter to automate SAP HANA backup, restore and recovery, as well as cloning workflows. Disaster recovery configuration, testing, and failover scenarios are described using synchronous NetApp SnapMirror data replication software. Additionally, SAP Data Protection with CommVault is outlined.
+
+
+link:https://www.netapp.com/pdf.html?item=/media/10235-nva-1147-design.pdf[https://www.netapp.com/pdf.html?item=/media/10235-nva-1147-design.pdf]

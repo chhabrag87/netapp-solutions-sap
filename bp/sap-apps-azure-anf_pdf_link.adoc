@@ -1,0 +1,20 @@
+---
+sidebar: sidebar
+permalink: bp/sap-apps-azure-anf_pdf_link.html
+keywords: tr-4746, pdf, sap, applications, apps, hana, azure netapp files
+summary: TR-4746 provides best practices for using Azure NetApp Files for SAP Applications and SAP HANA deployments. It also details the different use cases from SAP shared file systems to full SAP HANA deployments and specific performance, data protection, and migration considerations with SAP HANA on Azure NetApp Files.
+---
+
+= TR-4746: SAP Applications on Microsoft Azure
+: hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+Nils Bauer, Tobias Brandl, Bernd Herth, Kevin Morris, Geert van Teylingen NetApp
+Will Bratton, Ralf Klahr, Amish Patel, Juergen Thomas Microsoft
+
+TR-4746 provides best practices for using Azure NetApp Files for SAP Applications and SAP HANA deployments. It also details the different use cases from SAP shared file systems to full SAP HANA deployments and specific performance, data protection, and migration considerations with SAP HANA on Azure NetApp Files.
+
+link:https://www.netapp.com/pdf.html?item=/media/17152-tr4746.pdf[https://www.netapp.com/pdf.html?item=/media/17152-tr4746.pdf]
