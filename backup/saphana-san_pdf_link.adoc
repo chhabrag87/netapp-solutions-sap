@@ -14,6 +14,7 @@ summary: This NetApp Verified Architecture covers modernizing SAP systems and op
 :imagesdir: ./../media/
 
 Nils Bauer, Roland Wartenberg, Darryl Clinkscales, Daniel Hohman, Marco Schöen, Steve Botkin, Michael Peppers, Vidula Aiyer, Steve Collins, Pavan Jhamnani, Lee Dorrier, NetApp
+
 Jim Zucchero, Naem Saafein, Ph.D., Broadcom Brocade
 
 This NetApp Verified Architecture covers modernizing SAP systems and operations for SAP HANA on NetApp All SAN Array (ASA) storage systems with Brocade FC SAN Fabric. It includes backup and recovery, disaster recovery, and data protection. The solution leverages NetApp SnapCenter to automate SAP HANA backup, restore and recovery, as well as cloning workflows. Disaster recovery configuration, testing, and failover scenarios are described using synchronous NetApp SnapMirror data replication software. Additionally, SAP Data Protection with CommVault is outlined.

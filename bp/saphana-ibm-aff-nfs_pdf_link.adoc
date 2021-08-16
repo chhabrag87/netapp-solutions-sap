@@ -13,6 +13,7 @@ summary: IBM Power Systems are designed for data-intensive and mission-critical 
 :imagesdir: ./../media/
 
 Tobias Brandl, NetApp
+
 Carsten Dieterle, IBM
 
 IBM Power Systems are designed for data-intensive and mission-critical workloads like SAP HANA. IBM Power Systems simplify and accelerate SAP HANA deployments by providing four key capabilities: superior virtualization and flexibility, faster provisioning, affordable scalability, and maximized uptime. The NetApp AFF product family is certified for use with SAP HANA in tailored data center integration (TDI) projects and perfectly complements IBM Power Systems. This document describes best practices for a NAS (NFS) storage setup using NetApp ONTAP with the AFF product family and IBM Power Systems.
