@@ -53,7 +53,7 @@ entries:
   - title: SAP HANA Disaster Recovery with Storage Replication
     url: /backup/saphana-dr-sr_pdf_link.html
   - title: SAP HANA System Replication, Backup, and Recovery with SnapCenter
-    url: backup/saphana-sr_pdf_link.html
+    url: /backup/saphana-sr_pdf_link.html
   - title: SAP HANA Backup and Recovery Using Snap Creator
     url: /backup/saphana-bandr-sc_pdf_link.html
   - title: SAP HANA Backup and Recovery Using NetApp Storage and Commvault Software
