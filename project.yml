@@ -8,6 +8,8 @@ sidebar:
     - section: briefs
     - title: NetApp Solutions
       url: https://docs.netapp.com/us-en/netapp-solutions/
+    - title: Legal Notices
+      url: /reference_legal_notices.html
 
 homepage:
 #  tiles:
