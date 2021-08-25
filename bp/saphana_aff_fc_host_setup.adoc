@@ -144,19 +144,19 @@ stlrx300s8-6:/ # cat /etc/multipath.conf
 multipaths {
         multipath {
                 wwid    3600a098038304436392b4d442d6f534f
-                alias   hana- SS3_data_mnt00001
+                alias   hana-SS3_data_mnt00001
         }
         multipath {
                 wwid    3600a098038304436375d4d442d753879
-                alias   hana- SS3_data_mnt00002
+                alias   hana-SS3_data_mnt00002
         }
         multipath {
                 wwid    3600a098038304436375d4d442d753878
-                alias   hana- SS3_log_mnt00001
+                alias   hana-SS3_log_mnt00001
         }
         multipath {
                 wwid    3600a098038304436392b4d442d6f5350
-                alias   hana- SS3_log_mnt00002
+                alias   hana-SS3_log_mnt00002
         }
 
 }
@@ -234,10 +234,12 @@ For an LVM-based setup, the multipath configuration described in the previous se
 
 ....
 pvcreate /dev/mapper/hana-FC5_data_mnt00001
-pvcreate /dev/mapper/hana-FC5_data2_mnt00001pvcreate /dev/mapper/hana-FC5_data_mnt00002
+pvcreate /dev/mapper/hana-FC5_data2_mnt00001
+pvcreate /dev/mapper/hana-FC5_data_mnt00002
 pvcreate /dev/mapper/hana-FC5_data2_mnt00002
 pvcreate /dev/mapper/hana-FC5_log_mnt00001
-pvcreate /dev/mapper/hana-FC5_log2_mnt00001pvcreate /dev/mapper/hana-FC5_log_mnt00002
+pvcreate /dev/mapper/hana-FC5_log2_mnt00001
+pvcreate /dev/mapper/hana-FC5_log_mnt00002
 pvcreate /dev/mapper/hana-FC5_log2_mnt00002
 ....
 
@@ -320,11 +322,11 @@ To create the required mount point directories, take one of the following action
 * For a single-host system, set permissions and create mount points on the database host.
 
 ....
-stlrx300s8- 6:/ # mkdir -p /hana/data/SS3/mnt00001
-stlrx300s8- 6:/ # mkdir -p /hana/log/SS3/mnt00001
-stlrx300s8- 6:/ # mkdir -p /hana/shared
-stlrx300s8- 6:/ # chmod –R 777 /hana/log/SS3
-stlrx300s8- 6:/ # chmod –R 777 /hana/data/SS3
+stlrx300s8-6:/ # mkdir -p /hana/data/SS3/mnt00001
+stlrx300s8-6:/ # mkdir -p /hana/log/SS3/mnt00001
+stlrx300s8-6:/ # mkdir -p /hana/shared
+stlrx300s8-6:/ # chmod –R 777 /hana/log/SS3
+stlrx300s8-6:/ # chmod –R 777 /hana/data/SS3
 stlrx300s8-6:/ # chmod 777 /hana/shared
 ....
 
@@ -334,13 +336,13 @@ stlrx300s8-6:/ # chmod 777 /hana/shared
 The example commands show a 2+1 multiple-host HANA system.
 
 ....
-stlrx300s8- 6:/ # mkdir -p /hana/data/SS3/mnt00001
-stlrx300s8- 6:/ # mkdir -p /hana/log/SS3/mnt00001
-stlrx300s8- 6:/ # mkdir -p /hana/data/SS3/mnt00002
-stlrx300s8- 6:/ # mkdir -p /hana/log/SS3/mnt00002
-stlrx300s8- 6:/ # mkdir -p /hana/shared
-stlrx300s8- 6:/ # chmod –R 777 /hana/log/SS3
-stlrx300s8- 6:/ # chmod –R 777 /hana/data/SS3
+stlrx300s8-6:/ # mkdir -p /hana/data/SS3/mnt00001
+stlrx300s8-6:/ # mkdir -p /hana/log/SS3/mnt00001
+stlrx300s8-6:/ # mkdir -p /hana/data/SS3/mnt00002
+stlrx300s8-6:/ # mkdir -p /hana/log/SS3/mnt00002
+stlrx300s8-6:/ # mkdir -p /hana/shared
+stlrx300s8-6:/ # chmod –R 777 /hana/log/SS3
+stlrx300s8-6:/ # chmod –R 777 /hana/data/SS3
 stlrx300s8-6:/ # chmod 777 /hana/shared
 ....
 
