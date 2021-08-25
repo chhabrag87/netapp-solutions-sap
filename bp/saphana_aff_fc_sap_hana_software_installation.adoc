@@ -97,8 +97,12 @@ Depending on the OS version being used, it might be necessary to install Python 
 
 ....
 sapcc-hana-tst-03:/mnt/sapcc-share/software/SAP/HANA2SP5-52/DATA_UNITS/HDB_LCM_LINUX_X86_64 # ./hdblcm --action=install --addhosts=sapcc-hana-tst-04:role=worker:storage_partion=2,sapcc-hana-tst-05:role:=standby --storage_cfg=/hana(shared/shared
+
+
 SAP HANA Lifecycle Management - SAP HANA Database 2.00.052.00.1599235305
 ************************************************************************
+
+
 Scanning software locations...
 Detected components:
     SAP HANA AFL (incl.PAL,BFL,OFL) (2.00.052.0000.1599259237) in /mnt/sapcc-share/software/SAP/HANA2SP5-52/DATA_UNITS/HDB_AFL_LINUX_X86_64/packages
@@ -120,7 +124,10 @@ Detected components:
     SAPUI5 FESV6 XSA 1 - SAPUI5 1.71 (1.071.25) in /mnt/sapcc-share/software/SAP/HANA2SP5-52/DATA_UNITS/XSA_CONTENT_10/XSACUI5FESV671_25.zip
     SAPUI5 SERVICE BROKER XSA 1 - SAPUI5 Service Broker 1.0 (1.000.3) in /mnt/sapcc-share/software/SAP/HANA2SP5-52/DATA_UNITS/XSA_CONTENT_10/XSACUI5SB00_3.zip
     XSA Cockpit 1 (1.001.17) in /mnt/sapcc-share/software/SAP/HANA2SP5-52/DATA_UNITS/XSA_CONTENT_10/XSACXSACOCKPIT01_17.zip
+
+
 SAP HANA Database version '2.00.052.00.1599235305' will be installed.
+
 Select additional components for installation:
   Index | Components | Description
   ---------------------------------------------------------------------------------------------
