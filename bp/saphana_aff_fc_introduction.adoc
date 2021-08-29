@@ -27,7 +27,9 @@ The NetApp AFF product family is certified for use with SAP HANA in TDI projects
 The certification is valid for the following models:
 
 * AFF A220, AFF A250, AFF A300, AFF A320, AFF A400, AFF A700s, AFF A700, AFF A800
-* ASA AFF A220, ASA AFF A250, ASA AFF A400, ASA AFF A700, ASA AFF A800For a complete list of NetApp certified storage solutions for SAP HANA, see the https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/enterprise-storage.html[Certified and supported SAP HANA hardware directory^].
+* ASA AFF A220, ASA AFF A250, ASA AFF A400, ASA AFF A700, ASA AFF A800
+
+For a complete list of NetApp certified storage solutions for SAP HANA, see the https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/enterprise-storage.html[Certified and supported SAP HANA hardware directory^].
 
 This document describes AFF configurations that use the Fibre Channel Protocol (FCP).
 
