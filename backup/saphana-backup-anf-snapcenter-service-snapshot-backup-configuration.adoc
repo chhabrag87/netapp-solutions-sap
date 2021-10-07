@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: backup/saphana-br-scs-snapcenter-service-snapshot-backup-configuration.html
+permalink: backup/saphana-backup-anf-snapcenter-service-snapshot-backup-configuration.html
 keywords:
 summary:
 ---

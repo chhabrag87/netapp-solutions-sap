@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: backup/saphana-br-scs-backup-configuration-of-sap-hana-non-data-volumes.html
+permalink: backup/saphana-backup-anf-backup-configuration-of-sap-hana-non-data-volumes.html
 keywords:
 summary:
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: backup/saphana-br-scs-lab-setup-used-for-this-report.html
+permalink: backup/saphana-backup-anf-lab-setup-used-for-this-report.html
 keywords:
 summary:
 ---

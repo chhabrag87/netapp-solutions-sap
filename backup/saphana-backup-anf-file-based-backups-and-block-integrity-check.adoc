@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: backup/saphana-br-scs-file-based-backups-and-block-integrity-check.html
+permalink: backup/saphana-backup-anf-file-based-backups-and-block-integrity-check.html
 keywords:
 summary:
 ---

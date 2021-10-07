@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: backup/saphana-br-scs-snapcenter-service-concepts-and-best-practices.html
+permalink: backup/saphana-backup-anf-snapcenter-service-concepts-and-best-practices.html
 keywords:
 summary:
 ---
