@@ -1,0 +1,56 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-br-scs-backup-configuration-of-sap-hana-non-data-volumes.html
+keywords:
+summary:
+---
+
+= Backup configuration of SAP HANA non-data volumes
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2021-10-07 09:49:08.458609
+//
+
+[.lead]
+The backup of non- data volumes is an integrated part of the SnapCenter Service. Protecting the database data volume is sufficient to restore and recover the SAP HANA database to a given point in time provided that the database installation resources,  and the required logs are still available.
+
+To recover from situations where other non- data files must be restored, NetApp recommends developing an additional backup strategy for these volumes to augment the SAP HANA database backup. Depending on your specific requirements, the backup of non- data volumes might differ in scheduling frequency and retention settings, and you should consider how frequently files are changed. For instance, the HANA volume `/hana/shared` contains executables but also SAP HANA trace files. Although executables only change when the SAP HANA database is upgraded, the SAP HANA trace files might need a higher backup frequency to support analyzing problem situations with SAP HANA.
+
+A SnapCenter Service non- data volume backup enables Snapshot copies of all relevant volumes to be created in a few seconds with the same space efficiency as SAP HANA database backups. The difference is that there is no SQL communication with the SAP HANA database required.
+
+The following steps show how to protect the HANA shared volume of the SAP HANA database PR1.
+
+. In the SAP HANA Systems view, select Add Non-Data Volumes in the context menu on the right of the screen.
+
+image:saphana-br-scs-image31.png[Error: Missing Graphic Image]
+
+. Click Add Storage.
+
+image:saphana-br-scs-image32.png[Error: Missing Graphic Image]
+
+. Select the HANA shared volume and click Add Storage.
+
+image:saphana-br-scs-image33.png[Error: Missing Graphic Image]
+
+. To add the non- data volume, click Add.
+
+image:saphana-br-scs-image35.png[Error: Missing Graphic Image]
+
+The SAP HANA Systems overview now shows a second icon in the protection column, which indicates that a non-data volume was added to the HANA system.
+
+image:saphana-br-scs-image36.png[Error: Missing Graphic Image]
+
+. In the context menu on the right, select Protect > Non- Data Volumes.
+
+image:saphana-br-scs-image37.png[Error: Missing Graphic Image]
+
+. Assign a policy to the non- data volume. In the following example, the `SnapshotEvery4h` policy is assigned to the HANA shared volume.
+
+image:saphana-br-scs-image38.png[Error: Missing Graphic Image]

@@ -1,0 +1,24 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-br-scs-lab-setup-used-for-this-report.html
+keywords:
+summary:
+---
+
+= Lab setup used for this report
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2021-10-07 09:49:08.437651
+//
+
+[.lead]
+The lab setup used for this report includes the SAP HANA system PR1- SAP HANA single host MDC single tenant system,  and the SnapCenter Service components,  as shown in the following figure.
+
+image:saphana-br-scs-image13.jpg[Error: Missing Graphic Image]

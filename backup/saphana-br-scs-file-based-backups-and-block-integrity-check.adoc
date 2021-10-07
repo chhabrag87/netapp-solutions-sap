@@ -1,0 +1,57 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-br-scs-file-based-backups-and-block-integrity-check.html
+keywords:
+summary:
+---
+
+= File-based backups and block integrity check
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2021-10-07 09:49:08.473189
+//
+
+[.lead]
+SAP recommends combining storage-based snapshot backups with a weekly file-based backup to execute a block integrity check. SnapCenter Service supports the execution of a block integrity check by using a policy in which file-based backup is selected as the backup type.
+
+File-based backups are also used to have secondary backup copies in addition to the snapshot backups on the HANA data volume. You can use these file-based backups for restore and recovery operations in case of a complete loss of the primary data volume.
+
+When scheduling backups using this policy, SnapCenter Service creates a standard SAP HANA file backup for the system and all tenant databases.
+
+SnapCenter Service does not display the file-based backups in the same manner as snapshot- based backups. Instead, only the last file-based backup is listed.  Success or failure of file-based backups are visible in the Job Monitor view.
+
+image:saphana-br-scs-image51.png[Error: Missing Graphic Image]
+
+The SAP HANA backup catalog shows entries for both the system and the tenant databases. The following figure shows a SnapCenter Service block integrity check in the backup catalog of the system database.
+
+image:saphana-br-scs-image58.png[Error: Missing Graphic Image]
+
+A successful block integrity check creates standard SAP HANA data backup files. SnapCenter Service uses the backup path that has been configured in the HANA database for file-based data backup operations.
+
+....
+vm-pr1:/hanabackup/PR1/file # ls -al *
+DB_PR1:
+total 1743736
+drwxr-xr-- 2 pr1adm sapsys       4096 Jun  6 05:12 .
+drwxr-x--- 4 pr1adm sapsys       4096 Jan 31 18:59 ..
+-rw-r----- 1 pr1adm sapsys     155648 Jun  6 05:00 SnapCenter_SCS_PR1_BlockIntegrityCheckEverySunday_Weekly_2021_06_06_05_00_00_databackup_0_1
+-rw-r----- 1 pr1adm sapsys   83894272 Jun  6 05:01 SnapCenter_SCS_PR1_BlockIntegrityCheckEverySunday_Weekly_2021_06_06_05_00_00_databackup_2_1
+-rw-r----- 1 pr1adm sapsys 1694507008 Jun  6 05:02 SnapCenter_SCS_PR1_BlockIntegrityCheckEverySunday_Weekly_2021_06_06_05_00_00_databackup_3_1
+SYSTEMDB:
+total 1562788
+drwxr-xr-- 2 pr1adm sapsys       4096 Jun  6 05:12 .
+drwxr-x--- 4 pr1adm sapsys       4096 Jan 31 18:59 ..
+-rw-r----- 1 pr1adm sapsys     159744 Jun  6 05:00 SnapCenter_SCS_PR1_BlockIntegrityCheckEverySunday_Weekly_2021_06_06_05_00_00_databackup_0_1
+-rw-r----- 1 pr1adm sapsys 1593843712 Jun  6 05:02 SnapCenter_SCS_PR1_BlockIntegrityCheckEverySunday_Weekly_2021_06_06_05_00_00_databackup_1_1
+....
+
+=== Restore and recovery using file-based backups
+
+You must do a restore and recovery operation of a file-based backup outside of SnapCenter by using the standard HANA recovery operations with HANA Studio or HANA Cockpit.

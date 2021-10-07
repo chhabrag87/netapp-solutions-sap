@@ -1,0 +1,34 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-br-scs-snapcenter-service-architecture.html
+keywords:
+summary:
+---
+
+= SnapCenter Service architecture
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2021-10-07 09:49:08.413651
+//
+
+[.lead]
+SnapCenter Service is a unified, scalable platform for application-consistent data protection. SnapCenter Service provides centralized control and oversight, while delegating the ability for users to manage application-specific backup and restore operations.
+
+SnapCenter Service leverages the NetApp Cloud Manager software as a UI and for managing credentials for Azure NetApp Files. The SnapCenter services run within a Kubernetes cluster and communicate with the NetApp Cloud Manager through the Cloud Manager Connector. SnapCenter Service triggers HANA database operations by using the HANA hdbsql client and the Azure NetApp Files storage operation by using the Azure NetApp Files management APIs.
+
+You can deploy the SnapCenter Service Kubernetes cluster and the Cloud Manager Connector in a separate service vNet or in the same vNet as the SAP HANA systems,  as shown in the following two figures.
+
+image:saphana-br-scs-image6.jpg[Error: Missing Graphic Image]
+
+image:saphana-br-scs-image7.jpg[Error: Missing Graphic Image]
+
+SnapCenter Service installation requires a minimum of two virtual machines (VMs), one VM for the Cloud Manager Connector and another VM running the Kubernetes cluster in a non-HA configuration. An additional two VMs are required when SnapCenter Service is set up in a high availability (HA) configuration.
+
+image:saphana-br-scs-image8.jpg[Error: Missing Graphic Image]

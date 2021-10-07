@@ -1,0 +1,37 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-backup-anf-overview.html
+keywords: overview, introduction, tr-4905, 4905, tr4905, snapcenter service, anf, azure netapp files
+summary: This technical report covers best practices for SAP HANA data protection with NetApp SnapCenter Service and Azure NetApp Files. It covers SnapCenter Service concepts, configuration recommendations, and operation workflows, including backup and restore and recovery operations.
+---
+
+= TR-4905: SAP HANA backup and recovery on Azure NetApp Files with SnapCenter Service
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2021-10-07 09:49:08.405356
+//
+
+Nils Bauer, NetApp
+
+This technical report covers best practices for SAP HANA data protection with NetApp SnapCenter Service and Azure NetApp Files. It covers SnapCenter Service concepts, configuration recommendations, and operation workflows, including backup and restore and recovery operations.
+
+Companies today require continuous, uninterrupted availability for their SAP applications. They expect consistent performance levels in the face of ever-increasing volumes of data and the need for routine maintenance tasks such as system backups. Performing backups of SAP databases is a critical task and can have a significant performance effect on the production SAP system.
+
+Backup windows are shrinking, while the amount of data to be backed up is increasing. Therefore, it is difficult to find a time when backups can be performed with minimal effect on business processes. The time needed to restore and recover SAP systems is a concern, because downtime for SAP production and nonproduction systems must be minimized to reduce data loss and cost to the business.
+
+The following points summarize the challenges facing SAP backup and recovery:
+
+* *Performance effects on production SAP systems.* Typically, traditional copy-based backups create a significant performance drain on production SAP systems because of the heavy loads placed on the database server, the storage system, and the storage network.
+* *Shrinking backup windows.* Conventional backups can only be made when few dialog or batch activities are in process on the SAP system. The scheduling of backups becomes more difficult when SAP systems are in use around the clock.
+* *Rapid data growth.* Rapid data growth and shrinking backup windows require ongoing investment in backup infrastructure.  In other words, you must procure additional backup disk space and faster backup networks. You must also cover the ongoing expense of storing and managing these backup assets. Incremental or differential backups can address these issues,  but this arrangement results in a very slow, cumbersome, and complex restore process that is harder to verify. Such systems usually increase recovery time objective (RTO) and recovery point objective (RPO) times in ways that are not acceptable to the business.
+* *Increasing cost of downtime.* Unplanned downtime of an SAP system typically affects business finances. A significant part of any unplanned downtime is consumed by the requirement to restore and recover the SAP system. Therefore, the desired RTO dictates the design of the backup and recovery architecture.
+* *Backup and recovery time for SAP upgrade projects.* The project plan for an SAP upgrade includes at least three backups of the SAP database. These backups significantly reduce the time available for the upgrade process. The decision to proceed is generally based on the amount of time required to restore and recover the database from the previously created backup. Rather than just restoring a system to its previous state, a rapid restore provides more time to solve problems that might occur during an upgrade.
+
+link:saphana-br-scs-the-netapp-solution.html[Next: The NetApp solution.]
