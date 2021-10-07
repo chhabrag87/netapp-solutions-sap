@@ -34,4 +34,4 @@ The following points summarize the challenges facing SAP backup and recovery:
 * *Increasing cost of downtime.* Unplanned downtime of an SAP system typically affects business finances. A significant part of any unplanned downtime is consumed by the requirement to restore and recover the SAP system. Therefore, the desired RTO dictates the design of the backup and recovery architecture.
 * *Backup and recovery time for SAP upgrade projects.* The project plan for an SAP upgrade includes at least three backups of the SAP database. These backups significantly reduce the time available for the upgrade process. The decision to proceed is generally based on the amount of time required to restore and recover the database from the previously created backup. Rather than just restoring a system to its previous state, a rapid restore provides more time to solve problems that might occur during an upgrade.
 
-link:saphana-br-scs-the-netapp-solution.html[Next: The NetApp solution.]
+link:saphana-backup-anf-the-netapp-solution.html[Next: The NetApp solution.]
