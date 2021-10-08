@@ -1,0 +1,74 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-backup-anf-snapcenter-service-policy-configuration.html
+keywords: minimum configuration, policy, service
+summary:
+---
+
+= SnapCenter Service policy configuration
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2021-10-07 09:49:08.439924
+//
+
+link:saphana-backup-anf-lab-setup-used-for-this-report.html[Previous: Lab setup used for this report.]
+
+As discussed in the section link:saphana-backup-anf-snapcenter-service-concepts-and-best-practices.html#data-protection-strategy[“Data protection strategy,”] policies are usually configured independently of the resource and can be used by multiple SAP HANA databases.
+
+A typical minimum configuration consists of the following policies:
+
+* Policy for hourly Snapshot backups.
++
+For example, `SnapshotEvery4h`
+
+* Policy for weekly block integrity check using a file-based backup.
++
+For example, `BlockIntegrityCheckEverySunday`
+
+The following sections describe the configuration of these two policies.
+
+== Policy for hourly Snapshot backups
+
+To create a policy for hourly Snapshot backups, follow these steps:
+
+. Go to Policies and click Add Policy.
++
+image:saphana-backup-anf-image14.png[Error: Missing Graphic Image]
+
+. In the Create Policy screen provide a policy name, backup type, backup naming convention, and schedule and retention details.
++
+image:saphana-backup-anf-image10.png[Error: Missing Graphic Image]
++
+For example, in the following figure, for the Snapshot backup, a schedule of every 4 hours and a start time of 10AM is configured. The retention is configured with 18, which is 3 days.
++
+image:saphana-backup-anf-image15.png[Error: Missing Graphic Image]
++
+. In the Custom Backup Name window, you can change the backup naming convention and add a custom prefix.
++
+image:saphana-backup-anf-image16.png[Error: Missing Graphic Image]
+
+. To create the new policy, click Add.
+
+== Policy for weekly block integrity check
+
+To create a policy for a weekly block integrity check, follow these steps:
+
+. Go to Policies and click Add Policy.
+. In the Create Policy screen,  provide a policy name, backup type, backup naming convention, and as schedule and retention details.
++
+image:saphana-backup-anf-image17.png[Error: Missing Graphic Image]
+
+. To create the new policy, click Add.
++
+The following figure shows a summary of the configured policies.
++
+image:saphana-backup-anf-image18.png[Error: Missing Graphic Image]
+
+link:saphana-backup-anf-snapcenter-service-snapshot-backup-configuration_overview.html[Next: SnapCenter Service Snapshot backup configuration overview.]
