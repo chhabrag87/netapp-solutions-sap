@@ -71,4 +71,4 @@ The following figure shows a summary of the configured policies.
 +
 image:saphana-backup-anf-image18.png[Error: Missing Graphic Image]
 
-link:saphana-backup-anf-snapcenter-service-snapshot-backup-configuration_overview.html[Next: SnapCenter Service Snapshot backup configuration overview.]
+link:saphana-backup-anf-snapcenter-service-snapshot-backup-configuration-overview.html[Next: SnapCenter Service Snapshot backup configuration overview.]
