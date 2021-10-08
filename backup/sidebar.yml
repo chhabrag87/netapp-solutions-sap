@@ -69,7 +69,7 @@ entries:
       - title: SnapCenter Service Snapshot backup configuration
         entries:
           - title: Overview
-            url: /backup/saphana-backup-anf-snapcenter-service-snapshot-backup-configuration_overview.html
+            url: /backup/saphana-backup-anf-snapcenter-service-snapshot-backup-configuration-overview.html
           - title: Backup configuration of SAP HANA database backups
             url: /backup/saphana-backup-anf-backup-configuration-of-sap-hana-database-backups.html
           - title: Backup configuration of SAP HANA non-data volumes

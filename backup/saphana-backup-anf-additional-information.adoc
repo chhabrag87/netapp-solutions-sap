@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: backup/saphana-backup-anf-additional-information.html
-keywords:
+keywords: references
 summary:
 ---
 
@@ -10,7 +10,7 @@ summary:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ./../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)
@@ -18,8 +18,12 @@ summary:
 // 2021-10-07 09:49:08.489191
 //
 
+link:saphana-backup-anf-restore-and-recovery.html[Previous: Restore and recovery.]
+
 To learn more about the information that is described in this document, review the following documents and/or websites:
 
 * TR-4746: SAP Applications on Microsoft Azure using Azure NetApp Files
 +
 https://www.netapp.com/us/media/tr-4746.pdf
+
+link:saphana-backup-anf-version-history.html[Next: Version history.]

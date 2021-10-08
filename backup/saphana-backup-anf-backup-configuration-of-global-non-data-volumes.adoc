@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: backup/saphana-backup-anf-backup-configuration-of-global-non-data-volumes.html
-keywords:
-summary:
+keywords: non-data, volumes, configuration, global
+summary: This section lists the steps necessary to perform backup configuration of SAP HANA non-data volumes.
 ---
 
 = Backup configuration of global non-data volumes
@@ -10,7 +10,7 @@ summary:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ./../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)
@@ -18,34 +18,37 @@ summary:
 // 2021-10-07 09:49:08.462387
 //
 
-[.lead]
+link:saphana-backup-anf-backup-configuration-of-sap-hana-non-data-volumes.html[Previous: Backup configuration of SAP HANA non-data volumes.]
+
 To set the backup configuration of global non-data volumes, follow these steps:
 
 . Go to SAP HANA Systems and click Add.
 . In the System Details screen, select the system type, Global Non-Data Volume. You can provide a comma-separated list of SIDs, which are associated with the global volume. Enter a system name of your choosing and click Continue.
-
-image:saphana-br-scs-image39.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image39.png[Error: Missing Graphic Image]
 
 . Select the volume and click Continue.
-
-image:saphana-br-scs-image40.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image40.png[Error: Missing Graphic Image]
 
 . Click Continue.
-
-image:saphana-br-scs-image41.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image41.png[Error: Missing Graphic Image]
 
 . Click Add.
-
-image:saphana-br-scs-image42.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image42.png[Error: Missing Graphic Image]
 
 . To configure the protection, click Proceed.
-
-image:saphana-br-scs-image43.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image43.png[Error: Missing Graphic Image]
 
 . Select the policy and click Protect.
-
-image:saphana-br-scs-image44.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image44.png[Error: Missing Graphic Image]
 
 . Transport Directory now displays in the list of HANA systems as a global non- data volume.
++
+image:saphana-backup-anf-image45.png[Error: Missing Graphic Image]
 
-image:saphana-br-scs-image45.png[Error: Missing Graphic Image]
+link:saphana-backup-anf-sap-hana-database-snapshot-backups.html[Next: SAP HANA database Snapshot backups.]

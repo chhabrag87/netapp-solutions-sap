@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: backup/saphana-backup-anf-backup-configuration-of-sap-hana-database-backups.html
-keywords:
-summary:
+keywords: configuration, database, backups, MDC
+summary: This section describes the configuration steps for a single host SAP HANA MDC single-tenant system PR1. The steps are identical for an MDC system with multiple tenants. The differences for a single-container or a multiple-host system are reflected in the corresponding configuration steps.
 ---
 
 = Backup configuration of SAP HANA database backups
@@ -10,7 +10,7 @@ summary:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ./../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)
@@ -18,10 +18,11 @@ summary:
 // 2021-10-07 09:49:08.449368
 //
 
-[.lead]
+link:saphana-backup-anf-snapcenter-service-snapshot-backup-configuration-overview.html[Previous: SnapCenter Service Snapshot backup configuration overview.]
+
 This section describes the configuration steps for a single host SAP HANA MDC single-tenant system PR1. The steps are identical for an MDC system with multiple tenants. The differences for a single-container or a multiple-host system are reflected in the corresponding configuration steps.
 
-=== SAP HANA backup user
+== SAP HANA backup user
 
 NetApp recommends configuring a dedicated database user in the HANA database to run the backup operations with SnapCenter Service. During the HANA system configuration in SnapCenter Service, an HANA database user store key is configured for this backup user, and this user store key is used to communicate with the HANA system.
 
@@ -32,17 +33,17 @@ The required privileges changed in the SAP HANA 2.0 SPS5 release: backup admin, 
 
 For an SAP HANA MDC system, with single or multiple tenants, you must create the user in the system database because all backup commands for the system and the tenant databases are executed by using the system database.
 
-image:saphana-br-scs-image19.png[Error: Missing Graphic Image]
+image:saphana-backup-anf-image19.png[Error: Missing Graphic Image]
 
-=== SAP HANA system configuration in SnapCenter Service
+== SAP HANA system configuration in SnapCenter Service
 
 To configure the SAP HANA system PR1 in SnapCenter Service, follow these steps:
 
 . Go to SAP HANA Systems and click Add.
-. In the System Details screen, select the system type, HANA Single Container,  or Multitenant Database Container. Provide the SID of the HANA system and enter any text of your choosing as a system name.
+. In the System Details screen, select the system type, HANA Single Container, or Multitenant Database Container. Provide the SID of the HANA system and enter any text of your choosing as a system name.
 . To add a HANA database user store key, Click Add Keys.
-
-image:saphana-br-scs-image20.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image20.png[Error: Missing Graphic Image]
 
 . Enter the information for configuring the user store key for the HANA database. You can provide any name as the key name.
 +
@@ -51,44 +52,46 @@ The system details include the IP address and the port to communicate with the s
 You must provide the username and password for the database user in the system database that was previously configured. SnapCenter automatically creates a user store key by using this information and uses the key to communicate with the HANA database.
 
 . To continue, click Add.
-
-image:saphana-br-scs-image21.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image21.png[Error: Missing Graphic Image]
 
 . To proceed to the storage footprint configuration, click Continue.
-
-image:saphana-br-scs-image22.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image22.png[Error: Missing Graphic Image]
 
 . Enter the information for the storage volumes of the HANA system.
 +
-Select the working environment and the NetApp account that is used for the Azure NetApp Files volumes of the HANA system. Select the data volume of your HANA system, for example,  `PR1_data_mnt00001`.
+Select the working environment and the NetApp account that is used for the Azure NetApp Files volumes of the HANA system. Select the data volume of your HANA system, for example, `PR1_data_mnt00001`.
 +
 For an SAP HANA multiple-host system, you must select the data volumes of all HANA hosts belonging to the system.
-
-image:saphana-br-scs-image23.png[Error: Missing Graphic Image]
-
-image:saphana-br-scs-image24.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image23.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image24.png[Error: Missing Graphic Image]
 
 . Click Continue.
-
-image:saphana-br-scs-image25.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image25.png[Error: Missing Graphic Image]
 
 . To add the HANA system, click Add.
-
-image:saphana-br-scs-image26.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image26.png[Error: Missing Graphic Image]
 
 . To continue with the protection configuration, click Proceed.
-
-image:saphana-br-scs-image27.png[Error: Missing Graphic Image]
-
++
+image:saphana-backup-anf-image27.png[Error: Missing Graphic Image]
++
 The screen displays all the policies that have been configured in SnapCenter Service.
-
-image:saphana-br-scs-image28.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image28.png[Error: Missing Graphic Image]
 
 . Select the policies that you want to assign. For example,  the policies `SnapshotEvery4h` and `BlockIntegrityCheckEverySunday` that were previously created are selected.
 . To assign the policies to the HANA system, click Protect.
-
-image:saphana-br-scs-image29.png[Error: Missing Graphic Image]
-
++
+image:saphana-backup-anf-image29.png[Error: Missing Graphic Image]
++
 The HANA systems overview screen shows the HANA system and the assigned policies.
++
+image:saphana-backup-anf-image30.png[Error: Missing Graphic Image]
 
-image:saphana-br-scs-image30.png[Error: Missing Graphic Image]
+link:saphana-backup-anf-backup-configuration-of-sap-hana-non-data-volumes.html[Next: Backup configuration of SAP HANA non-data volumes.]

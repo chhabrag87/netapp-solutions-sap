@@ -10,7 +10,7 @@ summary:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ./../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)
@@ -18,18 +18,22 @@ summary:
 // 2021-10-07 09:49:08.426087
 //
 
-=== Data protection strategy
+link:saphana-backup-anf-snapcenter-service-sap-hana-backup-solution.html[Previous: SnapCenter Service SAP HANA backup solution.]
+
+== Data protection strategy
 
 Before configuring SnapCenter Service, you must define the data protection strategy based on the RTO and RPO requirements of the various SAP systems.
 
 A common approach is to define system types such as production, development, test, or sandbox systems. All SAP systems of the same system type typically have the same data protection parameters.
 
-You must define the following parameters :
+You must define the following parameters:
 
 * How often a Snapshot backup is executed
 * How long a Snapshot backup is kept
 * How often a block integrity check (file-based backups) is executed
-* How long a block integrity check backup (file-based backup) is kept?The following table shows an example of data protection parameters for the system type’s production, development, and test. For the production system, a high backup frequency has been defined, and weekly file-based backups are executed. The test and the development systems have lower requirements and Snapshot backups are scheduled less often.
+* How long a block integrity check backup (file-based backup) is kept?
+
+The following table shows an example of data protection parameters for the system type’s production, development, and test. For the production system, a high backup frequency has been defined, and weekly file-based backups are executed. The test and the development systems have lower requirements and Snapshot backups are scheduled less often.
 
 |===
 |Parameters |Production systems |Development systems |Test systems
@@ -106,17 +110,19 @@ In SnapCenter Service a single protection policy includes the following paramete
 ** Snapshot-based
 ** File-based
 * Schedule and retention
-** Schedules: Hourly, Daily, Weekly, Monthly.  A single policy can have multiple schedules.
+** Schedules: Hourly, Daily, Weekly, Monthly. A single policy can have multiple schedules.
 ** For each schedule, a start or end time and the frequency is configured.
-** For each schedule,  a retention is configured. Retention can be time based,  or counter based.The following figure shows a screenshot of the policy configuration.
+** For each schedule,  a retention is configured. Retention can be time based, or counter based.
 
-image:saphana-br-scs-image10.png[Error: Missing Graphic Image]
+The following figure shows a screenshot of the policy configuration.
 
-=== Backup operations
+image:saphana-backup-anf-image10.png[Error: Missing Graphic Image]
 
-SAP introduced the support of Snapshot backups for MDC multiple tenant systems with HANA 2.0 SPS4. In an SAP HANA MDC system, the tenant configuration is not necessarily static. You can add or delete tenants.  SnapCenter Service cannot rely on the configuration that is discovered when the HANA database is added to SnapCenter.  SnapCenter Service must know which tenants are available at the point in time the backup operation is executed.
+== Backup operations
 
-Therefore, with each backup operation, the first step in the workflow is to get the tenant information.  The next step is the Snapshot backup operation itself. This step includes the SQL command to trigger the HANA backup savepoint, the Azure NetApp Files Snapshot backup, and the SQL command to close the HANA backup savepoint.  By using the close command,  the HANA database updates the backup catalog of the system database and each tenant.
+SAP introduced the support of Snapshot backups for MDC multiple tenant systems with HANA 2.0 SPS4. In an SAP HANA MDC system, the tenant configuration is not necessarily static. You can add or delete tenants.  SnapCenter Service cannot rely on the configuration that is discovered when the HANA database is added to SnapCenter. SnapCenter Service must know which tenants are available at the point in time the backup operation is executed.
+
+Therefore, with each backup operation, the first step in the workflow is to get the tenant information. The next step is the Snapshot backup operation itself. This step includes the SQL command to trigger the HANA backup savepoint, the Azure NetApp Files Snapshot backup, and the SQL command to close the HANA backup savepoint. By using the close command, the HANA database updates the backup catalog of the system database and each tenant.
 
 [NOTE]
 SAP does not support Snapshot backup operations for MDC systems when one or more tenants are stopped.
@@ -125,9 +131,9 @@ For the retention management of data backups and the HANA backup catalog managem
 
 The following figure shows an overview of the backup workflow.
 
-image:saphana-br-scs-image11.jpg[Error: Missing Graphic Image]
+image:saphana-backup-anf-image11.jpg[Error: Missing Graphic Image]
 
-==== Backup workflow for Snapshot backups of the HANA database
+=== Backup workflow for Snapshot backups of the HANA database
 
 SnapCenter Service executes the backup of the SAP HANA database in the following sequence:
 
@@ -137,13 +143,13 @@ SnapCenter Service executes the backup of the SAP HANA database in the following
 +
 For an SAP HANA MDC single or multiple tenant system, a synchronized global backup savepoint for the system database and for each tenant database is created.
 
-. Creates Azure NetApp Files Snapshot copies for all data volumes configured for the HANA system. In our example of a single-host HANA database, there is only one data volume.  With an SAP HANA multiple-host database, there are multiple data volumes.
+. Creates Azure NetApp Files Snapshot copies for all data volumes configured for the HANA system. In our example of a single-host HANA database, there is only one data volume. With an SAP HANA multiple-host database, there are multiple data volumes.
 . Registers the Azure NetApp Files Snapshot backup in the SAP HANA backup catalog.
 . Deletes the SAP HANA backup savepoint.
-. Deletes the Azure NetApp Files Snapshot copies and the backup entries in its database as well as in the SAP HANA backup catalog based on the retention policy defined for backups.  HANA backup catalog operations are done for the system database and all tenants.
+. Deletes the Azure NetApp Files Snapshot copies and the backup entries in its database as well as in the SAP HANA backup catalog based on the retention policy defined for backups. HANA backup catalog operations are done for the system database and all tenants.
 . Deletes all log backups on the file system and in the SAP HANA backup catalog that are older than the oldest data backup identified in the SAP HANA backup catalog. These operations are done for the system database and all tenants.
 
-==== Backup workflow for block integrity check operations
+=== Backup workflow for block integrity check operations
 
 SnapCenter Service executes the block integrity check in the following sequence:
 
@@ -152,30 +158,32 @@ SnapCenter Service executes the block integrity check in the following sequence:
 . Deletes file-based backups in its database, on the file system, and in the SAP HANA backup catalog based on the retention policy defined for block integrity check operations. Backup deletion on the file system and HANA backup catalog operations are done for the system database and all tenants.
 . Deletes all log backups on the file system and in the SAP HANA backup catalog that are older than the oldest data backup identified in the SAP HANA backup catalog. These operations are done for the system database and all tenants.
 
-=== Backup retention management and housekeeping of data and log backups
+== Backup retention management and housekeeping of data and log backups
 
 The data backup retention management and log backup housekeeping can be divided into four main areas, including retention management of the following:
 
 * Snapshot backups
 * File-based backups
 * Data backups in the SAP HANA backup catalog
-* Log backups in the SAP HANA backup catalog and the file systemThe following figure provides an overview of the different workflows and the dependencies of each operation. The following sections describe the different operations in detail.
+* Log backups in the SAP HANA backup catalog and the file system
 
-image:saphana-br-scs-image12.png[Error: Missing Graphic Image]
+The following figure provides an overview of the different workflows and the dependencies of each operation. The following sections describe the different operations in detail.
 
-==== Retention management of Snapshot backups
+image:saphana-backup-anf-image12.png[Error: Missing Graphic Image]
+
+=== Retention management of Snapshot backups
 
 You can also delete Snapshot backups manually in SnapCenter.
 
-==== Retention management of file-based backups
+=== Retention management of file-based backups
 
 SnapCenter Service handles the housekeeping of file-based backups by deleting the backups on the file system according to a retention defined in the SnapCenter Service backup policy.
 
-==== Retention management of data backups within the SAP HANA backup catalog
+=== Retention management of data backups within the SAP HANA backup catalog
 
 When SnapCenter Service deletes any backup (Snapshot or file-based), this data backup is also deleted in the SAP HANA backup catalog.
 
-==== Retention management of log backups
+=== Retention management of log backups
 
 The SAP HANA database automatically creates log backups. These log backup runs create backup files for each individual SAP HANA service in a backup directory configured in SAP HANA.
 
@@ -186,11 +194,13 @@ SnapCenter Service handles the housekeeping of log file backups on the file syst
 . Reads the SAP HANA backup catalog to get the backup ID of the oldest successful file-based or Snapshot backup.
 . Deletes all log backups in the SAP HANA catalog and the file system that are older than this backup ID.
 +
-SnapCenter Service only handles housekeeping for backups that have been created by SnapCenter. If additional file- based backups are created outside of SnapCenter, you must make sure that the file-based backups are deleted from the backup catalog. If such a data backup is not deleted manually from the backup catalog, it can become the oldest data backup,  and older log backups are not deleted until this file-based backup is deleted.
+SnapCenter Service only handles housekeeping for backups that have been created by SnapCenter. If additional file- based backups are created outside of SnapCenter, you must make sure that the file-based backups are deleted from the backup catalog. If such a data backup is not deleted manually from the backup catalog, it can become the oldest data backup, and older log backups are not deleted until this file-based backup is deleted.
 
 [NOTE]
 You cannot switch off log backup retention management with the current release of SnapCenter Service.
 
-=== Capacity requirements for Snapshot backups
+== Capacity requirements for Snapshot backups
 
 You must consider the higher block change rate on the storage layer relative to the change rate with traditional databases. Due to the HANA table merge process of the column store, the complete table is written to disk, not just the changed blocks. Data from our customer base shows a daily change rate between 20% and 50% if multiple Snapshot backups are taken during the day.
+
+link:saphana-backup-anf-lab-setup-used-for-this-report.html[Next: Lab setup used for this report.]

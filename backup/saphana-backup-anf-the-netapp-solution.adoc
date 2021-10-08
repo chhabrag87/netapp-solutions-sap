@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: backup/saphana-backup-anf-the-netapp-solution.html
-keywords:
-summary:
+keywords: anf, snapshot, backup, copy, replication
+summary: You can use Azure NetApp Files NetApp Snapshot technology to create database backups in seconds. The time needed to create a Snapshot copy is independent of the size of the database because a Snapshot copy does not move any physical data blocks on the storage platform.
 ---
 
 = The NetApp solution
@@ -10,7 +10,7 @@ summary:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ./../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)
@@ -18,7 +18,7 @@ summary:
 // 2021-10-07 09:49:08.408503
 //
 
-link:saphana-br-scs-overview.html[Previous: Overview.]
+link:saphana-backup-anf-overview.html[Previous: Overview.]
 
 You can use Azure NetApp Files NetApp Snapshot technology to create database backups in seconds. The time needed to create a Snapshot copy is independent of the size of the database because a Snapshot copy does not move any physical data blocks on the storage platform. In addition, the use of Snapshot technology has no performance effect on the live SAP system. Therefore, you can schedule the creation of Snapshot copies without considering peak dialog or batch activity periods. SAP on Azure NetApp Files customers typically schedule multiple online Snapshot backups during the day; for example, every four hours is common. These Snapshot backups are typically kept for three to five days on the primary storage system before being removed.
 
@@ -34,54 +34,54 @@ You can also offload Snapshot copies for longer term retention to Azure Blob sto
 
 The following figure shows an example of a data protection configuration using Snapshot backups and file-based backups.
 
-image:saphana-br-scs-image1.jpg[Error: Missing Graphic Image]
+image:saphana-backup-anf-image1.jpg[Error: Missing Graphic Image]
 
-=== Runtime of Snapshot backups
+== Runtime of Snapshot backups
 
 The following figure shows a screenshot of a customer’s HANA Studio running SAP HANA on NetApp storage. The customer is using NetApp Snapshot copies to back up the HANA database. As the figure shows,  the HANA database (approximately 2.3TB) is backed up in 2 minutes and 11 seconds by using Snapshot backup technology.
 
 The largest part of the overall backup workflow runtime is the time needed to execute the HANA backup savepoint operation—this step is dependent on the load on the HANA database. The storage Snapshot backup itself always finishes in a couple of seconds.
 
-image:saphana-br-scs-image2.png[Error: Missing Graphic Image]
+image:saphana-backup-anf-image2.png[Error: Missing Graphic Image]
 
-=== Recovery Time Objective comparison
+== Recovery Time Objective comparison
 
 This section provides an RTO comparison of file-based and storage-based Snapshot backups. The RTO is defined by the sum of the time needed to restore the database and the time needed to start and recover the database.
 
-==== Time needed to restore database
+=== Time needed to restore database
 
 With a file-based backup, the restore time depends on the size of the database and backup infrastructure, which defines the restore speed in megabytes per second (MBps). For example, if the infrastructure supports a restore operation at a speed of 250MBps, it takes approximately 1 hour and 10 minutes to restore a database 1TB in size.
 
 With storage Snapshot copy backups, the restore time is independent of the size of the database and is in the range of a couple of seconds when you can perform the restore from primary storage. A restore from a file-based backup is only required in the case of a disaster when the primary storage is no longer available.
 
-==== Time needed to start database
+=== Time needed to start database
 
 The database start time depends on the size of the row and column store. For the column store, the start time also depends on how much data is preloaded during the database start. In the following examples, we assume that the start time is 30 minutes. The start time is the same for a file-based restore and recovery and a restore and recovery based on Snapshot copies.
 
-==== Time needed to recover database
+=== Time needed to recover database
 
 The recovery time depends on the number of logs that must be applied after the restore. This number is determined by the frequency at which data backups are taken.
 
-With file-based data backups, the backup schedule is typically once per day.  A higher backup frequency is normally not possible because the backup degrades production performance. Therefore, in the worst case, all the logs that were written during the day must be applied during forward recovery.
+With file-based data backups, the backup schedule is typically once per day. A higher backup frequency is normally not possible because the backup degrades production performance. Therefore, in the worst case, all the logs that were written during the day must be applied during forward recovery.
 
 Storage Snapshot copy data backups are typically scheduled with a higher frequency because they do not influence the performance of the SAP HANA database. For example, if Snapshot copy backups are scheduled every six hours, the recovery time is, in the worst case, one-fourth of the recovery time for a file-based backup (6 hours / 24 hours = 1/4).
 
 The following figure shows an RTO example for a 1TB database when file-based data backups are used. In this example, a backup is taken once per day. The RTO differs depending on when the restore and recovery were performed. If the restore and recovery were performed immediately after a backup was taken, the RTO is primarily based on the restore time, which is 1 hour and 10 minutes in the example. The recovery time increased to 2 hours and 50 minutes when restore and recovery were performed immediately before the next backup was taken, and the maximum RTO was 4 hours and 30 minutes.
 
-image:saphana-br-scs-image3.jpg[Error: Missing Graphic Image]
+image:saphana-backup-anf-image3.jpg[Error: Missing Graphic Image]
 
-The following figure shows an RTO example for a 1TB database when Snapshot backups are used. With storage-based Snapshot backups,  the RTO only depends on the database start time and the forward recovery time because the restore is completed in a few seconds,  independent of the size of the database. The forward recovery time also increases depending on when the restore and recovery are done, but due to the higher frequency of backups (every 6 hours in this example),  the forward recovery time is 43 minutes at most. In this example, the maximum RTO is 1 hour and 13 minutes.
+The following figure shows an RTO example for a 1TB database when Snapshot backups are used. With storage-based Snapshot backups,  the RTO only depends on the database start time and the forward recovery time because the restore is completed in a few seconds, independent of the size of the database. The forward recovery time also increases depending on when the restore and recovery are done, but due to the higher frequency of backups (every 6 hours in this example), the forward recovery time is 43 minutes at most. In this example, the maximum RTO is 1 hour and 13 minutes.
 
-image:saphana-br-scs-image4.jpg[Error: Missing Graphic Image]
+image:saphana-backup-anf-image4.jpg[Error: Missing Graphic Image]
 
 The following figure shows an RTO comparison of file-based and storage-based Snapshot backups for different database sizes and different frequencies of Snapshot backups. The green bar shows the file-based backup. The other bars show Snapshot copy backups with different backup frequencies.
 
 With a single Snapshot copy data backup per day, the RTO is already reduced by 40% when compared to a file-based data backup. The reduction increases to 70% when four Snapshot backups are taken per day. The figure also shows that the curve goes flat if you increase the Snapshot backup frequency to more than four to six Snapshot backups per day. Our customers, therefore, typically configure four to six Snapshot backups per day.
 
-image:saphana-br-scs-image5.jpg[Error: Missing Graphic Image]
+image:saphana-backup-anf-image5.jpg[Error: Missing Graphic Image]
 
 This graph shows the HANA server RAM size. The database size in memory is calculated to be half of the server RAM size.
 
 The restore and recovery time is calculated based on the following assumptions: the database can be restored at 250MBps; the number of log files per day is 50% of the database size (for example, a 1TB database creates 500MB of log files per day); and a recovery can be performed at 100MBps.
 
-link:saphana-br-scs-snapcenter-service-architecture.html[Next: SnapCenter Service architecture.]
+link:saphana-backup-anf-snapcenter-service-architecture.html[Next: SnapCenter Service architecture.]

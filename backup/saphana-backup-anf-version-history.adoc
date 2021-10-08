@@ -10,13 +10,15 @@ summary:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ./../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)
 //
 // 2021-10-07 09:49:08.491412
 //
+
+link:saphana-backup-anf-additional-information.html[Previous: Additional information.]
 
 |===
 |Version |Date |Document version history
