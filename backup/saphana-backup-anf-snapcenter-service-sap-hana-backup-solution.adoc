@@ -57,6 +57,8 @@ The following figure summarizes the backup solution.
 
 image:saphana-backup-anf-image9.png[Error: Missing Graphic Image]
 
+When executing a storage-based Snapshot backup of non-data volumes, SnapCenter Service performs the following tasks:
+
 . Creates a storage Snapshot copy of the non-data volume.
 . Deletes storage Snapshot copies based on the defined retention policy.
 
