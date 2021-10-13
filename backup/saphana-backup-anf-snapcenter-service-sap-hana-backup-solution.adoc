@@ -1,0 +1,89 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-backup-anf-snapcenter-service-sap-hana-backup-solution.html
+keywords: solution components, scheduling, retention,
+summary: This section describes the areas covered by the SnapCenter Service backup solution.
+---
+
+= SnapCenter Service SAP HANA backup solution
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2021-10-07 09:49:08.416241
+//
+
+link:saphana-backup-anf-snapcenter-service-architecture.html[Previous: SnapCenter Service architecture.]
+
+== Solution components
+
+The SnapCenter Service backup solution for SAP HANA covers the following areas:
+
+* SAP HANA data backup with storage-based Snapshot copies:
+** Backup scheduling
+** On-demand backups
+** Retention management
+** Housekeeping of the SAP HANA backup catalog
+** Restore operation
+* Non- data volume backup with storage-based Snapshot copies
+** SnapCenter differentiates between non-data volumes belonging to a specific HANA system, for example, the HANA shared volume, and global non-data volumes, which do not belong to a specific HANA system, for example,  the SAP transport directory.
+** Backup scheduling
+** On-demand backups
+** Retention management
+** Restore operation
+* File-based backup for database block integrity checks or backup to a second location:
+** Backup scheduling
+** On-demand backups
+** Retention management
+** Housekeeping of the SAP HANA backup catalog
+* Retention management of HANA database log backup:
+** Retention management based on data backup retention
+** Housekeeping of the SAP HANA backup catalog
+
+Snapshot data backups are executed with SnapCenter Service by triggering the SAP HANA database backup savepoint so that the Snapshot copy, which is created on the storage layer, is based on a consistent image of the SAP HANA database.
+
+To enable a complete backup of all SAP HANA-related resources, SnapCenter Service also enables you to back up all non-data volumes with storage-based Snapshot copies. You can schedule non-data volumes independently from the database data backup to enable individual retention and protection policies.
+
+SAP recommends combining storage-based Snapshot backups with a weekly file-based backup to execute a block integrity check. You can execute the block integrity check from within SnapCenter. Block integrity check (file-based) backups are also used to offload backups to a second storage location.
+
+Based on your configurable retention policies, SnapCenter Service manages the housekeeping of data backups, log backups, and the SAP HANA backup catalog.
+
+The following figure summarizes the backup solution.
+
+image:saphana-backup-anf-image9.png[Error: Missing Graphic Image]
+
+. Creates a storage Snapshot copy of the non-data volume.
+. Deletes storage Snapshot copies based on the defined retention policy.
+
+When executing a storage-based Snapshot backup of the SAP HANA database, SnapCenter Service performs the following tasks:
+
+. Creates an SAP HANA backup savepoint to create a consistent image on the persistence layer.
+. Creates a storage Snapshot copy of the data volume.
+. Registers the storage Snapshot backup in the SAP HANA backup catalog.
+. Releases the SAP HANA backup savepoint.
+. Deletes storage Snapshot copies based on the defined retention policy.
+. Deletes SAP HANA backup catalog entries based on the defined retention policy.
+. Whenever a data backup has been deleted manually or based on the retention policy, SnapCenter Service deletes all log backups that are older than the oldest data backup. Log backups are deleted on the file system and in the SAP HANA backup catalog.
+
+== Supported SAP HANA releases and configurations
+
+SnapCenter Service supports SAP HANA single-host and multiple-host configurations attached to Azure NetApp Files volumes.
+
+SnapCenter Service supports the following SAP HANA architectures and releases:
+
+* SAP HANA single container:
+** SAP HANA 1.0 SPS12
+* SAP HANA multitenant-database container (MDC) with single or multiple tenants:
+** SAP HANA 2.0 SPS4 and later
+
+[NOTE]
+Snapshot backup support for MDC systems has been introduced by SAP with HANA 2.0 SP1 for single tenant systems and with HANA 2.0 SPS4 for multiple tenant systems.
+
+The combination of data Snapshot backups with SnapCenter Service and log backups with a backint solution is not supported. Log backups must be configured to be written to a file system.
+
+link:saphana-backup-anf-snapcenter-service-concepts-and-best-practices.html[Next: SnapCenter Service concepts and best practices.]
