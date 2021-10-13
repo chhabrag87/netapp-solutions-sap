@@ -39,6 +39,8 @@ image:saphana-backup-anf-image32.png[Error: Missing Graphic Image]
 . Select the HANA shared volume and click Add Storage.
 +
 image:saphana-backup-anf-image33.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image34.png[Error: Missing Graphic Image]
 
 . To add the non-data volume, click Add.
 +
