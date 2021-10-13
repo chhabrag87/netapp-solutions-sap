@@ -3,8 +3,6 @@ title: Best Practices
 entries:
   - title: SAP Applications on Microsoft Azure Using Azure NetApp Files
     url: /bp/sap-apps-azure-anf_pdf_link.html
-  - title: SAP Applications on Microsoft Azure Using Cloud Volumes ONTAP
-    url: /bp/sap-apps-azure-cvo_pdf_link.html
   - title: SAP HANA on NetApp AFF Systems with FCP Configuration Guide
     type: solutions
     entries:
@@ -141,8 +139,6 @@ entries:
         url: /bp/saphana_fas_fc_where_to_find_additional_information.html
       - title: Update history
         url: /bp/saphana_fas_fc_update_history.html
-  - title: SAP HANA on VMware vSphere and NetApp FAS and All Flash FAS Systems
-    url: /bp/saphana-vsphere-fas-aff_pdf_link.html
   - title: SAP HANA on IBM Power Systems and NetApp AFF Systems with NFS
     url: /bp/saphana-ibm-aff-nfs_pdf_link.html
   - title: SAP with Oracle on UNIX and NFS with NetApp ONTAP
