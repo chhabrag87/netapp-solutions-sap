@@ -1,0 +1,95 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-backup-anf-sap-hana-database-snapshot-backups.html
+keywords: Snapshot, policy, schedule, on-demand, UI, API
+summary: With SnapCenter Service, database backups are typically executed by using the schedules defined within the policies. You can also perform on-demand database backups by using either the SnapCenter Service UI or REST APIs.
+---
+
+= SAP HANA database Snapshot backups
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2021-10-07 09:49:08.467975
+//
+
+link:saphana-backup-anf-backup-configuration-of-global-non-data-volumes.html[Previous:  Backup configuration of global non-data volumes.]
+
+With SnapCenter Service, database backups are typically executed by using the schedules defined within the policies. You can also perform on-demand database backups by using either the SnapCenter Service UI or REST APIs.
+
+== Identify SnapCenter Service data backups in SAP HANA Studio
+
+In the context menu of the SAP HANA Systems view, select View Backups to open the backup overview.
+
+image:saphana-backup-anf-image46.png[Error: Missing Graphic Image]
+
+The backup overview shows a list of backups created by using SnapCenter Service. The following figure shows the backups available and highlights the most recent backup.
+
+image:saphana-backup-anf-image47.png[Error: Missing Graphic Image]
+
+When performing a backup by using storage Snapshot copies for an SAP HANA MDC system, a Snapshot copy of the data volume is created. This data volume contains the data of the system database as well as the data of all tenant databases. To reflect this physical architecture, SAP HANA internally performs a combined backup of the system database and all tenant databases whenever SnapCenter Service triggers a Snapshot backup. This results in multiple separate backup entries in the SAP HANA backup catalog: one for the system database and one for each tenant database.
+
+[NOTE]
+For SAP HANA single-container systems, the database volume contains only the single database,  and there is only one entry in SAP HANA’s backup catalog.
+
+In the SAP HANA backup catalog, the SnapCenter Service backup name is stored in the Comment field and the External Backup ID (EBID) field. The following figures show the system database and the tenant database PR1. Both figures highlight the SnapCenter Service backup name stored in the Comment field and EBID field.
+
+image:saphana-backup-anf-image48.png[Error: Missing Graphic Image]
+
+image:saphana-backup-anf-image49.png[Error: Missing Graphic Image]
+
+[NOTE]
+SnapCenter Service is only aware of its own backups. Additional backups created, for example, with SAP HANA Studio, are visible in the SAP HANA catalog but not in SnapCenter Service.
+
+== Identify SnapCenter Service backups on the Azure NetApp Files volume
+
+The same name, which is used as backup name in SnapCenter Service, is also used as the Snapshot backup name on the Azure NetApp Files volume. The following figure shows the Azure portal and the Snapshot backups for the database data volume.
+
+image:saphana-backup-anf-image50.png[Error: Missing Graphic Image]
+
+== List non-data volume backups
+
+In the backup view of the HANA system, select Non-Data Volumes to display the list of backups for the non-data volume, as shown in the following figure.
+
+image:saphana-backup-anf-image51.png[Error: Missing Graphic Image]
+
+On the Azure NetApp Files volume for HANA shared, the Snapshot copies have the same name as in SnapCenter Service.
+
+image:saphana-backup-anf-image52.png[Error: Missing Graphic Image]
+
+== On-demand database backup
+
+To create an on-demand database backup, follow these steps:
+
+. In the SAP HANA Systems view, select On-Demand Backup in the context menu. You also can select either Data Volume or Non-Data Volume. For the database backup, you must select Data Volume.
++
+image:saphana-backup-anf-image53.png[Error: Missing Graphic Image]
+
+. In the On-Demand Backup dialog, select either Policy: None, or one of the policies that you have assigned to the HANA system.
++
+If you select policy None, you can define a specific retention that must be used for this specific backup. If you select a policy, which is assigned to the HANA system, the same retention is applied to this backup as for the scheduled backups using this policy.
++
+In the following example, the existing policy is selected.
++
+image:saphana-backup-anf-image54.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image55.png[Error: Missing Graphic Image]
+
+. To start the backup workflow, click Create Backup.
++
+A screen displays the job ID of the backup operation.
+
+. To open the job detail screen, click the job ID.
++
+image:saphana-backup-anf-image56.png[Error: Missing Graphic Image]
++
+Job Monitor displays the different workflow steps, the runtime of the steps, and the total operation runtime. In the following example, the backup operation takes 19 seconds.
++
+image:saphana-backup-anf-image57.png[Error: Missing Graphic Image]
+
+link:saphana-backup-anf-file-based-backups-and-block-integrity-check.html[Next: File-based backups and block integrity check.]

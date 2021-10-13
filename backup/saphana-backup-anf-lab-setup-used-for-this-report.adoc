@@ -1,0 +1,27 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-backup-anf-lab-setup-used-for-this-report.html
+keywords: lab, setup, configuration
+summary: The lab setup used for this report includes the SAP HANA system PR1-SAP HANA single host MDC single tenant system, and the SnapCenter Service components.
+---
+
+= Lab setup used for this report
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2021-10-07 09:49:08.437651
+//
+
+link:saphana-backup-anf-snapcenter-service-concepts-and-best-practices.html[Previous: SnapCenter Service concepts and best practices.]
+
+The lab setup used for this report includes the SAP HANA system PR1-SAP HANA single host MDC single tenant system, and the SnapCenter Service components, as shown in the following figure.
+
+image:saphana-backup-anf-image13.jpg[Error: Missing Graphic Image]
+
+link:saphana-backup-anf-snapcenter-service-policy-configuration.html[Next: SnapCenter Service policy configuration.]
