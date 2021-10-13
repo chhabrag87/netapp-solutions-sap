@@ -1,0 +1,22 @@
+---
+sidebar: sidebar
+permalink: sap-lcm-blogs.html
+summary: Series of blogs discussing SAP Lifecycle Management
+keywords: netapp, solutions, SAP, lifecycle, management, lcm, blogs
+---
+
+= SAP Lifecycle Management Blogs
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:table-stripes: odd
+:imagesdir: ./media/
+
+[.lead]
+Overview of the blogs highlighting the SAP Lifecycle Management.
+
+// tag::blogs[]
+=== SAP Lifecycle Management Blogs
+
+// end::blogs[]

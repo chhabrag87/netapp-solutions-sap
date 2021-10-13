@@ -1,0 +1,25 @@
+---
+sidebar: sidebar
+permalink: sap-dr-videos.html
+summary: Series of videos and demos discussing SAP Backup, Restore and Disaster Recovery
+keywords: netapp, solutions, SAP, backup, restore, disaster recover, dr, videos, demos
+---
+
+= SAP Backup, Restore and Disaster Recovery Videos and Demos
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:table-stripes: odd
+:imagesdir: ./media/
+
+[.lead]
+Overview of the videos and demos highlighting SAP Backup, Restore and Disaster Recovery.
+
+// tag::videos[]
+=== SAP Backup, Restore and Disaster Recovery Demos / Videos
+
+* video::HANA-Backup-Recovery-on-ANF-with-SnapCenter-Service.mp4[]
+
+* video::HANA-Backup and Recovery-SnapCenter-Nils.mp4[]
+// end::videos[]
