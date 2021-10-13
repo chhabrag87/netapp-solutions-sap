@@ -26,4 +26,6 @@ To learn more about the information that is described in this document, review t
 +
 https://www.netapp.com/us/media/tr-4746.pdf
 
+* link:https://review.docs.netapp.com/us-en/netapp-solutions-sap_main/backup/saphana-dr-anf_data_protection_overview_overview.html[TR-4891: SAP HANA disaster recovery with Azure NetApp Files.]
+
 link:saphana-backup-anf-version-history.html[Next: Version history.]
