@@ -19,7 +19,8 @@ Overview of the videos and demos highlighting SAP Backup, Restore and Disaster R
 // tag::videos[]
 === SAP Backup, Restore and Disaster Recovery Demos / Videos
 
-* video::HANA-Backup-Recovery-on-ANF-with-SnapCenter-Service.mp4[]
+video::HANA-Backup-Recovery-on-ANF-with-SnapCenter-Service.mp4[]
 
-* video::HANA-Backup and Recovery-SnapCenter-Nils.mp4[]
+video::HANA-Backup-and-Recovery-SnapCenter-Nils.mp4[]
+
 // end::videos[]
