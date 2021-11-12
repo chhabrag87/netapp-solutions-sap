@@ -19,9 +19,13 @@ Overview of the videos and demos highlighting SAP Lifecycle Management.
 // tag::videos[]
 === SAP Lifecycle Management Demos / Videos
 
-video::Libell-System-Copy-Snapcenter-Integration.mp4[]
+* link:https://www.netapp.tv/details/25592[Ensure SAP Application Availability and Minimize Downtime]
 
-video::SAP-System-Clone-SnapCenter-Scott.mp4[]
+* link: https://www.netapp.tv/details/25588[Decrease Risk and Increase Quality of SAP Projects]
 
-video::SAP-System-Refresh-SnapCenter-Tobias.mp4[]
+* link:https://www.netapp.tv/details/25595[Ensure Continuity for Lines of Business in the Face of Unexpected Events]
+
+* link:https://www.netapp.tv/details/28400[SnapCenter Use Cases]
+
+* link:https://www.netapp.tv/details/28401[SAP System Copy with Libelle and SnapCenter]
 // end::videos[]
