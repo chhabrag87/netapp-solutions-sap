@@ -16,8 +16,4 @@ keywords: netapp, solutions, SAP, backup, restore, dr, disaster recovery, tools
 [.lead]
 Overview of tools for SAP Backup, Restore and Disaster Recovery solutions and solutions collateral.
 
-[width=100%,cols="1,1",frame="none",grid="none"]
-|===
-|SnapCenter custom plug-ins for MaxDB, DB2 and ASE
-|https://automationstore.netapp.com/snap-list.shtml
-|===
+* link:https://automationstore.netapp.com/snap-list.shtml[SnapCenter custom plug-ins for MaxDB, DB2 and ASE]

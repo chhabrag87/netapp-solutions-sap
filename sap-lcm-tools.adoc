@@ -16,8 +16,4 @@ keywords: netapp, solutions, SAP, lifecycle, management, lcm, tools
 [.lead]
 Overview of the tools for SAP Lifecycle Management solutions and solutions collateral.
 
-[width=100%,cols="1,1",frame="none",grid="none"]
-|===
-|Storage Services Connector (SSC) for SAP LaMa
-|https://mysupport.netapp.com/site/tools/tool-eula/ssc-sap
-|===
+* link:https://mysupport.netapp.com/site/tools/tool-eula/ssc-sap[Storage Services Connector (SSC) for SAP LaMa]

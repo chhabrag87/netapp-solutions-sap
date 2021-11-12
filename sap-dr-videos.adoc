@@ -17,7 +17,7 @@ keywords: netapp, solutions, SAP, backup, restore, disaster recover, dr, videos,
 Overview of the videos and demos highlighting SAP Backup, Restore and Disaster Recovery.
 
 // tag::videos[]
-=== SAP Backup, Restore and Disaster Recovery Demos / Videos
+=== SAP Backup, Restore and Disaster Recovery Videos and Demos
 
 * link:https://www.netapp.tv/details/28398[Disaster Recovery Options for SAP HANA]
 
