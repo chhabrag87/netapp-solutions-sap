@@ -19,5 +19,7 @@ Overview of the blogs highlighting SAP on NetApp.
 == SAP Solution Blogs
 
 include::sap-bp-blogs.adoc[tag=blogs]
+
 include::sap-dr-blogs.adoc[tag=blogs]
+
 include::sap-lcm-blogs.adoc[tag=blogs]

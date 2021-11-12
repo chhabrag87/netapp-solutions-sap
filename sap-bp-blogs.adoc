@@ -17,7 +17,9 @@ keywords: netapp, solutions, SAP, best practices, blogs
 Overview of the blogs highlighting the SAP Configuration Best Practices.
 
 // tag::blogs[]
+
 === SAP Configuration Best Practices Blogs
 
 * link:https://blogs.sap.com/2021/10/27/whitepaper-sap-landscape-management-with-netapp/[SAP Landscape Management with NetApp]
+
 // end::blogs[]

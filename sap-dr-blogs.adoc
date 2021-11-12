@@ -17,6 +17,7 @@ keywords: netapp, solutions, SAP, backuop, restore, dr, disaster recovery, blogs
 Overview of the blogs highlighting the SAP Backup, Restore and Disaster Recovery.
 
 // tag::blogs[]
+
 === SAP Backup, Restore and Disaster Recovery Blogs
 
 // end::blogs[]
