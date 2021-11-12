@@ -22,5 +22,4 @@ Overview of the videos and demos highlighting SAP Backup, Restore and Disaster R
 * link:https://www.netapp.tv/details/28398[Disaster Recovery Options for SAP HANA]
 
 * link:https://www.netapp.tv/details/28406[SAP HANA Disaster Recovery with ANF and Cross-Region Replication]
-
 // end::videos[]
