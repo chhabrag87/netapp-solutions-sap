@@ -1,0 +1,29 @@
+---
+sidebar: sidebar
+permalink: sap-whatsnew.html
+summary: The latest additions to the SAP Solution portfolio
+keywords: netapp, solutions, SAP, what's new
+---
+
+= What's New for SAP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:table-stripes: odd
+:imagesdir: ./media/
+
+[.lead]
+Overview of the most recent SAP solutions and solutions collateral.
+
+* link:https://review.docs.netapp.com/us-en/netapp-solutions-sap_saphome/backup/saphana-backup-anf-overview.html[TR-4905: SAP HANA backup and recovery on Azure NetApp Files with SnapCenter Service]
+
+* link:https://review.docs.netapp.com/us-en/netapp-solutions-sap_saphome/backup/saphana-dr-anf_data_protection_overview_overview.html[TR-4891: SAP HANA disaster recovery with Azure NetApp Files]
+
+* link:https://review.docs.netapp.com/us-en/netapp-solutions-sap_saphome/bp/saphana_aff_nfs_introduction.html[TR-4435: SAP HANA on NetApp AFF Systems with NFS - Configuration Guide]
+
+* link:https://review.docs.netapp.com/us-en/netapp-solutions-sap_saphome/bp/saphana-fas-nfs_introduction.html[TR-4290: SAP HANA on NetApp FAS systems with NFS Configuration Guide]
+
+* link:https://review.docs.netapp.com/us-en/netapp-solutions-sap_saphome/bp/saphana_fas_fc_introduction.html[TR-4384: SAP HANA on NetApp FAS Systems with Fibre Channel Protocol Configuration Guide]
+
+* link:https://review.docs.netapp.com/us-en/netapp-solutions-sap_saphome/bp/saphana_aff_fc_introduction.html[TR-4436: SAP HANA on NetApp AFF Systems with Fibre Channel Protocol]

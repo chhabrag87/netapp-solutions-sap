@@ -15,44 +15,47 @@ sidebar:
     - section: backup
     - section: lifecycle
     - section: briefs
+    - title: FlexPod SAP Solutions
+      url: https://docs.netapp.com/us-en/flexpod/ent-db/index.html
     - title: NetApp Solutions
       url: https://docs.netapp.com/us-en/netapp-solutions/
     - title: Legal Notices
       url: /reference_legal_notices.html
 
-# homepage:
-#  tiles:
-#    - title: Best Practices
-#      links:
-#        - title: "What's New"
-#          url: sap-bp-whatsnew.html
-#        - title: "Videos and Demos"
-#          url: sap-bp-videos.html
-#        - title: "Blogs"
-#          url: sa-bp-blogs.html
-#
-#    - title: Backup, Restore, and Disaster Recovery
-#      links:
-#        - title: "What's New"
-#          url: sap-dr-whatsnew.html
-#        - title: "Videos and Demos"
-#          url: sap-dr-videos.html
-#        - title: "Blogs"
-#          url: sap-dr-blogs.html
-#
-#    - title: Solution Briefs
-#      links:
-#        - title: "What's New"
-#          url: sap-sb-whatsnew.html
-#        - title: "Videos and Demos"
-#          url: sap-sb-videos.html
-#
-#    - title: Lifecycle Management
-#      links:
-#        - title: "What's New"
-#          url: sap-lcm-whatsnew.html
-#
-#    - title: Other NetApp Solutions
-#      links:
-#        - title: NetApp Solutions Content Library
-#          url: https:#docs.netapp.com/us-en/netapp-solutions/
+homepage:
+  tiles:
+    - title: Configuration Best Practices
+      links:
+        - title: "Videos & Demos"
+          url: sap-bp-videos.html
+        - title: "Blogs"
+          url: sap-bp-blogs.html
+        - title: "Tools"
+          url: sap-bp-tools.html
+
+    - title: Backup, Restore, and Disaster Recovery
+      links:
+        - title: "Videos & Demos"
+          url: sap-dr-videos.html
+        - title: "Blogs"
+          url: sap-dr-blogs.html
+        - title: "Tools"
+          url: sap-dr-tools.html
+
+    - title: Lifecycle Management
+      links:
+        - title: "Videos & Demos"
+          url: sap-lcm-videos.html
+        - title: "Blogs"
+          url: sap-lcm-blogs.html
+        - title: "Tools"
+          url: sap-lcm-tools.html
+
+    - title: All SAP Solutions
+      links:
+        - title: "What's New"
+          url: sap-whatsnew.html
+        - title: "Videos & Demos"
+          url: sap-videos.html
+        - title: "Blogs"
+          url: sap-blogs.html

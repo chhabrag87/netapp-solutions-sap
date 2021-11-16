@@ -1,0 +1,29 @@
+---
+sidebar: sidebar
+permalink: sap-lcm-videos.html
+summary: Series of videos and demos discussing SAP Lifecycle Management
+keywords: netapp, solutions, SAP, lifecycle, management, lcm, videos, demos
+---
+
+= SAP Lifecycle Management Videos and Demos
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:table-stripes: odd
+:imagesdir: ./media/
+
+[.lead]
+Overview of the videos and demos highlighting SAP Lifecycle Management.
+
+// tag::videos[]
+=== SAP Lifecycle Management Videos and Demos
+
+* link:https://www.netapp.tv/details/25588[Decrease Risk and Increase Quality of SAP Projects]
+
+* link:https://www.netapp.tv/details/25595[Ensure Continuity for Lines of Business in the Face of Unexpected Events]
+
+* link:https://www.netapp.tv/details/28400[SnapCenter Use Cases]
+
+* link:https://www.netapp.tv/details/28401[SAP System Copy with Libelle and SnapCenter]
+// end::videos[]

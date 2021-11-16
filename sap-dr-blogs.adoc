@@ -1,0 +1,25 @@
+---
+sidebar: sidebar
+permalink: sap-dr-blogs.html
+summary: Series of blogs discussing SAP Backup, Restore and Disaster Recovery
+keywords: netapp, solutions, SAP, backuop, restore, dr, disaster recovery, blogs
+---
+
+= SAP Backup, Restore and Disaster Recovery Blogs
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:table-stripes: odd
+:imagesdir: ./media/
+
+[.lead]
+Overview of the blogs highlighting the SAP Backup, Restore and Disaster Recovery.
+
+// tag::blogs[]
+
+=== SAP Backup, Restore and Disaster Recovery Blogs
+
+* link:https://blogs.sap.com/2021/10/27/whitepaper-sap-landscape-management-with-netapp/[SAP Landscape Management with NetApp]
+
+// end::blogs[]

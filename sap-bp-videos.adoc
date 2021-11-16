@@ -1,0 +1,29 @@
+---
+sidebar: sidebar
+permalink: sap-bp-videos.html
+summary: Series of videos and demos discussing SAP Configuration Best Practices
+keywords: netapp, solutions, SAP, best practices, videos, demos
+---
+
+= SAP Configuration Best Practices Videos and Demos
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:table-stripes: odd
+:imagesdir: ./media/
+
+[.lead]
+Overview of the videos and demos highlighting SAP Configuration Best Practices.
+
+// tag::videos[]
+
+=== SAP Configuration Best Practices Videos and Demos
+
+* link:https://www.netapp.tv/details/28149[SAP HANA Runs Best on NetApp Infrastructure]
+
+* link:https://www.netapp.tv/details/28189[SAP on Azure NetApp Files: Overview and Updates]
+
+* link:https://www.netapp.tv/details/28402[Using NetApp Block and Object Storage for SAP Data Intelligence]
+
+// end::videos[]
