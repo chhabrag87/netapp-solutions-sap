@@ -77,6 +77,8 @@ If you select policy None, you can define a specific retention that must be used
 In the following example, the existing policy is selected.
 +
 image:saphana-backup-anf-image54.png[Error: Missing Graphic Image]
++
+image:saphana-backup-anf-image55.png[Error: Missing Graphic Image]
 
 . To start the backup workflow, click Create Backup.
 +
@@ -84,6 +86,10 @@ A screen displays the job ID of the backup operation.
 
 . To open the job detail screen, click the job ID.
 +
+image:saphana-backup-anf-image56.png[Error: Missing Graphic Image]
++
 Job Monitor displays the different workflow steps, the runtime of the steps, and the total operation runtime. In the following example, the backup operation takes 19 seconds.
++
+image:saphana-backup-anf-image57.png[Error: Missing Graphic Image]
 
 link:saphana-backup-anf-file-based-backups-and-block-integrity-check.html[Next: File-based backups and block integrity check.]

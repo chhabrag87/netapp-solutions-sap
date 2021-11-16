@@ -173,11 +173,17 @@ image:saphana-backup-anf-image12.png[Error: Missing Graphic Image]
 
 === Retention management of Snapshot backups
 
+SnapCenter Service handles the housekeeping of SAP HANA database backups and non-data volume backups by deleting Snapshot copies on the storage and in the SnapCenter Service repository according to a retention defined in the SnapCenter Service backup policy.
+
+Retention management logic is executed with each backup workflow in SnapCenter.
+
 You can also delete Snapshot backups manually in SnapCenter.
 
 === Retention management of file-based backups
 
 SnapCenter Service handles the housekeeping of file-based backups by deleting the backups on the file system according to a retention defined in the SnapCenter Service backup policy.
+
+Retention management logic is executed with each backup workflow in SnapCenter.
 
 === Retention management of data backups within the SAP HANA backup catalog
 
