@@ -19,8 +19,6 @@ Overview of the videos and demos highlighting SAP Lifecycle Management.
 // tag::videos[]
 === SAP Lifecycle Management Videos and Demos
 
-* link:https://www.netapp.tv/details/25592[Ensure SAP Application Availability and Minimize Downtime]
-
 * link:https://www.netapp.tv/details/25588[Decrease Risk and Increase Quality of SAP Projects]
 
 * link:https://www.netapp.tv/details/25595[Ensure Continuity for Lines of Business in the Face of Unexpected Events]

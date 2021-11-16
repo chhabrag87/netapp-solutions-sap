@@ -24,8 +24,6 @@ Overview of the videos and demos highlighting SAP Configuration Best Practices.
 
 * link:https://www.netapp.tv/details/28189[SAP on Azure NetApp Files: Overview and Updates]
 
-* link:https://www.netapp.tv/details/28399[Optimize Your Data Protection for SAP HANA on Azure NetApp Files]
-
 * link:https://www.netapp.tv/details/28402[Using NetApp Block and Object Storage for SAP Data Intelligence]
 
 // end::videos[]
