@@ -1,0 +1,91 @@
+---
+sidebar: sidebar
+permalink: saphana-sr-scs-restore-and-recovery-from-a-backup-created-at-the-other-host.html
+keywords: restore, backup, recovery,
+summary: A restore operation from a backup that has been created at the other SAP HANA host is a valid scenario for both SnapCenter configuration options.
+---
+
+= Restore and recovery from a backup created at the other host
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-01-10 18:20:17.368191
+//
+
+link:saphana-sr-scs-snapcenter-configuration-with-a-single-resource.html[Previous: SnapCenter configuration with a single resource.]
+
+A restore operation from a backup that has been created at the other SAP HANA host is a valid scenario for both SnapCenter configuration options.
+
+The following figure shows an overview of the restore and recovery scenario described in this section.
+
+A backup has been created at T1 at host 1. A failover has been performed to host 2. At the current point in time, host 2 is the primary host.
+
+. A failure occurred and you must restore to the backup created at T1 at host 1.
+. The primary host (host 1) is shut down.
+. The backup data T1 of host 1 is restored to host 2.
+. A forward recovery is performed using logs from host 1 and host 2.
+. Host 1 is started, and a system replication resynchronization of host 1 is automatically started.
+
+image:saphana-sr-scs-image48.png[Error: Missing Graphic Image]
+
+The following figure shows the SAP HANA backup catalog and highlights the backup, created at host 1, that was used for the restore and recovery operation.
+
+image:saphana-sr-scs-image49.png[Error: Missing Graphic Image]
+
+The restore operation involves the following steps:
+
+. Create a clone from the backup created at host 1.
+. Mount the cloned volume at host 2.
+. Copy the data from the cloned volume to the original location.
+
+In SnapCenter, the backup is selected and the clone operation is started.
+
+image:saphana-sr-scs-image50.png[Error: Missing Graphic Image]
+
+You must provide the clone server and the NFS export IP address.
+
+[NOTE]
+In a SnapCenter single-resource configuration, the SAP HANA plug-in is not installed at the database host. To execute the SnapCenter clone workflow, any host with an installed HANA plug-in can be used as a clone server.
+
+In a SnapCenter configuration with separate resources, the HANA database host is selected as a clone server, and a mount script is used to mount the clone to the target host.
+
+image:saphana-sr-scs-image51.png[Error: Missing Graphic Image]
+
+To determine the junction path that is required to mount the cloned volume, check the job log of the cloning job, as the following figure shows.
+
+image:saphana-sr-scs-image52.png[Error: Missing Graphic Image]
+
+The cloned volume can now be mounted.
+
+....
+stlrx300s8-5:/mnt/tmp # mount 192.168.173.101:/Scc373da37-00ff-4694-b1e1-8153dbd46caf /mnt/tmp
+....
+
+The cloned volume contains the data of the HANA database.
+
+....
+stlrx300s8-5:/mnt/tmp/# ls –al
+drwxr-x--x 2 ssradm sapsys 4096 Jun 27 11:12 hdb00001
+drwx------ 2 ssradm sapsys 4096 Jun 21 09:38 hdb00002.00003
+drwx------ 2 ssradm sapsys 4096 Jun 27 11:12 hdb00003.00003
+-rw-r--r-- 1 ssradm sapsys   22 Jun 27 11:12 nameserver.lck
+....
+
+The data is copied to the original location.
+
+....
+stlrx300s8-5:/mnt/tmp # cp -Rp hdb00001 /hana/data/SSR/mnt00001/
+stlrx300s8-5:/mnt/tmp # cp -Rp hdb00002.00003/ /hana/data/SSR/mnt00001/
+stlrx300s8-5:/mnt/tmp # cp -Rp hdb00003.00003/ /hana/data/SSR/mnt00001/
+....
+
+The recovery with SAP HANA Studio is performed as described in the section link:saphana-sr-scs-snapcenter-configuration-with-a-single-resource.html#snapcenter-restore-of-the-valid-backup-only[SnapCenter restore of the valid backup only].
+
+- title: Where to find additional information
+  link:saphana-sr-scs-where-to-find-additional-information_overview.html[Next: Where to find additional information.]

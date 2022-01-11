@@ -1,0 +1,59 @@
+---
+sidebar: sidebar
+permalink: saphana-sr-scs-snapcenter-configuration-options-for-sap-system-replication.html
+keywords: configuration, snapcenter, virtual ip, auto-discovery
+summary: This page describes configuration options for SAP System Replication.
+---
+
+= SnapCenter configuration options for SAP System Replication
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-01-10 18:20:17.317165
+//
+
+link:saphana-sr-scs-storage-snapshot-backups-and-sap-system-replication.html[Previous: Storage Snapshot backups and SAP System Replication.]
+
+There are two options for configuring data protection with NetApp SnapCenter software in an SAP HANA System Replication environment:
+
+* A SnapCenter resource group including both SAP HANA hosts and auto discovery with SnapCenter 4.6.
+* A single SnapCenter resource for both SAP HANA hosts using a virtual IP address.
+
+image:saphana-sr-scs-image5.png[Error: Missing Graphic Image]
+
+Starting with SnapCenter 4.6, SnapCenter supports auto-discovery of HANA systems configured in a HANA System Replication relationship. Each host is configured using its physical IP address (host name) and its individual data volume on the storage layer. The two Snapcenter resources are combined in a resource group, and SnapCenter automatically identifies which host is primary or secondary and executes the required backup operations accordingly. Retention management for Snapshot and file-based backups is performed across both hosts to ensure that old backups also get deleted at the current secondary host.
+
+With a single-resource configuration for both SAP HANA hosts, the single SnapCenter resource is configured using the virtual IP address of the SAP HANA System Replication hosts. Both data volumes of the SAP HANA hosts are included in the SnapCenter resource. This options is possible with all SnapCenter releases.
+
+The following table summarizes the key differences of the two configuration options.
+
+|===
+| |Resource group with SnapCenter 4.6  |Single SnapCenter resource and virtual IP address
+
+|Backup operation (Snapshot and file-based)
+|Automatic identification of primary host in resource group
+|Automatically use virtual IP address
+|Retention management (Snapshot and file-based)
+|Automatically executed across both hosts
+|Automatically use single resource
+|Backup capacity requirements
+|Backups are only created at primary host volume
+|Backups are always created at both hosts volumes
+|Restore operation
+|Backups from current active host are available for restore operation
+|Pre-backup script required to identify which backups are valid and can be used for restore
+|Recovery operation
+|All recovery options available, same as for any auto-discovered resource
+|Manual recovery required
+|===
+
+The two options are discussed in detail in the following sections.
+
+- title:
+link:saphana-sr-scs-snapcenter-4.6-configuration-using-a-resource-group.html[Next: SnapCenter 4.6 configuration using a resource group.]

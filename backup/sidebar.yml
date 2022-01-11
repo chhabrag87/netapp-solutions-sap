@@ -1,6 +1,25 @@
 section: backup
 title: Backup, Restore and Disaster Recovery
 entries:
+
+  - title: SAP HANA System Replication Backup and Recovery with SnapCenter
+    type: solutions
+    entries:
+      - title: SAP HANA System Replication overview
+        url: /backup/saphana-sr-scs-sap-hana-system-replication-overview.html
+      - title: Storage Snapshot backups and SAP System Replication
+        url: /backup/saphana-sr-scs-storage-snapshot-backups-and-sap-system-replication.html
+      - title: SnapCenter configuration options for SAP System Replication
+        url: /backup/saphana-sr-scs-snapcenter-configuration-options-for-sap-system-replication.html
+      - title: SnapCenter 4.6 configuration using a resource group
+        url: /backup/saphana-sr-scs-snapcenter-4.6-configuration-using-a-resource-group.html
+      - title: SnapCenter configuration with a single resource
+        url: /backup/saphana-sr-scs-snapcenter-configuration-with-a-single-resource.html
+      - title: Restore and recovery from a backup created at the other host
+        url: /backup/saphana-sr-scs-restore-and-recovery-from-a-backup-created-at-the-other-host.html
+      - title: Where to find additional information
+        url: /backup/saphana-sr-scs-where-to-find-additional-information_overview.html
+
   - title: SAP HANA Disaster Recovery with Azure NetApp Files
     type: solutions
     entries:
