@@ -52,7 +52,7 @@ You must provide the clone server and the NFS export IP address.
 
 [NOTE]
 In a SnapCenter single-resource configuration, the SAP HANA plug-in is not installed at the database host. To execute the SnapCenter clone workflow, any host with an installed HANA plug-in can be used as a clone server.
-
++
 In a SnapCenter configuration with separate resources, the HANA database host is selected as a clone server, and a mount script is used to mount the clone to the target host.
 
 image:saphana-sr-scs-image51.png[Error: Missing Graphic Image]

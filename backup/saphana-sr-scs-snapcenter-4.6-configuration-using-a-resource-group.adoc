@@ -18,7 +18,6 @@ summary: SnapCenter 4.6 supports auto discovery for HANA systems configured with
 // 2022-01-10 18:20:17.325492
 //
 
-- title: SnapCenter configuration options for SAP System Replication
 link:saphana-sr-scs-snapcenter-configuration-options-for-sap-system-replication.html[Previous: SnapCenter configuration options for SAP System Replication.]
 
 SnapCenter 4.6 supports auto discovery for HANA systems configured with HANA System Replication. SnapCenter 4.6 includes the logic to identify primary and secondary HANA hosts during backup operations and also handles retention management across both HANA hosts. In addition, automated restore and recovery is now also available for HANA System Replication environments.

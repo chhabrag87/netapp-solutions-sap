@@ -55,5 +55,4 @@ The following table summarizes the key differences of the two configuration opti
 
 The two options are discussed in detail in the following sections.
 
-- title:
 link:saphana-sr-scs-snapcenter-4.6-configuration-using-a-resource-group.html[Next: SnapCenter 4.6 configuration using a resource group.]

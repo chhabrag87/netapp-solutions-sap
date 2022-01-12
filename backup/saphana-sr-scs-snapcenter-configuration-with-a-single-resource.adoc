@@ -152,6 +152,8 @@ image:saphana-sr-scs-image42.png[Error: Missing Graphic Image]
 
 After the restore operation, the backup is highlighted in green in SAP HANA Studio. You don’t have to enter an additional log backup location, because the file path of log backups of host 1 and host 2 are included in the backup catalog.
 
+image:saphana-sr-scs-image43.png[Error: Missing Graphic Image]
+
 After forward recovery has finished, the secondary host (host 2) is started and SAP HANA System Replication resynchronization is started.
 
 [NOTE]

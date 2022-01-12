@@ -18,6 +18,8 @@ summary: SAP HANA System Replication is commonly used as a high-availability or 
 // 2022-01-10 18:20:17.301818
 //
 
+Nils Bauer, NetApp
+
 SAP HANA System Replication is commonly used as a high-availability or disaster-recovery solution for SAP HANA databases. SAP HANA System Replication provides different operating modes that you can use depending on the use case or availability requirements.
 
 There are two primary use cases that can be combined:
