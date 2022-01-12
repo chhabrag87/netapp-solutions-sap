@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: saphana-sr-scs-snapcenter-configuration-options-for-sap-system-replication.html
+permalink: backup/saphana-sr-scs-snapcenter-configuration-options-for-sap-system-replication.html
 keywords: configuration, snapcenter, virtual ip, auto-discovery
 summary: This page describes configuration options for SAP System Replication.
 ---

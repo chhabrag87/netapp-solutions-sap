@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: saphana-sr-scs-version-history.html
+permalink: backup/saphana-sr-scs-version-history.html
 keywords:
 summary:
 ---

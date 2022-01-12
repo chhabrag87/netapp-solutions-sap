@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: saphana-sr-scs-where-to-find-additional-information_overview.html
+permalink: backup/saphana-sr-scs-where-to-find-additional-information_overview.html
 keywords: additional information, version history
 summary:
 ---

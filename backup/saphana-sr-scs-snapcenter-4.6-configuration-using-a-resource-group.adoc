@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: saphana-sr-scs-snapcenter-4.6-configuration-using-a-resource-group.html
+permalink: backup/saphana-sr-scs-snapcenter-4.6-configuration-using-a-resource-group.html
 keywords: resource group, configuration, discovery, retention management
 summary: SnapCenter 4.6 supports auto discovery for HANA systems configured with HANA System Replication. SnapCenter 4.6 includes the logic to identify primary and secondary HANA hosts during backup operations and also handles retention management across both HANA hosts.
 ---
