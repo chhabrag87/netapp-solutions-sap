@@ -96,6 +96,8 @@ The following figure shows the SAP HANA backup catalog in SAP HANA Studio. When 
 [NOTE]
 The SAP HANA backup catalog on the file system, which is used during a restore and recovery operation, does not include the host name where the backup was created. The only way to identify the host when the database is down is to combine the backup catalog entries with the `backup.log` file of both SAP HANA hosts.
 
+image:saphana-sr-scs-image36.png[Error: Missing Graphic Image]
+
 == Restore and recovery
 
 As discussed before, you must be able to identify where the selected backup was created to define the required restore operation. If the SAP HANA database is still online, you can use SAP HANA Studio to identify the host at which the backup was created. If the database is offline, the information is only available in the SnapCenter backup job log.

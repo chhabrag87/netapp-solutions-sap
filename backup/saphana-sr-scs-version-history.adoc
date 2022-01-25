@@ -10,13 +10,15 @@ summary:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ./../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)
 //
 // 2022-01-10 18:20:17.386762
 //
+
+link:saphana-sr-scs-where-to-find-additional-information_overview.html[Previous: Where to find additional information.]
 
 |===
 |Version |Date |Document Version History
@@ -28,5 +30,3 @@ summary:
 |January 2022
 |Update to cover SnapCenter 4.6 HANA System Replication support
 |===
-
-image:saphana-sr-scs-image53.jpeg[Error: Missing Graphic Image]

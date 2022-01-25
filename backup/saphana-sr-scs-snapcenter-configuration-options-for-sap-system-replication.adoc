@@ -22,14 +22,14 @@ link:saphana-sr-scs-storage-snapshot-backups-and-sap-system-replication.html[Pre
 
 There are two options for configuring data protection with NetApp SnapCenter software in an SAP HANA System Replication environment:
 
-* A SnapCenter resource group including both SAP HANA hosts and auto discovery with SnapCenter 4.6.
+* A SnapCenter resource group including both SAP HANA hosts and auto discovery with SnapCenter version 4.6 or higher.
 * A single SnapCenter resource for both SAP HANA hosts using a virtual IP address.
 
 image:saphana-sr-scs-image5.png[Error: Missing Graphic Image]
 
-Starting with SnapCenter 4.6, SnapCenter supports auto-discovery of HANA systems configured in a HANA System Replication relationship. Each host is configured using its physical IP address (host name) and its individual data volume on the storage layer. The two Snapcenter resources are combined in a resource group, and SnapCenter automatically identifies which host is primary or secondary and executes the required backup operations accordingly. Retention management for Snapshot and file-based backups is performed across both hosts to ensure that old backups also get deleted at the current secondary host.
+Starting with SnapCenter 4.6, SnapCenter supports auto-discovery of HANA systems configured in a HANA System Replication relationship. Each host is configured using its physical IP address (host name) and its individual data volume on the storage layer. The two Snapcenter resources are combined in a resource group, and SnapCenter automatically identifies which host is primary or secondary and executes the required backup operations accordingly. Retention management for Snapshot and file-based backups created by SnapCenter is performed across both hosts to ensure that old backups also get deleted at the current secondary host.
 
-With a single-resource configuration for both SAP HANA hosts, the single SnapCenter resource is configured using the virtual IP address of the SAP HANA System Replication hosts. Both data volumes of the SAP HANA hosts are included in the SnapCenter resource. This options is possible with all SnapCenter releases.
+With a single-resource configuration for both SAP HANA hosts, the single SnapCenter resource is configured using the virtual IP address of the SAP HANA System Replication hosts. Both data volumes of the SAP HANA hosts are included in the SnapCenter resource. Because it is a single SnapCenter resource, retention management for Snapshot and file-based backups created by SnapCenter works independent of which host is currently primary or secondary. This options is possible with all SnapCenter releases.
 
 The following table summarizes the key differences of the two configuration options.
 
@@ -44,7 +44,7 @@ The following table summarizes the key differences of the two configuration opti
 |Automatically use single resource
 |Backup capacity requirements
 |Backups are only created at primary host volume
-|Backups are always created at both hosts volumes
+|Backups are always created at both hosts volumes. The backup of the second host is only crash consistent and cannot be used to do a roll forward.
 |Restore operation
 |Backups from current active host are available for restore operation
 |Pre-backup script required to identify which backups are valid and can be used for restore
@@ -52,6 +52,8 @@ The following table summarizes the key differences of the two configuration opti
 |All recovery options available, same as for any auto-discovered resource
 |Manual recovery required
 |===
+
+NOTE: In general, NetApp recommends using the resource group configuration option with SnapCenter 4.6 to protect HANA systems with enabled HANA System Replication. Using a single SnapCenter resource configuration is only required if the SnapCenter operation approach is based on a central plug-in host and the HANA plug-in is not deployed on the HANA database hosts.
 
 The two options are discussed in detail in the following sections.
 

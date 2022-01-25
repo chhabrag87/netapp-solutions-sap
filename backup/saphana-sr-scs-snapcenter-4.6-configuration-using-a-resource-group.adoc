@@ -68,7 +68,7 @@ NetApp recommends using a custom name format for the Snapshot name, which should
 
 image:saphana-sr-scs-image12.png[Error: Missing Graphic Image]
 
-You must add Both HANA hosts to the resource group.
+You must add both HANA hosts to the resource group.
 
 image:saphana-sr-scs-image13.png[Error: Missing Graphic Image]
 
@@ -87,7 +87,7 @@ image:saphana-sr-scs-image16.png[Error: Missing Graphic Image]
 
 == Snapshot backup operations
 
-When a backup operation of the resource group is executed, SnapCenter identifies which host is primary and only triggers a backup at the primary host. In our example, hana-3 is the current primary host and a backup is executed at this host.
+When a backup operation of the resource group is executed, SnapCenter identifies which host is primary and only triggers a backup at the primary host. This means, only the data volume of the primary host will be snapshotted. In our example, hana-3 is the current primary host and a backup is executed at this host.
 
 image:saphana-sr-scs-image17.png[Error: Missing Graphic Image]
 
@@ -103,7 +103,7 @@ The same Snapshot backup is also visible in the HANA backup catalog.
 
 image:saphana-sr-scs-image20.png[Error: Missing Graphic Image]
 
-If a takeover operation is executed, further SnapCenter backups now identify the former secondary host (hana-4) as primary, and the backup operation is executed at hana-4.
+If a takeover operation is executed, further SnapCenter backups now identify the former secondary host (hana-4) as primary, and the backup operation is executed at hana-4. Again, only the data volume of the new primary host (hana-4) is snapshotted.
 
 [NOTE]
 The SnapCenter identification logic only covers scenarios in which the HANA hosts are in a primary-secondary relation or when one of the HANA hosts is offline.
@@ -122,13 +122,13 @@ The same Snapshot backup is also visible in the HANA backup catalog.
 
 image:saphana-sr-scs-image24.png[Error: Missing Graphic Image]
 
-== Block-integrity check operations
+== Block-integrity check operations with file-based backups
 
-SnapCenter 4.6 uses the same logic as described for Snapshot backup operations for block-integrity check operations. SnapCenter identifies the current primary HANA host and executes the file-based backup for this host. Retention management is also performed across both hosts, so the oldest backup is deleted regardless of which host is currently the primary.
+SnapCenter 4.6 uses the same logic as described for Snapshot backup operations for block-integrity check operations with file-based backups. SnapCenter identifies the current primary HANA host and executes the file-based backup for this host. Retention management is also performed across both hosts, so the oldest backup is deleted regardless of which host is currently the primary.
 
 == SnapVault replication
 
-To allow transparent backup operations independent of which HANA host is currently the primary host, you must configure a SnapVault relationship for the data volumes of both hosts. SnapCenter executes a SnapVault update operation for the current primary host with each backup run.
+To allow transparent backup operations without manual interaction in case of a takeover and independent of which HANA host is currently the primary host, you must configure a SnapVault relationship for the data volumes of both hosts. SnapCenter executes a SnapVault update operation for the current primary host with each backup run.
 
 [NOTE]
 If a takeover to the secondary host is not performed for a long time, the number of changed blocks for the first SnapVault update at the secondary host will be high.
@@ -144,7 +144,7 @@ image:saphana-sr-scs-image25.png[Error: Missing Graphic Image]
 
 SnapCenter 4.6 manages retention for Snapshot backups, block-integrity check operations, HANA backup catalog entries,  and log backups (if not disabled) across both HANA hosts, so it doesn’t matter which host is currently primary or secondary. Backups (data and log) and entries in the HANA catalog are deleted based on the defined retention,  regardless of whether a delete operation is necessary on the current primary or secondary host. In other words, no manual interaction is required if a takeover operation is performed and/or the replication is configured in the other direction.
 
-If the SnapVault replication part of the data protection strategy, manual interaction is required for specific scenarios, as described in the section <<SnapVault Replication>>.
+If SnapVault replication is part of the data protection strategy, manual interaction is required for specific scenarios, as described in the section <<SnapVault Replication>>.
 
 == Restore and recovery
 
