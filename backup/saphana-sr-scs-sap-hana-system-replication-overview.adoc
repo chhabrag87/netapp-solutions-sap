@@ -1,0 +1,50 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-sr-scs-sap-hana-system-replication-overview.html
+keywords: tr4719, 4719, introduction, system replication, dr, snapcenter, high availability, RPO, RTO
+summary: SAP HANA System Replication is commonly used as a high-availability or disaster-recovery solution for SAP HANA databases. SAP HANA System Replication provides different operating modes that you can use depending on the use case or availability requirements.
+---
+
+= TR-4719: SAP HANA System Replication - Backup and Recovery with SnapCenter
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-01-10 18:20:17.301818
+//
+
+Nils Bauer, NetApp
+
+SAP HANA System Replication is commonly used as a high-availability or disaster-recovery solution for SAP HANA databases. SAP HANA System Replication provides different operating modes that you can use depending on the use case or availability requirements.
+
+There are two primary use cases that can be combined:
+
+* High availability with a recovery point objective (RPO) of zero and a minimal recovery time objective (RTO) using a dedicated secondary SAP HANA host.
+* Disaster recovery over a large distance. The secondary SAP HANA host can also be used for development or testing during normal operation.
+
+== High availability with an RPO of zero and a minimal RTO
+
+System Replication is configured with synchronous replication using tables preloaded into memory at the secondary SAP HANA host. This high-availability solution can be used to address hardware or software failures and also to reduce planned downtime during SAP HANA software upgrades (near- zero downtime operations).
+
+Failover operations are often automated by using third-party cluster software or with a one-click workflow with SAP Landscape Management software.
+
+From a backup requirement perspective, you must be able to create backups independent of which SAP HANA host is primary or secondary. A shared backup infrastructure is used to restore any backup, regardless of which host the backup has been created on.
+
+The rest of this document focuses on backup operations with SAP System Replication configured as a high-availability solution.
+
+image:saphana-sr-scs-image1.png[Error: Missing Graphic Image]
+
+== Disaster recovery over a large distance
+
+System replication can be configured with asynchronous replication with no table preloaded into memory at the secondary host. This solution is used to address data center failures, and failover operations are typically performed manually.
+
+Regarding backup requirements, you must be able to create backups during normal operation in data center 1 and during disaster recovery in data center 2. A separate backup infrastructure is available in data centers 1 and 2, and backup operations are activated as a part of disaster failover. The backup infrastructure is typically not shared, and a restore operation of a backup that was created at the other data center is not possible.
+
+image:saphana-sr-scs-image2.png[Error: Missing Graphic Image]
+
+link:saphana-sr-scs-storage-snapshot-backups-and-sap-system-replication.html[Next: Storage Snapshot backups and SAP System Replication.]

@@ -1,0 +1,159 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-sr-scs-snapcenter-4.6-configuration-using-a-resource-group.html
+keywords: resource group, configuration, discovery, retention management
+summary: SnapCenter 4.6 supports auto discovery for HANA systems configured with HANA System Replication. SnapCenter 4.6 includes the logic to identify primary and secondary HANA hosts during backup operations and also handles retention management across both HANA hosts.
+---
+
+= SnapCenter 4.6 configuration using a resource group
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-01-10 18:20:17.325492
+//
+
+link:saphana-sr-scs-snapcenter-configuration-options-for-sap-system-replication.html[Previous: SnapCenter configuration options for SAP System Replication.]
+
+SnapCenter 4.6 supports auto discovery for HANA systems configured with HANA System Replication. SnapCenter 4.6 includes the logic to identify primary and secondary HANA hosts during backup operations and also handles retention management across both HANA hosts. In addition, automated restore and recovery is now also available for HANA System Replication environments.
+
+== SnapCenter 4.6 configuration of HANA System Replication environments
+
+The following figure shows the lab setup used for this chapter. Two HANA hosts, hana-3 and hana-4, were configured with HANA System Replication.
+
+A database user “SnapCenter” was created for the HANA system database with the required privileges to execute backup and recovery operations (see https://www.netapp.com/us/media/tr-4614.pdf[SAP HANA Backup and Recovery with SnapCenter^]). A HANA user store key must be configured at both hosts using the above database user.
+
+....
+ss2adm@hana- 3: / > hdbuserstore set SS2KEY hana- 3:33313 SNAPCENTER <password>
+....
+
+....
+ss2adm@hana- 4:/ > hdbuserstore set SS2KEY hana-4:33313 SNAPCENTER <password>
+....
+
+From a high-level perspective, you must perform the following steps to set up HANA System Replication within SnapCenter.
+
+. Install the HANA plugin on the primary and secondary host. Autodiscovery is executed and the HANA System Replication status is detected for each primary or secondary host.
+. Execute SnapCenter `configure database` and provide the `hdbuserstore` key. Further autodiscovery operations are executed.
+. Create a resource group,  including both hosts and configure protection.
+
+image:saphana-sr-scs-image6.png[Error: Missing Graphic Image]
+
+After you have installed the SnapCenter HANA plug-in on both HANA hosts, the HANA systems are shown in the SnapCenter resource view in the same way as other autodiscovered resources. Starting with SnapCenter 4.6, an additional column is displayed that shows the status of HANA system replication (enabled/disabled, primary/secondary).
+
+image:saphana-sr-scs-image7.png[Error: Missing Graphic Image]
+
+By clicking the resource, SnapCenter requests the HANA user store key for the HANA system.
+
+image:saphana-sr-scs-image8.png[Error: Missing Graphic Image]
+
+Additional autodiscovery steps are executed, and SnapCenter show the resource details. With SnapCenter 4.6, the system replication status and the secondary server are listed in this view.
+
+image:saphana-sr-scs-image9.png[Error: Missing Graphic Image]
+
+After performing the same steps for the second HANA resource, the autodiscovery process is complete and both HANA resources are configured in SnapCenter.
+
+image:saphana-sr-scs-image10.png[Error: Missing Graphic Image]
+
+For HANA System Replication- enabled systems, you must configure a SnapCenter resource group, including both HANA resources.
+
+image:saphana-sr-scs-image11.png[Error: Missing Graphic Image]
+
+NetApp recommends using a custom name format for the Snapshot name, which should include the hostname, the policy, and the schedule.
+
+image:saphana-sr-scs-image12.png[Error: Missing Graphic Image]
+
+You must add both HANA hosts to the resource group.
+
+image:saphana-sr-scs-image13.png[Error: Missing Graphic Image]
+
+Policies and schedules are configured for the resource group.
+
+[NOTE]
+The retention defined in the policy is used across both HANA hosts. If, for example, a retention of 10 is defined in the policy, the sum of backups of both hosts is used as a criteria for backup deletion. SnapCenter deletes the oldest backup independently if it has been created at the current primary or secondary host.
+
+image:saphana-sr-scs-image14.png[Error: Missing Graphic Image]
+
+The resource group configuration is now finished and backups can be executed.
+
+image:saphana-sr-scs-image15.png[Error: Missing Graphic Image]
+
+image:saphana-sr-scs-image16.png[Error: Missing Graphic Image]
+
+== Snapshot backup operations
+
+When a backup operation of the resource group is executed, SnapCenter identifies which host is primary and only triggers a backup at the primary host. This means, only the data volume of the primary host will be snapshotted. In our example, hana-3 is the current primary host and a backup is executed at this host.
+
+image:saphana-sr-scs-image17.png[Error: Missing Graphic Image]
+
+The SnapCenter job log shows the identification operation and the execution of the backup at the current primary host hana-3.
+
+image:saphana-sr-scs-image18.png[Error: Missing Graphic Image]
+
+A Snapshot backup has now been created at the primary HANA resource. The hostname included in the backup name shows hana-3.
+
+image:saphana-sr-scs-image19.png[Error: Missing Graphic Image]
+
+The same Snapshot backup is also visible in the HANA backup catalog.
+
+image:saphana-sr-scs-image20.png[Error: Missing Graphic Image]
+
+If a takeover operation is executed, further SnapCenter backups now identify the former secondary host (hana-4) as primary, and the backup operation is executed at hana-4. Again, only the data volume of the new primary host (hana-4) is snapshotted.
+
+[NOTE]
+The SnapCenter identification logic only covers scenarios in which the HANA hosts are in a primary-secondary relation or when one of the HANA hosts is offline.
+
+image:saphana-sr-scs-image21.png[Error: Missing Graphic Image]
+
+The SnapCenter job log shows the identification operation and the execution of the backup at the current primary host hana-4.
+
+image:saphana-sr-scs-image22.png[Error: Missing Graphic Image]
+
+A Snapshot backup has now been created at the primary HANA resource. The hostname included in the backup name shows hana-4.
+
+image:saphana-sr-scs-image23.png[Error: Missing Graphic Image]
+
+The same Snapshot backup is also visible in the HANA backup catalog.
+
+image:saphana-sr-scs-image24.png[Error: Missing Graphic Image]
+
+== Block-integrity check operations with file-based backups
+
+SnapCenter 4.6 uses the same logic as described for Snapshot backup operations for block-integrity check operations with file-based backups. SnapCenter identifies the current primary HANA host and executes the file-based backup for this host. Retention management is also performed across both hosts, so the oldest backup is deleted regardless of which host is currently the primary.
+
+== SnapVault replication
+
+To allow transparent backup operations without manual interaction in case of a takeover and independent of which HANA host is currently the primary host, you must configure a SnapVault relationship for the data volumes of both hosts. SnapCenter executes a SnapVault update operation for the current primary host with each backup run.
+
+[NOTE]
+If a takeover to the secondary host is not performed for a long time, the number of changed blocks for the first SnapVault update at the secondary host will be high.
+
+Since the retention management at the SnapVault target is managed outside of SnapCenter by ONTAP, the retention can’t be handled across both HANA hosts. Therefore backups that have been created before a takeover are not deleted with backup operations at the former secondary. These backups remain until the former primary becomes primary again. So that these backups do not block the retention management of log backups, they must deleted manually either at the SnapVault target or within the HANA backup catalog.
+
+[NOTE]
+A cleanup of all SnapVault Snapshot copies is not possible, because one Snapshot copy is blocked as a synchronization point. If the latest Snapshot copy needs to be deleted as well, the SnapVault replication relationship must be deleted. In this case, NetApp recommends deleting the backups in the HANA backup catalog to unblock log backup retention management.
+
+image:saphana-sr-scs-image25.png[Error: Missing Graphic Image]
+
+== Retention management
+
+SnapCenter 4.6 manages retention for Snapshot backups, block-integrity check operations, HANA backup catalog entries,  and log backups (if not disabled) across both HANA hosts, so it doesn’t matter which host is currently primary or secondary. Backups (data and log) and entries in the HANA catalog are deleted based on the defined retention,  regardless of whether a delete operation is necessary on the current primary or secondary host. In other words, no manual interaction is required if a takeover operation is performed and/or the replication is configured in the other direction.
+
+If SnapVault replication is part of the data protection strategy, manual interaction is required for specific scenarios, as described in the section <<SnapVault Replication>>.
+
+== Restore and recovery
+
+The following figure depicts a scenario in which multiple takeovers have been executed and Snapshot backups have been created at both sites. With the current status, the host hana-3 is the primary host and the latest backup is T4, which has been created at host hana-3. If you need to perform a restore and recovery operation, the backups T1 and T4 are available for restore and recovery in SnapCenter. The backups, which have been created at host hana-4 (T2, T3), can’t be restored using SnapCenter. These backups must be copied manually to the data volume of hana-3 for recovery.
+
+image:saphana-sr-scs-image26.png[Error: Missing Graphic Image]
+
+Restore and recovery operations for a SnapCenter 4.6 resource group configuration are identical to an autodiscovered non-System Replication setup. All options for restore and automated recovery are available. For further details, see the technical report https://www.netapp.com/us/media/tr-4614.pdf[TR-4614: SAP HANA Backup and Recovery with SnapCenter^].
+
+A restore operation from a backup that was created at the other host is described in the section link:saphana-sr-scs-restore-and-recovery-from-a-backup-created-at-the-other-host.html[Restore and Recovery from a Backup Created at the Other Host].
+
+link:saphana-sr-scs-snapcenter-configuration-with-a-single-resource.html[Next: SnapCenter configuration with a single resource.]
