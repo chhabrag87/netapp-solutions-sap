@@ -362,13 +362,10 @@ set admin
 |===
 
 [NOTE]
-For NFS version 4. 0, replace `4.1` with `4.0` in the previous commands. While NFSv4.0 is supported, NFSv4.1 is preferred.
-
-[NOTE]
 The NFSv4 domain ID must be set to the same value on all Linux servers (`/etc/idmapd.conf`) and SVMs, as described in the section link:saphana_aff_nfs_sap_hana_installation_preparations_for_nfsv4.html[“SAP HANA installation preparations for NFSv4.”]
 
 [NOTE]
-If you are using NFSV4.1, then pNFS is enabled and used by default (recommended).
+If you are using NFSV4.1, then pNFS can be enabled and can be used.
 
 Set the NFSv4 lease time at the SVM (as shown in the following table) if SAP HANA multiple host system are used.
 
