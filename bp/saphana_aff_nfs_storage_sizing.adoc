@@ -65,7 +65,7 @@ This calculation is independent of the storage controller used. Adding more disk
 
 === NS224 NVMe shelf
 
-The minimum number of 12 NVMe SSDs for the first shelf supports up to 16 SAP HANA hosts. A fully populated shelf (24 SSDs) supports up to 34 SAP HANA hosts. The same applies to the internal disks of an AFF A800 system.
+The minimum number of 12 NVMe SSDs for the first shelf supports up to 16 SAP HANA hosts. A fully populated shelf (24 SSDs) supports up to 48 SAP HANA hosts. The same applies to the internal disks of an AFF A800 system.
 
 [NOTE]
 Adding more disk shelfs does not increase the maximum amount of SAP HANA hosts a storage controller can support.
