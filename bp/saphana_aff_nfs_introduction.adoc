@@ -24,13 +24,11 @@ The NetApp AFF system product family has been certified for use with SAP HANA in
 
 This certification is valid for the following models:
 
-* AFF A220, AFF A250, AFF A300, AFF A320, AFF A400, AFF A700s, AFF A700, AFF A800
+* AFF A220, AFF A250, AFF A300, AFF A320, AFF A400, AFF A700s, AFF A700, AFF A800, AFF A900
 
-A complete list of NetApp certified storage solutions for SAP HANA can be found at the https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/enterprise-storage.html[Certified and supported SAP HANA hardware directory^].
+A complete list of NetApp certified storage solutions for SAP HANA can be found at the https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/#/solutions?filters=v:deCertified;ve:13[Certified and supported SAP HANA hardware directory^].
 
-This document describes the ONTAP configuration requirements for the NFS protocol version 3 (NFSv3) or the NFS protocol version 4 (NFSv4.0 and NFSv4.1).
-
-For the remainder of this document, NFSv4 refers to both NFSv4.0 and NFSv4.1.
+This document describes the ONTAP configuration requirements for the NFS protocol version 3 (NFSv3) or the NFS protocol version 4 (NFSv4.1).
 
 [NOTE]
 The configuration described in this paper is necessary to achieve the required SAP HANA KPIs and the best performance for SAP HANA. Changing any settings or using features not listed herein might cause performance degradation or unexpected behavior and should only be done if advised by NetApp support.
