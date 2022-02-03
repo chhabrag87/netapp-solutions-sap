@@ -235,7 +235,7 @@ To improve read performance with NFSv3, NetApp recommends that you use the `ncon
 Performance tests showed that `nconnect=8` provides good read results. Log writes might benefit from a lower number of sessions, such as `nconnect=2`. Be aware that the first mount from an NFS server (IP address) defines the amount of sessions being used. Further mounts do not change this even if different values are used for nconnect.
 
 [NOTE]
-The nconnect option is supported by NetApp for NFSv4.1, starting with ONTAP 9.8.  First NFS clients supporting nconnect with NFSv4.1 are available with SLES15SP2 and RHEL 8.4. For additional information check Linux vendor documentation.
+The nconnect option is supported by NetApp for NFSv4.1, starting with ONTAP 9.8. First NFS clients supporting nconnect with NFSv4.1 are available with SLES15SP2 and RHEL 8.4. For additional information check the Linux vendor documentation.
 
 The following example shows a single host SAP HANA database with SID=NF2 using NFSv3 and an NFS transfer size of 1MB. To mount the file systems during system boot with the `/etc/fstab` configuration file, complete the following steps:
 
