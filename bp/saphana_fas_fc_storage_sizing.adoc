@@ -81,7 +81,7 @@ The SAP HCMT test tool must be used to check if additional SAP HANA hosts can be
 
 == Capacity considerations
 
-A detailed description of the capacity requirements for SAP HANA is in the https://launchpad.support.sap.com/#/notes/1900823[SAP Note 1900823^] attached white paper.
+A detailed description of the capacity requirements for SAP HANA is in the https://launchpad.support.sap.com/#/notes/1900823[SAP Note 1900823^] white paper.
 
 [NOTE]
 The capacity sizing of the overall SAP landscape with multiple SAP HANA systems must be determined by using SAP HANA storage sizing tools from NetApp. Contact NetApp or your NetApp partner sales representative to validate the storage sizing process for a properly sized storage environment.
