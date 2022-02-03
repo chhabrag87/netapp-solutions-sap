@@ -238,7 +238,7 @@ Starting with ONTAP 9.8 and SUSE SLES15SP2 or RedHat RHEL 8.4 or higher, NetApp 
 
 To mount the file systems during system boot with the `/etc/fstab` configuration file, complete the following steps:
 
-The following example shows a single host SAP HANA database with SID=NF2 using NFSv3 and an NFS transfer size of 1MB for reads and 256k for writes is used.
+The following example shows a single host SAP HANA database with SID=NF2 using NFSv3 and an NFS transfer size of 1MB for reads and 256k for writes.
 
 . Add the required file systems to the `/etc/fstab` configuration file.
 +
