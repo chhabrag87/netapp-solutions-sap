@@ -374,14 +374,12 @@ set admin
 |nfs modify -vserver <vserver_name> -v4-numeric-ids disabled
 |===
 
-[NOTE]
-For NFS version 4. 0, replace `4. 1` with `4.0` in the previous commands. Although NFSv4.0 is supported, using NFSv4.1 is preferred.
 
 [NOTE]
 The NFSv4 domain ID must be set to the same value on all Linux servers (/`etc/idmapd.conf`) and SVMs, as described in link:saphana-fas-nfs_sap_hana_installation_preparations_for_nfsv4.html[SAP HANA installation preparations for NFSv4.]
 
 [NOTE]
-If you are using NFSV4.1, then pNFS is enabled and used by default (recommended).
+If you are using NFSV4.1, then pNFS can be enabled and used.
 
 Set the NFSv4 lease time at the SVM as shown in the following table if SAP HANA multiple- host systems are used.
 
