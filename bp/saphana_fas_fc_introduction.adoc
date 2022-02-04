@@ -27,7 +27,7 @@ The certification is valid for the following models:
 
 * FAS2720, FAS2750, FAS8200, FAS8300, FAS8700, FAS9000
 
-For a complete list of NetApp’s certified storage solutions for SAP HANA, see the https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/enterprise-storage.html[certified and supported SAP HANA hardware directory^].
+For a complete list of NetApp’s certified storage solutions for SAP HANA, see the https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/#/solutions?filters=v:deCertified;ve:13[certified and supported SAP HANA hardware directory^].
 
 This document describes FAS configurations that use the Fibre Channel Protocol (FCP).
 
