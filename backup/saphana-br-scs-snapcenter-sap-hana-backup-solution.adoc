@@ -1,0 +1,104 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-br-scs-snapcenter-sap-hana-backup-solution.html
+keywords: solution components, supported releases, configuration, enhancements
+summary: This section lists the components, supported SAP HANA releases and configurations, and SnapCenter 4.6 enhancements used in this solution.
+---
+
+= SnapCenter SAP HANA backup solution
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-02-15 15:58:30.758659
+//
+
+link:saphana-br-scs-snapcenter-architecture.html[Previous: SnapCenter architecture.]
+
+== Solution components
+
+The SnapCenter backup solution for SAP HANA covers the following areas:
+
+* SAP HANA data backup with storage-based Snapshot copies:
+** Backup scheduling
+** Retention management
+** Housekeeping of the SAP HANA backup catalog
+* Non-data volume (for example, `/hana/shared`) backup with storage-based Snapshot copies:
+** Backup scheduling
+** Retention management
+* Replication to an off-site backup or disaster recovery location:
+** SAP HANA data Snapshot backups
+** Non-data volumes
+** Retention management configured at off-site backup storage
+** Housekeeping of the SAP HANA backup catalog
+* Database block integrity checks using a file-based backup:
+** Backup scheduling
+** Retention management
+** Housekeeping of the SAP HANA backup catalog
+* Retention management of HANA database log backup:
+** Retention management based on data backup retention
+** Housekeeping of the SAP HANA backup catalog
+* Automatic discovery of HANA databases
+* Automated restore and recovery
+* Single-tenant restore operations with SAP HANA multitenant database container (MDC) systems
+
+Database data file backups are executed by SnapCenter in combination with the plug-in for SAP HANA. The plug-in triggers an SAP HANA database backup save point so that the Snapshot copies, which are created on the primary storage system, are based on a consistent image of the SAP HANA database.
+
+SnapCenter enables the replication of consistent database images to an off-site backup or disaster recovery location by using SnapVault or the NetApp SnapMirror. feature. Typically, different retention policies are defined for backups at primary and at the off-site backup storage. SnapCenter handles the retention at primary storage, and ONTAP handles the retention at the off-site backup storage.
+
+To allow a complete backup of all SAP HANA-related resources, SnapCenter also allows you to back up all non- data volumes using the SAP HANA plug-in with storage-based Snapshot copies. Non-data volumes can be scheduled independently from the database data backup to enable individual retention and protection policies.
+
+The SAP HANA database automatically executes log backups. Depending on the recovery point objectives, there are several options for the storage location of the log backups:
+
+* The log backup is written to a storage system that synchronously mirrors the data to a second location with NetApp MetroCluster high-availability (HA) and disaster recovery storage software.
+* The log backup destination can be configured on the same primary storage system and then replicated synchronously or asynchronously to a secondary storage with SnapMirror.
+* The log backup destination can be configured on the same off-site backup storage in which the database backups are replicated with SnapVault. With this configuration, the off-site backup storage has availability requirements like those of the primary storage so that log backups can be written to the off-site backup storage.
+
+SAP recommends combining storage-based Snapshot backups with a weekly file-based backup to execute a block integrity check. The block integrity check can be executed from within SnapCenter. Based on your configurable retention policies, SnapCenter manages the housekeeping of data file backups at the primary storage, log file backups, and the SAP HANA backup catalog.
+
+[NOTE]
+SnapCenter handles the retention at primary storage, while ONTAP manages secondary backup retention.
+
+The following figure shows an overview of the database and log backup configuration, where the log backups are written to an NFS mount of the off-site backup storage.
+
+image:saphana-br-scs-image7.png[Error: Missing Graphic Image]
+
+When executing a storage-based Snapshot backup of non-data volumes, SnapCenter performs the following tasks:
+
+. Creation of a storage Snapshot copy of the non-data volume.
+. Execution of a SnapVault or SnapMirror update for the data volume, if configured.
+. Deletion of storage Snapshot copies at the primary storage based on the defined retention policy.
+
+When executing a storage-based Snapshot backup of the SAP HANA database, SnapCenter performs the following tasks:
+
+. Creation of an SAP HANA backup save point to create a consistent image on the persistence layer.
+. Creation of a storage Snapshot copy of the data volume.
+. Registration of the storage Snapshot back up in the SAP HANA backup catalog.
+. Release of the SAP HANA backup save point.
+. Execution of a SnapVault or SnapMirror update for the data volume, if configured.
+. Deletion of storage Snapshot copies at the primary storage based on the defined retention policy.
+. Deletion of SAP HANA backup catalog entries if the backups do not exist anymore at the primary or off-site backup storage.
+. Whenever a backup has been deleted based on the retention policy or manually, SnapCenter deletes all log backups that are older than the oldest data backup. Log backups are deleted on the file system and in the SAP HANA backup catalog.
+
+== Supported SAP HANA releases and configurations
+
+SnapCenter supports SAP HANA single-host and multiple-host configurations using NFS- or FC-attached NetApp storage systems (AFF and FAS), as well as SAP HANA systems running on Cloud Volumes ONTAP at AWS, Azure, the Google Cloud Platform, and AWS FSx ONTAP using NFS.
+
+SnapCenter supports the following SAP HANA architectures and releases:
+
+* SAP HANA single container: SAP HANA 1.0 SPS12
+* SAP HANA multitenant-database container (MDC) single tenant: SAP HANA 2.0 SPS3 and later
+* SAP HANA multitenant-database container (MDC) multiple tenants: SAP HANA 2.0 SPS4 and later
+
+== SnapCenter 4.6 enhancements
+
+Starting with version 4.6, SnapCenter supports auto-discovery of HANA systems configured in a HANA System Replication relationship. Each host is configured using its physical IP address (host name) and its individual data volume on the storage layer. The two SnapCenter resources are combined in a resource group, SnapCenter automatically identifies which host is primary or secondary, and it then executes the required backup operations accordingly. Retention management for Snapshot and file-based backups created with SnapCenter is performed across both hosts to ensure that old backups are also deleted at the current secondary host. The following figure shows a high-level overview. A detailed description of the configuration and operation of HANA System Replication-enabled HANA systems in SnapCenter can be found in https://www.netapp.com/us/media/tr-4719.pdf[TR-4719 SAP HANA System Replication, Backup and Recovery with SnapCenter^].
+
+image:saphana-br-scs-image8.png[Error: Missing Graphic Image]
+
+link:saphana-br-scs-snapcenter-concepts-and-best-practices.html[Next: SnapCenter concepts and best practices.]

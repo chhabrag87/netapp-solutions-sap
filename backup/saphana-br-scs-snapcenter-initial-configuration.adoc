@@ -1,0 +1,223 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-br-scs-snapcenter-initial-configuration.html
+keywords: configuration, storage system, plug-in, hdbsql client
+summary: This section describes initial SnapCenter configuration, including the storage system, credentials, hosts, the hdbsql client, and policies.
+---
+
+= Initial SnapCenter configuration
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-02-15 15:58:30.841110
+//
+
+link:saphana-br-scs-snapcenter-configuration.html[Previous: SnapCenter configuration.]
+
+Initial configuration includes the following steps:
+
+. Storage system configuration
+. Credentials configuration for plug-in installation
+. For a central HANA plug-in host:
+.. Host configuration and SAP HANA plug-in deployment
+.. SAP HANA hdbsql client software installation and configuration
+. Policies configuration
+
+The following sections describe the initial configuration steps.
+
+== Storage system configuration
+
+. Log in to the SnapCenter Server GUI.
++
+image:saphana-br-scs-image23.png[Error: Missing Graphic Image]
+
+. Select Storage Systems.
++
+[NOTE]
+In the screen, you can select the storage system type, which can be ONTAP SVMs or ONTAP Clusters. If you configure the storage systems on SVM level, you need to have a management LIF configured for each SVM. As an alternative, you can use a SnapCenter management access on cluster level. SVM management is used in the following example.
++
+image:saphana-br-scs-image24.png[Error: Missing Graphic Image]
+
+. Click New to add a storage system and provide the required host name and credentials.
++
+[NOTE]
+The SVM user is not required to be the vsadmin user, as shown in the screenshot. Typically, a user is configured on the SVM and assigned the required permissions to execute backup and restore operations. Details on required privileges can be found in the http://docs.netapp.com/ocsc-43/index.jsp?topic=%2Fcom.netapp.doc.ocsc-isg%2Fhome.html[SnapCenter Installation Guide^] in the section titled “Minimum ONTAP privileges required”.
++
+image:saphana-br-scs-image25.png[Error: Missing Graphic Image]
+
+. Click More Options to configure the storage platform.
++
+Storage platform can be FAS, AFF, ONTAP Select, or Cloud Volumes ONTAP.
++
+[NOTE]
+For a system used as a SnapVault or SnapMirror target, select the Secondary icon.
++
+image:saphana-br-scs-image26.png[Error: Missing Graphic Image]
+
+. Add additional storage systems as required. In our example, an additional offsite backup storage and a disaster recovery storage has been added.
++
+image:saphana-br-scs-image27.png[Error: Missing Graphic Image]
+
+== Credentials configuration
+
+. Go to Settings, select Credentials, and click New.
++
+image:saphana-br-scs-image28.png[Error: Missing Graphic Image]
+
+. Provide the credentials for the user that are used for plug-in installations on Linux systems.
++
+image:saphana-br-scs-image29.png[Error: Missing Graphic Image]
+
+. Provide the credentials for the user that are used for plug-in installations on Windows systems.
++
+image:saphana-br-scs-image30.png[Error: Missing Graphic Image]
++
+The following figure shows the configured credentials.
+
+image:saphana-br-scs-image31.png[Error: Missing Graphic Image]
+
+== SAP HANA plug-in installation on a central plug-in host
+
+In the lab setup, the SnapCenter Server is also used as a central HANA plug-in host. The Windows host on which SnapCenter Server runs is added as a host, and the SAP HANA plug-in is installed on the Windows host.
+
+[NOTE]
+The SAP HANA plug-in requires Java 64-bit version 1.8. Java needs to be installed on the host before the SAP HANA plug-in is deployed.
+
+. Go to Hosts and click Add.
++
+image:saphana-br-scs-image32.png[Error: Missing Graphic Image]
+
+. Provide the required host information. Click Submit.
++
+image:saphana-br-scs-image33.png[Error: Missing Graphic Image]
++
+The following figure shows all the configured hosts after the HANA plug-in is deployed.
++
+image:saphana-br-scs-image34.png[Error: Missing Graphic Image]
+
+=== SAP HANA hdbsql client software installation and configuration
+
+The SAP HANA hdbsql client software must be installed on the same host on which the SAP HANA plug-in is installed. The software can be downloaded from the https://support.sap.com/en/index.html[SAP Support Portal^].
+
+The HDBSQL OS user configured during the resource configuration must be able to run the hdbsql executable. The path to the hdbsql executable must be configured in the `hana.properties` file.
+
+* Windows:
+
+....
+C:\More C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc\hana.properties
+HANA_HDBSQL_CMD=C:\\Program Files\\sap\\hdbclient\\hdbsql.exe
+....
+
+* Linux:
+
+....
+cat /opt/NetApp/snapcenter/scc/etc/hana.properties
+HANA_HDBSQL_CMD=/usr/sap/hdbclient/hdbsql
+....
+
+== Policy configuration
+
+As discussed in the section link:saphana-br-scs-snapcenter-concepts-and-best-practices.html#data-protection-strategy[“Data protection strategy,”] policies are usually configured independently of the resource and can be used by multiple SAP HANA databases.
+
+A typical minimum configuration consists of the following policies:
+
+* Policy for hourly backups without replication: `LocalSnap`
+* Policy for daily backups with SnapVault replication: `LocalSnapAndSnapVault`
+* Policy for weekly block integrity check using a file-based backup: `BlockIntegrityCheck`
+
+The following sections describe the configuration of these three policies.
+
+=== Policy for hourly Snapshot backups
+
+. Go to Settings > Policies and click New.
++
+image:saphana-br-scs-image35.png[Error: Missing Graphic Image]
+
+. Enter the policy name and description. Click Next.
++
+image:saphana-br-scs-image36.png[Error: Missing Graphic Image]
+
+. Select backup type as Snapshot Based and select Hourly for schedule frequency.
++
+image:saphana-br-scs-image37.png[Error: Missing Graphic Image]
+
+. Configure the retention settings for on-demand backups.
++
+image:saphana-br-scs-image38.png[Error: Missing Graphic Image]
+
+. Configure the retention settings for scheduled backups.
++
+image:saphana-br-scs-image39.png[Error: Missing Graphic Image]
+
+. Configure the replication options. In this case, no SnapVault or SnapMirror update is selected.
++
+image:saphana-br-scs-image40.png[Error: Missing Graphic Image]
+
+. On the Summary page, click Finish.
++
+image:saphana-br-scs-image41.png[Error: Missing Graphic Image]
+
+=== Policy for daily Snapshot backups with SnapVault replication
+
+. Go to Settings > Policies and click New.
+. Enter the policy name and description. Click Next.
++
+image:saphana-br-scs-image42.png[Error: Missing Graphic Image]
+
+. Set the backup type to Snapshot Based and the schedule frequency to Daily.
++
+image:saphana-br-scs-image43.png[Error: Missing Graphic Image]
+
+. Configure the retention settings for on-demand backups.
++
+image:saphana-br-scs-image44.png[Error: Missing Graphic Image]
+
+. Configure the retention settings for scheduled backups.
++
+image:saphana-br-scs-image45.png[Error: Missing Graphic Image]
+
+. Select Update SnapVault after creating a local Snapshot copy.
++
+[NOTE]
+The secondary policy label must be the same as the SnapMirror label in the data protection configuration on the storage layer. See the section link:saphana-br-scs-snapcenter-resource-specific-configuration-for-sap-hana-database-backups.html#configuration-of-data-protection-to-off-site-backup-storage[“Configuration of data protection to off-site backup storage.”]
++
+image:saphana-br-scs-image46.png[Error: Missing Graphic Image]
+
+. On the Summary page, click Finish.
++
+image:saphana-br-scs-image47.png[Error: Missing Graphic Image]
+
+=== Policy for Weekly Block Integrity Check
+
+. Go to Settings > Policies and click New.
+. Enter the policy name and description. Click Next.
++
+image:saphana-br-scs-image48.png[Error: Missing Graphic Image]
+
+. Set the backup type to File-Based and schedule frequency to Weekly.
++
+image:saphana-br-scs-image49.png[Error: Missing Graphic Image]
+
+. Configure the retention settings for on-demand backups.
++
+image:saphana-br-scs-image50.png[Error: Missing Graphic Image]
+
+. Configure the retention settings for scheduled backups.
++
+image:saphana-br-scs-image50.png[Error: Missing Graphic Image]
+
+. On the Summary page, click Finish.
++
+image:saphana-br-scs-image51.png[Error: Missing Graphic Image]
++
+The following figure shows a summary of the configured policies.
++
+image:saphana-br-scs-image52.png[Error: Missing Graphic Image]
+
+link:saphana-br-scs-snapcenter-resource-specific-configuration-for-sap-hana-database-backups.html[Next: SnapCenter resource-specific configuration for SAP HANA database backups.]

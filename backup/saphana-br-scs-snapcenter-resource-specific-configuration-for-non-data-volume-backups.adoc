@@ -1,0 +1,84 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-br-scs-snapcenter-resource-specific-configuration-for-non-data-volume-backups.html
+keywords: resource-specific, configuration, non-data volume, resource group, sap landscape
+summary: The backup of non-data volumes is an integrated part of the SAP HANA plug-in. Protecting the database data volume is sufficient to restore and recover the SAP HANA database to a given point in time, provided that the database installation resources and the required logs are still available.
+---
+
+= SnapCenter resource-specific configuration for non-data volume backups
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-02-15 15:58:30.894345
+//
+
+link:saphana-br-scs-snapcenter-resource-specific-configuration-for-sap-hana-database-backups.html[Previous: SnapCenter resource-specific configuration for SAP HANA database backups.]
+
+The backup of non-data volumes is an integrated part of the SAP HANA plug-in. Protecting the database data volume is sufficient to restore and recover the SAP HANA database to a given point in time, provided that the database installation resources and the required logs are still available.
+
+To recover from situations where other non-data files must be restored, NetApp recommends developing an additional backup strategy for non-data volumes to augment the SAP HANA database backup. Depending on your specific requirements, the backup of non-data volumes might differ in scheduling frequency and retention settings, and you should consider how frequently non-data files are changed. For instance, the HANA volume `/hana/shared` contains executables but also SAP HANA trace files. While executables only change when the SAP HANA database is upgraded, the SAP HANA trace files might need a higher backup frequency to support analyzing problem situations with SAP HANA.
+
+SnapCenter non-data volume backup enables Snapshot copies of all relevant volumes to be created in a few seconds with the same space efficiency as SAP HANA database backups. The difference is that there is no SQL communication with SAP HANA database required.
+
+== Configuration of non-data volume resources
+
+In this example, we want to protect the non-data volumes of the SAP HANA database SS1.
+
+. From the Resource tab, select Non-Data-Volume and click Add SAP HANA Database.
++
+image:saphana-br-scs-image78.png[Error: Missing Graphic Image]
+
+. In step one of the Add SAP HANA Database dialog, in the Resource Type list, select Non-data Volumes. Specify a name for the resource and the associated SID and the SAP HANA plug-in host you want to use for the resource, then click Next.
++
+image:saphana-br-scs-image79.png[Error: Missing Graphic Image]
+
+. Add the SVM and the storage volume as storage footprint, then click Next.
++
+image:saphana-br-scs-image80.png[Error: Missing Graphic Image]
++
+. In the summary step, click Finish to save the settings.
+. Repeat these steps for all the required non-data volumes.
+. Continue with the protection configuration of the new resource.
++
+[NOTE]
+Data protection for a non- data volume resources is identical to the workflow for SAP HANA database resources and can be defined on an individual resource level.
++
+The following figure shows the list of the configured non-data volume resources.
++
+image:saphana-br-scs-image81.png[Error: Missing Graphic Image]
+
+== Resource groups
+
+Resource groups are a convenient way to define the protection of multiple resources that require the same protection policies and schedule. Single resources that are part of a resource group can still be protected on an individual level.
+
+Resource groups provide the following features:
+
+* You can add one or more resources to a resource group. All resources must belong to the same SnapCenter plug-in.
+* Protection can be defined on a resource group level. All resources in the resource group use the same policy and schedule when protected.
+* All backups in the SnapCenter repository and the storage Snapshot copies have the same name defined in the resource protection.
+* Restore operations are applied on a single resource level, not as part of a resource group.
+* When using SnapCenter to delete the backup of a resource that was created on a resource group level, this backup is deleted for all resources in the resource group. Deleting the backup includes deleting the backup from the SnapCenter repository as well as deleting the storage Snapshot copies.
+* The main use case for resource groups is when a customer wants to use backups created with SnapCenter for system cloning with SAP Landscape Management. This is described in the next section.
+
+== Using SnapCenter together with SAP landscape management
+
+With SAP Landscape Management (SAP LaMa), customers can manage complex SAP system landscapes in on-premises data centers as well as in systems that are running in the cloud. SAP LaMa, together with NetApp Storage Services Connector (SSC), can execute storage operations such as cloning and replication for SAP system clone, copy, and refresh use cases using Snapshot and FlexClone technology. This allows you to completely automate an SAP system copy based on storage cloning technology while also including the required SAP postprocessing. For more details about NetApp’s solutions for SAP LaMa, refer to https://www.netapp.com/us/media/tr-4018.pdf[TR-4018: Integrating NetApp ONTAP Systems with SAP Landscape Management^].
+
+NetApp SSC and SAP LaMa can create on-demand Snapshot copies directly using NetApp SSC, but they can also utilize Snapshot copies that have been created using SnapCenter. To utilize SnapCenter backups as the basis for system clone and copy operations with SAP LaMa, the following prerequisites must be met:
+
+* SAP LaMa requires that all volumes be included in the backup; this includes SAP HANA data, log and shared volumes.
+* All storage Snapshot names must be identical.
+* Storage Snapshot names must start with VCM.
+
+[NOTE]
+In normal backup operations, NetApp does not recommend including the log volume. If you restore the log volume from a backup, it overwrites the last active redo logs and prevents the recovery of the database to the last recent state.
+
+SnapCenter resource groups meet all these requirements. Three resources are configured in SnapCenter: one resource each for the data volume, the log volume, and the shared volume. The resources are put into a resource group, and the protection is then defined on the resource group level. In the resource group protection, the custom Snapshot name must be defined with VCM at the beginning.
+
+link:saphana-br-scs-database-backups.html[Next: Database backups.]
