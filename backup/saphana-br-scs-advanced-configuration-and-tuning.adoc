@@ -1,0 +1,206 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-br-scs-advanced-configuration-and-tuning.html
+keywords: configuration, settings, secure communication, auto discovery, automated, log backup, housekeeping, cleanup
+summary: This page describes various operations necessary to complete configuration and tuning.
+---
+
+= Advanced configuration and tuning
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-02-15 15:58:30.972066
+//
+
+link:saphana-br-scs-restore-and-recovery.html[Previous: Restore and recovery.]
+
+This section describes configuration and tuning options that customers may use to adapt the SnapCenter setup to their specific needs. Not all the settings may apply for all customer scenarios.
+
+== Enable secure communication to HANA database
+
+If the HANA databases are configured with secure communication, the `hdbsql` command that is executed by SnapCenter must use additional command-line options. This can be achieved by using a wrapper script which calls `hdbsql` with the required options.
+
+[NOTE]
+There are various options to configure the SSL communication. In the following examples, the simplest client configuration is described using the command line option,  where no server certificate validation is done. If certificate validation on server and/or client side is required, different hdbsql command line options are needed,  and you must configure the PSE environment accordingly as described in the SAP HANA Security Guide.
+
+Instead of configuring the `hdbsql` executable in the `hana.properties` files, the wrapper script is added.
+
+For a central HANA plug-in host on the SnapCenter Windows server, you must add the following content in `C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc\hana.properties`.
+
+....
+HANA_HDBSQL_CMD=C:\\Program Files\\sap\\hdbclient\\hdbsql-ssl.cmd
+....
+
+The wrapper script `hdbsql-ssl.cmd` calls `hdbsql.exe` with the required command-line options.
+
+....
+@echo off
+"C:\Program Files\sap\hdbclient\hdbsql.exe" -e -ssltrustcert %*
+....
+
+[NOTE]
+The `-e - ssltrustcert` hdbsql command-line option also works for HANA systems where SSL is not enabled. This option can therefore also be used with a central HANA plug-in host, where not all HANA systems have SSL enabled or disabled.
+
+If the HANA plug-in is deployed on individual HANA database hosts, the configuration must be done on each Linux host accordingly.
+
+....
+HANA_HDBSQL_CMD = /usr/sap/SM1/HDB12/exe/hdbsqls
+....
+
+The wrapper script `hdbsqls` calls `hdbsql` with the required command-line options.
+
+....
+#/bin/bash
+/usr/sap/SM1/HDB12/exe/hdbsql -e -ssltrustcert $*
+....
+
+== Disable auto discovery on the HANA plug-in host
+
+To disable autodiscovery on the HANA plug-in host, complete the following steps:
+
+. On the SnapCenter Server, open PowerShell. Connect to the SnapCenter Server by running the `Open- SmConnection` command and specify the username and password in the opening login window.
+. To disable auto discovery, run the `Set- SmConfigSettings` command.
++
+For a HANA host `hana-2`, the command is as follows:
++
+....
+PS C:\Users\administrator.SAPCC> Set-SmConfigSettings -Agent -Hostname hana-2 -configSettings @{"DISABLE_AUTO_DISCOVERY"="true"}
+Name                           Value
+----                           -----
+DISABLE_AUTO_DISCOVERY         true
+PS C:\Users\administrator.SAPCC>
+....
+
+. Verify the configuration by running the `Get- SmConfigSettings` command.
++
+....
+PS C:\Users\administrator.SAPCC> Get-SmConfigSettings -Agent -Hostname hana-2 -key all
+Key: CUSTOMPLUGINS_OPERATION_TIMEOUT_IN_MSEC            Value: 3600000      Details: Plug-in API operation Timeout
+Key: CUSTOMPLUGINS_HOSTAGENT_TO_SERVER_TIMEOUT_IN_SEC   Value: 1800         Details: Web Service API Timeout
+Key: CUSTOMPLUGINS_ALLOWED_CMDS                         Value: *;           Details: Allowed Host OS Commands
+Key: DISABLE_AUTO_DISCOVERY                             Value: true          Details:
+Key: PORT                                               Value: 8145          Details: Port for server communication
+PS C:\Users\administrator.SAPCC>
+....
++
+The configuration is written to the agent configuration file on the host and is still available after a plug-in upgrade with SnapCenter.
++
+....
+hana-2:/opt/NetApp/snapcenter/scc/etc # cat /opt/NetApp/snapcenter/scc/etc/agent.properties | grep DISCOVERY
+DISABLE_AUTO_DISCOVERY = true
+hana-2:/opt/NetApp/snapcenter/scc/etc #
+....
+
+== Deactivate automated log backup housekeeping
+
+Log backup housekeeping is enabled by default and can be disabled on the HANA plug-in host level. There are two options to change these settings.
+
+=== Edit the hana.property file
+
+Including the parameter `LOG_CLEANUP_DISABLE = Y` in the `hana.property` configuration file disables the log backup housekeeping for all resources using this SAP HANA plug-in host as communication host:
+
+* For the Hdbsql communication host on Windows, the `hana.property` file is located at `C:\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc`.
+* For the Hdbsql communication host on Linux, the `hana.property` file is located at `/opt/NetApp/snapcenter/scc/etc`.
+
+=== Use the PowerShell command
+
+A second option to configure these settings is using a SnapCenter PowerShell command.
+
+. On the SnapCenter server, open a PowerShell. Connect to the SnapCenter server using the command `Open- SmConnection` and specify user name and password in the opening login window.
+. With the command `Set- SmConfigSettings -Plugin - HostName <pluginhostname> - PluginCode hana - configSettings @{"LOG_CLEANUP_DISABLE" = "Y"}`, the changes are configured for the SAP HANA plug-in host `<pluginhostname>` specified by the IP or host name (see the following figure).
+
+image:saphana-br-scs-image154.jpeg[Error: Missing Graphic Image]
+
+== Disable warning when running SAP HANA plug-in on a virtual environment
+
+SnapCenter detects if the SAP HANA plug-in is installed on a virtualized environment. This could be a VMware environment or a SnapCenter installation at a public cloud provider. In this case, SnapCenter displays a warning to configure the hypervisor, as shown in the following figure.
+
+image:saphana-br-scs-image34.png[Error: Missing Graphic Image]
+
+It is possible to suppress this warning globally. In this case, SnapCenter is not aware of virtualized environments and, therefore, does not show these warnings.
+
+To configure SnapCenter to suppress this warning, the following configuration must be applied:
+
+. From the Settings tab, select Global Settings.
+. For the hypervisor settings, select VMs Have iSCSI Direct Attached Disks or NFS For All the Hosts and update the settings.
+
+image:saphana-br-scs-image155.png[Error: Missing Graphic Image]
+
+== Change scheduling frequency of backup synchronization with off-site backup storage
+
+As described in the section link:saphana-br-scs-snapcenter-concepts-and-best-practices.html#retention-management-of-backups-at-the-secondary-storage[“Retention management of backups at the secondary storage,”] retention management of data backups to an off-site backup storage is handled by ONTAP. SnapCenter periodically checks if ONTAP has deleted backups at the off-site backup storage by running a cleanup job with a weekly default schedule.
+
+The SnapCenter cleanup job deletes backups in the SnapCenter repository as well as in the SAP HANA backup catalog if any deleted backups at the off-site backup storage have been identified.
+
+The cleanup job also executes the housekeeping of SAP HANA log backups.
+
+Until this scheduled cleanup has finished, SAP HANA and SnapCenter might still show backups that have already been deleted from the off-site backup storage.
+
+[NOTE]
+This might result in additional log backups that are kept, even if the corresponding storage-based Snapshot backups on the off-site backup storage have already been deleted.
+
+The following sections describe two ways to avoid this temporary discrepancy.
+
+=== Manual refresh on resource level
+
+In the topology view of a resource, SnapCenter displays the backups on the off-site backup storage when selecting the secondary backups, as shown in the following screenshot. SnapCenter executes a cleanup operation with the Refresh icon to synchronize the backups for this resource.
+
+image:saphana-br-scs-image156.png[Error: Missing Graphic Image]
+
+=== Change the frequency of the SnapCenter cleanup job
+
+SnapCenter executes the cleanup job `SnapCenter_RemoveSecondaryBackup` by default for all resources on a weekly basis using the Windows task scheduling mechanism. This can be changed using a SnapCenter PowerShell cmdlet.
+
+. Start a PowerShell command window on the SnapCenter Server.
+. Open the connection to the SnapCenter Server and enter the SnapCenter administrator credentials in the login window.
++
+image:saphana-br-scs-image157.png[Error: Missing Graphic Image]
+
+. To change the schedule from a weekly to a daily basis, use the cmdlet `Set- SmSchedule`.
++
+....
+PS C:\Users\scadmin> Set-SmSchedule -ScheduleInformation @{"ScheduleType"="Daily";"StartTime"="03:45 AM";"DaysInterval"=
+"1"} -TaskName SnapCenter_RemoveSecondaryBackup
+TaskName              : SnapCenter_RemoveSecondaryBackup
+Hosts                 : {}
+StartTime             : 11/25/2019 3:45:00 AM
+DaysoftheMonth        :
+MonthsofTheYear       :
+DaysInterval          : 1
+DaysOfTheWeek         :
+AllowDefaults         : False
+ReplaceJobIfExist     : False
+UserName              :
+Password              :
+SchedulerType         : Daily
+RepeatTask_Every_Hour :
+IntervalDuration      :
+EndTime               :
+LocalScheduler        : False
+AppType               : False
+AuthMode              :
+SchedulerSQLInstance  : SMCoreContracts.SmObject
+MonthlyFrequency      :
+Hour                  : 0
+Minute                : 0
+NodeName              :
+ScheduleID            : 0
+RepeatTask_Every_Mins :
+CronExpression        :
+CronOffsetInMinutes   :
+StrStartTime          :
+StrEndTime            :
+PS C:\Users\scadmin> Check the configuration using the Windows Task Scheduler.
+....
+
+. You can check the job properties in Windows task scheduler.
++
+image:saphana-br-scs-image158.png[Error: Missing Graphic Image]
+
+link:saphana-br-scs-where-to-find-additional-information.html[Next: Where to find additional information.]
