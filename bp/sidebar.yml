@@ -1,8 +1,6 @@
 section: bp
 title: Best Practices
 entries:
-  - title: SAP Applications on Microsoft Azure Using Azure NetApp Files
-    url: /bp/sap-apps-azure-anf_pdf_link.html
   - title: SAP HANA on NetApp AFF Systems with FCP Configuration Guide
     type: solutions
     entries:
