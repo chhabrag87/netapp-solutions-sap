@@ -1,0 +1,101 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-br-scs-block-integrity-check.html
+keywords: snapshot backup, file-based backup, block integrity check
+summary: SAP recommends combining storage-based Snapshot backups with a weekly file-based backup to execute a block integrity check. SnapCenter supports the execution of a block integrity check by using a policy in which file-based backup is selected as the backup type.
+---
+
+= Block integrity check
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-02-15 15:58:30.915752
+//
+
+link:saphana-br-scs-database-backups.html[Previous: Database backups.]
+
+SAP recommends combining storage-based Snapshot backups with a weekly file-based backup to execute a block integrity check. SnapCenter supports the execution of a block integrity check by using a policy in which file-based backup is selected as the backup type.
+
+When scheduling backups using this policy, SnapCenter creates a standard SAP HANA file backup for the system and tenant databases.
+
+SnapCenter does not display the block integrity check in the same manner as Snapshot copy-based backups. Instead, the summary card shows the number of file-based backups and the status of the previous backup.
+
+image:saphana-br-scs-image94.png[Error: Missing Graphic Image]
+
+A block integrity check backup cannot be deleted using the SnapCenter UI, but it can be deleted using PowerShell commands.
+
+....
+PS C:\Users\scadmin> Get-SmBackupReport -Resource SS1
+SmBackupId                : 9
+SmJobId                   : 42
+StartDateTime             : 11/19/2019 8:26:32 AM
+EndDateTime               : 11/19/2019 8:27:33 AM
+Duration                  : 00:01:00.7652030
+CreatedDateTime           : 11/19/2019 8:27:24 AM
+Status                    : Completed
+ProtectionGroupName       : hana-1_sapcc_stl_netapp_com_hana_MDC_SS1
+SmProtectionGroupId       : 1
+PolicyName                : BlockIntegrityCheck
+SmPolicyId                : 5
+BackupName                : SnapCenter_BlockIntegrityCheck_11-19-2019_08.26.33.2913
+VerificationStatus        : NotApplicable
+VerificationStatuses      :
+SmJobError                :
+BackupType                : SCC_BACKUP
+CatalogingStatus          : NotApplicable
+CatalogingStatuses        :
+ReportDataCreatedDateTime :
+PluginCode                : SCC
+PluginName                : hana
+JobTypeId                 : 0
+JobHost                   :
+ 
+PS C:\Users\scadmin> Remove-SmBackup -BackupIds 9
+ 
+Remove-SmBackup
+Are you sure want to remove the backup(s).
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): y
+ 
+ 
+BackupResult : {}
+Result       : SMCoreContracts.SMResult
+TotalCount   : 0
+DisplayCount : 0
+Context      :
+Job          : SMCoreContracts.SmJob
+ 
+ 
+ 
+PS C:\Users\scadmin>
+....
+
+The SAP HANA backup catalog shows entries for both the system and the tenant databases. The following figure shows a SnapCenter block integrity check in the backup catalog of the system database.
+
+image:saphana-br-scs-image95.png[Error: Missing Graphic Image]
+
+A successful block integrity check creates standard SAP HANA data backup files. SnapCenter uses the backup path that has been configured in the HANA database for file-based data backup operations.
+
+....
+hana-1:/usr/sap/SS1/HDB00/backup/data # ls -al *
+DB_SS1:
+total 1710840
+drwxr-xr-- 2 ss1adm sapsys       4096 Nov 28 10:25 .
+drwxr-xr-- 4 ss1adm sapsys       4096 Nov 19 05:11 ..
+-rw-r----- 1 ss1adm sapsys     155648 Nov 23 08:46 SnapCenter_SnapCenter_BlockIntegrityCheck_Weekly_11-23-2019_06.00.07.8397_databackup_0_1
+-rw-r----- 1 ss1adm sapsys   83894272 Nov 23 08:46 SnapCenter_SnapCenter_BlockIntegrityCheck_Weekly_11-23-2019_06.00.07.8397_databackup_2_1
+-rw-r----- 1 ss1adm sapsys 1660952576 Nov 23 08:46 SnapCenter_SnapCenter_BlockIntegrityCheck_Weekly_11-23-2019_06.00.07.8397_databackup_3_1
+SYSTEMDB:
+total 1546340
+drwxr-xr-- 2 ss1adm sapsys       4096 Nov 28 10:24 .
+drwxr-xr-- 4 ss1adm sapsys       4096 Nov 19 05:11 ..
+-rw-r----- 1 ss1adm sapsys     159744 Nov 23 08:46 SnapCenter_SnapCenter_BlockIntegrityCheck_Weekly_11-23-2019_06.00.07.8397_databackup_0_1
+-rw-r----- 1 ss1adm sapsys 1577066496 Nov 23 08:46 SnapCenter_SnapCenter_BlockIntegrityCheck_Weekly_11-23-2019_06.00.07.8397_databackup_1_1
+....
+
+link:saphana-br-scs-restore-and-recovery.html[Next: Restore and recovery.]

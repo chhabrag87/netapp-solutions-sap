@@ -1,0 +1,61 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-br-scs-snapcenter-configuration.html
+keywords: configuration, resource-specific, dependencies, storage system, credentials, hosts, policies
+summary: The SnapCenter configuration can be separated into two main areas - initial configuration and resource-specific configuration.
+---
+
+= SnapCenter configuration
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-02-15 15:58:30.827688
+//
+
+link:saphana-br-scs-lab-setup-used-for-this-report.html[Previous: Lab setup used for this report.]
+
+The SnapCenter configuration can be separated into two main areas:
+
+* *Initial configuration.* Covers generic configurations, independent of an individual SAP HANA database. Configurations such as storage systems, central HANA plug-in hosts, and policies, which are selected when executing the resource-specific configurations.
+* *Resource-specific configuration.* Covers SAP HANA system-specific configurations and must be done for each SAP HANA database.
+
+The following figure provides an overview of the configuration components and their dependencies. The green boxes show configuration steps that must be done outside of SnapCenter; the blue boxes show the steps that are done using the SnapCenter GUI.
+
+image:saphana-br-scs-image22.png[Error: Missing Graphic Image]
+
+With the initial configuration, the following components are installed and configured:
+
+* *Storage system.* Credential configuration for all SVMs that are used by the SAP HANA systems: typically, primary,  off-site backup, and disaster recovery storage.
+
+[NOTE]
+Storage cluster credentials can the also be configured instead of individual SVM credentials.
+
+* *Credentials.* Configuration of credentials used to deploy the SAP HANA plug-in on the hosts.
+* *Hosts (for central HANA plug-in hosts).* Deployment of SAP HANA plug-in. Installation of the SAP HANA hdbclient software on the host. The SAP hdbclient software must be installed manually.
+* *Policies.* Configuration of backup type, retention, and replication. Typically, at least one policy for local Snapshot copies, one for SnapVault replication, and one for file-based backup is required.
+
+The resource-specific configuration must be performed for each SAP HANA database and includes the following configurations:
+
+* SAP HANA non-data volume resource configuration:
+** Storage systems and volumes
+* SAP hdbuserstore key configuration:
+** The SAP hdbuserstore key configuration for the specific SAP HANA database must be performed either on the central plug-in host, or on the HANA database host, depending on where the HANA plug-in is deployed.
+* Auto discovered SAP HANA database resources:
+** Deployment of SAP HANA plug-in on database host
+** Provide hdbuserstore key
+* Manual SAP HANA database resource configuration:
+** SAP HANA database SID, plug-in host, hdbuserstore key, storage systems and volumes
+* Resource protection configuration:
+** Selection of required policies
+** Definition of schedules for each policy
+* ONTAP data protection configuration:
+** Only required if the backups should be replicated to an off-site backup storage.
+** Definition of relationship and retention.
+
+link:saphana-br-scs-snapcenter-initial-configuration.html[Next: SnapCenter initial configuration.]

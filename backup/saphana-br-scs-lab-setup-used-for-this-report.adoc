@@ -1,0 +1,54 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-br-scs-lab-setup-used-for-this-report.html
+keywords: lab, setup, configuration,
+summary: The lab setup used for this technical report includes five different SAP HANA configurations.
+---
+
+= Lab setup used for this report
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-02-15 15:58:30.819011
+//
+
+link:saphana-br-scs-snapcenter-concepts-and-best-practices.html[Previous: SnapCenter concepts and best practices.]
+
+The lab setup used for this technical report includes five different SAP HANA configurations:
+
+* *MS1.*
+** SAP HANA multiple-host MDC single tenant system
+** Managed with a central plug-in host (SnapCenter server)
+** Uses NFS as storage protocol
+* *SS1.*
+** SAP HANA single-host MDC single tenant system
+** Auto discovered with HANA plug-in installed on HANA database host
+** Uses NFS as storage protocol
+* *SM1.*
+** SAP HANA single-host MDC multiple tenant system
+** Auto discovered with HANA plug-in installed on HANA database host
+** Uses NFS as storage protocol
+* *SS2.*
+** SAP HANA single-host MDC single tenant system
+** Managed with a central plug-in host (SnapCenter Server)
+** Uses NFS as storage protocol
+* *SS3.*
+** SAP HANA single-host MDC single tenant system
+** Auto discovered with HANA plug-in installed on HANA database host
+** Uses Fibre Channel SAN as storage protocol
+
+The following sections describe the complete configuration and the backup, restore, and recovery workflows. The description covers local Snapshot backups as well as replication to backup storage using SnapVault. The storage virtual machines (SVMs) are `hana-primary` for the primary storage and `hana-backup` for the off-site backup storage.
+
+The SnapCenter Server is used as a central HANA plug-in host for the HANA systems MS1 and SS2.
+
+The following figure shows the lab setup.
+
+image:saphana-br-scs-image21.png[Error: Missing Graphic Image]
+
+link:saphana-br-scs-snapcenter-configuration.html[Next: SnapCenter configuration.]

@@ -1,6 +1,37 @@
 section: backup
 title: Backup, Restore and Disaster Recovery
 entries:
+  - title: SAP HANA backup and recovery with SnapCenter
+    type: solutions
+    entries:
+      - title: Overview
+        url: /backup/saphana-br-scs-overview.html
+      - title: SnapCenter architecture
+        url: /backup/saphana-br-scs-snapcenter-architecture.html
+      - title: SnapCenter SAP HANA backup solution
+        url: /backup/saphana-br-scs-snapcenter-sap-hana-backup-solution.html
+      - title: SnapCenter concepts and best practices
+        url: /backup/saphana-br-scs-snapcenter-concepts-and-best-practices.html
+      - title: Lab setup used for this report
+        url: /backup/saphana-br-scs-lab-setup-used-for-this-report.html
+      - title: SnapCenter configuration
+        url: /backup/saphana-br-scs-snapcenter-configuration.html
+      - title: SnapCenter initial configuration
+        url: /backup/saphana-br-scs-snapcenter-initial-configuration.html
+      - title: SnapCenter resource-specific configuration for SAP HANA database backups
+        url: /backup/saphana-br-scs-snapcenter-resource-specific-configuration-for-sap-hana-database-backups.html
+      - title: SnapCenter resource-specific configuration for non-data volume backups
+        url: /backup/saphana-br-scs-snapcenter-resource-specific-configuration-for-non-data-volume-backups.html
+      - title: Database backups
+        url: /backup/saphana-br-scs-database-backups.html
+      - title: Block integrity check
+        url: /backup/saphana-br-scs-block-integrity-check.html
+      - title: Restore and recovery
+        url: /backup/saphana-br-scs-restore-and-recovery.html
+      - title: Advanced configuration and tuning
+        url: /backup/saphana-br-scs-advanced-configuration-and-tuning.html
+      - title: Where to find additional information and version history
+        url: /backup/saphana-br-scs-where-to-find-additional-information.html
 
   - title: SAP HANA System Replication Backup and Recovery with SnapCenter
     type: solutions

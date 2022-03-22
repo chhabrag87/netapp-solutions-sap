@@ -1,0 +1,106 @@
+---
+sidebar: sidebar
+permalink: backup/saphana-br-scs-database-backups.html
+keywords: sap hana studio, on-demand backup, replication
+summary: In SnapCenter, database backups are typically executed using the schedules defined within the resource protection configuration of each HANA database. On-demand database backup can be performed by using either the SnapCenter GUI, a PowerShell command line, or REST APIs.
+---
+
+= Database backups
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-02-15 15:58:30.906328
+//
+
+link:saphana-br-scs-snapcenter-resource-specific-configuration-for-non-data-volume-backups.html[Previous: SnapCenter resource-specific configuration for non-data volume backups.]
+
+In SnapCenter, database backups are typically executed using the schedules defined within the resource protection configuration of each HANA database.
+
+On-demand database backup can be performed by using either the SnapCenter GUI, a PowerShell command line, or REST APIs.
+
+== Identifying SnapCenter backups in SAP HANA Studio
+
+The SnapCenter resource topology shows a list of backups created using SnapCenter. The following figure shows the backups available on the primary storage and highlights the most recent backup.
+
+image:saphana-br-scs-image82.png[Error: Missing Graphic Image]
+
+When performing a backup using storage Snapshot copies for an SAP HANA MDC system, a Snapshot copy of the data volume is created. This data volume contains the data of the system database as well as the data of all tenant databases. To reflect this physical architecture, SAP HANA internally performs a combined backup of the system database as well as all tenant databases whenever SnapCenter triggers a Snapshot backup. This results in multiple separate backup entries in the SAP HANA backup catalog: one for the system database and one for each tenant database.
+
+[NOTE]
+For SAP HANA single-container systems, the database volume contains only the single database, and there is only one entry in SAP HANA’s backup catalog.
+
+In the SAP HANA backup catalog, the SnapCenter backup name is stored as a `Comment` field as well as `External Backup ID (EBID)`. This is shown in the following screenshot for the system database and in the screenshot after that for the tenant database SS1. Both figures highlight the SnapCenter backup name stored in the comment field and EBID.
+
+[NOTE]
+The HANA 2.0 SPS4 (revision 40 and 41) release always shows a backup size of zero for Snapshot-based backups. This was fixed with revision 42. For more information, see the SAP Note https://launchpad.support.sap.com/[https://launchpad.support.sap.com/#/notes/2795010^].
+
+image:saphana-br-scs-image83.png[Error: Missing Graphic Image]
+
+image:saphana-br-scs-image84.png[Error: Missing Graphic Image]
+
+[NOTE]
+SnapCenter is only aware of its own backups. Additional backups created, for example, with SAP HANA Studio, are visible in the SAP HANA catalog but not in SnapCenter.
+
+== Identifying SnapCenter backups on the storage systems
+
+To view the backups on the storage layer, use NetApp OnCommand System Manager and select the database volume in the SVM—Volume view. The lower Snapshot Copies tab displays the Snapshot copies of the volume. The following screenshot shows the available backups for the database volume `SS1_data_mnt00001` at the primary storage. The highlighted backup is the backup shown in SnapCenter and SAP HANA Studio in the previous images and has the same naming convention.
+
+image:saphana-br-scs-image85.png[Error: Missing Graphic Image]
+
+The following screenshot shows the available backups for the replication target volume `hana_SA1_data_mnt00001_dest` at the secondary storage system.
+
+image:saphana-br-scs-image86.png[Error: Missing Graphic Image]
+
+== On-demand database backup at primary storage
+
+. In the resource view, select the resource and double-click the line to switch to the topology view.
++
+The resource topology view provides an overview of all available backups that have been created using SnapCenter. The top area of this view displays the backup topology, showing the backups on the primary storage (local copies) and, if available, on the off-site backup storage (vault copies).
++
+image:saphana-br-scs-image86.5.png[Error: Missing Graphic Image]
+
+. In the top row, select the Back up Now icon to start an on-demand backup. From the drop-down list, select the backup policy `LocalSnap` and then click Backup to start the on-demand backup.
++
+image:saphana-br-scs-image87.png[Error: Missing Graphic Image]
++
+This starts the backup job. A log of the previous five jobs is shown in the Activity area below the topology view. When the backup is finished, a new entry is shown in the topology view. The backup names follow the same naming convention as the Snapshot name defined in the section link:saphana-br-scs-snapcenter-resource-specific-configuration-for-sap-hana-database-backups.html#resource-protection-configuration[“Resource protection configuration.”]
++
+[NOTE]
+You must close and reopen the topology view to see the updated backup list.
++
+image:saphana-br-scs-image88.png[Error: Missing Graphic Image]
+
+. The job details are shown when clicking the job’s activity line in the Activity area. You can open a detailed job log by clicking View Logs.
+. In SAP HANA Studio, the new backup is visible in the backup catalog. The same backup name in SnapCenter is also used in the comment and the EBID field in the backup catalog.
+
+== On-demand database backups with SnapVault replication
+
+. In the resource view, select the resource and double-click the line to switch to the topology view.
+. In the top row, select the Backup Now icon to start an on-demand backup. From the drop-down list, select the backup policy `LocalSnapAndSnapVault`, then click Backup to start the on-demand backup.
++
+image:saphana-br-scs-image90.png[Error: Missing Graphic Image]
+
+. The job details are shown when clicking the job’s activity line in the Activity area.
++
+image:saphana-br-scs-image91.png[Error: Missing Graphic Image]
+
+. When the backup is finished, a new entry is shown in the topology view. The backup names follow the same naming convention as the Snapshot name defined in the section link:saphana-br-scs-snapcenter-resource-specific-configuration-for-sap-hana-database-backups.html#resource-protection-configuration[“Resource protection configuration.”]
++
+[NOTE]
+You must close and reopen the topology view to see the updated backup list.
++
+image:saphana-br-scs-image92.png[Error: Missing Graphic Image]
+
+. By selecting Vault copies, backups at the secondary storage are shown. The name of the replicated backup is identical to the backup name at the primary storage.
++
+image:saphana-br-scs-image93.png[Error: Missing Graphic Image]
+
+. In SAP HANA Studio, the new backup is visible in the backup catalog. The same backup name in SnapCenter is also used in the comment and the EBID field in the backup catalog.
+
+link:saphana-br-scs-block-integrity-check.html[Next: Block integrity check.]
