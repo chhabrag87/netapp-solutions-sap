@@ -85,7 +85,7 @@ a|* Bare metal with NFS
 * VMware with direct OS NFS mounts
 |===
 
-=== Deployment options for the SAP HANA plug-in
+== Deployment options for the SAP HANA plug-in
 
 The following figure shows the logical view and the communication between the SnapCenter Server and the SAP HANA databases.
 
