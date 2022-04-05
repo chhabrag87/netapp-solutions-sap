@@ -77,6 +77,9 @@ You must close and reopen the topology view to see the updated backup list.
 image:saphana-br-scs-image88.png[Error: Missing Graphic Image]
 
 . The job details are shown when clicking the job’s activity line in the Activity area. You can open a detailed job log by clicking View Logs.
++
+image:saphana-br-scs-image89.png[Error: Missing Graphic Image]
+
 . In SAP HANA Studio, the new backup is visible in the backup catalog. The same backup name in SnapCenter is also used in the comment and the EBID field in the backup catalog.
 
 == On-demand database backups with SnapVault replication
