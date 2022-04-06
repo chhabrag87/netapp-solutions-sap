@@ -366,10 +366,6 @@ set admin
 |nfs modify -vserver <vserver_name> -v4.1-read-delegation disabled
 |Disable NFSv4 write delegation
 |nfs modify -vserver <vserver_name> -v4.1-write-delegation disabled
-|Set the NFSv4 lease time
-|set advanced
-nfs modify -vserver <vserver_name> -v4-lease-seconds 10
-set admin
 |Disable NFSv4 numeric ids
 |nfs modify -vserver <vserver_name> -v4-numeric-ids disabled
 |===
