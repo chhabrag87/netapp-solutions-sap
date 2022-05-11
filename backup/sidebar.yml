@@ -139,8 +139,6 @@ entries:
       - title: Version history
         url: /backup/saphana-backup-anf-version-history.html
 
-  - title: SAP HANA Backup and Recovery with SnapCenter
-    url: /backup/saphana-br-sc_pdf_link.html
   - title: SAP HANA Disaster Recovery with Storage Replication
     url: /backup/saphana-dr-sr_pdf_link.html
   - title: SAP HANA Backup and Recovery Using Snap Creator
