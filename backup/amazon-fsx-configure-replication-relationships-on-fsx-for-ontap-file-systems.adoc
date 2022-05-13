@@ -1,0 +1,180 @@
+---
+sidebar: sidebar
+permalink: backup/amazon-fsx-configure-replication-relationships-on-fsx-for-ontap-file-systems.html
+keywords: Peer FSx, ontap file system, svm, target volume, snapmirror,
+summary: This section describes how to peer FSx for ONTAP file systems, peer SVMs, create a target volume, create a SnapMirror policy, create a SnapMirror relationship, and initialize SnapMirror.
+---
+
+= Configure replication relationships on FSx for ONTAP file systems
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-05-13 09:40:18.338914
+//
+
+link:amazon-fsx-backup-replication-with-snapvault_overview.html[Previous: Overview - Backup replication with SnapVault.]
+
+You can find additional information about SnapMirror configuration options in the ONTAP documentation at https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-replication-workflow-concept.html[SnapMirror replication workflow (netapp.com)^].
+
+* Source FSx for ONTAP file system: `FsxId00fa9e3c784b6abbb`
+* Source SVM: `sapcc-hana-svm`
+* Target FSx for ONTAP file system: `FsxId05f7f00af49dc7a3e`
+* Target SVM: `sapcc-backup-target-zone5`
+
+== Peer FSx for ONTAP file systems
+
+....
+FsxId00fa9e3c784b6abbb::> network interface show -role intercluster
+            Logical    Status     Network            Current       Current Is
+Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
+----------- ---------- ---------- ------------------ ------------- ------- ----
+FsxId00fa9e3c784b6abbb
+            inter_1      up/up    10.1.1.57/24       FsxId00fa9e3c784b6abbb-01
+                                                                   e0e     true
+            inter_2      up/up    10.1.2.7/24        FsxId00fa9e3c784b6abbb-02
+                                                                   e0e     true
+2 entries were displayed.
+....
+
+....
+FsxId05f7f00af49dc7a3e::> network interface show -role intercluster
+            Logical    Status     Network            Current       Current Is
+Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
+----------- ---------- ---------- ------------------ ------------- ------- ----
+FsxId05f7f00af49dc7a3e
+            inter_1      up/up    10.1.2.144/24      FsxId05f7f00af49dc7a3e-01
+                                                                   e0e     true
+            inter_2      up/up    10.1.2.69/24       FsxId05f7f00af49dc7a3e-02
+                                                                   e0e     true
+2 entries were displayed.
+....
+
+....
+FsxId05f7f00af49dc7a3e::> cluster peer create -address-family ipv4 -peer-addrs 10.1.1.57, 10.1.2.7
+Notice: Use a generated passphrase or choose a passphrase of 8 or more characters. To ensure the authenticity of the peering relationship, use a phrase or sequence of characters that would be hard to guess.
+Enter the passphrase:
+Confirm the passphrase:
+Notice: Now use the same passphrase in the "cluster peer create" command in the other cluster.
+....
+
+[NOTE]
+`peer-addrs` are cluster IPs of the destination cluster.
+
+....
+FsxId00fa9e3c784b6abbb::>  cluster peer create -address-family ipv4 -peer-addrs  10.1.2.144, 10.1.2.69
+Notice: Use a generated passphrase or choose a passphrase of 8 or more characters. To ensure the authenticity of the peering relationship, use a
+        phrase or sequence of characters that would be hard to guess.
+Enter the passphrase:
+Confirm the passphrase:
+FsxId00fa9e3c784b6abbb::>
+FsxId00fa9e3c784b6abbb::> cluster peer show
+Peer Cluster Name         Cluster Serial Number Availability   Authentication
+------------------------- --------------------- -------------- --------------
+FsxId05f7f00af49dc7a3e    1-80-000011           Available      ok
+....
+
+== Peer SVMs
+
+....
+FsxId05f7f00af49dc7a3e::> vserver peer create -vserver sapcc-backup-target-zone5 -peer-vserver sapcc-hana-svm -peer-cluster FsxId00fa9e3c784b6abbb -applications snapmirror
+Info: [Job 41] 'vserver peer create' job queued
+....
+
+....
+FsxId00fa9e3c784b6abbb::> vserver peer accept -vserver sapcc-hana-svm  -peer-vserver sapcc-backup-target-zone5
+Info: [Job 960] 'vserver peer accept' job queued
+....
+
+....
+FsxId05f7f00af49dc7a3e::> vserver peer show
+            Peer        Peer                           Peering        Remote
+Vserver     Vserver     State        Peer Cluster      Applications   Vserver
+----------- ----------- ------------ ----------------- -------------- ---------
+sapcc-backup-target-zone5
+            peer-source-cluster
+                        peered       FsxId00fa9e3c784b6abbb
+                                                       snapmirror     sapcc-hana-svm
+....
+
+== Create a target volume
+
+You must create the target volume with the type `DP` to flag it as a replication target.
+
+....
+FsxId05f7f00af49dc7a3e::> volume create -vserver sapcc-backup-target-zone5  -volume PFX_data_mnt00001 -aggregate aggr1 -size 100GB -state online -policy default -type DP -autosize-mode grow_shrink -snapshot-policy none -foreground true -tiering-policy all -anti-ransomware-state disabled
+[Job 42] Job succeeded: Successful
+....
+
+== Create a SnapMirror policy
+
+The SnapMirror policy and the added rule define the retention and the Snapmirror label to identify Snapshots that should be replicated. When creating the SnapCenter policy later, you must use the same label.
+
+....
+FsxId05f7f00af49dc7a3e::> snapmirror policy create -policy snapcenter-policy -tries 8 -transfer-priority normal -ignore-atime false -restart always -type vault -vserver sapcc-backup-target-zone5
+....
+
+....
+FsxId05f7f00af49dc7a3e::> snapmirror policy add-rule -vserver sapcc-backup-target-zone5  -policy snapcenter-policy -snapmirror-label snapcenter -keep 14
+....
+
+....
+FsxId00fa9e3c784b6abbb::> snapmirror policy showVserver Policy             Policy Number         Transfer
+Name    Name               Type   Of Rules Tries Priority Comment
+------- ------------------ ------ -------- ----- -------- ----------
+FsxId00fa9e3c784b6abbb
+        snapcenter-policy  vault         1     8  normal  -
+  SnapMirror Label: snapcenter                         Keep:      14
+                                                 Total Keep:      14
+....
+
+== Create SnapMirror relationship
+
+Now the relation between the source and target volume is defined as well as the type XDP and the policy we created earlier.
+
+....
+FsxId05f7f00af49dc7a3e::> snapmirror create -source-path sapcc-hana-svm:PFX_data_mnt00001 -destination-path sapcc-backup-target-zone5:PFX_data_mnt00001 -vserver sapcc-backup-target-zone5 -throttle unlimited -identity-preserve false -type XDP -policy snapcenter-policy
+Operation succeeded: snapmirror create for the relationship with destination "sapcc-backup-target-zone5:PFX_data_mnt00001".
+....
+
+== Initialize SnapMirror
+
+With this command,  the initial replication starts. This is a full transfer of all data from the source volume to the target volume.
+
+....
+FsxId05f7f00af49dc7a3e::> snapmirror initialize -destination-path sapcc-backup-target-zone5:PFX_data_mnt00001 -source-path sapcc-hana-svm:PFX_data_mnt00001
+Operation is queued: snapmirror initialize of destination "sapcc-backup-target-zone5:PFX_data_mnt00001".
+....
+
+You can check the status of the replication with the `snapmirror show` command.
+
+....
+FsxId05f7f00af49dc7a3e::> snapmirror show
+                                                                       Progress
+Source            Destination Mirror  Relationship   Total             Last
+Path        Type  Path        State   Status         Progress  Healthy Updated
+----------- ---- ------------ ------- -------------- --------- ------- --------
+sapcc-hana-svm:PFX_data_mnt00001
+            XDP  sapcc-backup-target-zone5:PFX_data_mnt00001
+                              Uninitialized
+                                      Transferring   1009MB    true    02/24 12:34:28
+....
+
+....
+FsxId05f7f00af49dc7a3e::> snapmirror show
+                                                                       Progress
+Source            Destination Mirror  Relationship   Total             Last
+Path        Type  Path        State   Status         Progress  Healthy Updated
+----------- ---- ------------ ------- -------------- --------- ------- --------
+sapcc-hana-svm:PFX_data_mnt00001
+            XDP  sapcc-backup-target-zone5:PFX_data_mnt00001
+                              Snapmirrored
+                                      Idle           -         true    -
+....
+
+link:amazon-fsx-add-a-backup-svm-to-snapcenter.html[Next: Add a backup SVM to SnapCenter.]

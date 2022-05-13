@@ -1,0 +1,53 @@
+---
+sidebar: sidebar
+permalink: backup/amazon-fsx-where-to-find-additional-information.html
+keywords:
+summary:
+---
+
+= Where to find additional information
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-05-13 09:40:18.384978
+//
+
+link:amazon-fsx-restore-and-recover-from-secondary-storage.html[Previous: Restore and recover from secondary storage.]
+
+To learn more about the information that is described in this document, review the following documents and/or websites:
+
+* FSx for NetApp ONTAP user guide — What is Amazon FSx for NetApp ONTAP?
++
+https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html
+
+* SnapCenter resources page
++
+https://www.netapp.com/us/documentation/snapcenter-software.aspx[https://www.netapp.com/us/documentation/snapcenter-software.aspx^]
+
+* SnapCenter Software documentation
++
+https://docs.netapp.com/us-en/snapcenter/index.html[https://docs.netapp.com/us-en/snapcenter/index.html^]
+
+* TR-4667: Automating SAP HANA System Copy and Clone Operations with SnapCenter
++
+https://www.netapp.com/pdf.html?item=/media/17111-tr4667.pdf
+
+* TR-4719: SAP HANA System Replication — Backup and Recovery with SnapCenter
++
+https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-sr-scs-sap-hana-system-replication-overview.html[https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-sr-scs-sap-hana-system-replication-overview.html^]
+
+== Version history
+
+|===
+|Version |Date |Document version history
+
+|Version 1.0
+|May 2022
+|Initial release.
+|===
