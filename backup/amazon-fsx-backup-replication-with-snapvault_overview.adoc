@@ -1,0 +1,50 @@
+---
+sidebar: sidebar
+permalink: backup/amazon-fsx-backup-replication-with-snapvault_overview.html
+keywords: overview, configuration,
+summary: In our lab setup, we use a second FSX for ONTAP file system in a second AWS availability zone to showcase the backup replication for the HANA data volume.
+---
+
+= Overview - Backup replication with SnapVault
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-05-13 09:40:18.331286
+//
+
+link:amazon-fsx-backup-of-non-data-volumes.html[Previous: Backup of non-data volumes.]
+
+In our lab setup, we use a second FSX for ONTAP file system in a second AWS availability zone to showcase the backup replication for the HANA data volume.
+
+As discussed in chapter link:amazon-fsx-snapcenter-architecture.html#data-protection-strategy[“Data protection strategy”], the replication target must be a second FSx for ONTAP file system in another availability zone to be protected from a failure of the primary FSx for ONTAP file system. Also, the HANA shared volume should be replicated to the secondary FSx for ONTAP file system.
+
+image:amazon-fsx-image8.png[Error: Missing Graphic Image]
+
+=== Overview of configuration steps
+
+There are a couple of configuration steps that you must execute on the FSx for ONTAP layer. You can do this either with NetApp Cloud Manager or the FSx for ONTAP command line.
+
+. Peer FSx for ONTAP file systems. FSx for ONTAP file systems must be peered to allow replication between each other.
+. Peer SVMs. SVMs must be peered to allow replication between each other.
+. Create a target volume. Create a volume at the target SVM with volume type `DP`. Type `DP` is required to be used as a replication target volume.
+. Create a SnapMirror policy. This is used to create a policy for replication with type `vault`.
+.. Add a rule to policy. The rule contains the SnapMirror label and the retention for backups at the secondary site. You must configure the same SnapMirror label later in the SnapCenter policy so that SnapCenter creates Snapshot backups at the source volume containing this label.
+. Create a SnapMirror relationship. Defines the replication relationship between the source and target volume and attaches a policy.
+. Initialize SnapMirror. This starts the initial replication in which the complete source data is transferred to the target volume.
+
+When volume replication configuration is complete, you must configure the backup replication in SnapCenter as follows:
+
+. Add the target SVM to SnapCenter.
+. Create a new SnapCenter policy for Snapshot backup and SnapVault replication.
+. Add the policy to HANA resource protection.
+. You can now execute backups with the new policy.
+
+The following chapters describe the individual steps in more detail.
+
+link:amazon-fsx-configure-replication-relationships-on-fsx-for-ontap-file-systems.html[Next: Configure replication relationships on FSx for ONTAP file systems.]
