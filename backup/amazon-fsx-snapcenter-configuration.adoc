@@ -305,4 +305,4 @@ The HANA resource configuration is now completed, and you can execute backups.
 
 image:amazon-fsx-image47.png[Error: Missing Graphic Image]
 
-link:amazon-fsx-snapcenter-backup-operations.htm[Next: SnapCenter backup operations.]
+link:amazon-fsx-snapcenter-backup-operations.html[Next: SnapCenter backup operations.]
