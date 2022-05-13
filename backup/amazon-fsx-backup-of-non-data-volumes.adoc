@@ -1,0 +1,137 @@
+---
+sidebar: sidebar
+permalink: backup/amazon-fsx-backup-of-non-data-volumes.html
+keywords: non-data volume, restore, recover
+summary: The backup of non-data volumes is an integrated part of the SnapCenter and the SAP HANA plug-in. Protecting the database data volume is sufficient to restore and recover the SAP HANA database to a given point in time, provided that the database installation resources, and the required logs are still available.
+---
+
+= Backup of non-data volumes
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-05-13 09:40:18.312536
+//
+
+link:amazon-fsx-snapcenter-backup-operations.html[Previous: SnapCenter backup operations.]
+
+The backup of non-data volumes is an integrated part of the SnapCenter and the SAP HANA plug-in. Protecting the database data volume is sufficient to restore and recover the SAP HANA database to a given point in time, provided that the database installation resources, and the required logs are still available.
+
+To recover from situations where other non-data files must be restored, NetApp recommends developing an additional backup strategy for non-data volumes to augment the SAP HANA database backup. Depending on your specific requirements, the backup of non-data volumes might differ in scheduling frequency and retention settings, and you should consider how frequently non-data files are changed. For instance, the HANA volume `/hana/shared` contains executables but also SAP HANA trace files. While executables only change when the SAP HANA database is upgraded, the SAP HANA trace files might need a higher backup frequency to support analyzing problem situations with SAP HANA.
+
+SnapCenter non-data volume backup enables Snapshot copies of all relevant volumes to be created in a few seconds with the same space efficiency as SAP HANA database backups. The difference is that there is no SQL communication with SAP HANA database required.
+
+=== Configure non-data volume resources
+
+Follow these steps to configure non-data volume resources:
+
+. From the Resources tab, select Non-Data-Volume and click Add SAP HANA Database.
++
+image:amazon-fsx-image60.png[Error: Missing Graphic Image]
+
+. In step one of the Add SAP HANA Database dialog, in the Resource Type list, select Non- data Volumes. Specify a name for the resource and the associated SID and the SAP HANA plug-in host that you want to use for the resource, then click Next.
++
+image:amazon-fsx-image61.png[Error: Missing Graphic Image]
+
+. Add the SVM and the storage volume as storage footprint, then click Next.
++
+image:amazon-fsx-image62.png[Error: Missing Graphic Image]
+
+. To save the settings, in the summary step, click Finish.
++
+image:amazon-fsx-image63.png[Error: Missing Graphic Image]
++
+The new non-data volume is now added to SnapCenter. Double click the new resource to execute the resource protection.
++
+image:amazon-fsx-image64.png[Error: Missing Graphic Image]
++
+The resource protection is done in the same way as described before with a HANA database resource.
+
+. You can now execute a backup by clicking on Backup Now.
++
+image:amazon-fsx-image65.png[Error: Missing Graphic Image]
+
+. Select the policy and start the backup operation.
++
+image:amazon-fsx-image66.png[Error: Missing Graphic Image]
+
+The SnapCenter job log shows the individual workflow steps.
+
+image:amazon-fsx-image67.png[Error: Missing Graphic Image]
+
+The new backup is now visible in the resource view of the non- data volume resource.
+
+image:amazon-fsx-image68.png[Error: Missing Graphic Image]
+
+=== Restore and recover
+
+With SnapCenter, automated restore and recovery operations are supported for HANA single host MDC systems with a single tenant. For multiple-host systems or MDC systems with multiple tenants, SnapCenter only executes the restore operation and you must perform the recovery manually.
+
+You can execute an automated restore and recovery operation with the following steps:
+
+. Select the backup to be used for the restore operation.
+. Select the restore type. Select Complete Restore with Volume Revert or without Volume Revert.
+. Select the recovery type from the following options:
+
+** To most recent state
+** Point in time
+** To specific data backup
+** No recovery
++
+The selected recovery type is used for the recovery of the system and the tenant database.
+
+Next, SnapCenter performs the following operations:
+
+. It stops the HANA database.
+. It restores the database. Depending on the selected restore type, different operations are executed.
+
+** If Volume Revert is selected, then SnapCenter unmounts the volume, restores the volume by using volume-based SnapRestore on the storage layer, and mounts the volume.
+** If Volume Revert is not selected, then SnapCenter restores all files by using single file SnapRestore operations on the storage layer.
+
+. It recovers the database:
+.. By recovering the system database
+.. recovering the tenant database
+.. starting the HANA database
++
+If No Recovery is selected, SnapCenter exits, and you must perform the restore operation for the system and the tenant database manually.
+
+To perform a manual restore operation, follow these steps:
+
+. Select a backup in SnapCenter to be used for the restore operation.
++
+image:amazon-fsx-image69.png[Error: Missing Graphic Image]
+
+. Select the restore scope and type.
++
+The standard scenario for HANA MDC single tenant systems is to use complete resource with volume revert. For a HANA MDC system with multiple tenants, you might want to restore only a single tenant. For more information about the single tenant restore, see https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-restore-and-recovery.html[Restore and recovery (netapp.com)^].
++
+image:amazon-fsx-image70.png[Error: Missing Graphic Image]
+
+. Select Recovery Scope and provide the location for log backup and catalog backup.
++
+SnapCenter uses the default path or the changed paths in the HANA global.ini file to prepopulate the log and catalog backup locations.
++
+image:amazon-fsx-image71.png[Error: Missing Graphic Image]
+
+. Enter the optional pre-restore commands.
++
+image:amazon-fsx-image72.png[Error: Missing Graphic Image]
+
+. Enter the optional post-restore commands.
++
+image:amazon-fsx-image73.png[Error: Missing Graphic Image]
+
+. To start the restore and recovery operation, click Finish.
++
+image:amazon-fsx-image74.png[Error: Missing Graphic Image]
++
+SnapCenter executes the restore and recovery operation. This example shows the job details of the restore and recovery job.
++
+image:amazon-fsx-image75.png[Error: Missing Graphic Image]
+
+link:amazon-fsx-backup-replication-with-snapvault_overview.html[Next: Overview - Backup replication with SnapVault.]

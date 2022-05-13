@@ -1,0 +1,197 @@
+---
+sidebar: sidebar
+permalink: backup/amazon-fsx-snapcenter-architecture.html
+keywords: snapcenter, scope, data protection strategy, example lab setup
+summary: SnapCenter is a unified, scalable platform for application-consistent data protection. SnapCenter provides centralized control and oversight, while delegating the ability for users to manage application-specific backup, restore, and clone jobs. With SnapCenter, database and storage administrators learn a single tool to manage backup, restore, and cloning operations for a variety of applications and databases.  SnapCenter manages data across endpoints in the data fabric powered by NetApp.
+---
+
+= SnapCenter architecture
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-05-13 09:40:18.248518
+//
+
+link:amazon-fsx-backup-and-recovery-using-amazon-fsx-for-ontap.html[Previous: Backup and recovery using Amazon FSx for ONTAP.]
+
+== SnapCenter overview
+
+SnapCenter is a unified, scalable platform for application-consistent data protection. SnapCenter provides centralized control and oversight, while delegating the ability for users to manage application-specific backup, restore, and clone jobs. With SnapCenter, database and storage administrators learn a single tool to manage backup, restore, and cloning operations for a variety of applications and databases. SnapCenter manages data across endpoints in the data fabric powered by NetApp. You can use SnapCenter to replicate data between on-premises environments;  between on-premises environments and the cloud; and between private, hybrid, or public clouds.
+
+== SnapCenter components
+
+SnapCenter includes the SnapCenter Server, the SnapCenter Plug-In Package for Windows, and the SnapCenter Plug-In Package for Linux. Each package contains plug-ins to SnapCenter for various applications and infrastructure components.
+
+image:amazon-fsx-image5.png[Error: Missing Graphic Image]
+
+== SnapCenter SAP HANA backup solution
+
+The SnapCenter backup solution for SAP HANA covers the following areas:
+
+* Backup operations, scheduling, and retention management
+** SAP HANA data backup with storage-based Snapshot copies
+** Non-data volume backup with storage-based Snapshot copies (for example, `/hana/shared`)
+** Database block integrity checks using a file-based backup
+** Replication to an off-site backup or disaster recovery location
+* Housekeeping of the SAP HANA backup catalog
+** For HANA data backups (Snapshot and file-based)
+** For HANA log backups
+* Restore and recovery operations
+** Automated restore and recovery
+** Single tenant restore operations for SAP HANA (MDC) systems
+
+Database data file backups are executed by SnapCenter in combination with the plug-in for SAP HANA. The plug-in triggers the SAP HANA database backup save point so that the Snapshot copies, which are created on the primary storage system, are based on a consistent image of the SAP HANA database.
+
+SnapCenter enables the replication of consistent database images to an off-site backup or disaster recovery location by using SnapVault or the SnapMirror feature. Typically, different retention policies are defined for backups at primary and at the off-site backup storage. SnapCenter handles the retention at primary storage, and ONTAP handles the retention at the off-site backup storage.
+
+To allow a complete backup of all SAP HANA-related resources, SnapCenter also enables you to back up all non-data volumes by using the SAP HANA plug-in with storage-based Snapshot copies. You can schedule non-data volumes independently from the database data backup to enable individual retention and protection policies.
+
+SAP recommends combining storage-based Snapshot backups with a weekly file-based backup to execute a block integrity check. You can execute the block integrity check from within SnapCenter. Based on your configured retention policies, SnapCenter manages the housekeeping of data file backups at the primary storage, log file backups, and the SAP HANA backup catalog.
+
+SnapCenter handles the retention at primary storage, while FSx for ONTAP manages secondary backup retention.
+
+The following figure shows an overview of the SnapCenter backup and retention management operations.
+
+image:amazon-fsx-image6.png[Error: Missing Graphic Image]
+
+When executing a storage-based Snapshot backup of the SAP HANA database, SnapCenter performs the following tasks:
+
+. Creates an SAP HANA backup save point to create a consistent image on the persistence layer.
+. Creates a storage-based Snapshot copy of the data volume.
+. Registers the storage- based Snapshot back up in the SAP HANA backup catalog.
+. Releases the SAP HANA backup save point.
+. Executes a SnapVault or SnapMirror update for the data volume, if configured.
+. Deletes storage Snapshot copies at the primary storage based on the defined retention policies.
+. Deletes SAP HANA backup catalog entries if the backups do not exist anymore at the primary or off-site backup storage.
+. Whenever a backup has been deleted based on the retention policy or manually, SnapCenter also deletes all log backups that are older than the oldest data backup. Log backups are deleted on the file system and in the SAP HANA backup catalog.
+
+== Scope of this document
+
+This document describes the most common SnapCenter configuration option for an SAP HANA MDC single host system with a single tenant on FSx for ONTAP. Other configuration options are possible and, in some cases, required for specific SAP HANA systems, for example, for a multiple host system. For a detailed description about other configuration options, see https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-snapcenter-concepts-and-best-practices.html[SnapCenter concepts and best practices (netapp.com)^].
+
+In this document, we use the Amazon Web Services (AWS) console and the FSx for ONTAP CLI to execute the required configuration steps on the storage layer. You can also use NetApp Cloud Manager to manage FSx for ONTAP,  but this is out of scope for this document. For information about using NetApp Cloud Manager for FSx for ONTAP, see https://docs.netapp.com/us-en/occm/concept_fsx_aws.html[Learn about Amazon FSx for ONTAP (netapp.com)^].
+
+== Data protection strategy
+
+The following figure shows a typical backup architecture for SAP HANA on FSx for ONTAP. The HANA system is located in the AWS availability zone 1 and is using an FSx for ONTAP file system within the same availability zone. Snapshot backup operations are executed for the data and the shared volume of the HANA database. In addition to the local Snapshot backups, which are kept for 3-5 days, backups are also replicated to an offsite storage for longer term retention. The offsite backup storage is a second FSx for ONTAP file system located in a different AWS availability zone. Backups of the HANA data and shared volume are replicated with SnapVault to the second FSx for ONTAP file system and are kept for 2-3 weeks.
+
+image:amazon-fsx-image7.png[Error: Missing Graphic Image]
+
+Before configuring SnapCenter, the data protection strategy must be defined based on the RTO and RPO requirements of the various SAP systems.
+
+A common approach is to define system types such as production, development, test, or sandbox systems. All SAP systems of the same system type typically have the same data protection parameters.
+
+The following parameters must be defined:
+
+* How often should a Snapshot backup be executed?
+* How long should Snapshot copy backups be kept on the primary storage system?
+* How often should a block integrity check be executed?
+* Should the primary backups be replicated to an off-site backup site?
+* How long should the backups be kept at the off-site backup storage?
+
+The following table shows an example of data protection parameters for the system types: production, development, and test. For the production system, a high backup frequency has been defined, and the backups are replicated to an off-site backup site once per day. The test systems have lower requirements and no replication of the backups.
+
+|===
+|Parameters |Production systems |Development systems |Test systems
+
+|Backup frequency
+|Every 6 hours
+|Every 6 hours
+|Every 6 hours
+|Primary retention
+|3 days
+|3 days
+|3 days
+|Block integrity check
+|Once per week
+|Once per week
+|No
+|Replication to off-site backup site
+|Once per day
+|Once per day
+|No
+|Off-site backup retention
+|2 weeks
+|2 weeks
+|Not applicable
+|===
+
+The following table shows the policies that must be configured for the data protection parameters.
+
+|===
+|Parameters |Policy LocalSnap |Policy LocalSnapAndSnapVault |Policy BlockIntegrityCheck
+
+|Backup type
+|Snapshot based
+|Snapshot based
+|File based
+|Schedule frequency
+|Hourly
+|Daily
+|Weekly
+|Primary retention
+|Count = 12
+|Count = 3
+|Count = 1
+|SnapVault replication
+|No
+|Yes
+|Not applicable
+|===
+
+The policy `LocalSnapshot` is used for the production, development, and test systems to cover the local Snapshot backups with a retention of two days.
+
+In the resource protection configuration, the schedule is defined differently for the system types:
+
+* Production: Schedule every 4 hours.
+* Development: Schedule every 4 hours.
+* Test: Schedule every 4 hours.
+
+The policy `LocalSnapAndSnapVault` is used for the production and development systems to cover the daily replication to the off-site backup storage.
+
+In the resource protection configuration, the schedule is defined for production and development:
+
+* Production: Schedule every day.
+* Development: Schedule every day.The policy `BlockIntegrityCheck` is used for the production and development systems to cover the weekly block integrity check by using a file-based backup.
+
+In the resource protection configuration, the schedule is defined for production and development:
+
+* Production: Schedule every week.
+* Development: Schedule every week.
+
+For each individual SAP HANA database that uses the off-site backup policy, you must configure a protection relationship on the storage layer. The protection relationship defines which volumes are replicated and the retention of backups at the off-site backup storage.
+
+With the following example, for each production and development system, a retention of two weeks is defined at the off-site backup storage.
+
+In this example, protection policies and retention for SAP HANA database resources and non- data volume resources are not different.
+
+== Example lab setup
+
+The following lab setup was used as an example configuration for the rest of this document.
+
+HANA system PFX:
+
+* Single host MDC system with a single tenant
+* HANA 2.0 SPS 6 revision 60
+* SLES for SAP 15SP3
+
+SnapCenter:
+
+* Version 4.6
+* HANA and Linux plug-in deployed on a HANA database host
+
+FSx for ONTAP file systems:
+
+* Two FSx for ONTAP file systems with a single storage virtual machine (SVM)
+* Each FSx for ONTAP system in a different AWS availability zone
+* HANA data volume replicated to the second FSx for ONTAP file system
+
+image:amazon-fsx-image8.png[Error: Missing Graphic Image]
+
+link:amazon-fsx-snapcenter-configuration.html[Next: SnapCenter configuration.]

@@ -1,0 +1,53 @@
+---
+sidebar: sidebar
+permalink: backup/amazon-fsx-create-a-new-snapcenter-policy-for-backup-replication.html
+keywords: policy, backup, replication, snapshot
+summary: This section describes how to configure a policy for backup replication.
+---
+
+= Create a new SnapCenter policy for backup replication
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-05-13 09:40:18.365902
+//
+
+link:amazon-fsx-add-a-backup-svm-to-snapcenter.html[Previous: Add a backup SVM to SnapCenter.]
+
+You must configure a policy for the backup replication as follows:
+
+. Provide a name for the policy.
++
+image:amazon-fsx-image79.png[Error: Missing Graphic Image]
+
+. Select Snapshot backup and a schedule frequency. Daily is typically used for backup replication.
++
+image:amazon-fsx-image80.png[Error: Missing Graphic Image]
+
+. Select the retention for the Snapshot backups.
++
+image:amazon-fsx-image81.png[Error: Missing Graphic Image]
++
+This is the retention for the daily Snapshot backups taken at the primary storage. The retention for secondary backups at the SnapVault target has already been configured previously using the add rule command at the ONTAP level. See “Configure replication relationships on FSx for ONTAP file systems” (xref).
++
+image:amazon-fsx-image82.png[Error: Missing Graphic Image]
+
+. Select the Update SnapVault field and provide a custom label.
++
+This label must match the SnapMirror label provided in the `add rule` command at ONTAP level.
++
+image:amazon-fsx-image83.png[Error: Missing Graphic Image]
++
+image:amazon-fsx-image84.png[Error: Missing Graphic Image]
+
+The new SnapCenter policy is now configured.
+
+image:amazon-fsx-image85.png[Error: Missing Graphic Image]
+
+link:amazon-fsx-add-a-policy-to-resource-protection.html[Next: Add a policy to resource protection.]
