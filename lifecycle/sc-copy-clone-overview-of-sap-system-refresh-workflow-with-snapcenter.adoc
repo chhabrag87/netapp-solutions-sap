@@ -1,0 +1,63 @@
+---
+sidebar: sidebar
+permalink: lifecycle/sc-copy-clone-overview-of-sap-system-refresh-workflow-with-snapcenter.html
+keywords: overview, sap system refresh, workflow
+summary: SnapCenter provides workflows that allows you to manage clones of data sets from any existing Snapshot backup. This cloned data set, a FlexClone volume, can be used to rapidly provision a HANA data volume from a source system and attach it to a target system. It is therefore a perfect fit for executing system refresh operations for QA, test, sandbox, or training systems.
+---
+
+= Overview of SAP system refresh workflow with SnapCenter
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-05-23 12:08:56.456420
+//
+
+link:sc-copy-clone-use-cases-for-system-refresh-and-cloning.html[Previous: Use cases for system refresh and cloning.]
+
+SnapCenter provides workflows that allows you to manage clones of data sets from any existing Snapshot backup. This cloned data set, a FlexClone volume, can be used to rapidly provision a HANA data volume from a source system and attach it to a target system. It is therefore a perfect fit for executing system refresh operations for QA, test, sandbox, or training systems.
+
+The SnapCenter cloning workflows handle all required operations on the storage layer and can be extended using scripts to execute host-specific and HANA database-specific operations. In this document, we use a script to execute mount and unmount operations on the target host as well as HANA database recovery and shutdown operations. SnapCenter workflows with further automation using the script handle all required HANA database operations but do not cover any required SAP post-processing steps. SAP post processing must be performed manually or with third party tools.
+
+[NOTE]
+All the steps that are automated using the scripts can also be executed manually. However, for the mount operation at the target host, you need to know the storage system junction path of the FlexClone volume. The junction path is not visible within SnapCenter, so you need to either look up the junction path directly at the storage system or you could use a simple script that provides the SnapCenter environment variables at the target host. For more details see the section link:sc-copy-clone-automation-example-scripts.html[“Automation example scripts.”]
+
+The SAP system refresh workflow with SnapCenter consists of five main steps as shown in the following figure.
+
+. A one-time, initial installation and preparation of the target system.
+. The SnapCenter clone create workflow.
+. SAP post processing (manual or with a third-party tool).
+. The system can be used as test/QA system.
+. When a new system refresh is requested, the SnapCenter clone delete workflow is used to remove the FlexClone volume, and the refresh is restarted with step 2.
+
+image:sc-copy-clone-image7.png[Error: Missing Graphic Image]
+
+In most cases, target test/QA systems are used for at least a couple of weeks, and FlexClone capacity savings no longer exist after one to two weeks. It is important that the Snapshot backup of the source system gets released from the FlexClone volume so that it can be deleted by the SnapCenter retention management. Therefore, NetApp recommends splitting the FlexClone volume either immediately or after a couple of days. The clone split operation does not block use of the cloned volume and can therefore be performed at any time while the HANA database is in use.
+
+[NOTE]
+When splitting the FlexClone volume, SnapCenter deletes all backups that were created at the target system.
+
+The refresh operation including the clone split consists of the following steps (The following figure).
+
+. One-time, initial installation and preparation of the target system.
+. SnapCenter clone create workflow.
+. SnapCenter clone split workflow.
+. SAP post processing (manual or with a third-party tool).
+. Now the system can be used as a test/QA system.
+. When a new system refresh is requested, the SnapCenter clone create workflow is used with additional shutdown and unmount steps.
+
+[NOTE]
+The old data volume, which was split previously, must be deleted manually on the storage system.
+
+The following figure depicts an overview of SAP system refresh workflow with SnapCenter with clone split.
+
+image:sc-copy-clone-image8.png[Error: Missing Graphic Image]
+
+The section link:sc-copy-clone-sap-hana-system-refresh-with-snapcenter.html[“SAP HANA system refresh with SnapCenter”] provides a detailed step-by-step description of both system-refresh workflows.
+
+link:sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html[Next: Overview of SAP system copy workflow with SnapCenter.]

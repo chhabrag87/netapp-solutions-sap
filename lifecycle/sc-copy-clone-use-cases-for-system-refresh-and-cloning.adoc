@@ -1,0 +1,67 @@
+---
+sidebar: sidebar
+permalink: lifecycle/sc-copy-clone-use-cases-for-system-refresh-and-cloning.html
+keywords: date refresh, qa, test, sandbox, training, logical corruption, dr, disaster recovery, testing
+summary: There are multiple scenarios in which data from a source system must be made available to a target system for testing or training purposes. These test and training systems must be updated with data from the source system on a regular basis to make sure that testing and training is performed with the current data set.
+---
+
+= Use cases for system refresh and cloning
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-05-23 12:08:56.449347
+//
+
+link:sc-copy-clone-sap-system-copy,-refresh,-and-clone-scenarios.html[Previous: SAP system copy, refresh, and clone scenarios.]
+
+== Data refresh of QA, test, sandbox, or training systems
+
+There are multiple scenarios in which data from a source system must be made available to a target system for testing or training purposes. These test and training systems must be updated with data from the source system on a regular basis to make sure that testing and training is performed with the current data set. These system- refresh operations consist of multiple tasks on the infrastructure, database, and application layers, and they can take multiple days depending on the level of automation.
+
+The following figure depicts SAP system refresh, copy, and clone operations.
+
+image:sc-copy-clone-image3.png[Error: Missing Graphic Image]
+
+SnapCenter cloning workflows can be used to accelerate and automate the required tasks at the infrastructure and database layers. Instead of restoring a backup from the source system to the target system, SnapCenter uses NetApp Snapshot copy and NetApp FlexClone technology, so that required tasks up to a started HANA database can be performed in minutes instead of hours as shown in the following figure. The time needed for the cloning process is independent from the size of the database, therefore even very large systems can be created in a couple of minutes.
+
+The following figure depicts data refresh of QA, test, sandbox, or training systems.
+
+image:sc-copy-clone-image4.png[Error: Missing Graphic Image]
+
+The workflow for system-refresh operations is described  in the section link:sc-copy-clone-sap-hana-system-refresh-with-snapcenter.html[“SAP HANA system refresh with SnapCenter.”]
+
+== Address logical corruption
+
+Logical corruption can be caused by software errors, human errors, or sabotage. Unfortunately, logical corruption often cannot be addressed with standard high-availability and disaster recovery solutions. As a result, depending on the layer, application, file system, or storage where the logical corruption occurred, minimal downtime and maximum data loss requirements can sometimes not be fulfilled.
+
+The worst case is logical corruption in an SAP application. SAP applications often operate in a landscape in which different applications communicate with each other and exchange data. Therefore, restoring and recovering an SAP system in which a logical corruption has occurred is not the recommended approach. Restoring the system to a point in time before the corruption occurred results in data loss. Also, the SAP landscape would no longer be in sync and would require additional postprocessing.
+
+Instead of restoring the SAP system, the better approach is to try to fix the logical error within the system by analyzing the problem in a separate repair system. Root cause analysis requires the involvement of the business process and application owner. For this scenario, you create a repair system (a clone of the production system) based on data stored before the logical corruption occurred. Within the repair system, the required data can be exported and imported to the production system. With this approach, the production system does not need to be stopped, and, in the best-case scenario, no data or only a small fraction of data is lost.
+
+When setting up the repair system, flexibility and speed are crucial. With NetApp storage-based Snapshot backups, multiple consistent database images are available to create a clone of the production system by using NetApp FlexClone technology, as shown in the following figure. FlexClone volumes can be created in a matter of seconds rather than multiple hours if a redirected restore from a file-based backup is used to set up the repair system.
+
+image:sc-copy-clone-image5.png[Error: Missing Graphic Image]
+
+The workflow of the repair system creation is described in the section link:sc-copy-clone-sap-system-clone-with-snapcenter.html[“SAP system clone with SnapCenter.”]
+
+== Disaster recovery testing
+
+An effective disaster recovery strategy requires testing the required workflow. Testing demonstrates whether the strategy works and whether the internal documentation is sufficient. It also allows administrators to train on the required procedures.
+
+Storage replication with SnapMirror makes it possible to execute disaster recovery testing without putting RTO and RPO at risk. Disaster recovery testing can be performed without interrupting data replication.
+
+Disaster recovery testing for both asynchronous and synchronous SnapMirror uses Snapshot backups and FlexClone volumes at the disaster recovery target.
+
+The following figure depicts disaster recovery testing.
+
+image:sc-copy-clone-image6.png[Error: Missing Graphic Image]
+
+A detailed step-by-step description can be found in the technical report http://www.netapp.com/us/media/tr-4646.pdf[SAP HANA Disaster Recovery with Storage Replication^].
+
+link:sc-copy-clone-overview-of-sap-system-refresh-workflow-with-snapcenter.html[Next: Overview of SAP system refresh workflow with SnapCenter.]
