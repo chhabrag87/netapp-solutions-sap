@@ -30,6 +30,8 @@ The following figure illustrates the main steps that must be performed during a 
 
 All three operations can be fully automated by using SAP LaMa and the NetApp Storage Services Connector. More details can be found at https://www.netapp.com/us/media/tr-4018.pdf[Integrating NetApp ONTAP Systems with SAP Landscape Management^].
 
+NetApp has also worked with Libelle https://www.libelle.com[www.libelle.com^] to integrate SnapCenter cloning with Libelle SystemCopy to automate SAP pre- and post-processing. A detailed solution description is available at link:https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/libelle-sc-overview.html[Automating SAP System Copy Operations with Libelle SystemCopy^].
+
 image:sc-copy-clone-image2.png[Error: Missing Graphic Image]
 
 link:sc-copy-clone-use-cases-for-system-refresh-and-cloning.html[Next: Use cases for system refresh and cloning.]

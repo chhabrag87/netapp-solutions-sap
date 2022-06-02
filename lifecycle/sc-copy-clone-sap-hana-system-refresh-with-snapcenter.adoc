@@ -293,7 +293,7 @@ OK
 
 == SAP HANA system refresh with clone split operation
 
-If the target system of the system refresh operation is used for a longer timeframe (longer than 1-2 weeks), then there are typically not any FlexClone capacity savings. Also, the dependent Snapshot backup of the source system is blocked and is not deleted by SnapCenter retention management.
+If the target system of the system refresh operation is used for a longer timeframe (longer than 1-2 weeks), then there are typically not any FlexClone capacity savings. Also, the dependent Snapshot backup of the source system is blocked and not deleted by SnapCenter retention management.
 
 Therefore, in most cases it makes sense to split the FlexClone volume as part of the system refresh operation.
 
@@ -301,7 +301,7 @@ Therefore, in most cases it makes sense to split the FlexClone volume as part of
 The clone split operation does not block the use of the cloned volume and can therefore be executed at any time while the HANA database is in use.
 
 [NOTE]
-With a clone split operation, SnapCenter deletes all backups created at the target system in the SnapCenter repository. For NetApp AFF systems, a clone split operation only keeps the Snapshot copies on the volume for FAS systems; otherwise, the Snapshot copies are deleted by ONTAP. This is a known bug in SnapCenter that will be addressed in future releases.
+With a clone split operation, SnapCenter deletes all backups created at the target system in the SnapCenter repository. For NetApp AFF systems, a clone split operation keeps the Snapshot copies on the volume; it is only for FAS systems that Snapshot copies are deleted by ONTAP. This is a known bug in SnapCenter that will be addressed in future releases.
 
 The clone split workflow in SnapCenter is initiated in the topology view of the source system by selecting the clone and clicking on clone split.
 
