@@ -1,0 +1,33 @@
+---
+sidebar: sidebar
+permalink: lifecycle/sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html
+keywords: overview, system copy, initial installation, clone create, clone split, post-processing
+summary: The SAP copy workflow is similar to the initial steps for a system refresh workflow. The workflow with SnapCenter consists of five main steps as shown in the following figure.
+---
+
+= Overview of SAP system copy workflow with SnapCenter
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-05-23 12:08:56.465540
+//
+
+link:sc-copy-clone-overview-of-sap-system-refresh-workflow-with-snapcenter.html[Previous: Overview of SAP system refresh workflow with SnapCenter.]
+
+The SAP copy workflow is similar to the initial steps for a system refresh workflow. The workflow with SnapCenter consists of five main steps as shown in the following figure.
+
+. Initial installation and preparation of the target system.
+. The SnapCenter clone create workflow.
+. The SnapCenter clone split workflow (optional).
+. SAP post-processing (manual or with a third-party tool).
+. The new system can be used as a test/QA system.
+
+image:sc-copy-clone-image9.png[Error: Missing Graphic Image]
+
+link:sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html[Next: Overview of SAP system clone workflow with SnapCenter.]

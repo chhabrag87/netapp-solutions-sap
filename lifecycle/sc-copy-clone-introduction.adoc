@@ -1,0 +1,53 @@
+---
+sidebar: sidebar
+permalink: lifecycle/sc-copy-clone-introduction.html
+keywords: tr4667, 4667, overview, introduction
+summary: NetApp solutions for optimizing SAP lifecycle management are integrated into SAP HANA database and lifecycle management tools, combining efficient application-integrated data protection with the flexible provisioning of SAP test systems, as is shown in the following figure.
+---
+
+= TR-4667: Automating SAP HANA System Copy and Clone Operations with SnapCenter
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-05-23 12:08:56.434230
+//
+
+Nils Bauer, NetApp
+
+In today’s dynamic business environment, companies must provide ongoing innovation and react quickly to changing markets. Under these competitive circumstances, companies that implement greater flexibility in their work processes can adapt to market demands more effectively.
+
+Changing market demands also affect a company’s SAP environments such that they require regular integrations, changes, and updates. IT departments must implement these changes with fewer resources and over shorter time periods. Minimizing risk when deploying those changes requires thorough testing and training, which require additional SAP systems with actual data from production.
+
+Traditional SAP lifecycle-management approaches to provision these systems are primarily based on manual processes. These manual processes are often error-prone and time-consuming, delaying innovation and the response to business requirements.
+
+NetApp solutions for optimizing SAP lifecycle management are integrated into SAP HANA database and lifecycle management tools, combining efficient application-integrated data protection with the flexible provisioning of SAP test systems, as is shown in the following figure.
+
+image:sc-copy-clone-image1.png[Error: Missing Graphic Image]
+
+== Application-integrated Snapshot backup operations
+
+The ability to create application-consistent NetApp Snapshot backups on the storage layer is the foundation for the system copy and system clone operations described in this document. Storage-based Snapshot backups are created by using the NetApp SnapCenter Plug-In for SAP HANA and interfaces provided by the SAP HANA database. SnapCenter registers Snapshot backups in the SAP HANA backup catalog so that the backups can be used for restore and recovery as well as for cloning operations.
+
+== Off-site backup and/or disaster recovery data replication
+
+Application-consistent Snapshot backups can be replicated on the storage layer to an off-site backup site or a disaster recovery site controlled by SnapCenter. Replication is based on block changes and is therefore space and bandwidth efficient.
+
+== Use any Snapshot backup for SAP system copy or clone operations
+
+NetApp technology and software integration allows you to use any Snapshot backup of a source system for an SAP system copy or clone operation. This Snapshot backup can be either selected from the same storage that is used for the SAP production systems, the storage that is used for off-site backups, or the storage at the disaster recovery site. This flexibility allows you to separate development and test systems from production if required and covers other scenarios, such as the testing of disaster recovery at the disaster recovery site.
+
+== Automation with integration
+
+There are various scenarios and use cases for the provisioning of SAP test systems, and you might also have different requirements for the level of automation. NetApp software products for SAP integrate into database and lifecycle management products from SAP to support different scenarios and levels of automation.
+
+NetApp SnapCenter with the plug-in for SAP HANA is used to provision the required storage volumes based on an application-consistent Snapshot backup and to execute all required host and database operations up to a started SAP HANA database. Depending on the use case, SAP system copy, system clone, system refresh, or additional manual steps such as SAP postprocessing might be required. More details are covered in the next section.
+
+A fully automated, end-to-end provision of SAP test systems can be performed by using SAP Landscape Management (LaMa). NetApp Storage Services Connector integrates into SAP LaMa and provides the required operations for SAP LaMa at the storage layer. More details can be found at https://www.netapp.com/us/media/tr-4018.pdf[Integrating NetApp ONTAP Systems with SAP Landscape Management^].
+
+link:sc-copy-clone-sap-system-copy,-refresh,-and-clone-scenarios.html[Next: SAP system copy, refresh, and clone scenarios.]

@@ -1,0 +1,46 @@
+---
+sidebar: sidebar
+permalink: lifecycle/sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html
+keywords: system clone, target host, clone create
+summary: FlexClone technology enables a rapid provisioning process, and provides significant capacity savings, since the repair system is typically only used for a short time.
+---
+
+= Overview of SAP system clone workflow with SnapCenter
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-05-23 12:08:56.470258
+//
+
+link:sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html[Previous: Overview of SAP system copy workflow with SnapCenter.]
+
+As discussed in the previous section, SnapCenter can manage clones of data sets from any existing Snapshot backup and can rapidly provision these data sets to any target system. The speed of provisioning production data to a repair system to address logical corruption is critical, since it is often necessary to reset the repair system and to choose a different production data set. FlexClone technology enables a rapid provisioning process, and provides significant capacity savings, since the repair system is typically only used for a short time.
+
+The following figure summarizes the required steps for an SAP system clone operation using SnapCenter.
+
+. Prepare the target host.
+. SnapCenter clone create workflow for the HANA shared volume.
+. Start SAP HANA services.
+. SnapCenter clone create workflow for the HANA data volume including database recovery.
+. The HANA system can now be used as a repair system.
+
+[NOTE]
+If you must reset the system to a different Snapshot backup, then step 6 and step 4 are sufficient. The HANA shared volume can continue to be mounted.
+
+If the system is not needed anymore, the clean-up process is performed with the following steps.
+
+. SnapCenter clone delete workflow for the HANA data volume including database shutdown.
+. Stop SAP HANA services.
+. SnapCenter clone delete workflow for the HANA shared volume.
+
+image:sc-copy-clone-image10.png[Error: Missing Graphic Image]
+
+The section link:sc-copy-clone-sap-system-clone-with-snapcenter.html[“SAP system clone with SnapCenter”] provides a detailed step-by-step description of the system clone workflow.
+
+link:sc-copy-clone-sap-hana-system-refresh-operation-workflows-using-storage-snapshot-backups.html[Next: SAP HANA system refresh operation workflows using storage snapshot backups.]
