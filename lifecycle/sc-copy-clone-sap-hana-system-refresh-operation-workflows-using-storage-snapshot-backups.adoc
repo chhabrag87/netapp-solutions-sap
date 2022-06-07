@@ -1,0 +1,38 @@
+---
+sidebar: sidebar
+permalink: lifecycle/sc-copy-clone-sap-hana-system-refresh-operation-workflows-using-storage-snapshot-backups.html
+keywords: tenant create, rename, drop, refresh
+summary: The steps required to perform an SAP HANA system refresh depend on the source system tenant configuration and the required tenant name at the target system, as shown in the following figure.
+---
+
+= SAP HANA system refresh operation workflows using storage snapshot backups
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-05-23 12:08:56.476278
+//
+
+link:sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html[Previous: Overview of SAP system clone workflow with SnapCenter.]
+
+The steps required to perform an SAP HANA system refresh depend on the source system tenant configuration and the required tenant name at the target system, as shown in the following figure.
+
+Since the tenant name is configured in the system database, the tenant name of the source system is also available at the target system after the recovery of the system database. Therefore, the tenant at the target system can only be recovered with the same name as the source tenant as shown in option 1 in the following figure. If the tenant name at the target system must be different, the tenant must first be recovered with the same name as the source tenant and then renamed to the required target tenant name. This is option 2 in the following figure.
+
+An exception of this rule is a HANA system with a single tenant, where the tenant name is identical to the system SID. This configuration is the default after the initial HANA installation. This specific configuration is flagged by the HANA database. In this case, tenant recovery at the target system can be executed with the tenant name of the target system, which must be also identical to the system SID of the target system. This workflow is shown in option 3 in the following figure.
+
+[NOTE]
+As soon as any tenant create, rename, or drop operation is executed at the source system, this configuration flag is deleted by the HANA database. Therefore, even if the configuration has been brought back to tenant = SID, the flag is no longer available and the exception regarding tenant recovery with workflow 3 is no longer possible. In this case, option 2 is the required workflow.
+
+image:sc-copy-clone-image11.png[Error: Missing Graphic Image]
+
+This figure shows the configuration flag for initial MDC single-tenant installation.
+
+image:sc-copy-clone-image12.png[Error: Missing Graphic Image]
+
+link:sc-copy-clone-automation-example-scripts.html[Next: Automation example scripts.]

@@ -1,0 +1,161 @@
+---
+sidebar: sidebar
+permalink: lifecycle/sc-copy-clone-automation-example-scripts.html
+keywords: example script, automation, clone create, clone delete
+summary: In this document, two scripts are used to further automate SnapCenter clone create and clone delete operations.
+---
+
+= Automation example scripts
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2022-05-23 12:08:56.480600
+//
+
+link:sc-copy-clone-sap-hana-system-refresh-operation-workflows-using-storage-snapshot-backups.html[Previous: SAP HANA system refresh operation workflows using storage snapshot backups.]
+
+In this document, two scripts are used to further automate SnapCenter clone create and clone delete operations.
+
+* The script `sc-system-refresh.sh` is used for the system refresh and the system clone workflow to execute mount and unmount operations for the HANA data volume as well as for recovery and shutdown operations of the HANA database.
+* The script `sc-mount-volume.sh` is used for the system clone workflow to execute mount and unmount operations for the HANA shared volume.
+
+[NOTE]
+The example scripts are provided as is and are not supported by NetApp. You can request the scripts via email to mailto:ng-sapcc@netapp.com[ng-sapcc@netapp.com^].
+
+== Script sc-system-refresh.sh
+
+The example script `sc-system-refresh.sh` is used to execute mount and unmount operations for SAP HANA data volumes as well as recovery and shutdown operations. The script is called with specific command-line options within the SnapCenter workflows clone create and clone delete, as shown in the following figure.
+
+The script is generic and is configured with an SID-specific configuration file and environment variables, which are made available by SnapCenter when executing the script. The script and the configuration file must be available at the target host of the system refresh operation. If the script is used for multiple target hosts, you can provide an NFS share from which the script is made available to all target hosts.
+
+[NOTE]
+The current version of the script supports single host systems with a single container, MDC single tenant, or MDC multiple tenant configurations. It does not support SAP HANA multiple-host systems.
+
+[NOTE]
+The script supports HANA systems using NFS or Fibre Channel (FC) as a storage protocol.
+
+image:sc-copy-clone-image13.png[Error: Missing Graphic Image]
+
+=== Supported tenant recovery operations
+
+As described in the section link:sc-copy-clone-sap-hana-system-refresh-operation-workflows-using-storage-snapshot-backups.html[“SAP HANA system refresh operation workflows using storage snapshot backups”] the possible tenant recovery operations at the target system depend on the tenant configuration of the source system. The script `sc-system-refresh.sh` supports all tenant recovery operations, which are possible dependent on the source system configuration, as shown in the following table.
+
+If a different tenant name is required at the target system, the tenant must be renamed manually after the recovery operation.
+
+|===
+|HANA System |Tenant Configuration at Source System |Tenant Configuration at Target System
+
+|Single container
+|NA
+|NA
+|MDC single tenant
+|Source tenant name equal to source SID
+|Target tenant name is equal to target SID
+|MDC single tenant
+|Source tenant name not equal to source SID
+|Target tenant name is equal to source tenant name
+|MDC multiple tenants
+|Any tenant names
+|Only the first tenant is recovered and has the same name as the source tenant.
+|===
+
+=== SID-specific configuration file
+
+This script uses a configuration file to configure a few target system-specific parameters. The configuration file must have an SID-specific file name `sc-system-refresh- SID.cfg`.
+
+[NOTE]
+The database user, which is configured with the hdbuserstore key for the target system, must exist in the source database and must have the correct rights to allow database recovery.
+
+The configuration file parameters are shown in the following table.
+
+|===
+|Parameter | |Description
+
+|KEY
+|For example:QS1KEY
+|SAP HANA hdbuserstore key, which should be used for the recovery operation of the target SAP HANA database. The key must be configured for the user <SID>adm on the target host.
+|PROTOCOL
+|NFS or FCP
+|Storage protocol, that is used to connect the HANA database data volume.
+|===
+
+The following output shows an example configuration file for an SAP HANA system with `SID=QS1`.
+
+....
+ss1adm@hana-1:/mnt/sapcc-share/SAP-System-Refresh> cat sc-system-refresh-QS1.cfg
+# ---------------------------------------------
+# Target database specific parameters
+# ---------------------------------------------
+# hdbuserstore key, which should be used to connect to the target database
+KEY="QS1KEY"
+# Used storage protocol, NFS or FCP
+PROTOCOL="NFS"
+ss1adm@hana-1:/mnt/sapcc-share/SAP-System-Refresh>
+....
+
+=== SnapCenter environment variables
+
+SnapCenter provides a set of environment variables that are available within the script that is executed at the target host. The script uses these variables to determine relevant configuration settings.
+
+* The script variable `HANA_ARCHITECTURE` is used to determine the required recovery operation, either for single container or MDC systems.
+** Derived from `HANA_DATABASE_TYPE` environmental variable
+** For example: `MDC\SS1_HANA_DATABASE_TYPE=MULTIPLE_CONTAINERS`
+* the script variables `TENANT_LIST, SOURCE_TENANT`, and `SOURCE_SID` are used to determine the target tenant name for a recovery operation.
+** Derived from `TENANT_DATABASE_NAMES` environmental variable
+** For example: `MDC\SM1_TENANT_DATABASE_NAMES=TENANT1,TENANT2`
+* The script variable `STORAGE, JUNCTION_PATH` is used for the mount operation.
+** Derived from `CLONED_VOLUMES_MOUNT_PATH` environmental variable
+** For example:
+
+....
+CLONED_VOLUMES_MOUNT_PATH=192.168.175.117:/SS1_data_mnt00001_Clone_05112206115489411
+....
+
+== Script sc-mount-volume.sh
+
+The example script `sc- mount-volume.sh` is used to execute mount and unmount for any volume. The script is used to mount the HANA shared volume with the SAP HANA system clone operation. The script is called with specific command-line options within the SnapCenter workflows clone create and clone delete, as shown in the following figure.
+
+[NOTE]
+The script supports HANA systems using NFS as a storage protocol.
+
+image:sc-copy-clone-image14.png[Error: Missing Graphic Image]
+
+=== SnapCenter environment variables
+
+SnapCenter provides a set of environment variables that are available within the script that is executed at the target host. The script uses these variables to determine relevant configuration settings.
+
+* The script variable `STORAGE, JUNCTION_PATH` is used for the mount operation.
+** Derived from `CLONED_VOLUMES_MOUNT_PATH` environment variable.
+** For example:
+
+....
+CLONED_VOLUMES_MOUNT_PATH=192.168.175.117:/SS1_shared_Clone_05112206115489411
+....
+
+== Script to get SnapCenter environment variables
+
+If the automation scripts should not be used and the steps should be executed manually, you need to know the storage system junction path of the FlexClone volume. The junction path is not visible within SnapCenter, so you need to either look up the junction path directly at the storage system, or you could use a simple script that provides the SnapCenter environment variables at the target host. This script needs to be added as a mount operation script within the SnapCenter clone create operation.
+
+....
+ss1adm@hana-1:/mnt/sapcc-share/SAP-System-Refresh> cat get-env.sh
+#!/bin/bash
+rm /tmp/env-from-sc.txt
+env > /tmp/env-from-sc.txt
+ss1adm@hana-1:/mnt/sapcc-share/SAP-System-Refresh>
+....
+
+Within the `env-from-sc.txt` file, look for the variable `CLONED_VOLUMES_MOUNT_PATH` to get the storage system IP address and junction path of the FlexClone volume.
+
+For example:
+
+....
+CLONED_VOLUMES_MOUNT_PATH=192.168.175.117:/SS1_data_mnt00001_Clone_05112206115489411
+....
+
+link:sc-copy-clone-sap-hana-system-refresh-with-snapcenter.html[Next: SAP HANA system refresh with SnapCenter.]
