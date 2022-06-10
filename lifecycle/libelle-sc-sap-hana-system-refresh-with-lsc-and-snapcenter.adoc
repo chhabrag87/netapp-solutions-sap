@@ -33,7 +33,7 @@ For more details regarding these different SnapCenter agents and SAP HANA databa
 
 The following sections highlight the differences between integrating LSC with SnapCenter using either the standard installation or the central communication host. Notably, all configuration steps that are not highlighted are the same regardless of the installation option and the database used.
 
-To perform an automated Snapshot copy-based backup from the source database and create a clone for the new target database, the described integration between LSC and SnapCenter uses the configuration options and scripts described in https://www.netapp.com/pdf.html?item=/media/17111-tr4667pdf.pdf[TR-4667: Automating SAP HANA System Copy and Clone Operations with SnapCenter^].
+To perform an automated Snapshot copy-based backup from the source database and create a clone for the new target database, the described integration between LSC and SnapCenter uses the configuration options and scripts described in link:https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html[TR-4667: Automating SAP HANA System Copy and Clone Operations with SnapCenter^].
 
 == Overview
 
@@ -89,7 +89,7 @@ Documentation resources:
 * https://docs.netapp.com/us-en/snapcenter/[SnapCenter Documentation Center^]
 * https://www.netapp.com/pdf.html?item=/media/12403-tr4700.pdf[TR-4700: SnapCenter Plug-In for Oracle Database^]
 * https://www.netapp.com/pdf.html?item=/media/12405-tr4614pdf.pdf[TR-4614: SAP HANA Backup and Recovery with SnapCenter^]
-* https://www.netapp.com/pdf.html?item=/media/17111-tr4667pdf.pdf[TR-4667: Automating SAP HANA System Copy and Clone Operations with SnapCenter^]
+* https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html[TR-4667: Automating SAP HANA System Copy and Clone Operations with SnapCenter^]
 * https://fieldportal.netapp.com/content/883721[TR-4769 -SnapCenter Best Practices and Sizing Guidelines^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2880726[SnapCenter 4.6 Cmdlet Reference Guide^]
 

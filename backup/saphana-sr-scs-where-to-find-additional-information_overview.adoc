@@ -28,7 +28,7 @@ https://www.netapp.com/us/media/tr-4614.pdf[https://www.netapp.com/us/media/tr-4
 
 * Automating SAP HANA System Copy and Clone Operations with SnapCenter
 +
-https://www.netapp.com/us/media/tr-4667.pdf[https://www.netapp.com/us/media/tr-4667.pdf^]
+https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html[https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html^]
 
 * SAP HANA Disaster Recovery with Storage Replication
 +
