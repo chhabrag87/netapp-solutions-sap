@@ -37,8 +37,8 @@ https://www.netapp.com/us/media/tr-4646.pdf[https://www.netapp.com/us/media/tr-4
 https://www.netapp.com/us/media/tr-4614.pdf[https://www.netapp.com/us/media/tr-4614.pdf^]
 * TR-4338: SAP HANA on VMware vSphere with NetApp FAS and AFF Systems
 http://www.netapp.com/us/media/tr-4338.pdf[www.netapp.com/us/media/tr-4338.pdf^]
-* TR-4667: Automating SAP System Copies Using the SnapCenter 4.0 SAP HANA Plug- In
-https://www.netapp.com/us/media/tr-4667.pdf[https://www.netapp.com/us/media/tr-4667.pdf^]
+* TR-4667: Automating SAP System Copies Using the SnapCenter 4.0 SAP HANA Plug-In
+https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html[https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html^]
 * NetApp Documentation Centers
 https://www.netapp.com/us/documentation/index.aspx[https://www.netapp.com/us/documentation/index.aspx^]
 * NetApp FAS Storage System Resources
