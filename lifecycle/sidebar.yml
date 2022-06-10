@@ -39,7 +39,5 @@ entries:
       - title: Where to find additional Information and version history
         url: /lifecycle/libelle-sc-where-to-find-additional-information.html
 
-  - title: Automating SAP System Copies Using the SnapCenter SAP HANA Plug-In
-    url: https://www.netapp.com/us/media/tr-4667.pdf
   - title: Integrating NetApp Storage with SAP Landscape Management
     url: https://www.netapp.com/us/media/tr-4018.pdf

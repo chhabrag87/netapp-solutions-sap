@@ -29,7 +29,7 @@ To learn more about the information described in this document, refer to the fol
 * TR-4646: SAP HANA Disaster Recovery with Storage Replication http://www.netapp.com/us/media/tr-4646.pdf[www.netapp.com/us/media/tr-4646.pdf^]
 * TR-4614: SAP HANA Backup and Recovery with SnapCenter http://www.netapp.com/us/media/tr-4614.pdf[www.netapp.com/us/media/tr-4614.pdf^]
 * TR-4338: SAP HANA on VMware vSphere with NetApp FAS and AFF Systems http://www.netapp.com/us/media/tr-4338.pdf[www.netapp.com/us/media/tr-4338.pdf^]
-* TR-4667: Automating SAP System Copies Using the SnapCenter 4.0 SAP HANA Plug- In http://www.netapp.com/us/media/tr-4667.pdf[www.netapp.com/us/media/tr-4667.pdf^]
+* TR-4667: Automating SAP System Copies Using the SnapCenter 4.0 SAP HANA Plug-In https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html[www.netapp.com/us/media/tr-4667.pdf^]
 * NetApp Documentation Centers https://www.netapp.com/us/documentation/index.aspx[https://www.netapp.com/us/documentation/index.aspx^]
 * NetApp FAS Storage System Resources https://mysupport.netapp.com/info/web/ECMLP2676498.html[https://mysupport.netapp.com/info/web/ECMLP2676498.html^]
 * SAP HANA Software Solutions http://www.netapp.com/us/solutions/applications/sap/index.aspx[www.netapp.com/us/solutions/applications/sap/index.aspx#sap-hana^]
