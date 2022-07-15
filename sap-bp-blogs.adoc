@@ -18,6 +18,6 @@ Overview of the blogs highlighting the SAP Configuration Best Practices.
 
 // tag::blogs[]
 
-=== SAP Configuration Best Practices Blogs
+== SAP Configuration Best Practices Blogs
 
 // end::blogs[]

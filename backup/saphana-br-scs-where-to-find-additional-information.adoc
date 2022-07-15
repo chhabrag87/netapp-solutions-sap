@@ -46,7 +46,7 @@ https://www.netapp.com/pdf.html?item=/media/17195-tr4018pdf.pdf[https://www.neta
 +
 https://www.netapp.com/pdf.html?item=/media/8584-tr4646pdf.pdf[https://www.netapp.com/pdf.html?item=/media/8584-tr4646pdf.pdf^]
 
-=== Version history
+== Version history
 
 |===
 |Version |Date |Document version history

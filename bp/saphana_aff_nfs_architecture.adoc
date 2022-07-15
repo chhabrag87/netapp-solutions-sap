@@ -46,7 +46,7 @@ Independent of the deployed AFF system, the SAP HANA landscape can also be scale
 
 image:saphana_aff_nfs_image5.png[Error: Missing Graphic Image]
 
-=== SAP HANA backup
+== SAP HANA backup
 
 The ONTAP software present on all NetApp storage controllers provides a built-in mechanism to back up SAP HANA databases while in operation with no effect on performance. Storage-based NetApp Snapshot backups are a fully supported and integrated backup solution available for SAP HANA single containers and for SAP HANA Multitenant Database Containers (MDC) systems with a single tenant or multiple tenants.
 
@@ -68,13 +68,13 @@ Storage-based Snapshot backups provide significant advantages compared to conven
 [NOTE]
 For detailed information about the SAP HANA backup and recovery solution see https://www.netapp.com/us/media/tr-4614.pdf[TR-4614: SAP HANA Backup and Recovery with SnapCenter^].
 
-=== SAP HANA disaster recovery
+== SAP HANA disaster recovery
 
 SAP HANA disaster recovery (DR) can be done either on the database layer by using SAP HANA system replication or on the storage layer by using storage replication technologies. The following section provides an overview of disaster recovery solutions based on storage replication.
 
 For detailed information about SAP HANA disaster recovery solutions, see https://www.netapp.com/pdf.html?item=/media/8584-tr4646pdf.pdf[TR-4646: SAP HANA Disaster Recovery with Storage Replication^].
 
-==== Storage replication based on SnapMirror
+=== Storage replication based on SnapMirror
 
 The following figure shows a three-site disaster recovery solution using synchronous SnapMirror replication to the local DR datacenter and asynchronous SnapMirror to replicate the data to the remote DR datacenter.
 
@@ -92,7 +92,7 @@ image:saphana_aff_nfs_image7.png[Error: Missing Graphic Image]
 
 Synchronous replication offers StrictSync mode. If the write to secondary storage is not completed for any reason, the application I/O fails, thereby ensuring that the primary and secondary storage systems are identical. Application I/O to the primary resumes only after the SnapMirror relationship returns to the InSync status. If the primary storage fails, application I/O can be resumed on the secondary storage after failover with no loss of data. In StrictSync mode, the RPO is always zero.
 
-==== Storage replication based on MetroCluster
+=== Storage replication based on MetroCluster
 
 The following figure shows a high-level overview of the solution. The storage cluster at each site provides local high availability and is used for the production workload. The data of each site is synchronously replicated to the other location and is available in case of disaster failover.
 
