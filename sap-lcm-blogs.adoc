@@ -18,7 +18,7 @@ Overview of the blogs highlighting the SAP Lifecycle Management.
 
 // tag::blogs[]
 
-=== SAP Lifecycle Management Blogs
+== SAP Lifecycle Management Blogs
 
 * link:https://blogs.sap.com/2021/10/27/whitepaper-sap-landscape-management-with-netapp/[SAP Landscape Management with NetApp]
 

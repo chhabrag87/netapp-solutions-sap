@@ -18,7 +18,7 @@ Overview of the videos and demos highlighting SAP Configuration Best Practices.
 
 // tag::videos[]
 
-=== SAP Configuration Best Practices Videos and Demos
+== SAP Configuration Best Practices Videos and Demos
 
 * link:https://www.netapp.tv/details/28149[SAP HANA Runs Best on NetApp Infrastructure]
 
