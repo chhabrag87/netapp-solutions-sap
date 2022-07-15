@@ -23,7 +23,7 @@ Before setting up the host, NetApp SAN host utilities must be downloaded from th
 
 The documentation also contains information on multipath configurations that are specific to the Linux version used. This document covers the required configuration steps for SLES 12 SP1 or higher and RHEL 7. 2 or later, as described in the https://library.netapp.com/ecm/ecm_download_file/ECMLP2547958[Linux Host Utilities 7.1 Installation and Setup Guide^].
 
-=== Configure multipathing
+== Configure multipathing
 
 [NOTE]
 Steps 1 through 6 must be executed on all worker and standby hosts in an SAP HANA multiple-host configuration.
@@ -222,7 +222,7 @@ size=512G features='4 queue_if_no_path pg_init_retries 50 retain_attached_hw_han
   `- 11:0:3:0 sdv  65:80  active ready running
 ....
 
-=== Create LVM volume groups and logical volumes
+== Create LVM volume groups and logical volumes
 
 This step is only required if LVM is used. The following example is for 2+1 host setup using SID FC5.
 
@@ -282,7 +282,7 @@ To mount the logical volumes, the logical volumes must be activated. To activate
 vgchange -a y
 ....
 
-=== Create file systems
+== Create file systems
 
 To create the XFS file system on each LUN belonging to the HANA system, take one of the following actions:
 
@@ -315,7 +315,7 @@ mkfs.xfs FC5_log_mnt00002-vol
 [NOTE]
 The multiple host example commands show a 2+1 multiple-host HANA system.
 
-=== Create mount points
+== Create mount points
 
 To create the required mount point directories, take one of the following actions:
 
@@ -349,7 +349,7 @@ stlrx300s8-6:/ # chmod 777 /hana/shared
 [NOTE]
 The same steps must be executed for a system configuration with Linux LVM.
 
-=== Mount file systems
+== Mount file systems
 
 To mount file systems during system boot using the `/etc/fstab` configuration file, complete the following steps:
 
