@@ -77,6 +77,8 @@ net.ipv4.tcp_window_scaling = 1
 net.ipv4.tcp_timestamps = 1
 net.ipv4.tcp_sack = 1
 ....
+[NOTE]
+Since RedHat Enterprise Linux version 8.6 the settings can be also applied by using the (Ansible) RHEL System Roles for SAP. See https://launchpad.support.sap.com/[SAP Note 3024346^] (requires SAP login).
 
 == Create subdirectories in /hana/shared volume
 
