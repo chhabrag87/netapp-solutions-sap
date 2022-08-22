@@ -78,7 +78,7 @@ net.ipv4.tcp_timestamps = 1
 net.ipv4.tcp_sack = 1
 ....
 [NOTE]
-Since RedHat Enterprise Linux version 8.6 the settings can be also applied by using the (Ansible) RHEL System Roles for SAP. See https://launchpad.support.sap.com/[SAP Note 3024346^] (requires SAP login).
+Since RedHat Enterprise Linux version 8.6, these settings can be also applied by using RHEL System Roles for SAP (Ansible). See https://launchpad.support.sap.com/[SAP Note 3024346^] (requires SAP login).
 
 == Create subdirectories in /hana/shared volume
 
@@ -87,7 +87,7 @@ The examples show an SAP HANA database with SID=NF2.
 
 To create the required subdirectories, take one of the following actions:
 
-* For a single- host system, mount the `/hana/shared` volume and create the `shared` and `usr-sap` subdirectories.
+* For a single-host system, mount the `/hana/shared` volume and create the `shared` and `usr-sap` subdirectories.
 
 ....
 sapcc-hana-tst-06:/mnt # mount <storage-hostname>:/NF2_shared /mnt/tmp
