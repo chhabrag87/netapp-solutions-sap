@@ -35,9 +35,9 @@ The configuration described in this paper is necessary to achieve the required S
 
 The configuration guides for NetApp AFF systems using FCP and for FAS systems using NFS or FCP can be found at the following links:
 
-* https://docs.netapp.com/us-en/netapp-solutions-sap_main/bp/saphana_fas_fc_introduction.html[SAP HANA on NetApp FAS Systems with Fibre Channel Protocol^]
-* https://docs.netapp.com/us-en/netapp-solutions-sap_main/bp/saphana-fas-nfs_introduction.html[SAP HANA on NetApp FAS Systems with NFS^]
-* https://docs.netapp.com/us-en/netapp-solutions-sap_main/bp/saphana_aff_fc_introduction.html[SAP HANA on NetApp AFF Systems with Fibre Channel Protocol^]
+* https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_introduction.html[SAP HANA on NetApp FAS Systems with Fibre Channel Protocol^]
+* https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_introduction.html[SAP HANA on NetApp FAS Systems with NFS^]
+* https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_introduction.html[SAP HANA on NetApp AFF Systems with Fibre Channel Protocol^]
 
 The following table shows the supported combinations for NFS versions, NFS locking, and the required isolation implementations, depending on the SAP HANA database configuration.
 
@@ -80,10 +80,9 @@ NetApp AFF storage controllers are certified in the SAP HANA TDI program using b
 
 image:saphana_aff_nfs_image1.png[Error: Missing Graphic Image]
 
-For more information regarding the prerequisites and recommendations for producti SAP HANA systems, see the following resources:
+For more information regarding the prerequisites and recommendations for producti SAP HANA systems, see the following resource:
 
 * http://go.sap.com/documents/2016/05/e8705aae-717c-0010-82c7-eda71af511fa.html[SAP HANA Tailored Data Center Integration Frequently Asked Questions^]
-* http://go.sap.com/documents/2015/03/74cdb554-5a7c-0010-82c7-eda71af511fa.html[SAP HANA Storage Requirements^]
 
 == SAP HANA using VMware vSphere
 
