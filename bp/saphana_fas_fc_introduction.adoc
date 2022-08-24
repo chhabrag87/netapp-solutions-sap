@@ -36,9 +36,9 @@ The configuration described in this paper is necessary to achieve the required S
 
 The configuration guides for FAS systems using NFS and NetApp AFF systems can be found using the following links:
 
-* https://docs.netapp.com/us-en/netapp-solutions-sap_main/bp/saphana_aff_fc_introduction.html[SAP HANA on NetApp AFF Systems with Fibre Channel Protocol^]
-* https://docs.netapp.com/us-en/netapp-solutions-sap_main/bp/saphana-fas-nfs_introduction.html[SAP HANA on NetApp FAS Systems with NFS^]
-* https://docs.netapp.com/us-en/netapp-solutions-sap_main/bp/saphana_aff_nfs_introduction.html[SAP HANA on NetApp AFF Systems with NFS^]
+* https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_introduction.html[SAP HANA on NetApp AFF Systems with Fibre Channel Protocol^]
+* https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_introduction.html[SAP HANA on NetApp FAS Systems with NFS^]
+* https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_introduction.html[SAP HANA on NetApp AFF Systems with NFS^]
 
 In an SAP HANA multiple-host environment, the standard SAP HANA storage connector is used to provide fencing in the event of an SAP HANA host failover. Refer to the relevant SAP notes for operating system configuration guidelines and HANA-specific Linux kernel dependencies. For more information, see https://launchpad.support.sap.com/[SAP Note 2235581 – SAP HANA Supported Operating Systems^].
 
@@ -48,10 +48,9 @@ NetApp FAS storage controllers are certified in the SAP HANA Tailored Data Cente
 
 image:saphana_fas_fc_image1.png[Error: Missing Graphic Image]
 
-For more information regarding the prerequisites and recommendations for productive SAP HANA systems, see the following resources:
+For more information regarding the prerequisites and recommendations for productive SAP HANA systems, see the following resource:
 
 * http://go.sap.com/documents/2016/05/e8705aae-717c-0010-82c7-eda71af511fa.html[SAP HANA Tailored Data Center Integration Frequently Asked Questions^]
-* http://go.sap.com/documents/2015/03/74cdb554-5a7c-0010-82c7-eda71af511fa.html[SAP HANA Storage Requirements^]
 
 == SAP HANA using VMware vSphere
 
