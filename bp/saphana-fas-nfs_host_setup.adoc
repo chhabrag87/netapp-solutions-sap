@@ -44,7 +44,7 @@ net.ipv4.tcp_sack = 1
 ....
 
 [NOTE]
-Saptune, which is included in SLES for SAP OS versions, can be used to set these values. See https://launchpad.support.sap.com/[SAP Note 3024346^] (requires SAP login).
+Saptune, which is included in SLES for SAP OS versions, can be used to set these values. See https://launchpad.support.sap.com/#/notes/3024346[SAP Note 3024346^] (requires SAP login).
 
 If NFSv3 is used for connecting the storage, the `sunrpc.tcp_max_slot_table_entries` parameter must be set in `/etc/modprobe.d/sunrpc.conf`. If the file does not exist, it must first be created by adding the following line:
 
@@ -78,7 +78,7 @@ net.ipv4.tcp_timestamps = 1
 net.ipv4.tcp_sack = 1
 ....
 [NOTE]
-Since RedHat Enterprise Linux version 8.6, these settings can be also applied by using RHEL System Roles for SAP (Ansible). See https://launchpad.support.sap.com/[SAP Note 3024346^] (requires SAP login).
+Since RedHat Enterprise Linux version 8.6, these settings can be also applied by using RHEL System Roles for SAP (Ansible). See https://launchpad.support.sap.com/#/notes/3024346[SAP Note 3024346^] (requires SAP login).
 
 == Create subdirectories in /hana/shared volume
 
