@@ -1,0 +1,81 @@
+---
+sidebar: sidebar
+permalink: lama-ansible-sap-lama-provisioning-workflow---clone-system.html
+keywords:
+summary:
+---
+
+= SAP LaMa provisioning workflow - clone system
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2023-01-30 15:53:02.704402
+//
+
+image:lama-ansible-image17.png[Error: Missing Graphic Image]
+
+In this section,  we go through the complete SAP LaMa system cloning workflow based on the source SAP system HN9 with HANA database H09. The following picture gives an overview of the steps executed during the workflow.
+
+image:lama-ansible-image18.png[Error: Missing Graphic Image]
+
+. To start the cloning workflow,  open *Provisioning* in the menu tree and select the source system (in our example HN9). Then start the *Clone System* wizard.
+
+image:lama-ansible-image19.png[Error: Missing Graphic Image]
+
+. Enter the requested values. Screen 1 of the wizard asks for the pool name for the cloned system. This step specifies the instances (virtual or physical) on which the cloned system will be started. The default is to clone the system into the same pool as the target system.
+
+image:lama-ansible-image20.png[Error: Missing Graphic Image]
+
+. Screen 2 of the wizard asks for the target hosts that the new SAP instances are started on. The target hosts for this instance(s) can be selected out of the host pool specified in the previous screen. Each instance or service can be started on a different host.  In our example,  all three services run on the same host.
+
+image:lama-ansible-image21.png[Error: Missing Graphic Image]
+
+. Provide the information requested in screen 3, which asks for virtual hostnames and networks.  Typically,  the hostnames are maintained in DNS, so the IP addresses are prepopulated accordingly.
+
+image:lama-ansible-image22.png[Error: Missing Graphic Image]
+
+. In screen 4,  the custom clone operations are listed.  A clone and a *SnapPostfix* name are provided,  which are used during the storage clone operation for the FlexClone volume and Snapshot name, respectively.  If you leave these fields empty,  the default value configured in the variable section of the provider script `netapp_clone.sh` is used.
+
+image:lama-ansible-image23.png[Error: Missing Graphic Image]
+
+. In screen 5, the database consistency option is selected. In our example, we selected *Online:  Clone running DB*.  
+
+image:lama-ansible-image24.png[Error: Missing Graphic Image]
+
+. In screen 6,  input is only required if you perform a tenant clone.
+
+image:lama-ansible-image25.png[Error: Missing Graphic Image]
+
+. In screen 7, system isolation can be configured.
+
+image:lama-ansible-image26.png[Error: Missing Graphic Image]
+
+. In screen 8, a summary page contains all the settings for final confirmation before the workflow is started. Click *Execute* to start the workflow.
+
+image:lama-ansible-image27.png[Error: Missing Graphic Image]
+
+SAP LaMa now performs all the actions indicated in the configuration. These actions include creating the storage volume clones and exports, mounting them to the target host, adding the firewall rules for isolation,  and starting the HANA database and SAP services.
+
+. You can monitor the progress of the clone workflow under the *Monitoring* menu.
+
+image:lama-ansible-image28.png[Error: Missing Graphic Image]
+
+Within the detailed log, the operations *Clone Volume* and *Modify Mountpoints and add Custom Properties* are executed at the Ansible node, the `sap-jump` host.  These steps are executed for each service, the HANA database, the SAP central services,  and the SAP AS service.
+
+image:lama-ansible-image29.png[Error: Missing Graphic Image]
+
+. By selecting the *Clone Volumes* task the detailed log for that step is displayed and the execution of the Ansible Playbook is shown here.  You can see, that the Ansible playbook `netapp_lama_CloneVolumes.yml` is executed for each HANA database volume, data, log,  and shared.
+
+image:lama-ansible-image30.png[Error: Missing Graphic Image]
+
+. In the details view of the step *Modify Mountpoints and add Custom Properties*,  you can find information about the mount points and the custom properties handed over by the execution script.
+
+image:lama-ansible-image31.png[Error: Missing Graphic Image]
+
+After the workflow has been completed, the cloned SAP system is prepared, started, and ready for use.

@@ -1,0 +1,51 @@
+---
+sidebar: sidebar
+permalink: lama-ansible-sap-lama-deprovisioning-workflow---system-destroy.html
+keywords:
+summary:
+---
+
+= SAP LaMa deprovisioning workflow - system destroy
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2023-01-30 15:53:02.715537
+//
+
+image:lama-ansible-image32.png[Error: Missing Graphic Image]
+
+To decommission a cloned system, it must be stopped and prepared in advance.  Afterwards the system destroy workflow can be started.
+
+image:lama-ansible-image33.png[Error: Missing Graphic Image]
+
+. In this example,  we run the system destroy workflow for the system created before. We select the system in the *System View* screen and start the system destroy workflow under *Destroy Processes*.
+
+image:lama-ansible-image34.png[Error: Missing Graphic Image]
+
+. All the mountpoints maintained during the provisioning phase are shown here and are deleted during the system destroy workflow process.
+
+image:lama-ansible-image35.png[Error: Missing Graphic Image]
+
+No virtual hostnames are deleted because they are maintained through DNS and have been assigned automatically.
+
+image:lama-ansible-image36.png[Error: Missing Graphic Image]
+
+. The operation is started by clicking the execute button.
+
+image:lama-ansible-image37.png[Error: Missing Graphic Image]
+
+SAP LaMa now performs the deletion of the volume clones and deletes the configuration of the cloned system.
+
+. You can monitor the progress of the clone workflow under the *Monitoring* menu.
+
+image:lama-ansible-image38.png[Error: Missing Graphic Image]
+
+By selecting the *Delete NetAppClone* task,  the detailed log for that step is displayed. The execution of the Ansible Playbook is shown here. As you can see, the Ansible playbook `netapp_lama_ServiceConfigRemoval.yml` is executed for each HANA database volume, data, log,  and shared.
+
+image:lama-ansible-image39.png[Error: Missing Graphic Image]

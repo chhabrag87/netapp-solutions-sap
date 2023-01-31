@@ -1,0 +1,35 @@
+---
+sidebar: sidebar
+permalink: lama-ansible-netapp-sap-lama-integration-using-ansible.html
+keywords:
+summary:
+---
+
+= NetApp SAP LaMa integration using Ansible
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2023-01-30 15:53:02.684591
+//
+
+[.lead]
+The integration approach uses SAP LaMa custom provisioning and operation hooks combined with Ansible playbooks for NetApp storage management.  The following figure shows a high-level overview of the configuration on the LaMa side as well as the corresponding components of the example implementation.
+
+image:lama-ansible-image6.png[Error: Missing Graphic Image]
+
+A central host acting as an Ansible control node is used to execute the requests from SAP LaMa and to trigger the NetApp storage operations using Ansible playbooks. The SAP host agent components must be installed on this host so that the host can be used as a communication gateway to SAP LaMa.
+
+Within LaMa Automation Studio,  a provider is defined that is registered at the Ansible host’s SAP host agent. A host agent configuration file points to a shell script that is called by SAP LaMa with a set of command line parameters, depending on the requested operation.
+
+Within LaMa Automation Studio,  custom provisioning and a custom hook is defined to execute storage cloning operations during provisioning and also during clean-up operations when the system is deprovisioned. The shell script on the Ansible control node then executes the corresponding Ansible playbooks, which trigger the Snapshot and FlexClone operations as well as the deletion of the clones with the deprovisioning workflow.
+
+More information on NetApp Ansible modules and the LaMa provider definitions can be found at:
+
+* https://www.ansible.com/integrations/infrastructure/netapp[NetApp Ansible modules^] (xref)
+* https://help.sap.com/doc/700f9a7e52c7497cad37f7c46023b7ff/3.0.11.0/en-US/bf6b3e43340a4cbcb0c0f3089715c068.html[SAP LaMa documentation – provider definitions^] (xref)

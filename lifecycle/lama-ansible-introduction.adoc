@@ -1,0 +1,28 @@
+---
+sidebar: sidebar
+permalink: lama-ansible-introduction.html
+keywords:
+summary:
+---
+
+= Introduction
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2023-01-30 15:53:02.668394
+//
+
+[.lead]
+SAP Landscape Management (LaMa) enables SAP system administrators to automate SAP system operations, including end-to-end SAP system clone, copy,  and refresh operations.
+
+NetApp offers a rich set of Ansible modules that allows SAP LaMa to access technologies such as NetApp Snapshot and FlexClone through SAP LaMa Automation Studio. These technologies help to simplify and accelerate SAP system clone, copy,  and refresh operations.
+
+The integration can be used by customers who run NetApp storage solutions on-premises or by customers using NetApp storage services at public cloud providers such as Amazon Web Services,  Microsoft Azure,  or Google Cloud Platform.
+
+This document describes the configuration of SAP LaMa with NetApp storage features for SAP system copy, clone,  and refresh operations using Ansible automation.

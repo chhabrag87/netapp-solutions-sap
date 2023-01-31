@@ -1,0 +1,56 @@
+---
+sidebar: sidebar
+permalink: lama-ansible-sap-lama-provisioning-workflow---copy-system.html
+keywords:
+summary:
+---
+
+= SAP LaMa provisioning workflow - copy system
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2023-01-30 15:53:02.723025
+//
+
+image:lama-ansible-image40.png[Error: Missing Graphic Image]
+
+In this chapter, we briefly discuss the differences for the system clone workflow and input screens.  As you can see in the following image, nothing changes in the storage workflow.
+
+image:lama-ansible-image41.png[Error: Missing Graphic Image]
+
+The system copy workflow can be started when the system is prepared accordingly. This is not a specific task for this configuration,  and we do not explain it in detail. If you need further information,  review the SAP LaMa documentation.
+
+image:lama-ansible-image42.png[Error: Missing Graphic Image]
+
+. During the copy workflow,  the system is renamed,  as must be specified in the first screen.
+
+image:lama-ansible-image43.png[Error: Missing Graphic Image]
+
+. During the workflow,  you can change the instance numbers.
+
+image:lama-ansible-image44.png[Error: Missing Graphic Image]
+
+[NOTE]
+Changing instance numbers has not been tested and might require changes in the provider script.
+
+. As described, the *Custom Clone* screen does not differ from the cloning workflow, as is shown here.
+
+image:lama-ansible-image45.png[Error: Missing Graphic Image]
+
+. As we already described, the remaining input masks do not deviate from the standard and we do not go into them any further here.  The final screen shows a summary,  and execution can now be started.
+
+image:lama-ansible-image46.png[Error: Missing Graphic Image]
+
+After the copy process, the target instance is not enabled for the custom cloning process.
+
+image:lama-ansible-image47.png[Error: Missing Graphic Image]
+
+It must be adopted manually to run the pre-hook step during the system destroy process because a constraint is set and would prevent execution.
+
+image:lama-ansible-image48.png[Error: Missing Graphic Image]

@@ -1,0 +1,28 @@
+---
+sidebar: sidebar
+permalink: lama-ansible-sap-system-clone,-copy,-and-refresh-scenarios.html
+keywords:
+summary:
+---
+
+= SAP system clone, copy, and refresh scenarios
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2023-01-30 15:53:02.673145
+//
+
+[.lead]
+The term SAP system copy is often used as a synonym for three different processes: SAP system clone, SAP system copy,  or SAP system refresh. It is important to distinguish between the different operations because the workflows and use cases differ for each one.
+
+* *SAP system clone.* An SAP system clone is an identical clone of a source SAP system. SAP system clones are typically used to address logical corruption or to test disaster recovery scenarios. With a system clone operation, the hostname, instance number, and SID remain the same. It is therefore important to establish proper network fencing for the target system to make sure that there is no communication with the production environment.
+* *SAP system copy.* An SAP system copy is a setup of a new target SAP system with data from a source SAP system. The new target system could be, for example, an additional test system with data from the production system. The hostname, instance number, and SID are different for the source and target systems.
+* *SAP system refresh.* An SAP system refresh is a refresh of an existing target SAP system with data from a source SAP system. The target system is typically part of an SAP transport landscape, for example a quality assurance system, that is refreshed with data from the production system. The hostname, instance number, and SID are different for the source and target systems.The following figure illustrates the main steps that must be performed during a system clone,  system copy, or system refresh operation. The purple boxes indicate steps where NetApp storage features can be integrated. All three operations can be fully automated by using SAP LaMa.
+
+image:lama-ansible-image1.png[Error: Missing Graphic Image]

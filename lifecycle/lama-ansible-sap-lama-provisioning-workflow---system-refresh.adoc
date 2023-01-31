@@ -1,0 +1,33 @@
+---
+sidebar: sidebar
+permalink: lama-ansible-sap-lama-provisioning-workflow---system-refresh.html
+keywords:
+summary:
+---
+
+= SAP LaMa provisioning workflow - system refresh
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2023-01-30 15:53:02.730880
+//
+
+image:lama-ansible-image49.png[Error: Missing Graphic Image]
+
+During the refresh workflow,  the storage clone must be deleted. You can use the same Ansible playbook as for the system destroy workflow. However,  the custom hook is defined to a different step, so the playbook is named accordingly.  The process step for the clone doesn´t differ.
+
+image:lama-ansible-image50.png[Error: Missing Graphic Image]
+
+The refresh workflow can be triggered through the provisioning screen for a copied system.
+
+image:lama-ansible-image51.png[Error: Missing Graphic Image]
+
+Again nothing differs in the input screens from the standard and the workflow execution can be started from the summary screen.
+
+image:lama-ansible-image52.png[Error: Missing Graphic Image]
