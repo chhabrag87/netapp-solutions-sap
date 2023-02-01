@@ -1,16 +1,16 @@
 ---
 sidebar: sidebar
-permalink: lama-ansible-appendix--provider-script-configuration-and-ansible-playbooks.html
-keywords:
-summary:
+permalink: lifecycle/lama-ansible-appendix--provider-script-configuration-and-ansible-playbooks.html
+keywords: appendix, script, ansible playbook, directory 
+summary: The following provider configuration file, execution script, and Ansible playbooks are used during the sample deployment and workflow execution in this documentation.
 ---
 
-= Appendix: Provider script configuration and Ansible playbooks
+= Provider script configuration and Ansible playbooks
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ./../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)
@@ -18,19 +18,23 @@ summary:
 // 2023-01-30 15:53:02.735739
 //
 
+link:lama-ansible-sap-lama-provisioning-workflow---system-refresh.html[Previous: AP LaMa provisioning workflow - system refresh.]
+
 [.lead]
-The following provider configuration file, execution script,  and Ansible playbooks are used during the sample deployment and workflow execution in this documentation.
+The following provider configuration file, execution script, and Ansible playbooks are used during the sample deployment and workflow execution in this documentation.
 
 [NOTE]
 The example scripts are provided as is and are not supported by NetApp. You can request the current version of the scripts via email to mailto:ng-sapcc@netapp.com[ng-sapcc@netapp.com^].
 
-=== Provider configuration file netapp_clone.conf
+== Provider configuration file netapp_clone.conf
 
-The configuration file is created as described in the https://help.sap.com/doc/700f9a7e52c7497cad37f7c46023b7ff/3.0.11.0/en-US/250dfc5eef4047a38bab466c295d3a49.html[SAP LaMa Documentation - Configuring SAP Host Agent Registered Scripts^].  This configuration file must be located on the Ansible control node where the SAP host agent is installed.
+The configuration file is created as described in the https://help.sap.com/doc/700f9a7e52c7497cad37f7c46023b7ff/3.0.11.0/en-US/250dfc5eef4047a38bab466c295d3a49.html[SAP LaMa Documentation - Configuring SAP Host Agent Registered Scripts^]. This configuration file must be located on the Ansible control node where the SAP host agent is installed.
 
 The configured os-user `sapuser` must have the appropriate permissions to execute the script and the called Ansible playbooks. You can place the script in a common script directory. SAP LaMa can provide multiple parameters when calling the script.
 
-In addition to the custom parameters,  `PARAM_ClonePostFix`, `PROP_ClonePostFix`, `PARAM_ClonePostFix`,  and `PROP_ClonePostFix`,  many others can be handed over, as is shown in the https://help.sap.com/doc/700f9a7e52c7497cad37f7c46023b7ff/3.0.11.0/en-US/0148e495174943de8c1c3ee1b7c9cc65.html[SAP LaMa Documentation^].
+In addition to the custom parameters, `PARAM_ClonePostFix`, `PROP_ClonePostFix`, `PARAM_ClonePostFix`, and `PROP_ClonePostFix`, many others can be handed over, as is shown in the https://help.sap.com/doc/700f9a7e52c7497cad37f7c46023b7ff/3.0.11.0/en-US/0148e495174943de8c1c3ee1b7c9cc65.html[SAP LaMa Documentation^].
+
+....
 root@sap-jump:~# cat /usr/sap/hostctrl/exe/operations.d/netapp_clone.conf 
 Name: netapp_clone
 Username: sapuser
@@ -40,29 +44,31 @@ ResulConverter: hook
 Platform: Unix
 ....
 
-=== Provider script netapp_clone.sh
+== Provider script netapp_clone.sh
 
 The provider script must be stored in `/usr/sap/scripts` as configured in the provider configuration file.
 
-==== Variables
+=== Variables
 
 The following variables are hard coded in the script and must be adapted accordingly.
 
 * `PRIMARY_CLUSTER=`<hostname of netapp cluster>
-* `PRIMARY_SVM=`<SVM name where source system volumes are stored>The certificate files `PRIMARY_KEYFILE=/usr/sap/scripts/ansible/certs/ontap.key` and `PRIMARY_CERTFILE=/usr/sap/scripts/ansible/certs/ontap.pem` must be provided as described in https://github.com/sap-linuxlab/demo.netapp_ontap/blob/main/netapp_ontap.md[NetApp Ansible modules - Prepare ONTAP^].
+* `PRIMARY_SVM=`<SVM name where source system volumes are stored>
+
+The certificate files `PRIMARY_KEYFILE=/usr/sap/scripts/ansible/certs/ontap.key` and `PRIMARY_CERTFILE=/usr/sap/scripts/ansible/certs/ontap.pem` must be provided as described in https://github.com/sap-linuxlab/demo.netapp_ontap/blob/main/netapp_ontap.md[NetApp Ansible modules - Prepare ONTAP^].
 
 [NOTE]
 If different clusters or SVMs are required for different SAP systems, these variables can be added as parameters in the SAP LaMa provider definition.
 
-==== Function: create inventory file
+=== Function: create inventory file
 
 To make Ansible playbook execution more dynamic, an `inventory. yml` file is created on the fly. Some static values are configured in the variable section and some are dynamically created during execution.
 
-==== Function: run Ansible playbook
+=== Function: run Ansible playbook
 
-This function is used to execute the Ansible playbook together with the dynamically created `inventory. yml` file. The naming convention for the playbooks is `netapp_lama_${HookOperationName}. yml`. The values for `${HookOperationName}` is dependent on the LaMa operation and handed over by LaMa as a command line parameter.
+This function is used to execute the Ansible playbook together with the dynamically created `inventory.yml` file. The naming convention for the playbooks is `netapp_lama_${HookOperationName}.yml`. The values for `${HookOperationName}` is dependent on the LaMa operation and handed over by LaMa as a command line parameter.
 
-==== Section Main
+=== Section Main
 
 This section contains the main execution plan. The variable `${HookOperationName}` contains the name of the LaMa replacement step and is provided by LaMa when the script is called.
 
@@ -74,22 +80,22 @@ This section contains the main execution plan. The variable `${HookOperationName
 * Value with the system refresh workflow:
 ** ClearMountConfig
 
-==== HookOperationName = CloneVolumes
+=== HookOperationName = CloneVolumes
 
-With this step,  the Ansible playbook is executed,  which triggers the Snapshot copy and cloning operation.  The volume names and mount configuration are handed over by SAP LaMa through an XML file defined in the variable `$MOUNT_XML_PATH`. This file is saved because it is used later in the step `FinalizeCloneVolumes` to create the new mount- point configuration.  The volume names are extracted from the XML file and the Ansible cloning playbook is executed for each volume.
+With this step, the Ansible playbook is executed, which triggers the Snapshot copy and cloning operation. The volume names and mount configuration are handed over by SAP LaMa through an XML file defined in the variable `$MOUNT_XML_PATH`. This file is saved because it is used later in the step `FinalizeCloneVolumes` to create the new mount-point configuration. The volume names are extracted from the XML file and the Ansible cloning playbook is executed for each volume.
 
 [NOTE]
-In this example,  the AS instance and the central services share the same volume. Therefore, volume cloning is only executed when the SAP instance number (`$SAPSYSTEM`) is not `01`. This might differ in other environments and must be changed accordingly.
+In this example, the AS instance and the central services share the same volume. Therefore, volume cloning is only executed when the SAP instance number (`$SAPSYSTEM`) is not `01`. This might differ in other environments and must be changed accordingly.
 
-==== HookOperationName = PostCloneVolumes
+=== HookOperationName = PostCloneVolumes
 
 During this step, the custom properties `ClonePostFix` and `SnapPostFix` and the mount point configuration for the target system are maintained.
 
 The custom properties are used later as input when the system is decommissioned during the `ServiceConfigRemoval` or `ClearMountConfig` phase. The system is designed to preserve the settings of the custom parameters that were specified during the system provisioning workflow.
 
-The values used in this example are `ClonePostFix=_clone_20221115` and “`SnapPostFix=_snap_20221115`.
+The values used in this example are `ClonePostFix=_clone_20221115` and `SnapPostFix=_snap_20221115`.
 
-For the volume `HN9_sap`,  the dynamically created Ansible file includes the following values:  `datavolumename`: `HN9_sap`, `snapshotpostfix: _snap_20221115`, and `clonepostfix: _clone_20221115`.
+For the volume `HN9_sap`, the dynamically created Ansible file includes the following values: `datavolumename`: `HN9_sap`, `snapshotpostfix: _snap_20221115`, and `clonepostfix: _clone_20221115`.
 
 Which leads into the snapshot name on the volume HN9_sap `HN9_sap_snap_20221115` and the created volume clone name `HN9_sap_clone_20221115`.
 
@@ -99,29 +105,31 @@ Custom properties could be used in any way to preserve parameters used during th
 The mount point configuration is extracted from the XML file that has been handed over by LaMa in the `CloneVolume` step. The `ClonePostFix` is added to the volume names and send back to LaMa through the default script output. The functionality is described in https://launchpad.support.sap.com/[SAP Note 1889590^].
 
 [NOTE]
-In this example,  qtrees on the storage system are used as a common way to place different data on a single volume.  For example,  `HN9_sap` holds the mount points for `/usr/sap/HN9`, `/sapmnt/HN9`, and `/home/hn9adm`. Subdirectories work in the same way.  This might differ in other environments and must be changed accordingly.
+In this example, qtrees on the storage system are used as a common way to place different data on a single volume. For example, `HN9_sap` holds the mount points for `/usr/sap/HN9`, `/sapmnt/HN9`, and `/home/hn9adm`. Subdirectories work in the same way. This might differ in other environments and must be changed accordingly.
 
-==== HookOperationName = ServiceConfigRemoval
+=== HookOperationName = ServiceConfigRemoval
 
-In this step,  the Ansible playbook that is responsible for the deletion of the volume clones is running.
+In this step, the Ansible playbook that is responsible for the deletion of the volume clones is running.
 
-The volume names are handed over by SAP LaMa through the mount configuration file,  and the custom properties `ClonePostFix` and `SnapPostFix` are used to hand over the values of the parameters originally specified during the system provisioning workflow (see the note at `HookOperationName = PostCloneVolumes`).
+The volume names are handed over by SAP LaMa through the mount configuration file, and the custom properties `ClonePostFix` and `SnapPostFix` are used to hand over the values of the parameters originally specified during the system provisioning workflow (see the note at `HookOperationName = PostCloneVolumes`).
 
-The volume names are extracted from the xml file,  and the Ansible cloning playbook is executed for each volume.
+The volume names are extracted from the xml file, and the Ansible cloning playbook is executed for each volume.
 
 [NOTE]
-In this example,  the AS instance and the central services share the same volume.  Therefore, the volume deletion is only executed when the SAP instance number (`$SAPSYSTEM`) is not `01`. This might differ in other environments and must be changed accordingly.
+In this example, the AS instance and the central services share the same volume. Therefore, the volume deletion is only executed when the SAP instance number (`$SAPSYSTEM`) is not `01`. This might differ in other environments and must be changed accordingly.
 
-==== HookOperationName = ClearMountConfig
+=== HookOperationName = ClearMountConfig
 
-In this step,  the Ansible playbook that is responsible for the deletion of the volume clones during a system refresh workflow is running.
+In this step, the Ansible playbook that is responsible for the deletion of the volume clones during a system refresh workflow is running.
 
-The volume names are handed over by SAP LaMa through the mount configuration file,  and the custom properties `ClonePostFix` and `SnapPostFix` are used to hand over the values of the parameters originally specified during the system provisioning workflow.
+The volume names are handed over by SAP LaMa through the mount configuration file, and the custom properties `ClonePostFix` and `SnapPostFix` are used to hand over the values of the parameters originally specified during the system provisioning workflow.
 
 The volume names are extracted from the XML file and the Ansible cloning playbook is executed for each volume.
 
 [NOTE]
-In this example,  the AS instance and the central services share the same volume. Therefore, volume deletion is only executed when the SAP instance number (`$SAPSYSTEM`) is not `01`. This might differ in other environments and must be changed accordingly.
+In this example, the AS instance and the central services share the same volume. Therefore, volume deletion is only executed when the SAP instance number (`$SAPSYSTEM`) is not `01`. This might differ in other environments and must be changed accordingly.
+
+....
 root@sap-jump:~# cat /usr/sap/scripts/netapp_clone.sh
 #!/bin/bash
 #Section - Variables
@@ -341,9 +349,11 @@ if [ -e $YAML_TMP ];then rm $YAML_TMP;fi
 exit 0
 ....
 
-=== Ansible Playbook netapp_lama_CloneVolumes.yml
+== Ansible Playbook netapp_lama_CloneVolumes.yml
 
-The playbook,  which is executed during the CloneVolumes step of the LaMa system clone workflow,  is a combination of `create_snapshot.yml` and `create_clone.yml` (see https://github.com/sap-linuxlab/demo.netapp_ontap/blob/main/netapp_ontap.md[NetApp Ansible modules - YAML files^]). This playbook can be easily extended to cover additional use cases like cloning from secondary and clone split operations.
+The playbook that is executed during the CloneVolumes step of the LaMa system clone workflow is a combination of `create_snapshot.yml` and `create_clone.yml` (see https://github.com/sap-linuxlab/demo.netapp_ontap/blob/main/netapp_ontap.md[NetApp Ansible modules - YAML files^]). This playbook can be easily extended to cover additional use cases like cloning from secondary and clone split operations.
+
+....
 root@sap-jump:~# cat /usr/sap/scripts/ansible/netapp_lama_CloneVolumes.yml 
 ---
 - hosts: ontapservers
@@ -381,47 +391,11 @@ root@sap-jump:~# cat /usr/sap/scripts/ansible/netapp_lama_CloneVolumes.yml
       validate_certs: false
 ....
 
-=== Ansible Playbook netapp_lama_ServiceConfigRemoval.yml
+== Ansible Playbook netapp_lama_ServiceConfigRemoval.yml
 
-The playbook,  which is executed during the `ServiceConfigRemoval` phase of the LaMa system destroy workflow,  is combination of `delete_clone.yml` and `delete_snapshot.yml` (see https://github.com/sap-linuxlab/demo.netapp_ontap/blob/main/netapp_ontap.md[NetApp Ansible modules - YAML files^]). It must be aligned to the execution steps of the `netapp_lama_CloneVolumes` playbook.
-root@sap-jump:~# cat /usr/sap/scripts/ansible/netapp_lama_ServiceConfigRemoval.yml 
----
-- hosts: ontapservers
-  connection: local
-  collections:
-    - netapp.ontap
-  gather_facts: false
-  name: netapp_lama_ServiceConfigRemoval
-  tasks:
-  - name: Delete Clone
-    na_ontap_volume:
-      state: absent
-      name: "{{ datavolumename }}{{ clonepostfix }}"
-      use_rest: always
-      vserver: "{{ svmname }}"
-      wait_for_completion: True
-      hostname: "{{ inventory_hostname }}"
-      cert_filepath: "{{ certfile }}"
-      key_filepath: "{{ keyfile }}"
-      https: true
-      validate_certs: false
-  - name: Delete SnapShot
-    na_ontap_snapshot:
-      state: absent
-      snapshot: "{{ datavolumename }}{{ snapshotpostfix }}"
-      use_rest: always
-      volume: "{{ datavolumename }}"
-      vserver: "{{ svmname }}"
-      hostname: "{{ inventory_hostname }}"
-      cert_filepath: "{{ certfile }}"
-      key_filepath: "{{ keyfile }}"
-      https: true
-      validate_certs: false
-root@sap-jump:~# 
+The playbook that is executed during the `ServiceConfigRemoval` phase of the LaMa system destroy workflow is combination of `delete_clone.yml` and `delete_snapshot.yml` (see https://github.com/sap-linuxlab/demo.netapp_ontap/blob/main/netapp_ontap.md[NetApp Ansible modules - YAML files^]). It must be aligned to the execution steps of the `netapp_lama_CloneVolumes` playbook.
 
-=== Ansible Playbook netapp_lama_ClearMountConfig.yml
-
-The playbook,  which is executed during the `netapp_lama_ClearMountConfig` phase of the LaMa system refresh workflow is combination of `delete_clone.yml` and `delete_snapshot.yml` (see https://github.com/sap-linuxlab/demo.netapp_ontap/blob/main/netapp_ontap.md[NetApp Ansible modules - YAML files^]). It must be aligned to the execution steps of the `netapp_lama_CloneVolumes` playbook.
+....
 root@sap-jump:~# cat /usr/sap/scripts/ansible/netapp_lama_ServiceConfigRemoval.yml 
 ---
 - hosts: ontapservers
@@ -458,9 +432,52 @@ root@sap-jump:~# cat /usr/sap/scripts/ansible/netapp_lama_ServiceConfigRemoval.y
 root@sap-jump:~# 
 ....
 
-=== Sample Ansible inventory.yml
+== Ansible Playbook netapp_lama_ClearMountConfig.yml
 
-This inventory file is dynamically built during workflow execution,  and it is only shown here for illustration.
+The playbook, which is executed during the `netapp_lama_ClearMountConfig` phase of the LaMa system refresh workflow is combination of `delete_clone.yml` and `delete_snapshot.yml` (see https://github.com/sap-linuxlab/demo.netapp_ontap/blob/main/netapp_ontap.md[NetApp Ansible modules - YAML files^]). It must be aligned to the execution steps of the `netapp_lama_CloneVolumes` playbook.
+
+....
+root@sap-jump:~# cat /usr/sap/scripts/ansible/netapp_lama_ServiceConfigRemoval.yml 
+---
+- hosts: ontapservers
+  connection: local
+  collections:
+    - netapp.ontap
+  gather_facts: false
+  name: netapp_lama_ServiceConfigRemoval
+  tasks:
+  - name: Delete Clone
+    na_ontap_volume:
+      state: absent
+      name: "{{ datavolumename }}{{ clonepostfix }}"
+      use_rest: always
+      vserver: "{{ svmname }}"
+      wait_for_completion: True
+      hostname: "{{ inventory_hostname }}"
+      cert_filepath: "{{ certfile }}"
+      key_filepath: "{{ keyfile }}"
+      https: true
+      validate_certs: false
+  - name: Delete SnapShot
+    na_ontap_snapshot:
+      state: absent
+      snapshot: "{{ datavolumename }}{{ snapshotpostfix }}"
+      use_rest: always
+      volume: "{{ datavolumename }}"
+      vserver: "{{ svmname }}"
+      hostname: "{{ inventory_hostname }}"
+      cert_filepath: "{{ certfile }}"
+      key_filepath: "{{ keyfile }}"
+      https: true
+      validate_certs: false
+root@sap-jump:~# 
+....
+
+== Sample Ansible inventory.yml
+
+This inventory file is dynamically built during workflow execution, and it is only shown here for illustration.
+
+....
 ontapservers:
  hosts:
   grenada:
@@ -472,3 +489,5 @@ ontapservers:
    snapshotpostfix: " _snap_20221115"
    clonepostfix: "_clone_20221115"
 ....
+
+link:lama-ansible-conclusion.html[Next: Conclusion.]

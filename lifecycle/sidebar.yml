@@ -16,14 +16,14 @@ entries:
       - title: Example implementation
         url: /lifecycle/lama-ansible-example-implementation.html
       - title: SAP LaMa provisioning workflow - clone system
-        url: /lifecycle/lama-ansible-sap-lama-provisioning-workflow---clone-system.html
+        url: /lifecycle/lama-ansible-sap-lama-provisioning-workflow-clone-system.html
       - title: SAP LaMa deprovisioning workflow - system destroy
-        url: /lifecycle/lama-ansible-sap-lama-deprovisioning-workflow---system-destroy.html
+        url: /lifecycle/lama-ansible-sap-lama-deprovisioning-workflow-system-destroy.html
       - title: SAP LaMa provisioning workflow - copy system
-        url: /lifecycle/lama-ansible-sap-lama-provisioning-workflow---copy-system.html
+        url: /lifecycle/lama-ansible-sap-lama-provisioning-workflow-copy-system.html
       - title: SAP LaMa provisioning workflow - system refresh
-        url: /lifecycle/lama-ansible-sap-lama-provisioning-workflow---system-refresh.html
-      - title: Appendix  Provider script configuration and Ansible playbooks
+        url: /lifecycle/lama-ansible-sap-lama-provisioning-workflow-system-refresh.html
+      - title: Provider script configuration and Ansible playbooks
         url: /lifecycle/lama-ansible-appendix--provider-script-configuration-and-ansible-playbooks.html
       - title: Conclusion
         url: /lifecycle/lama-ansible-conclusion.html
