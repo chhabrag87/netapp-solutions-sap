@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: lifecycle/lama-ansible-appendix--provider-script-configuration-and-ansible-playbooks.html
+permalink: lifecycle/lama-ansible-appendix-provider-script-configuration-and-ansible-playbooks.html
 keywords: appendix, script, ansible playbook, directory 
 summary: The following provider configuration file, execution script, and Ansible playbooks are used during the sample deployment and workflow execution in this documentation.
 ---

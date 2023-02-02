@@ -37,4 +37,4 @@ Again, nothing differs in the input screens from the standard, and the workflow 
 
 image:lama-ansible-image52.png["This screenshot shows the Refresh System screen, including Basic Data of System to be refreshed and the host selection of the target system."]
 
-link:lama-ansible-appendix--provider-script-configuration-and-ansible-playbooks.html[Next: Provider script configuration and Ansible playbooks.]
+link:lama-ansible-appendix-provider-script-configuration-and-ansible-playbooks.html[Next: Provider script configuration and Ansible playbooks.]
