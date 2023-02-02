@@ -18,7 +18,7 @@ summary: To decommission a cloned system, it must be stopped and prepared in adv
 // 2023-01-30 15:53:02.715537
 //
 
-link:lama-ansible-sap-lama-provisioning-workflow---clone-system.html[Previous: SAP LaMa provisioning workflow - clone system.]
+link:lama-ansible-sap-lama-provisioning-workflow-clone-system.html[Previous: SAP LaMa provisioning workflow - clone system.]
 
 [.lead]
 The following figure highlights the main steps executed with the system destroy workflow.
@@ -55,4 +55,4 @@ image:lama-ansible-image38.png["This screenshot shows the progress of the System
 +
 image:lama-ansible-image39.png["This screenshot shows the log page for the System Destroy workflow."]
 
-link:lama-ansible-sap-lama-provisioning-workflow---copy-system.html[Next: SAP LaMa provisioning workflow - copy system.]
+link:lama-ansible-sap-lama-provisioning-workflow-copy-system.html[Next: SAP LaMa provisioning workflow - copy system.]

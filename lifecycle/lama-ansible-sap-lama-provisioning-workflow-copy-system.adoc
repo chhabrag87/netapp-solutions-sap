@@ -18,7 +18,7 @@ summary: In this chapter, we briefly discuss the differences for the system clon
 // 2023-01-30 15:53:02.723025
 //
 
-link:lama-ansible-sap-lama-deprovisioning-workflow---system-destroy.html[Previous: SAP LaMa deprovisioning workflow - system destroy.]
+link:lama-ansible-sap-lama-deprovisioning-workflow-system-destroy.html[Previous: SAP LaMa deprovisioning workflow - system destroy.]
 
 [.lead]
 The following figure highlights the primary steps executed with the system copy workflow. 
@@ -60,4 +60,4 @@ It must be adopted manually to run the pre-hook step during the system destroy p
 
 image:lama-ansible-image48.png["This screenshot shows the LaMa Systems screen along with systems details, and the Use Custom Processing Process checkbox is checked."]
 
-link:lama-ansible-sap-lama-provisioning-workflow---system-refresh.html[Next: SAP LaMa provisioning workflow - system refresh.]
+link:lama-ansible-sap-lama-provisioning-workflow-system-refresh.html[Next: SAP LaMa provisioning workflow - system refresh.]

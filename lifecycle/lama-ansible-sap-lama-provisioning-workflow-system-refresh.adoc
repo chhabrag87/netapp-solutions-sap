@@ -18,7 +18,7 @@ summary: During the refresh workflow, the storage clone must be deleted. You can
 // 2023-01-30 15:53:02.730880
 //
 
-link:lama-ansible-sap-lama-provisioning-workflow---copy-system.html[Previous: SAP LaMa provisioning workflow - copy system.]
+link:lama-ansible-sap-lama-provisioning-workflow-copy-system.html[Previous: SAP LaMa provisioning workflow - copy system.]
 
 [.lead]
 The following figure highlights the main steps executed with the system refresh workflow.
