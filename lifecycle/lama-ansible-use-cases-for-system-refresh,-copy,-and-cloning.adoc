@@ -1,0 +1,56 @@
+---
+sidebar: sidebar
+permalink: lifecycle/lama-ansible-use-cases-for-system-refresh,-copy,-and-cloning.html
+keywords: data refresh, QA, text, sandbox, training, use case
+summary: There are multiple scenarios in which data from a source system must be made available to a target system for testing or training purposes. These test and training systems must be updated with data from the source system on a regular basis to make sure that testing and training is performed with the current data set. These system refresh operations consist of multiple tasks on the infrastructure, database, and application layers, and they can take multiple days depending on the level of automation.
+---
+
+= Use cases for system refresh, copy, and cloning
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2023-01-30 15:53:02.678236
+//
+
+link:lama-ansible-sap-system-clone,-copy,-and-refresh-scenarios.html[Previous: SAP system clone, copy, and refresh scenarios.]
+
+[.lead]
+== Data refresh of QA, test, sandbox, or training systems
+
+There are multiple scenarios in which data from a source system must be made available to a target system for testing or training purposes. These test and training systems must be updated with data from the source system on a regular basis to make sure that testing and training is performed with the current data set. These system refresh operations consist of multiple tasks on the infrastructure, database, and application layers, and they can take multiple days depending on the level of automation.
+
+image:lama-ansible-image2.png["This image depicts the environmental workflow from the main development landscape to temporary project splits, repair systems, training systems, and sanbox systems. It shows where System Refresh, System Copy, and System Clone are used for these various purposes."]
+
+SAP LaMa and NetApp cloning workflows can be used to accelerate and automate the required tasks at the infrastructure and database layers. Instead of restoring a backup from the source system to the target system, SAP LaMa uses NetApp Snapshot copy and NetApp FlexClone technology so that required tasks up to a started HANA database can be performed in minutes instead of hours as shown in the following figure. The time needed for the cloning process is independent from the size of the database; therefore even very large systems can be created in a couple of minutes. Further reduction of the runtime is accomplished by automating tasks on the operating system and database layer as well as on the SAP post processing side.
+
+image:lama-ansible-image3.png["This image shows a comparison between the cloning process with and without NetApp Snapshot copies and NetApp FlexClone technology, which speeds the process up dramatically."]
+
+== Address logical corruption
+
+Logical corruption can be caused by software errors, human errors, or sabotage. Unfortunately, logical corruption often cannot be addressed with standard high-availability and disaster recovery solutions. As a result, depending on the layer, application, file system, or storage where the logical corruption occurred, minimal downtime and acceptable data loss requirements can sometimes not be fulfilled.
+
+The worst case is logical corruption in an SAP application. SAP applications often operate in a landscape in which different applications communicate with each other and exchange data. Therefore, restoring and recovering an SAP system in which a logical corruption has occurred is not the recommended approach. Restoring the system to a point in time before the corruption occurred results in data loss. Also, the SAP landscape would no longer be in sync and would require additional postprocessing.
+
+Instead of restoring the SAP system, the better approach is to try to fix the logical error within the system by analyzing the problem in a separate repair system. Root cause analysis requires the involvement of the business process and application owner. For this scenario, you create a repair system (a clone of the production system) based on data stored before the logical corruption occurred. Within the repair system, the required data can be exported and imported into the production system. With this approach, the production system does not need to be stopped, and, in the best-case scenario, no data or only a small fraction of data is lost.
+
+When setting up the repair system, flexibility and speed are crucial. With NetApp storage-based Snapshot backups, multiple consistent database images are available to create a clone of the production system by using NetApp FlexClone technology. FlexClone volumes can be created in a matter of seconds rather than multiple hours if a redirected restore from a file-based backup is used to set up the repair system.
+
+image:lama-ansible-image4.png["This image depicts the step-by-step process for creating an repair system from the cloning system using FlexClone technology."]
+
+== Disaster recovery testing
+
+An effective disaster recovery strategy requires testing the required workflow. Testing demonstrates whether the strategy works and whether the internal documentation is sufficient. It also allows administrators to train on the required procedures.
+
+Storage replication with SnapMirror makes it possible to execute disaster recovery testing without putting RTO and RPO at risk. Disaster recovery testing can be performed without interrupting data replication. Disaster recovery testing for both asynchronous and synchronous SnapMirror uses Snapshot backups and FlexClone volumes at the disaster recovery target.
+
+SAP LaMa can be used to orchestrate the entire testing procedure, and it also takes care of network fencing, target host maintenance, and so on.
+
+image:lama-ansible-image5.png["This image depicts the relationship between NetApp storage systems in the primary datacenter, the local DR datacenter, and the remote DR datacenter. They are connected by both synchronous SnapMirror and asynchronous SnapMirror relationships."]
+
+link:lama-ansible-netapp-sap-lama-integration-using-ansible.html[Next: NetApp SAP LaMa integration using Ansible.]
