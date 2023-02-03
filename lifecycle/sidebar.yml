@@ -1,6 +1,33 @@
 section: lifecycle
 title: Lifecycle Management
 entries:
+#
+  - title: NetApp SAP Landscape Management Integration using Ansible
+    type: solutions
+    entries:
+      - title: Introduction
+        url: /lifecycle/lama-ansible-introduction.html
+      - title: SAP system clone, copy, and refresh scenarios
+        url: /lifecycle/lama-ansible-sap-system-clone,-copy,-and-refresh-scenarios.html
+      - title: Use cases for system refresh, copy, and cloning
+        url: /lifecycle/lama-ansible-use-cases-for-system-refresh,-copy,-and-cloning.html
+      - title: NetApp SAP LaMa integration using Ansible
+        url: /lifecycle/lama-ansible-netapp-sap-lama-integration-using-ansible.html
+      - title: Example implementation
+        url: /lifecycle/lama-ansible-example-implementation.html
+      - title: SAP LaMa provisioning workflow - clone system
+        url: /lifecycle/lama-ansible-sap-lama-provisioning-workflow-clone-system.html
+      - title: SAP LaMa deprovisioning workflow - system destroy
+        url: /lifecycle/lama-ansible-sap-lama-deprovisioning-workflow-system-destroy.html
+      - title: SAP LaMa provisioning workflow - copy system
+        url: /lifecycle/lama-ansible-sap-lama-provisioning-workflow-copy-system.html
+      - title: SAP LaMa provisioning workflow - system refresh
+        url: /lifecycle/lama-ansible-sap-lama-provisioning-workflow-system-refresh.html
+      - title: Provider script configuration and Ansible playbooks
+        url: /lifecycle/lama-ansible-appendix-provider-script-configuration-and-ansible-playbooks.html
+      - title: Conclusion
+        url: /lifecycle/lama-ansible-conclusion.html
+#
   - title: Automating SAP HANA System Copy and Clone Operations with SnapCenter
     type: solutions
     entries:
@@ -26,7 +53,7 @@ entries:
         url: /lifecycle/sc-copy-clone-sap-system-clone-with-snapcenter.html
       - title: Where to find additional information and version history
         url: /lifecycle/sc-copy-clone-where-to-find-additional-information.html
-
+#
   - title: Automating SAP system copy operations with Libelle SystemCopy
     type: solutions
     entries:
@@ -38,6 +65,6 @@ entries:
         url: /lifecycle/libelle-sc-sap-hana-system-refresh-with-lsc,-azacsnap,-and-azure-netapp-files.html
       - title: Where to find additional Information and version history
         url: /lifecycle/libelle-sc-where-to-find-additional-information.html
-
+#
   - title: Integrating NetApp Storage with SAP Landscape Management
     url: https://www.netapp.com/us/media/tr-4018.pdf

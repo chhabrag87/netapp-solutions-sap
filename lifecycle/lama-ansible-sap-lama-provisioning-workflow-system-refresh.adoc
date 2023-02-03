@@ -1,0 +1,40 @@
+---
+sidebar: sidebar
+permalink: lifecycle/lama-ansible-sap-lama-provisioning-workflow-system-refresh.html
+keywords: refresh, workflow, storage clone
+summary: During the refresh workflow, the storage clone must be deleted. You can use the same Ansible playbook as for the system destroy workflow. However, the custom hook is defined to a different step, so the playbook is named accordingly. The process step for the clone does not differ.
+---
+
+= SAP LaMa provisioning workflow - system refresh
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2023-01-30 15:53:02.730880
+//
+
+link:lama-ansible-sap-lama-provisioning-workflow-copy-system.html[Previous: SAP LaMa provisioning workflow - copy system.]
+
+[.lead]
+The following figure highlights the main steps executed with the system refresh workflow.
+
+image:lama-ansible-image49.png["This image depicts a timeline of the steps in the system refresh workflow. It contains Export configuration, stop system, unprepare system, delete storage clone, storage cloning, prepare system, activate isolation, system rename, start system, import configuration, post copy automation, and deactivate isolation."]
+
+During the refresh workflow, the storage clone must be deleted. You can use the same Ansible playbook as for the system destroy workflow. However, the custom hook is defined to a different step, so the playbook is named accordingly. The process step for the clone doesn´t differ.
+
+image:lama-ansible-image50.png["This image shows an architectural diagram that includes the steps contained within this workflow."]
+
+The refresh workflow can be triggered through the provisioning screen for a copied system.
+
+image:lama-ansible-image51.png["This screenshot shows the Provisioning system view with the Refresh system dropdown highlighted."]
+
+Again, nothing differs in the input screens from the standard, and the workflow execution can be started from the summary screen.
+
+image:lama-ansible-image52.png["This screenshot shows the Refresh System screen, including Basic Data of System to be refreshed and the host selection of the target system."]
+
+link:lama-ansible-appendix-provider-script-configuration-and-ansible-playbooks.html[Next: Provider script configuration and Ansible playbooks.]
