@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: lama-ansible-sap-system-clone,-copy,-and-refresh-scenarios.html
+permalink: lifecycle/lama-ansible-sap-system-clone,-copy,-and-refresh-scenarios.html
 keywords:
 summary:
 ---
@@ -10,7 +10,7 @@ summary:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ./../media/
 
 //
 // This file was created with NDAC Version 2.0 (August 17, 2020)

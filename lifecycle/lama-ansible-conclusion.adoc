@@ -18,7 +18,7 @@ summary: The integration of a modern automation framework like Ansible into SAP 
 // 2023-01-30 15:53:02.817313
 //
 
-link:lama-ansible-appendix--provider-script-configuration-and-ansible-playbooks.html[Previous: Provider script configuration and Ansible playbooks.]
+link:lama-ansible-appendix-provider-script-configuration-and-ansible-playbooks.html[Previous: Provider script configuration and Ansible playbooks.]
 
 [.lead]
 The integration of a modern automation framework like Ansible into SAP LaMa provisioning workflows gives customers a flexible solution to address standard or more complex infrastructure requirements.

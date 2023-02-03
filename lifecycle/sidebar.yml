@@ -24,7 +24,7 @@ entries:
       - title: SAP LaMa provisioning workflow - system refresh
         url: /lifecycle/lama-ansible-sap-lama-provisioning-workflow-system-refresh.html
       - title: Provider script configuration and Ansible playbooks
-        url: /lifecycle/lama-ansible-appendix--provider-script-configuration-and-ansible-playbooks.html
+        url: /lifecycle/lama-ansible-appendix-provider-script-configuration-and-ansible-playbooks.html
       - title: Conclusion
         url: /lifecycle/lama-ansible-conclusion.html
 #

@@ -85,4 +85,4 @@ image:lama-ansible-image31.png["More log information"]
 
 After the workflow has been completed, the cloned SAP system is prepared, started, and ready for use.
 
-link:lama-ansible-sap-lama-deprovisioning-workflow---system-destroy.html[Next: SAP LaMa deprovisioning workflow - system destroy.]
+link:lama-ansible-sap-lama-deprovisioning-workflow-system-destroy.html[Next: SAP LaMa deprovisioning workflow - system destroy.]

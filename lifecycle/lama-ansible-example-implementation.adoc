@@ -110,4 +110,4 @@ To enable the custom provisioning workflow for the source system, it must be ada
 
 image:lama-ansible-image16.png["Screenshot of the SAP LaMa Configuration > Systems> System Details screen. Use Custom Provisioning Process checkbox is highlighted."]
 
-link:lama-ansible-sap-lama-provisioning-workflow---clone-system.html[Next: SAP LaMa provisioning workflow - clone system.]
+link:lama-ansible-sap-lama-provisioning-workflow-clone-system.html[Next: SAP LaMa provisioning workflow - clone system.]
