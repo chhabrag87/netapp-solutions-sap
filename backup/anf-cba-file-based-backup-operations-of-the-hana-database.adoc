@@ -1,0 +1,103 @@
+---
+sidebar: sidebar
+permalink: backup/anf-cba-file-based-backup-operations-of-the-hana-database.html
+keywords: assign policy, file-based backup, cba topology, sap hana studio
+summary: "This section describes how to complete File-based backup operations of the HANA database."
+---
+
+= File-based backup operations of the HANA database
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2023-03-16 10:24:27.273504
+//
+ 
+link:anf-cba-snapshot-based-backup-operations-of-the-hana-database.html[Previous: Snapshot-based backup operations of the HANA database.]
+
+[.lead]
+SAP recommends combining storage-based Snapshot backups with a weekly file-based backup to execute a block integrity check. Cloud Backup for Applications supports the execution of a block integrity check by using a policy in which file-based backup is selected as the backup type.
+
+File-based backups are also used to have secondary backup copies in addition to the Snapshot backups on the HANA data volume. You can use these file-based backups for restore and recovery operations in case of a complete loss of the primary data volume.
+
+When scheduling backups using this policy, Cloud Backup for Applications creates a standard SAP HANA file backup for the system and all tenant databases.
+
+== Assign policy to HANA system
+
+To activate scheduled backups, the backup policy must be assigned to the HANA system.
+
+. Go to *Assign Policy* > *Data Volume*.
++
+image:anf-cba-image48.png["Screenshot of the step being completed."]
+
+. Select the policy for file-based backups and click *Assign*.
++
+image:anf-cba-image49.png["Screenshot of the step being completed."]
+
+. The policy is now assigned to the HANA system and file-based backups will be executed based on the schedule definition.
+
+== Create on-demand file-based backup
+
+To create an on-demand database backup, complete the following steps:
+
+. In the CBA dashboard view,  select On-Demand Backup – Data Volume in the context menu.
++
+image:anf-cba-image50.png["Screenshot of the step being completed."]
+
+. In the On-Demand Backup dialog, select either *Policy-based* or *One time*.
++
+** With *Policy-based*, the on-demand backup is treated in the same way as scheduled backups regarding the retention and pre- and post-script configuration.
+** With *One time*, you can define a specific retention, a specific backup name, and specific pre- and post-scripts.
+
+. In our example, we selected policy-based, and we will select the policy and retention as the next step.
++
+image:anf-cba-image51.png["Screenshot of the step being completed."]
+
+. Within the Job Monitoring view, you can see the different workflow steps, the runtime of the steps, and the total operation runtime.
++
+image:anf-cba-image52.png["Screenshot of the step being completed."]
++
+image:anf-cba-image53.png["Screenshot of the step being completed."]
+
+== Review file-based backup information in CBA topology view
+
+Cloud Backup for Applications does not display the file-based backups in the same manner as Snapshot copy-based backups. Instead, only the last file-based backup is listed. Success or failure of file-based backups are visible in the Job Monitor view.
+
+image:anf-cba-image54.png["Screenshot of the step being completed."]
+
+== Review file-based backup information on file system
+
+A successful block integrity check creates standard SAP HANA data backup files. CBA uses the backup path that has been configured in the HANA database for file-based data backup operations. Naming convention follows the configuration in the backup policy for the file-based backup.
+
+....
+vm-pr1:/hanabackup/PR1/file # ls -al *
+DB_PR1:
+total 3355880
+drwxr-xr-- 2 pr1adm sapsys       4096 Jan  3 10:12 .
+drwxr-x--- 4 pr1adm sapsys       4096 Dec 19 13:53 ..
+-rw-r----- 1 pr1adm sapsys     155648 Jan  3 10:10 SnapCenter_SnapCenter_PR1_WeeklyBlockIntegrityCheck_Weekly_2023_01_03_10_10_19_databackup_0_1
+-rw-r----- 1 pr1adm sapsys   83894272 Jan  3 10:11 SnapCenter_SnapCenter_PR1_WeeklyBlockIntegrityCheck_Weekly_2023_01_03_10_10_19_databackup_2_1
+-rw-r----- 1 pr1adm sapsys 1627398144 Jan  3 10:12 SnapCenter_SnapCenter_PR1_WeeklyBlockIntegrityCheck_Weekly_2023_01_03_10_10_19_databackup_3_1
+SYSTEMDB:
+total 3092672
+drwxr-xr-- 2 pr1adm sapsys       4096 Jan  3 10:12 .
+drwxr-x--- 4 pr1adm sapsys       4096 Dec 19 13:53 ..
+-rw-r----- 1 pr1adm sapsys     159744 Jan  3 10:10 SnapCenter_SnapCenter_PR1_WeeklyBlockIntegrityCheck_Weekly_2023_01_03_10_10_19_databackup_0_1
+-rw-r----- 1 pr1adm sapsys 1577066496 Jan  3 10:12 SnapCenter_SnapCenter_PR1_WeeklyBlockIntegrityCheck_Weekly_2023_01_03_10_10_19_databackup_1_1
+vm-pr1:/hanabackup/PR1/file #
+....
+
+== Review file-based backup information in SAP HANA Studio
+
+The SAP HANA backup catalog shows entries for both the system and the tenant databases. The following figures show the CBA file-based backup in the backup catalog of the system database and the tenant database.
+
+image:anf-cba-image55.png["The following figures show the CBA file-based backup in the backup catalog of the system database."]
+
+image:anf-cba-image56.png["The following figures show the CBA file-based backup in the backup catalog of the tenant database."]
+
+link:anf-cba-snapshot-based-backup-operations-of-non-data-volumes.html[Next: Snapshot-based backup operations of non-data volumes.]
