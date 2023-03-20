@@ -104,9 +104,9 @@ image:anf-cba-image14.png["This screenshot depicts the Hybrid vs Cloud Native se
 
 . In the System Details screen, select the system type: HANA single-container or multitenant database container. Provide the SID of the HANA system and enter free text as a system name.
 +
-The following screenshots show the configuration of an SAP HANA system PR.
+The following screenshots show the configuration of an SAP HANA system PR1.
 +
-image:anf-cba-image15.png["This screenshot shows the configuration of an SAP HANA system PR."]
+image:anf-cba-image15.png["This screenshot shows the configuration of an SAP HANA system PR1."]
 
 . Click *Add Plug-in host* to add the HANA database host. Typically, a host name is used. IP addresses also work. Port `8145` is the default port of the HANA plug-in that was installed on the HANA database host. If no changes have been made during the plug-in installation, the default port is valid.
 +

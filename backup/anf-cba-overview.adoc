@@ -5,7 +5,7 @@ keywords: tr4959, 4959, overview, introduction
 summary: "This technical report provides best practices for SAP HANA data protection on Azure NetApp Files (ANF) with NetApp BlueXP Cloud Backup for Applications (CBA). The document covers CBA concepts, configuration best practices, and descriptions of operation workflows for backup, and restore and recovery operations."
 ---
 
-= TR-4959: SAP HANA on ANF - Backup and recovery with cloud backup for applications
+= TR-4959: SAP HANA on ANF - Backup and recovery with Cloud Backup for Applications
 :hardbreaks:
 :nofooter:
 :icons: font

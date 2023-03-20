@@ -96,37 +96,44 @@ Backups are now executed based on the defined policies. CBA always triggers the 
 
 The HANA database executes Snapshot backups in the same way as for single-host systems. The backup operation SQL commands must be triggered at the system database, and the HANA backup savepoint is created for all HANA worker nodes so that all data volumes of each node are consistent. As a next step, the storage Snapshot operations must be performed on each data volume.
 
-== HANA multiple-host systems without standby host
+=== HANA multiple-host systems without standby host
 
-A HANA multiple-host system without a standby host is configured in a manner similar to a HANA single-host system.
+A HANA multiple-host system without a standby host is configured in CBA in a manner similar to a HANA single-host system.
 
-. The HANA plug-in needs to be installed on the worker node, where the HANA nameserver and system database is running. The worker nodes running the index servers do not require the HANA plug-in.
+. The HANA plug-in needs to be installed on the worker node, where the HANA nameserver and system database is running. The worker nodes running the Indexservers do not require the HANA plug-in.
 . The HDB user store key is configured for the system database in the same way as for a HANA single-host system.
 . In the configuration of the storage footprint, all data volumes of the HANA system must be added.
 +
 In the following example, you would add Data1, Data2, and Data3 volumes.
 +
+[NOTE]
+The data volumes of each HANA host must be mounted on each host in the same way as the configuration of a standby host. Cloud Backup for Applications creates a list of files included in the backup and therefore needs to have access to all volumes belonging to the HANA system. The file list is required for single-file restore operations when ANF cross-region replication or ANF backup is enabled.
++
 image:anf-cba-image111.png["This figure shows how a HANA plugin must be installed on worker nodes where the Nameserver/systemDB runs."]
 
-== HANA multiple-host systems with standby host
+=== HANA multiple-host systems with standby host
 
-HANA multiple-host systems with a standby host are not directly supported with the current CBA version. When the HANA system is configured as shown in the figure below, a failover of the HANA nameserver to the standby node leads to a failure of all backups, because the plug-in host configured in CBA does not work anymore.
+With the current CBA version, HANA multiple-host systems with a standby host are supported with the assumption that, after a failover of the nameserver to the standby host, the failed host gets restarted and then comes up with the same OS configuration, file system mounts, and HANA plugin.
 
-image:anf-cba-image112.png["This figure shows how a failover of the HANA nameserver to the standby node leads to a failure of all backups, because the plug-in host configured in CBA does not work anymore."]
+A HANA multiple-host system with standby host is configured in CBA with the following steps.
 
-As a workaround, you can configure a HANA multiple-host system with a standby host by adding the HANA nameserver host and the standby host to CBA. During normal operation, you must put the standby host in maintenance mode in CBA. In case of a failover, you must activate the standby host in CBA, and you must put the former nameserver host in maintenance mode.
+. The HANA plug-n must be installed on the worker node, where the HANA nameserver/system database is running.
 
-. Install the HANA plugin on the worker node where the HANA nameserver and system database is running.
-. Configure the HDB user store key for the system database in the same way as for a HANA single host system.
-. In the configuration of the storage footprint, you must add all data volumes for the HANA system. In the example shown in the figure below, add the Data1 and Data2 volumes.
-. After successful testing of backup operations, put the HANA system in maintenance mode in CBA.
-. Initiate a failover of the HANA nameserver to the standby host.
-. Now, install the HANA plug-in on the standby host, and configure CBA in the same way as described before.
-. After successful testing of backup operations, put the HANA system in maintenance mode in CBA.
-. A failover to the original nameserver host is executed.
-. Activate the original HANA system in CBA, and then execute backup operations.
+. The HDB user store key is configured with two hosts, the system database (name server host) and the standby host. The host:port strings in the CBA key configuration must be separated with a semicolon, and the list must start and end with double quotes. The hdbsql client then starts with the first entry in the user store key and will try to connect to the database. If the entry doesn’t work, the next entry is used. It is therefore important to configure the primary nameserver host as the first and the standby host as the second entry in the user store key.
 +
-image:anf-cba-image113.png[This figure shows how to activate the original HANA system in CBA, and then execute backup operations.]
+image:anf-cba-image112.png["This screenshot shows the Add User Store screen with appropriate information filled in."]
+
+. All data volumes of the HANA system must be added to the configuration of the storage footprint.
++
+In the example shown in the figure below, you would need to add Data1 and Data2 volumes.
++
+image:anf-cba-image113.png["This figure shows how add Data1 and Data2 to the Worker Nameservers and the Standby."]
+
+In case of a failover of the nameserver to the standby host, it is assumed that the failed host is restarted in a short time frame and comes up with the same configuration as before. In this case, the HANA plugin and the hdbsql and hdb user store components are available and can continued to be used for backup operations.
+
+With the user store configuration described before, the hdbsql client now uses the second host entry that points to the current nameserver host and executes backup operations.
+
+image:anf-cba-image114.png["This figure shows the failed VM is restarted and acts as the new standby host after a failover to the standby host."]
 
 link:anf-cba-where-to-find-additional-information-and-version-history.html[Next: Where to find additional information and version history.]
 

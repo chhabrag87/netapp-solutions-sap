@@ -47,6 +47,9 @@ After the recovery operation is finished, the system database is started.
 .. Select *Recover Tenant Database* and select the tenant to be recovered.
 .. Select the recovery type and the log backup location.
 
+. A list of data backups displays. Because the data volume has already been restored, the tenant backup indicates as available (in green). 
+.. Select the backup and start the recovery process. After the recovery process is finished, the tenant database is started automatically.
+
 A list of data backups displays. Because the data volume has already been restored, the tenant backup indicates as available (in green). Select the backup and start the recovery process. After the recovery process is finished, the tenant database is started automatically.
 
 The following steps describe the restore and recovery operations of the HANA system PR1.

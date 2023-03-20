@@ -27,7 +27,7 @@ Cloud Backup for Applications runs as SaaS within NetApp BlueXP and leverages th
 
 A BlueXP connector must be deployed within the customer vNet. Communication between the NetApp SaaS components and the customer environment is performed exclusively through the connector. The connector is executing the ANF storage operations by using the ANF management APIs.
 
-The HANA plug-in provides the HANA database with specific logic and must be deployed on each HANA host. The HANA plug-in communicates with the HANA database using the HANA hdbsql client and a user store key. All database operations are triggered by the BlueXP connector.
+The HANA plug-in provides the HANA database specific logic and must be deployed on each HANA host. The HANA plug-in communicates with the HANA database using the HANA hdbsql client and a user store key. All database operations are triggered by the BlueXP connector.
 
 image:anf-cba-image5.png["This image depicts the basic architecture for NetApp SaaS in combination with the customer network and an Azure subscription."]
 
