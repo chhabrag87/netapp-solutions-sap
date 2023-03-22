@@ -31,6 +31,8 @@ entries:
         url: /backup/anf-cba-restore-and-recovery-from-snapshot-backup.html
       - title: Backup operations with HANA System Replication
         url: /backup/anf-cba-backup-operations-with-hana-system-replication.html
+      - title: Backup operations with HANA multiple-host systems
+        url: /backup/anf-cba-backup-operations-with-hana-multiple-host-systems.html
       - title: Where to find additional information and version history
         url: /backup/anf-cba-where-to-find-additional-information-and-version-history.html
 
