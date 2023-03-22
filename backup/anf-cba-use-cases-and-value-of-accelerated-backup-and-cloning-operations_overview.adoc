@@ -1,0 +1,42 @@
+---
+sidebar: sidebar
+permalink: backup/anf-cba-use-cases-and-value-of-accelerated-backup-and-cloning-operations_overview.html
+keywords: system upgrade, backups, restore
+summary: Executing backups is a critical part of any data-protection strategy. Backups are scheduled on a regular basis to make sure that you can recover from system failures. This is the most obvious use case, but there are also other SAP-lifecycle management tasks for which accelerating backup and recovery operations are crucial.
+---
+
+= Overview of use cases and value of accelerated backup and cloning operations
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2023-03-16 10:24:27.204700
+//
+
+link:anf-cba-backup-and-recovery-using-azure-netapp-files.html[Previous: Backup and recovery using Azure NetApp Files.]
+
+[.lead]
+Executing backups is a critical part of any data-protection strategy. Backups are scheduled on a regular basis to make sure that you can recover from system failures. This is the most obvious use case, but there are also other SAP-lifecycle management tasks for which accelerating backup and recovery operations are crucial.
+
+SAP HANA system upgrade is an example of where an on-demand backup before the upgrade and a possible restore operation if the upgrade fails has a significant effect on the overall planned downtime. With the example of a 4TB database, you can reduce the planned downtime by 8 hours by using Snapshot-based backup and restore operations.
+
+Another use case example would be a typical test cycle, where testing must be done over multiple iterations with different data sets or parameters. When leveraging fast backup and restore operations, you can easily create save points within your test cycle and reset the system to any of these previous save points if a test fails or needs to be repeated. This enables testing to finish earlier, which enables more testing and improved test results.
+
+image:anf-cba-image3.png["This figure depicts use cases for backup and recovery operations."]
+
+When Snapshot backups have been implemented, they can be used to address other use cases as well, which require copies of a HANA database. With ANF, you can create a new volume based on the content of any available Snapshot backup. The runtime of this operation is a few seconds, independent of the size of the volume.
+
+The most popular use case is SAP System Refresh, where data from the production system needs to be copied to the test or QA system. By leveraging the ANF cloning feature, you can provision the volume for the test system from any Snapshot copy of the production system in a matter of seconds. The new volume then must be attached to the test system and the HANA database recovered.
+
+The second use case is the creation of a repair system, which is used to address a logical corruption in the production system. In this case,  an older Snapshot backup of the production system is used to start a repair system, which is an identical clone of the production system with the data before the corruption occurred. The repair system is then used to analyze the problem and export the required data before it was corrupted.
+
+The last use case is the ability to run a disaster recover failover test without stopping the replication and therefore without influencing RTO and the recovery point objective (RPO) of the disaster recovery setup. When ANF cross-region replication is used to replicate the data to the disaster recovery site, the production Snapshot backups are available at the disaster recovery site as well and can then be used to create a new volume for disaster recover testing.
+
+image:anf-cba-image4.png["This image depicts use cases for cloning operations."]
+
+link:anf-cba-cloud-backup-for-applications-architecture.html[Next: Cloud backup for applications architecture.]
