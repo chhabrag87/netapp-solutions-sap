@@ -1,6 +1,41 @@
 section: backup
 title: Backup, Restore and Disaster Recovery
 entries:
+
+  - title: SAP HANA on ANF - Backup and recovery with cloud backup for applications
+    type: solutions
+    entries:
+      - title: Overview
+        url: /backup/anf-cba-overview.html
+      - title: Backup and recovery using Azure NetApp Files
+        url: /backup/anf-cba-backup-and-recovery-using-azure-netapp-files.html
+      - title: Use cases and value of accelerated backup and cloning operations
+        entries:
+          - title: Overview
+            url: /backup/anf-cba-use-cases-and-value-of-accelerated-backup-and-cloning-operations_overview.html
+          - title: Cloud Backup for Applications architecture
+            url: /backup/anf-cba-cloud-backup-for-applications-architecture.html
+      - title: Overview of installation and configuration steps
+        url: /backup/anf-cba-overview-of-installation-and-configuration-steps.html
+      - title: Create backup policies
+        url: /backup/anf-cba-create-backup-policies.html
+      - title: Snapshot-based backup operations of the HANA database
+        url: /backup/anf-cba-snapshot-based-backup-operations-of-the-hana-database.html
+      - title: File-based backup operations of the HANA database
+        url: /backup/anf-cba-file-based-backup-operations-of-the-hana-database.html
+      - title: Snapshot-based backup operations of non-data volumes
+        url: /backup/anf-cba-snapshot-based-backup-operations-of-non-data-volumes.html
+      - title: Snapshot-based backup operations of global non-data volumes
+        url: /backup/anf-cba-snapshot-based-backup-operations-of-global-non-data-volumes.html
+      - title: Restore and recovery from Snapshot backup
+        url: /backup/anf-cba-restore-and-recovery-from-snapshot-backup.html
+      - title: Backup operations with HANA System Replication
+        url: /backup/anf-cba-backup-operations-with-hana-system-replication.html
+      - title: Backup operations with HANA multiple-host systems
+        url: /backup/anf-cba-backup-operations-with-hana-multiple-host-systems.html
+      - title: Where to find additional information and version history
+        url: /backup/anf-cba-where-to-find-additional-information-and-version-history.html
+
   - title: SAP HANA on Amazon FSx for NetApp ONTAP - Backup and recovery with SnapCenter
     type: solutions
     entries:
@@ -134,44 +169,6 @@ entries:
             url: /backup/saphana-dr-anf_hana_database_recovery_01.html
       - title: Update history
         url: /backup/saphana-dr-anf_update_history.html
-
-  - title: SAP HANA backup and recovery on Azure NetApp Files with SnapCenter Service
-    type: solutions
-    entries:
-      - title: Overview
-        url: /backup/saphana-backup-anf-overview.html
-      - title: The NetApp solution
-        url: /backup/saphana-backup-anf-the-netapp-solution.html
-      - title: SnapCenter Service architecture
-        url: /backup/saphana-backup-anf-snapcenter-service-architecture.html
-      - title: SnapCenter Service SAP HANA backup solution
-        url: /backup/saphana-backup-anf-snapcenter-service-sap-hana-backup-solution.html
-      - title: SnapCenter Service concepts and best practices
-        url: /backup/saphana-backup-anf-snapcenter-service-concepts-and-best-practices.html
-      - title: Lab setup used for this report
-        url: /backup/saphana-backup-anf-lab-setup-used-for-this-report.html
-      - title: SnapCenter Service policy configuration
-        url: /backup/saphana-backup-anf-snapcenter-service-policy-configuration.html
-      - title: SnapCenter Service Snapshot backup configuration
-        entries:
-          - title: Overview
-            url: /backup/saphana-backup-anf-snapcenter-service-snapshot-backup-configuration-overview.html
-          - title: Backup configuration of SAP HANA database backups
-            url: /backup/saphana-backup-anf-backup-configuration-of-sap-hana-database-backups.html
-          - title: Backup configuration of SAP HANA non-data volumes
-            url: /backup/saphana-backup-anf-backup-configuration-of-sap-hana-non-data-volumes.html
-          - title: Backup configuration of global non-data volumes
-            url: /backup/saphana-backup-anf-backup-configuration-of-global-non-data-volumes.html
-      - title: SAP HANA database Snapshot backups
-        url: /backup/saphana-backup-anf-sap-hana-database-snapshot-backups.html
-      - title: File-based backups and block integrity check
-        url: /backup/saphana-backup-anf-file-based-backups-and-block-integrity-check.html
-      - title: Restore and recovery
-        url: /backup/saphana-backup-anf-restore-and-recovery.html
-      - title: Additional information
-        url: /backup/saphana-backup-anf-additional-information.html
-      - title: Version history
-        url: /backup/saphana-backup-anf-version-history.html
 
   - title: SAP HANA Disaster Recovery with Storage Replication
     url: /backup/saphana-dr-sr_pdf_link.html

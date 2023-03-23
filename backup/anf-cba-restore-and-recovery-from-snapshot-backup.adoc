@@ -1,0 +1,180 @@
+---
+sidebar: sidebar
+permalink: backup/anf-cba-restore-and-recovery-from-snapshot-backup.html
+keywords: restore, recovery, operation, system database
+summary: "This sections describes how to perform restore and recovery from a Snapshot backup."
+---
+
+= Restore and recovery from Snapshot backup
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2023-03-16 10:24:27.304316
+//
+
+link:anf-cba-snapshot-based-backup-operations-of-global-non-data-volumes.html[Previous: Snapshot-based backup operations of global non-data volumes.]
+
+[.lead]
+The following section describes the restore and recovery workflows for a HANA MDC single-host, single-tenant system. The differences for a multiple- host system are highlighted. The examples show SAP HANA Studio as a tool to execute manual recovery. You can also use SAP HANA Cockpit or HANA SQL statements for the recovery operations.
+
+To restore and recover an SAP HANA MDC single-tenant system using SAP HANA Studio and Cloud Backup for Applications, complete the following steps:
+
+. Prepare the restore and recovery process with SAP HANA Studio:
+.. Select *Recover System Database* and confirm the shutdown of the SAP HANA system.
+.. Select the recovery type and the log backup location.
++
+The list of data backups displays.
+
+.. Select the relevant backup to see the external backup ID.
+. Unmount the HANA data volumes.
+. Perform the restore process with Cloud Backup for Applications:
+.. In the Backup view, select the backup that matches the external backup ID or comment field from SAP HANA Studio.
+.. To start the restore operation, select *Restore* in the context menu.
+. Mount the HANA data volumes.
+. Run the recovery process for the system database with SAP HANA Studio:
+.. Click *Refresh* from the backup list and select the available backup for recovery (indicated with a green icon).
+.. Start the recovery operation.
++
+After the recovery operation is finished, the system database is started.
+
+. Run the recovery process for the tenant database with SAP HANA Studio:
+.. Select *Recover Tenant Database* and select the tenant to be recovered.
+.. Select the recovery type and the log backup location.
+
+. A list of data backups displays. Because the data volume has already been restored, the tenant backup indicates as available (in green). 
+.. Select the backup and start the recovery process. After the recovery process is finished, the tenant database is started automatically.
+
+A list of data backups displays. Because the data volume has already been restored, the tenant backup indicates as available (in green). Select the backup and start the recovery process. After the recovery process is finished, the tenant database is started automatically.
+
+The following steps describe the restore and recovery operations of the HANA system PR1.
+
+== Prepare restore and recovery operation
+
+. To start the recovery of the system database in SAP HANA Studio, go to *Backup and Recovery* > *Recover System Database*.
++
+image:anf-cba-image79.png["Screenshot of the step being completed."]
++
+image:anf-cba-image80.png["Screenshot of the step being completed."]
+
+. Select the recovery type and click *Next*.
++
+image:anf-cba-image81.png["Screenshot of the step being completed."]
+
+. Provide the location of the backup catalog and click *Next*.
++
+image:anf-cba-image82.png["Screenshot of the step being completed."]
+
+. A list of available backups is shown based on the content of the HANA backup catalog. Choose the required backup and note the external backup ID:  the most recent backup, for example.
++
+image:anf-cba-image83.png["Screenshot of the step being completed."]
+
+. Unmount all data volumes.
++
+....
+umount /hana/data/PR1/mnt00001
+....
++
+[NOTE]
+For an SAP HANA multiple host system, you must unmount all the data volumes on each host.
+
+== Restore HANA database
+
+. To start the restore operation, in the Backup view, select the backup, which is also shows in HANA Studio, and select Restore in the context menu.
++
+image:anf-cba-image84.png["Screenshot of the step being completed."]
+
+. In the next step, you can provide pre- and post-scripts for the restore operation.
++
+image:anf-cba-image85.png["Screenshot of the step being completed."]
++
+The Cloud Backup for Applications job log shows the progress of the restore operation.
++
+image:anf-cba-image86.png["Screenshot of the step being completed."]
+
+. Wait until the restore process completes and mount the data volume.
++
+....
+mount /hana/data/SP1/mnt00001
+....
++
+[NOTE]
+For an SAP HANA multiple host system, you must mount all the data volumes on each host.
+
+== Recover system database
+
+. To update the list of available backups, go to SAP HANA Studio and click Refresh. The backup that was restored with Cloud Backup for Applications is shown with a green icon in the list of backups. Select the backup and click Next.
++
+image:anf-cba-image87.png["Screenshot of the step being completed."]
+
+. Provide the location of the log backups. Click *Next*.
++
+image:anf-cba-image88.png["Screenshot of the step being completed."]
+
+. Select other settings as required. Make sure Use Delta Backups is not selected. Click *Next*.
++
+image:anf-cba-image89.png["Screenshot of the step being completed."]
+
+. Review the recovery settings and click *Finish*.
++
+image:anf-cba-image90.png["Screenshot of the step being completed."]
+
+. The recovery process starts. Wait until the recovery of the system database completes.
++
+image:anf-cba-image91.png["Screenshot of the step being completed."]
+
+== Recover tenant database
+
+. In SAP HANA Studio, select the entry for the system database, and go to *Backup and Recovery* > *Recover Tenant Database*.
++
+image:anf-cba-image92.png["Screenshot of the step being completed."]
+
+. Select the tenant to recover and click *Next*.
++
+image:anf-cba-image93.png["Screenshot of the step being completed."]
+
+. Specify the recovery type and click Next.
++
+image:anf-cba-image94.png["Screenshot of the step being completed."]
+
+. Confirm the backup catalog location and click *Next*.
++
+image:anf-cba-image95.png["Screenshot of the step being completed."]
+
+. Confirm that the tenant database is offline. Click OK to continue.
++
+image:anf-cba-image96.png["Screenshot of the step being completed."]
++
+Because the restore of the data volume has occurred before the recovery of the system database, the tenant backup is immediately available.
+
+. Select the backup highlighted in green and click *Next*.
++
+image:anf-cba-image97.png["Screenshot of the step being completed."]
+
+. Confirm the log backup location and click *Next*.
++
+image:anf-cba-image98.png["Screenshot of the step being completed."]
+
+. Select other settings as required. Make sure *Use Delta Backups* is not selected. Click *Next*.
++
+image:anf-cba-image99.png["Screenshot of the step being completed."]
+
+. Review the recovery settings and start the recovery process of the tenant database by clicking *Finish*.
++
+image:anf-cba-image100.png["Screenshot of the step being completed."]
+
+. Wait until the recovery has finished and the tenant database is started.
++
+image:anf-cba-image101.png["Screenshot of the step being completed."]
++
+The SAP HANA system is up and running.
++
+[NOTE]
+For an SAP HANA MDC system with multiple tenants, you must repeat steps 16 through 25 for each tenant.
+
+link:anf-cba-backup-operations-with-hana-system-replication.html[Next: Backup operations with HANA System Replication.]
