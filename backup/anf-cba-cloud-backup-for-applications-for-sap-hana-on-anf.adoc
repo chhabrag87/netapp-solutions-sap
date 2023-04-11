@@ -1,0 +1,85 @@
+---
+sidebar: sidebar
+permalink: backup/anf-cba-cloud-backup-for-applications-for-sap-hana-on-anf.html
+keywords: sap hana releases, configurations, operations
+summary: "SAP HANA file-based backups are used for database block integrity checks and can also be executed either on-demand or as scheduled backup operations. Policy-driven retention management is performed at the file-system level and within the HANA backup catalog."
+---
+
+= Cloud Backup for Applications for SAP HANA on ANF
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2023-03-16 10:24:27.210933
+//
+
+link:anf-cba-cloud-backup-for-applications-architecture.html[Previous: Cloud Backup for Applications architecture.]
+
+== Solution overview
+
+Cloud Backup for Application supports Snapshot-based backup operations for the following components:
+
+. *SAP HANA system* data volume(s).
+. *Non-data volume(s)* of an SAP HANA database. For example, the `/hana/shared` volume and/or SAP application server data.
+. *Global non-data volume(s)* that do not belong to a specific HANA system. For example, the SAP transport directory `/usr/sap/trans`.
+
+The backup operations of these components include the following:
+
+* Scheduled or on-demand backups
+* Optional pre- and post-scripts
+* Policy-driven retention management
+** for Snapshot(s) on the ANF-volume level
+** within the SAP HANA backup catalog (for HANA data volume backups)
+
+SAP HANA file-based backups are used for database block integrity checks and can also be executed either on-demand or as scheduled backup operations. Policy-driven retention management is performed at the file-system level and within the HANA backup catalog.
+
+Retention management of HANA database log backup is performed based on the defined retention of HANA database data backups (Snapshot- or file-based).
+
+CBA supports restore operations for all Snapshot-based backups. File-based backups can only be restored using native HANA tools.
+
+image:anf-cba-image6.png["This image depicts backup and restore for a HANA system multitenant database container and global non-data volumes."]
+
+== Solution operations
+
+Snapshot data backups are executed with Cloud Backup for Applications by triggering the SAP HANA database backup savepoint so that the Snapshot copy, which is created on the storage layer, is based on a consistent image of the SAP HANA database. See the https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/b41a2823576f4726be649bc98e61d62c.html?q=sap%20hana%20snapshot%20backup[SAP Administration Guide^] for more information.
+
+To enable a complete backup of all SAP HANA-related resources, Cloud Backup for Applications also enables you to back up all non-data volumes with storage-based Snapshot copies. You can schedule non-data volumes independently from the database data backup to enable individual retention and protection policies.
+
+SAP recommends combining storage-based Snapshot backups with a weekly file-based backup to execute a block integrity check. You can execute the block integrity check from within CBA. Block integrity check (file-based) backups are also used to offload backups to a second storage location.
+
+Based on your configurable retention policies, Cloud Backup for Applications manages the housekeeping of data backups, log backups, and the SAP HANA backup catalog.
+
+The following figure summarizes the backup solution.
+
+image:anf-cba-image7.png["This figure summarizes the backup solution."]
+
+When executing a storage-based Snapshot backup of non-data volumes, Cloud Backup for Applications performs the following tasks:
+
+. Creates a storage Snapshot copy of the non-data volume.
+. Deletes storage Snapshot copies based on the defined retention policy.
+
+When executing a storage-based Snapshot backup of the SAP HANA database, Cloud Backup for Applications performs the following tasks:
+
+. Creates an SAP HANA backup savepoint to create a consistent image on the persistence layer.
+. Creates a storage Snapshot copy of the data volume(s).
+. Registers the storage Snapshot backup in the SAP HANA backup catalog.
+. Releases the SAP HANA backup savepoint.
+. Deletes storage Snapshot copies based on the defined retention policy.
+. Deletes SAP HANA backup catalog entries based on the defined retention policy.
+. Whenever a data backup has been deleted manually or based on the retention policy, Cloud Backup for Applications deletes all log backups that are older than the oldest data backup. Log backups are deleted on the file system and in the SAP HANA backup catalog.
+
+== Supported SAP HANA releases and configurations
+
+Cloud Backup for Applications supports HANA MDC systems with a single or with multiple tenants with the following configuration options:
+
+* SAP HANA 2.0 SPS4 and later
+* SAP HANA single-host systems 
+* SAP HANA multiple-host systems as described in the section link:anf-cba-backup-operations-with-hana-system-replication.html#backup-operations-with-hana-multiple-host-systems[“Backup operations with HANA multiple-host systems"]
+* SAP HANA system configured with HANA System Replication (HSR) as described in the section link:anf-cba-backup-operations-with-hana-system-replication.html[“Backup operations with HANA System Replication”]
+
+link:anf-cba-cloud-backup-for-applications-concepts-and-best-practices.html[Next: Cloud Backup for Applications concepts and best practices.]
