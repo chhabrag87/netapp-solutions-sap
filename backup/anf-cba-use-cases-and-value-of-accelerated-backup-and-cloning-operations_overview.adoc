@@ -5,7 +5,7 @@ keywords: system upgrade, backups, restore
 summary: Executing backups is a critical part of any data-protection strategy. Backups are scheduled on a regular basis to make sure that you can recover from system failures. This is the most obvious use case, but there are also other SAP-lifecycle management tasks for which accelerating backup and recovery operations are crucial.
 ---
 
-= Overview of use cases and value of accelerated backup and cloning operations
+= Use cases and value of accelerated backup and cloning operations
 :hardbreaks:
 :nofooter:
 :icons: font
