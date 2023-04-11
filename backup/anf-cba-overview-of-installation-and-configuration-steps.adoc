@@ -18,7 +18,7 @@ summary: "This section describes the installation and configuration of all compo
 // 2023-03-16 10:24:27.240164
 //
 
-link:anf-cba-cloud-backup-for-applications-architecture.html[Previous: Cloud Backup for Applications architecture.]
+link:anf-cba-cloud-backup-for-applications-concepts-and-best-practices.html[Previous: Cloud Backup for Applications concepts and best practices.]
 
 [.lead]
 The required installation and configuration steps can be split in three areas.
