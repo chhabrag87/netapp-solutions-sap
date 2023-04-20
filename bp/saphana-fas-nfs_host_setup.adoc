@@ -223,8 +223,8 @@ With ONTAP 9, the NFS transfer size can be configured up to 1MB. Specifically, w
 |Common parameter |NFSv3 |NFSv4 |NFS transfer size with ONTAP 9 |NFS transfer size with ONTAP 8
 
 |rw, bg, hard, timeo=600, noatime,
-|vers=3,nolock,
-|vers=4,minorversion=1,lock
+|nfsvers=3,nolock,
+|nfsvers=4.1,lock
 |rsize=1048576,wsize=262144,
 |rsize=65536,wsize=65536,
 |===
