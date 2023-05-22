@@ -362,6 +362,9 @@ set admin
 |===
 
 [NOTE]
+Please note that disabling numeric ids requires user management, as described in the section link:saphana_aff_nfs_sap_hana_installation_preparations_for_nfsv4.html[“SAP HANA installation preparations for NFSv4.”]
+
+[NOTE]
 The NFSv4 domain ID must be set to the same value on all Linux servers (`/etc/idmapd.conf`) and SVMs, as described in the section link:saphana_aff_nfs_sap_hana_installation_preparations_for_nfsv4.html[“SAP HANA installation preparations for NFSv4.”]
 
 [NOTE]
