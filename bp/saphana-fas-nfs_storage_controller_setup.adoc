@@ -370,6 +370,8 @@ set admin
 |nfs modify -vserver <vserver_name> -v4-numeric-ids disabled
 |===
 
+[NOTE]
+Please note that disabling numering ids requires user management as described in link:saphana-fas-nfs_sap_hana_installation_preparations_for_nfsv4.html[SAP HANA installation preparations for NFSv4.]
 
 [NOTE]
 The NFSv4 domain ID must be set to the same value on all Linux servers (/`etc/idmapd.conf`) and SVMs, as described in link:saphana-fas-nfs_sap_hana_installation_preparations_for_nfsv4.html[SAP HANA installation preparations for NFSv4.]
