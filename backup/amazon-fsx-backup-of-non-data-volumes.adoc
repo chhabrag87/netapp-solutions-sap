@@ -18,9 +18,10 @@ summary: The backup of non-data volumes is an integrated part of the SnapCenter 
 // 2022-05-13 09:40:18.312536
 //
 
-link:amazon-fsx-snapcenter-backup-operations.html[Previous: SnapCenter backup operations.]
+[.lead]
+The backup of non-data volumes is an integrated part of the SnapCenter and the SAP HANA plug-in.
 
-The backup of non-data volumes is an integrated part of the SnapCenter and the SAP HANA plug-in. Protecting the database data volume is sufficient to restore and recover the SAP HANA database to a given point in time, provided that the database installation resources, and the required logs are still available.
+Protecting the database data volume is sufficient to restore and recover the SAP HANA database to a given point in time, provided that the database installation resources, and the required logs are still available.
 
 To recover from situations where other non-data files must be restored, NetApp recommends developing an additional backup strategy for non-data volumes to augment the SAP HANA database backup. Depending on your specific requirements, the backup of non-data volumes might differ in scheduling frequency and retention settings, and you should consider how frequently non-data files are changed. For instance, the HANA volume `/hana/shared` contains executables but also SAP HANA trace files. While executables only change when the SAP HANA database is upgraded, the SAP HANA trace files might need a higher backup frequency to support analyzing problem situations with SAP HANA.
 
@@ -133,5 +134,3 @@ image:amazon-fsx-image74.png[Error: Missing Graphic Image]
 SnapCenter executes the restore and recovery operation. This example shows the job details of the restore and recovery job.
 +
 image:amazon-fsx-image75.png[Error: Missing Graphic Image]
-
-link:amazon-fsx-backup-replication-with-snapvault_overview.html[Next: Overview - Backup replication with SnapVault.]
