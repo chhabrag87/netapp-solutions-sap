@@ -18,10 +18,11 @@ summary: "You can use Azure NetApp Files (ANF) Snapshot technology to create dat
 // 2023-03-16 10:24:27.194398
 //
 
-link:anf-cba-overview.html[Previous: Overview.]
 
 [.lead]
-You can use Azure NetApp Files (ANF) Snapshot technology to create database backups in seconds. The time needed to create a Snapshot copy is independent of the size of the database because a Snapshot copy does not move any physical data blocks on the storage platform. In addition, the use of Snapshot technology has no performance effect on the live SAP system. Therefore, you can schedule the creation of Snapshot copies without considering peak dialog or batch activity periods. SAP on ANF customers typically schedule multiple online Snapshot backups during the day; for example, every four to six hours is common. These Snapshot backups are typically kept for three to five days on the primary storage system before being removed.
+You can use Azure NetApp Files (ANF) Snapshot technology to create database backups in seconds. The time needed to create a Snapshot copy is independent of the size of the database because a Snapshot copy does not move any physical data blocks on the storage platform. 
+
+In addition, the use of Snapshot technology has no performance effect on the live SAP system. Therefore, you can schedule the creation of Snapshot copies without considering peak dialog or batch activity periods. SAP on ANF customers typically schedule multiple online Snapshot backups during the day; for example, every four to six hours is common. These Snapshot backups are typically kept for three to five days on the primary storage system before being removed.
 
 Snapshot copies also provide key advantages for restore and recovery operations. A volume revert operation enables the restoration of an entire database to any point in time, based on the available Snapshot copies. Such restore processes are finished in a few seconds, independent of the size of the database. Because several online Snapshot backups are created during the day, the time needed for the recovery process is significantly reduced relative to a traditional backup approach. Because a restore operation can be performed with a Snapshot copy that is only a few hours old (rather than up to 24 hours), fewer transaction logs must be applied. Therefore, the RTO is reduced to several minutes rather than the several hours required for conventional single-cycle backups.
 
@@ -70,4 +71,3 @@ The following figure also shows that four to six Snapshot backups per day makes 
 
 image:anf-cba-image2.png["This figure shows a comparison of restore and recovery operations with a daily file-based backup and Snapshot backups with different schedules."]
 
-link:anf-cba-use-cases-and-value-of-accelerated-backup-and-cloning-operations_overview.html[Next: Use cases and value of accelerated backup and cloning operations.]

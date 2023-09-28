@@ -4,7 +4,6 @@ permalink: backup/amazon-fsx-create-a-backup-with-replication.html
 keywords: backup, local snapshot, copy
 summary: This section describes how to create a backup with replication.
 ---
-
 = Create a backup with replication
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary: This section describes how to create a backup with replication.
 // 2022-05-13 09:40:18.374929
 //
 
-link:amazon-fsx-add-a-policy-to-resource-protection.html[Previous: Add a policy to resource protection.]
-
+[.lead]
 A backup is created in the same way as with a local Snapshot copy.
 
 To create a backup with replication, select the policy that includes the backup replication and click Backup.
@@ -66,4 +64,3 @@ In SnapCenter, you can list the replicated backups by clicking Vault Copies in t
 
 image:amazon-fsx-image91.png[Error: Missing Graphic Image]
 
-link:amazon-fsx-restore-and-recover-from-secondary-storage.html[Next: Restore and recover from secondary storage.]

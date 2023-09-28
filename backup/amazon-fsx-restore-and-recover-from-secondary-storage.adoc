@@ -18,8 +18,7 @@ summary: This section describes how to restore and recover from secondary storag
 // 2022-05-13 09:40:18.381849
 //
 
-link:amazon-fsx-create-a-backup-with-replication.html[Previous: Create a backup with replication.]
-
+[.lead]
 To restore and recover from secondary storage, follow these steps:
 
 To retrieve the list of all the backups on the secondary storage, in the SnapCenter Topology view, click Vault Copies, then select a backup and click Restore.
@@ -32,4 +31,3 @@ image:amazon-fsx-image93.png[Error: Missing Graphic Image]
 
 Further restore and recovery steps are identical to those previously covered for a Snapshot backup at the primary storage.
 
-link:amazon-fsx-where-to-find-additional-information.html[Next: Where to find additional information and version history.]

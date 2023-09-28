@@ -18,7 +18,8 @@ summary: "This section describes how to perform backup operations with HANA syst
 // 2023-03-16 10:24:27.321926
 //
 
-link:anf-cba-restore-and-recovery-from-snapshot-backup.html[Previous: Restore and recovery from Snapshot backup.]
+[.lead]
+You can perform backup operations with HANA system replication.
 
 == Storage Snapshot backups and HANA System Replication
 
@@ -92,4 +93,3 @@ You must add the same policies to both systems because retention management is p
 
 Backups are now executed based on the defined policies. CBA always triggers the Snapshot backup operation at the primary HANA host.
 
-link:anf-cba-backup-operations-with-hana-multiple-host-systems.html[Next: Backup operations with HANA multiple-host systems.]

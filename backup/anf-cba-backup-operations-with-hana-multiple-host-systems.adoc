@@ -18,8 +18,7 @@ summary: "This section describes how to perform backup operations with HANA syst
 // 2023-03-16 10:24:27.321926
 //
 
-link:anf-cba-backup-operations-with-hana-system-replication.html[Previous: Backup operations with HANA System Replication.]
-
+[.lead]
 The HANA database executes Snapshot backups in the same way as for single-host systems. The backup operation SQL commands must be triggered at the system database, and the HANA backup savepoint is created for all HANA worker nodes so that all data volumes of each node are consistent. As a next step, the storage Snapshot operations must be performed on each data volume.
 
 == HANA multiple-host systems without standby host
@@ -61,4 +60,3 @@ With the user store configuration described before, the hdbsql client now uses t
 
 image:anf-cba-image114.png["This figure shows the failed VM is restarted and acts as the new standby host after a failover to the standby host."]
 
-link:anf-cba-where-to-find-additional-information-and-version-history.html[Next: Where to find additional information and version history.]
