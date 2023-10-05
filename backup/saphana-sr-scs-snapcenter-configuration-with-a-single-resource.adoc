@@ -4,7 +4,6 @@ permalink: backup/saphana-sr-scs-snapcenter-configuration-with-a-single-resource
 keywords: virtual ip, single resource, configuration,
 summary: A SnapCenter resource is configured with the virtual IP address (host name) of the HANA System Replication environment. With this approach, SnapCenter always communicates with the primary host, regardless of whether host 1 or host 2 is primary.
 ---
-
 = SnapCenter configuration with a single resource
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary: A SnapCenter resource is configured with the virtual IP address (host n
 // 2022-01-10 18:20:17.349792
 //
 
-link:saphana-sr-scs-snapcenter-4.6-configuration-using-a-resource-group.html[Previous: SnapCenter 4.6 configuration using a resource group.]
-
+[.lead]
 A SnapCenter resource is configured with the virtual IP address (host name) of the HANA System Replication environment. With this approach, SnapCenter always communicates with the primary host, regardless of whether host 1 or host 2 is primary. The data volumes of both SAP HANA hosts are included in the SnapCenter resource.
 
 [NOTE]
@@ -187,4 +185,3 @@ After forward recovery has been completed, the secondary host (host 2) is starte
 
 image:saphana-sr-scs-image47.png[Error: Missing Graphic Image]
 
-link:saphana-sr-scs-restore-and-recovery-from-a-backup-created-at-the-other-host.html[Next: Restore and recovery from a backup created at the other host.]

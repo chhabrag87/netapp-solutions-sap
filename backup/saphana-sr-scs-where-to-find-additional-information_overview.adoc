@@ -4,7 +4,6 @@ permalink: backup/saphana-sr-scs-where-to-find-additional-information_overview.h
 keywords: additional information, version history
 summary:
 ---
-
 = Where to find additional information and version history
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary:
 // 2022-01-10 18:20:17.382111
 //
 
-link:saphana-sr-scs-restore-and-recovery-from-a-backup-created-at-the-other-host.html[Previous: Restore and recovery from a backup created at the other host.]
-
+[.lead]
 To learn more about the information described in this document, refer to the following documents:
 
 * SAP HANA Backup and Recovery with SnapCenter
@@ -34,4 +32,4 @@ https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-intro
 +
 https://www.netapp.com/us/media/tr-4646.pdf[https://www.netapp.com/us/media/tr-4646.pdf^]
 
-link:saphana-sr-scs-version-history.html[Next: Version history.]
+

@@ -4,7 +4,6 @@ permalink: backup/saphana-sr-scs-snapcenter-configuration-options-for-sap-system
 keywords: configuration, snapcenter, virtual ip, auto-discovery
 summary: This page describes configuration options for SAP System Replication.
 ---
-
 = SnapCenter configuration options for SAP System Replication
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary: This page describes configuration options for SAP System Replication.
 // 2022-01-10 18:20:17.317165
 //
 
-link:saphana-sr-scs-storage-snapshot-backups-and-sap-system-replication.html[Previous: Storage Snapshot backups and SAP System Replication.]
-
+[.lead]
 There are two options for configuring data protection with NetApp SnapCenter software in an SAP HANA System Replication environment:
 
 * A SnapCenter resource group including both SAP HANA hosts and auto discovery with SnapCenter version 4.6 or higher.
@@ -57,4 +55,4 @@ NOTE: In general, NetApp recommends using the resource group configuration optio
 
 The two options are discussed in detail in the following sections.
 
-link:saphana-sr-scs-snapcenter-4.6-configuration-using-a-resource-group.html[Next: SnapCenter 4.6 configuration using a resource group.]
+
