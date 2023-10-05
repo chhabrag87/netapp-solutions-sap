@@ -4,7 +4,6 @@ permalink: backup/saphana-br-scs-snapcenter-architecture.html
 keywords: overview, components, snapcenter
 summary: SnapCenter is a unified, scalable platform for application-consistent data protection. SnapCenter provides centralized control and oversight, while delegating the ability for users to manage application-specific backup, restore, and clone jobs.
 ---
-
 = SnapCenter architecture
 :hardbreaks:
 :nofooter:
@@ -18,11 +17,10 @@ summary: SnapCenter is a unified, scalable platform for application-consistent d
 // 2022-02-15 15:58:30.755079
 //
 
-link:saphana-br-scs-overview.html[Previous: Overview.]
+[.lead]
+SnapCenter is a unified, scalable platform for application-consistent data protection. SnapCenter provides centralized control and oversight, while delegating the ability for users to manage application-specific backup, restore, and clone jobs. With SnapCenter, database and storage administrators learn a single tool to manage backup, restore, and cloning operations for a variety of applications and databases. 
 
-== SnapCenter overview
-
-SnapCenter is a unified, scalable platform for application-consistent data protection. SnapCenter provides centralized control and oversight, while delegating the ability for users to manage application-specific backup, restore, and clone jobs. With SnapCenter, database and storage administrators learn a single tool to manage backup, restore, and cloning operations for a variety of applications and databases. SnapCenter manages data across endpoints in the data fabric powered by NetApp. You can use SnapCenter to replicate data between on-premises environments; between on-premises environments and the cloud; and between private, hybrid, or public clouds.
+SnapCenter manages data across endpoints in the data fabric powered by NetApp. You can use SnapCenter to replicate data between on-premises environments; between on-premises environments and the cloud; and between private, hybrid, or public clouds.
 
 == SnapCenter components
 
@@ -34,4 +32,3 @@ The following figure depicts SnapCenter components.
 
 image:saphana-br-scs-image6.png[Error: Missing Graphic Image]
 
-link:saphana-br-scs-snapcenter-sap-hana-backup-solution.html[Next: SnapCenter SAP HANA backup solution.]

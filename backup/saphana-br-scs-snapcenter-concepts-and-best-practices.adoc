@@ -18,7 +18,8 @@ summary: This section describes SnapCenter concepts and best practices as they r
 // 2022-02-15 15:58:30.768586
 //
 
-link:saphana-br-scs-snapcenter-sap-hana-backup-solution.html[Previous: SnapCenter SAP HANA backup solution.]
+[.lead]
+This section describes SnapCenter concepts and best practices as they relate to SAP HANA resource configuration and deployment.
 
 == SAP HANA resource configuration options and concepts
 
@@ -578,4 +579,3 @@ a|* Complete resource (= Volume revert, available for NFS and SAN from primary s
 |Manual
 |===
 
-link:saphana-br-scs-lab-setup-used-for-this-report.html[Next: Lab setup used for this report.]

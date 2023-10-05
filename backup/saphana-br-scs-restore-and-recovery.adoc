@@ -4,7 +4,6 @@ permalink: backup/saphana-br-scs-restore-and-recovery.html
 keywords: automated, restore, recovery, single-tenant, manual recovery
 summary: The following sections describe the restore and recovery workflows of three different scenarios and example configurations.
 ---
-
 = Restore and recovery
 :hardbreaks:
 :nofooter:
@@ -18,7 +17,7 @@ summary: The following sections describe the restore and recovery workflows of t
 // 2022-02-15 15:58:30.928648
 //
 
-link:saphana-br-scs-block-integrity-check.html[Previous: Block integrity check.]
+[.lead]
 
 The following sections describe the restore and recovery workflows of three different scenarios and example configurations.
 
@@ -460,4 +459,3 @@ The SAP HANA system is up and running.
 [NOTE]
 For an SAP HANA MDC system with multiple tenants, you must repeat steps 20–29 for each tenant.
 
-link:saphana-br-scs-advanced-configuration-and-tuning.html[Next: Advanced configuration and tuning.]

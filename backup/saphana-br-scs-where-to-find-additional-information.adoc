@@ -4,7 +4,6 @@ permalink: backup/saphana-br-scs-where-to-find-additional-information.html
 keywords:
 summary:
 ---
-
 = Where to find additional information and version history
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary:
 // 2022-02-15 15:58:31.001837
 //
 
-link:saphana-br-scs-advanced-configuration-and-tuning.html[Previous: Advanced configuration and tuning.]
-
+[.lead]
 To learn more about the information that is described in this document, review the following documents and/or websites:
 
 * SnapCenter Resources Page

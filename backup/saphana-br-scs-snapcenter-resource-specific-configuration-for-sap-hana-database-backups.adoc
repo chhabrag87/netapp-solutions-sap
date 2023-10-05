@@ -4,7 +4,6 @@ permalink: backup/saphana-br-scs-snapcenter-resource-specific-configuration-for-
 keywords: resource-specific, backup user, hdbuserstore, off-site backup storage, automatic discovery, fibre channel SAN
 summary: This section describes the configuration steps for two example configurations, SS2 and SS1.
 ---
-
 = SnapCenter resource-specific configuration for SAP HANA database backups
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary: This section describes the configuration steps for two example configur
 // 2022-02-15 15:58:30.856598
 //
 
-link:saphana-br-scs-snapcenter-initial-configuration.html[Previous: SnapCenter initial configuration.]
-
+[.lead]
 This section describes the configuration steps for two example configurations.
 
 * *SS2.*
@@ -352,4 +350,3 @@ The following figure shows the Post Quiesce command within the resource protecti
 
 image:saphana-br-scs-image77.png[Error: Missing Graphic Image]
 
-link:saphana-br-scs-snapcenter-resource-specific-configuration-for-non-data-volume-backups.html[Next: SnapCenter resource-specific configuration for non-data volume backups.]

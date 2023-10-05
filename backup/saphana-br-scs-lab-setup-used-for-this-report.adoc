@@ -4,7 +4,6 @@ permalink: backup/saphana-br-scs-lab-setup-used-for-this-report.html
 keywords: lab, setup, configuration,
 summary: The lab setup used for this technical report includes five different SAP HANA configurations.
 ---
-
 = Lab setup used for this report
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary: The lab setup used for this technical report includes five different SA
 // 2022-02-15 15:58:30.819011
 //
 
-link:saphana-br-scs-snapcenter-concepts-and-best-practices.html[Previous: SnapCenter concepts and best practices.]
-
+[.lead]
 The lab setup used for this technical report includes five different SAP HANA configurations:
 
 * *MS1.*
@@ -51,4 +49,4 @@ The following figure shows the lab setup.
 
 image:saphana-br-scs-image21.png[Error: Missing Graphic Image]
 
-link:saphana-br-scs-snapcenter-configuration.html[Next: SnapCenter configuration.]
+

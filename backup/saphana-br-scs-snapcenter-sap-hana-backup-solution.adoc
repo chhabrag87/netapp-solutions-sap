@@ -18,7 +18,8 @@ summary: This section lists the components, supported SAP HANA releases and conf
 // 2022-02-15 15:58:30.758659
 //
 
-link:saphana-br-scs-snapcenter-architecture.html[Previous: SnapCenter architecture.]
+[.lead]
+This section lists the components, supported SAP HANA releases and configurations, and SnapCenter 4.6 enhancements used in this solution.
 
 == Solution components
 
@@ -101,4 +102,4 @@ Starting with version 4.6, SnapCenter supports auto-discovery of HANA systems co
 
 image:saphana-br-scs-image8.png[Error: Missing Graphic Image]
 
-link:saphana-br-scs-snapcenter-concepts-and-best-practices.html[Next: SnapCenter concepts and best practices.]
+

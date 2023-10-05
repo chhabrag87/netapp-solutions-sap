@@ -4,7 +4,6 @@ permalink: backup/saphana-br-scs-snapcenter-resource-specific-configuration-for-
 keywords: resource-specific, configuration, non-data volume, resource group, sap landscape
 summary: The backup of non-data volumes is an integrated part of the SAP HANA plug-in. Protecting the database data volume is sufficient to restore and recover the SAP HANA database to a given point in time, provided that the database installation resources and the required logs are still available.
 ---
-
 = SnapCenter resource-specific configuration for non-data volume backups
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary: The backup of non-data volumes is an integrated part of the SAP HANA pl
 // 2022-02-15 15:58:30.894345
 //
 
-link:saphana-br-scs-snapcenter-resource-specific-configuration-for-sap-hana-database-backups.html[Previous: SnapCenter resource-specific configuration for SAP HANA database backups.]
-
+[.lead]
 The backup of non-data volumes is an integrated part of the SAP HANA plug-in. Protecting the database data volume is sufficient to restore and recover the SAP HANA database to a given point in time, provided that the database installation resources and the required logs are still available.
 
 To recover from situations where other non-data files must be restored, NetApp recommends developing an additional backup strategy for non-data volumes to augment the SAP HANA database backup. Depending on your specific requirements, the backup of non-data volumes might differ in scheduling frequency and retention settings, and you should consider how frequently non-data files are changed. For instance, the HANA volume `/hana/shared` contains executables but also SAP HANA trace files. While executables only change when the SAP HANA database is upgraded, the SAP HANA trace files might need a higher backup frequency to support analyzing problem situations with SAP HANA.
@@ -81,4 +79,4 @@ In normal backup operations, NetApp does not recommend including the log volume.
 
 SnapCenter resource groups meet all these requirements. Three resources are configured in SnapCenter: one resource each for the data volume, the log volume, and the shared volume. The resources are put into a resource group, and the protection is then defined on the resource group level. In the resource group protection, the custom Snapshot name must be defined with VCM at the beginning.
 
-link:saphana-br-scs-database-backups.html[Next: Database backups.]
+

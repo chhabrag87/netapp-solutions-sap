@@ -4,7 +4,6 @@ permalink: backup/saphana-br-scs-database-backups.html
 keywords: sap hana studio, on-demand backup, replication
 summary: In SnapCenter, database backups are typically executed using the schedules defined within the resource protection configuration of each HANA database. On-demand database backup can be performed by using either the SnapCenter GUI, a PowerShell command line, or REST APIs.
 ---
-
 = Database backups
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary: In SnapCenter, database backups are typically executed using the schedu
 // 2022-02-15 15:58:30.906328
 //
 
-link:saphana-br-scs-snapcenter-resource-specific-configuration-for-non-data-volume-backups.html[Previous: SnapCenter resource-specific configuration for non-data volume backups.]
-
+[.lead]
 In SnapCenter, database backups are typically executed using the schedules defined within the resource protection configuration of each HANA database.
 
 On-demand database backup can be performed by using either the SnapCenter GUI, a PowerShell command line, or REST APIs.
@@ -106,4 +104,3 @@ image:saphana-br-scs-image93.png[Error: Missing Graphic Image]
 
 . In SAP HANA Studio, the new backup is visible in the backup catalog. The same backup name in SnapCenter is also used in the comment and the EBID field in the backup catalog.
 
-link:saphana-br-scs-block-integrity-check.html[Next: Block integrity check.]
