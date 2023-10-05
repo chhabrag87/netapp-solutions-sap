@@ -4,7 +4,6 @@ permalink: backup/anf-cba-file-based-backup-operations-of-the-hana-database.html
 keywords: assign policy, file-based backup, cba topology, sap hana studio
 summary: "This section describes how to complete File-based backup operations of the HANA database."
 ---
-
 = File-based backup operations of the HANA database
 :hardbreaks:
 :nofooter:
@@ -18,7 +17,6 @@ summary: "This section describes how to complete File-based backup operations of
 // 2023-03-16 10:24:27.273504
 //
  
-link:anf-cba-snapshot-based-backup-operations-of-the-hana-database.html[Previous: Snapshot-based backup operations of the HANA database.]
 
 [.lead]
 SAP recommends combining storage-based Snapshot backups with a weekly file-based backup to execute a block integrity check. Cloud Backup for Applications supports the execution of a block integrity check by using a policy in which file-based backup is selected as the backup type.
@@ -99,5 +97,3 @@ The SAP HANA backup catalog shows entries for both the system and the tenant dat
 image:anf-cba-image55.png["The following figures show the CBA file-based backup in the backup catalog of the system database."]
 
 image:anf-cba-image56.png["The following figures show the CBA file-based backup in the backup catalog of the tenant database."]
-
-link:anf-cba-snapshot-based-backup-operations-of-non-data-volumes.html[Next: Snapshot-based backup operations of non-data volumes.]

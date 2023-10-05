@@ -4,7 +4,6 @@ permalink: backup/saphana-backup-anf-snapcenter-service-policy-configuration.htm
 keywords: minimum configuration, policy, service
 summary:
 ---
-
 = SnapCenter Service policy configuration
 :hardbreaks:
 :nofooter:
@@ -70,5 +69,3 @@ image:saphana-backup-anf-image17.png[Error: Missing Graphic Image]
 The following figure shows a summary of the configured policies.
 +
 image:saphana-backup-anf-image18.png[Error: Missing Graphic Image]
-
-link:saphana-backup-anf-snapcenter-service-snapshot-backup-configuration-overview.html[Next: SnapCenter Service Snapshot backup configuration overview.]

@@ -4,7 +4,6 @@ permalink: backup/anf-cba-snapshot-based-backup-operations-of-global-non-data-vo
 keywords: global non-data, configuration, assign policy, azure portal
 summary: "This section describes how to create Snapshot-based backup operations of global non-data volumes."
 ---
-
 = Snapshot-based backup operations of global non-data volumes
 :hardbreaks:
 :nofooter:
@@ -18,7 +17,6 @@ summary: "This section describes how to create Snapshot-based backup operations 
 // 2023-03-16 10:24:27.292081
 //
 
-link:anf-cba-snapshot-based-backup-operations-of-non-data-volumes.html[Previous: Snapshot-based backup operations of non-data volumes.]
 
 [.lead]
 In CBA, global non-data volumes are volumes that are not assigned to a specific HANA system. Examples included the SAP transport directory `/usr/sap/trans` or a software repository.
@@ -100,5 +98,3 @@ image:anf-cba-image77.png["Screenshot of the step being completed."]
 The same name that was used as backup name in CBA is also used as the Snapshot backup name on the ANF volume. The following figure shows the Azure portal and the Snapshot backups for the global non-data volume `software`.
 
 image:anf-cba-image78.png["Screenshot of the step being completed."]
-
-link:anf-cba-restore-and-recovery-from-snapshot-backup.html[Next: Restore and recovery from Snapshot backup.]

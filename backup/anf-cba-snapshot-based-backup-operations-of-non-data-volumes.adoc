@@ -4,7 +4,6 @@ permalink: backup/anf-cba-snapshot-based-backup-operations-of-non-data-volumes.h
 keywords: configuration, assign policy, non-data volume, cba topology view, azure portal
 summary: "This sections describes how to perform Snapshot-based backup operations of non-data volumes."
 ---
-
 = Snapshot-based backup operations of non-data volumes
 :hardbreaks:
 :nofooter:
@@ -18,7 +17,6 @@ summary: "This sections describes how to perform Snapshot-based backup operation
 // 2023-03-16 10:24:27.284523
 //
 
-link:anf-cba-file-based-backup-operations-of-the-hana-database.html[Previous: File-based backup operations of the HANA database.]
 
 [.lead]
 As discussed before, CBA supports backup operation of non-data volumes. Non-data volumes are volumes which belong to a specific SAP HANA system, such as `/hana/shared` or SAP application server volumes, like `/usr/sap/SID` or `sapmnt/SID`.
@@ -84,5 +82,3 @@ image:anf-cba-image64.png["Screenshot of the step being completed."]
 The name used as backup name in CBA is also used as the Snapshot backup name on the ANF volume. The following figure shows the Azure portal and the Snapshot backups for the non-data volume `pr1-shared`.
 
 image:anf-cba-image65.png["Screenshot of the step being completed."]
-
-link:anf-cba-snapshot-based-backup-operations-of-global-non-data-volumes.html[Next: Snapshot-based backup operations of global non-data volumes.]

@@ -4,7 +4,6 @@ permalink: backup/saphana-backup-anf-sap-hana-database-snapshot-backups.html
 keywords: Snapshot, policy, schedule, on-demand, UI, API
 summary: With SnapCenter Service, database backups are typically executed by using the schedules defined within the policies. You can also perform on-demand database backups by using either the SnapCenter Service UI or REST APIs.
 ---
-
 = SAP HANA database Snapshot backups
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary: With SnapCenter Service, database backups are typically executed by usi
 // 2021-10-07 09:49:08.467975
 //
 
-link:saphana-backup-anf-backup-configuration-of-global-non-data-volumes.html[Previous:  Backup configuration of global non-data volumes.]
-
+[.lead]
 With SnapCenter Service, database backups are typically executed by using the schedules defined within the policies. You can also perform on-demand database backups by using either the SnapCenter Service UI or REST APIs.
 
 == Identify SnapCenter Service data backups in SAP HANA Studio
@@ -92,4 +90,3 @@ Job Monitor displays the different workflow steps, the runtime of the steps, and
 +
 image:saphana-backup-anf-image57.png[Error: Missing Graphic Image]
 
-link:saphana-backup-anf-file-based-backups-and-block-integrity-check.html[Next: File-based backups and block integrity check.]

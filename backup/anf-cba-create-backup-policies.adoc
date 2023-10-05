@@ -4,7 +4,6 @@ permalink: backup/anf-cba-create-backup-policies.html
 keywords: policy, snapshot, backups, file-based
 summary: "Policies are usually configured independently of the resource and can be used by multiple SAP HANA databases. A typical minimum configuration consists of a policy for hourly Snapshot backups and a policy for weekly block integrity check using a file-based backup."
 ---
-
 = Create backup policies
 :hardbreaks:
 :nofooter:
@@ -18,7 +17,6 @@ summary: "Policies are usually configured independently of the resource and can 
 // 2023-03-16 10:24:27.255141
 //
 
-link:anf-cba-overview-of-installation-and-configuration-steps.html[Previous: Overview of installation and configuration steps.]
 
 [.lead]
 As discussed before, policies are usually configured independently of the resource and can be used by multiple SAP HANA databases. A typical minimum configuration consists of the following two policies:
@@ -85,5 +83,3 @@ image:anf-cba-image34.png["This screenshot shows the screen BlueXP > Backup and 
 . The list of backup policies now shows one policy for Snapshot backups and another policy for file-based backups.
 +
 image:anf-cba-image35.png["Policy creation is complete."]
-
-link:anf-cba-snapshot-based-backup-operations-of-the-hana-database.html[Next: Snapshot-based backup operations of the HANA database.]

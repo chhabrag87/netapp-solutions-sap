@@ -4,7 +4,6 @@ permalink: backup/saphana-backup-anf-backup-configuration-of-sap-hana-database-b
 keywords: configuration, database, backups, MDC
 summary: This section describes the configuration steps for a single host SAP HANA MDC single-tenant system PR1. The steps are identical for an MDC system with multiple tenants. The differences for a single-container or a multiple-host system are reflected in the corresponding configuration steps.
 ---
-
 = Backup configuration of SAP HANA database backups
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary: This section describes the configuration steps for a single host SAP HA
 // 2021-10-07 09:49:08.449368
 //
 
-link:saphana-backup-anf-snapcenter-service-snapshot-backup-configuration-overview.html[Previous: SnapCenter Service Snapshot backup configuration overview.]
-
+[.lead]
 This section describes the configuration steps for a single host SAP HANA MDC single-tenant system PR1. The steps are identical for an MDC system with multiple tenants. The differences for a single-container or a multiple-host system are reflected in the corresponding configuration steps.
 
 == SAP HANA backup user
@@ -94,4 +92,3 @@ The HANA systems overview screen shows the HANA system and the assigned policies
 +
 image:saphana-backup-anf-image30.png[Error: Missing Graphic Image]
 
-link:saphana-backup-anf-backup-configuration-of-sap-hana-non-data-volumes.html[Next: Backup configuration of SAP HANA non-data volumes.]

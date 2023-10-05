@@ -4,7 +4,6 @@ permalink: backup/anf-cba-use-cases-and-value-of-accelerated-backup-and-cloning-
 keywords: system upgrade, backups, restore
 summary: Executing backups is a critical part of any data-protection strategy. Backups are scheduled on a regular basis to make sure that you can recover from system failures. This is the most obvious use case, but there are also other SAP-lifecycle management tasks for which accelerating backup and recovery operations are crucial.
 ---
-
 = Use cases and value of accelerated backup and cloning operations
 :hardbreaks:
 :nofooter:
@@ -17,8 +16,6 @@ summary: Executing backups is a critical part of any data-protection strategy. B
 //
 // 2023-03-16 10:24:27.204700
 //
-
-link:anf-cba-backup-and-recovery-using-azure-netapp-files.html[Previous: Backup and recovery using Azure NetApp Files.]
 
 [.lead]
 Executing backups is a critical part of any data-protection strategy. Backups are scheduled on a regular basis to make sure that you can recover from system failures. This is the most obvious use case, but there are also other SAP-lifecycle management tasks for which accelerating backup and recovery operations are crucial.
@@ -39,4 +36,3 @@ The last use case is the ability to run a disaster recover failover test without
 
 image:anf-cba-image4.png["This image depicts use cases for cloning operations."]
 
-link:anf-cba-cloud-backup-for-applications-architecture.html[Next: Cloud backup for applications architecture.]

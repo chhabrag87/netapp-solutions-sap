@@ -4,7 +4,6 @@ permalink: backup/anf-cba-cloud-backup-for-applications-for-sap-hana-on-anf.html
 keywords: sap hana releases, configurations, operations
 summary: "SAP HANA file-based backups are used for database block integrity checks and can also be executed either on-demand or as scheduled backup operations. Policy-driven retention management is performed at the file-system level and within the HANA backup catalog."
 ---
-
 = Cloud Backup for Applications for SAP HANA on ANF
 :hardbreaks:
 :nofooter:
@@ -81,5 +80,3 @@ Cloud Backup for Applications supports HANA MDC systems with a single or with mu
 * SAP HANA single-host systems 
 * SAP HANA multiple-host systems as described in the section link:anf-cba-backup-operations-with-hana-system-replication.html#backup-operations-with-hana-multiple-host-systems[“Backup operations with HANA multiple-host systems"]
 * SAP HANA system configured with HANA System Replication (HSR) as described in the section link:anf-cba-backup-operations-with-hana-system-replication.html[“Backup operations with HANA System Replication”]
-
-link:anf-cba-cloud-backup-for-applications-concepts-and-best-practices.html[Next: Cloud Backup for Applications concepts and best practices.]

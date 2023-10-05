@@ -4,7 +4,6 @@ permalink: backup/saphana-backup-anf-restore-and-recovery.html
 keywords: restore, recovery, workflow, studio, cockpit
 summary: This section describes the restore and recovery workflows for a HANA MDC single-host, single tenant system. The differences for a multiple host system are described.
 ---
-
 = Restore and recovery
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary: This section describes the restore and recovery workflows for a HANA MD
 // 2021-10-07 09:49:08.477317
 //
 
-link:saphana-backup-anf-file-based-backups-and-block-integrity-check.html[Previous: File-based backups and block integrity check.]
-
+[.lead]
 The following section describes the restore and recovery workflows for a HANA MDC single-host, single tenant system. The differences for a multiple host system are described.
 
 The examples show SAP HANA Studio as a tool to execute manual recovery. You can also use SAP HANA Cockpit or HANA SQL statements for the recovery operations.
@@ -164,4 +162,4 @@ The SAP HANA system is up and running.
 
 For an SAP HANA MDC system with multiple tenants, you must repeat steps 15 to 24 for each tenant.
 
-link:saphana-backup-anf-additional-information.html[Next: Where to find additional information.]
+

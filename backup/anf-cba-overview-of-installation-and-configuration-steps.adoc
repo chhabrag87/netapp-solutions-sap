@@ -4,7 +4,6 @@ permalink: backup/anf-cba-overview-of-installation-and-configuration-steps.html
 keywords: bluexp, hana host, backup user, hana system database
 summary: "This section describes the installation and configuration of all components of this solution."
 ---
-
 = Overview of installation and configuration steps
 :hardbreaks:
 :nofooter:
@@ -18,7 +17,6 @@ summary: "This section describes the installation and configuration of all compo
 // 2023-03-16 10:24:27.240164
 //
 
-link:anf-cba-cloud-backup-for-applications-concepts-and-best-practices.html[Previous: Cloud Backup for Applications concepts and best practices.]
 
 [.lead]
 The required installation and configuration steps can be split in three areas.
@@ -171,5 +169,3 @@ image:anf-cba-image23.png["This screenshot shows the result."]
 The HANA system is now added to Cloud Backup for Applications. As a next step, you must configure backup operations.
 
 image:anf-cba-image24.png["This screenshot shows where to configure backup operations."]
-
-link:anf-cba-create-backup-policies.html[Next: Create backup policies.]

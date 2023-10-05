@@ -18,7 +18,6 @@ summary:
 // 2023-03-16 10:24:27.336135
 //
 
-link:anf-cba-backup-operations-with-hana-system-replication.html[Previous: Backup operations with HANA System Replication.]
 
 [.lead]
 To learn more about the information that is described in this document, review the following documents and/or websites:

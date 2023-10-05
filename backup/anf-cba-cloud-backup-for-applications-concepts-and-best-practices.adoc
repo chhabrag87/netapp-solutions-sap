@@ -4,7 +4,6 @@ permalink: backup/anf-cba-cloud-backup-for-applications-concepts-and-best-practi
 keywords: applications, anf, strategy, data protection, backup
 summary: "Before configuring Cloud Backup for Applications, you must define the data protection strategy based on the RTO and RPO requirements of the various SAP systems. A common approach is to define system types, such as production, development, test, or sandbox systems. All SAP systems of the same system type typically have the same data protection parameters."
 ---
-
 = Cloud Backup for Applications concepts and best practices
 :hardbreaks:
 :nofooter:
@@ -12,10 +11,7 @@ summary: "Before configuring Cloud Backup for Applications, you must define the 
 :linkattrs:
 :imagesdir: ./../media/
 
-link:anf-cba-cloud-backup-for-applications-for-sap-hana-on-anf.html[Previous: Cloud Backup for Applications for SAP HANA on ANF.]
-
-== Data protection strategy
-
+[.lead]
 Before configuring Cloud Backup for Applications, you must define the data protection strategy based on the RTO and RPO requirements of the various SAP systems.
 
 A common approach is to define system types, such as production, development, test, or sandbox systems. All SAP systems of the same system type typically have the same data protection parameters.
@@ -212,5 +208,3 @@ The wrapper script `hdbsqls` calls `hdbsql` with the required command-line optio
 You must consider the higher block change rate on the storage layer relative to the change rate with traditional databases. Due to the HANA table- merge process of the column store, the complete table is written to disk, not just the changed data in the table.
 
 Data from our customer base shows a daily change rate between 20% and 50% per day if multiple Snapshot backups are taken during the day.
-
-link:anf-cba-overview-of-installation-and-configuration-steps.html[Next: Overview of installation and configuration steps.]

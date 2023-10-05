@@ -4,7 +4,6 @@ permalink: backup/anf-cba-restore-and-recovery-from-snapshot-backup.html
 keywords: restore, recovery, operation, system database
 summary: "This sections describes how to perform restore and recovery from a Snapshot backup."
 ---
-
 = Restore and recovery from Snapshot backup
 :hardbreaks:
 :nofooter:
@@ -18,7 +17,6 @@ summary: "This sections describes how to perform restore and recovery from a Sna
 // 2023-03-16 10:24:27.304316
 //
 
-link:anf-cba-snapshot-based-backup-operations-of-global-non-data-volumes.html[Previous: Snapshot-based backup operations of global non-data volumes.]
 
 [.lead]
 The following section describes the restore and recovery workflows for a HANA MDC single-host, single-tenant system. The differences for a multiple- host system are highlighted. The examples show SAP HANA Studio as a tool to execute manual recovery. You can also use SAP HANA Cockpit or HANA SQL statements for the recovery operations.
@@ -176,5 +174,3 @@ The SAP HANA system is up and running.
 +
 [NOTE]
 For an SAP HANA MDC system with multiple tenants, you must repeat steps 16 through 25 for each tenant.
-
-link:anf-cba-backup-operations-with-hana-system-replication.html[Next: Backup operations with HANA System Replication.]

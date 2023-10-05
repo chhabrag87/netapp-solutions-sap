@@ -4,7 +4,6 @@ permalink: backup/saphana-br-scs-advanced-configuration-and-tuning.html
 keywords: configuration, settings, secure communication, auto discovery, automated, log backup, housekeeping, cleanup
 summary: This page describes various operations necessary to complete configuration and tuning.
 ---
-
 = Advanced configuration and tuning
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary: This page describes various operations necessary to complete configurat
 // 2022-02-15 15:58:30.972066
 //
 
-link:saphana-br-scs-restore-and-recovery.html[Previous: Restore and recovery.]
-
+[.lead]
 This section describes configuration and tuning options that customers may use to adapt the SnapCenter setup to their specific needs. Not all the settings may apply for all customer scenarios.
 
 == Enable secure communication to HANA database
@@ -203,4 +201,3 @@ PS C:\Users\scadmin> Check the configuration using the Windows Task Scheduler.
 +
 image:saphana-br-scs-image158.png[Error: Missing Graphic Image]
 
-link:saphana-br-scs-where-to-find-additional-information.html[Next: Where to find additional information.]
