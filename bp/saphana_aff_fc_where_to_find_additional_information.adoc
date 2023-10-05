@@ -4,7 +4,6 @@ permalink: bp/saphana_aff_fc_where_to_find_additional_information.html
 keywords:
 summary:
 ---
-
 = Where to find additional information
 :hardbreaks:
 :nofooter:
@@ -17,8 +16,8 @@ summary:
 //
 // 2021-05-20 16:47:33.821615
 //
-link:saphana_aff_fc_adding_additional_data_volume_partitions_for_sap_hana_single-host_systems.html[Previous: Adding additional data volume partitions for SAP HANA single-host systems.]
 
+[.lead]
 To learn more about the information described in this document, refer to the following documents and/or websites:
 
 * Best Practices and Recommendations for Scale-Up Deployments of SAP HANA on VMware vSphere
@@ -69,4 +68,4 @@ https://mysupport.netapp.com/info/web/ECMLP2676498.html[https://mysupport.netapp
 +
 file:///C:/Users/mschoen/NetApp%20Inc/SAP%20TME%20-%20Dokumente/Projects/HANA-BestPracticeGuide-TRs/2018_sept/www.netapp.com/us/solutions/applications/sap/index.aspx%23sap-hana[www.netapp.com/us/solutions/applications/sap/index.aspx#sap-hana^]
 
-link:saphana_aff_fc_update_history.html[Next: Update history.]
+

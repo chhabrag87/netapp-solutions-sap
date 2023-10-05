@@ -4,7 +4,6 @@ permalink: bp/saphana_aff_nfs_i_o_stack_configuration_for_sap_hana.html
 keywords: stack, configuration, io, i/o, optimal values
 summary: Starting with SAP HANA 1.0 SPS10, SAP introduced parameters to adjust the I/O behavior and optimize the database for the file and storage systems used.
 ---
-
 = I/O stack configuration for SAP HANA
 :hardbreaks:
 :nofooter:
@@ -17,8 +16,8 @@ summary: Starting with SAP HANA 1.0 SPS10, SAP introduced parameters to adjust t
 //
 // 2021-05-20 16:44:23.362680
 //
-link:saphana_aff_nfs_sap_hana_installation_preparations_for_nfsv4.html[Previous: SAP HANA installation preparations for NFSv4.]
 
+[.lead]
 Starting with SAP HANA 1.0 SPS10, SAP introduced parameters to adjust the I/O behavior and optimize the database for the file and storage systems used.
 
 NetApp conducted performance tests to define the ideal values. The following table lists the optimal values inferred from the performance tests.
@@ -70,4 +69,4 @@ python setParameter.py -set=SYSTEM/global.ini/fileio/async_write_submit_active=o
 python setParameter.py -set=SYSTEM/global.ini/fileio/async_write_submit_blocks=all
 ....
 
-link:saphana_aff_nfs_sap_hana_data_volume_size.html[Next: SAP HANA data volume size.]
+
