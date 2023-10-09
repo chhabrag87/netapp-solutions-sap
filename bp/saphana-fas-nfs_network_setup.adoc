@@ -4,7 +4,6 @@ permalink: bp/saphana-fas-nfs_network_setup.html
 keywords: network, setup, vmware, sap, hana, storage, hosts
 summary: Use the following guidelines when configuring the network.
 ---
-
 = Network setup
 :hardbreaks:
 :nofooter:
@@ -17,8 +16,8 @@ summary: Use the following guidelines when configuring the network.
 //
 // 2021-06-16 12:00:07.188519
 //
-link:saphana-fas-nfs_infrastructure_setup_and_configuration_overview.html[Previous: Infrastructure setup and configuration.]
 
+[.lead]
 Use the following guidelines when configuring the network:
 
 * A dedicated storage network must be used to connect the SAP HANA hosts to the storage controllers with a 10GbE or faster network.
@@ -57,4 +56,4 @@ LRO (large receive offload) must be turned off for interfaces used for NFS traff
 
 image:saphana-fas-nfs_image12.png[Error: Missing Graphic Image]
 
-link:saphana-fas-nfs_time_synchronization.html[Next: Time synchronization.]
+
