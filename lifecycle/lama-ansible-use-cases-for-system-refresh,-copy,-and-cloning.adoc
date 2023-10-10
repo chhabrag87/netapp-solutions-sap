@@ -4,7 +4,6 @@ permalink: lifecycle/lama-ansible-use-cases-for-system-refresh,-copy,-and-clonin
 keywords: data refresh, QA, text, sandbox, training, use case
 summary: There are multiple scenarios in which data from a source system must be made available to a target system for testing or training purposes. These test and training systems must be updated with data from the source system on a regular basis to make sure that testing and training is performed with the current data set. These system refresh operations consist of multiple tasks on the infrastructure, database, and application layers, and they can take multiple days depending on the level of automation.
 ---
-
 = Use cases for system refresh, copy, and cloning
 :hardbreaks:
 :nofooter:
@@ -18,12 +17,11 @@ summary: There are multiple scenarios in which data from a source system must be
 // 2023-01-30 15:53:02.678236
 //
 
-link:lama-ansible-sap-system-clone,-copy,-and-refresh-scenarios.html[Previous: SAP system clone, copy, and refresh scenarios.]
 
 [.lead]
-== Data refresh of QA, test, sandbox, or training systems
+There are multiple scenarios in which data from a source system must be made available to a target system for testing or training purposes. These test and training systems must be updated with data from the source system on a regular basis to make sure that testing and training is performed with the current data set. 
 
-There are multiple scenarios in which data from a source system must be made available to a target system for testing or training purposes. These test and training systems must be updated with data from the source system on a regular basis to make sure that testing and training is performed with the current data set. These system refresh operations consist of multiple tasks on the infrastructure, database, and application layers, and they can take multiple days depending on the level of automation.
+These system refresh operations consist of multiple tasks on the infrastructure, database, and application layers, and they can take multiple days depending on the level of automation.
 
 image:lama-ansible-image2.png["This image depicts the environmental workflow from the main development landscape to temporary project splits, repair systems, training systems, and sanbox systems. It shows where System Refresh, System Copy, and System Clone are used for these various purposes."]
 
@@ -53,4 +51,3 @@ SAP LaMa can be used to orchestrate the entire testing procedure, and it also ta
 
 image:lama-ansible-image5.png["This image depicts the relationship between NetApp storage systems in the primary datacenter, the local DR datacenter, and the remote DR datacenter. They are connected by both synchronous SnapMirror and asynchronous SnapMirror relationships."]
 
-link:lama-ansible-netapp-sap-lama-integration-using-ansible.html[Next: NetApp SAP LaMa integration using Ansible.]

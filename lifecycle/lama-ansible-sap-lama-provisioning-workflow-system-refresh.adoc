@@ -4,7 +4,6 @@ permalink: lifecycle/lama-ansible-sap-lama-provisioning-workflow-system-refresh.
 keywords: refresh, workflow, storage clone
 summary: During the refresh workflow, the storage clone must be deleted. You can use the same Ansible playbook as for the system destroy workflow. However, the custom hook is defined to a different step, so the playbook is named accordingly. The process step for the clone does not differ.
 ---
-
 = SAP LaMa provisioning workflow - system refresh
 :hardbreaks:
 :nofooter:
@@ -18,7 +17,7 @@ summary: During the refresh workflow, the storage clone must be deleted. You can
 // 2023-01-30 15:53:02.730880
 //
 
-link:lama-ansible-sap-lama-provisioning-workflow-copy-system.html[Previous: SAP LaMa provisioning workflow - copy system.]
+
 
 [.lead]
 The following figure highlights the main steps executed with the system refresh workflow.
@@ -37,4 +36,3 @@ Again, nothing differs in the input screens from the standard, and the workflow 
 
 image:lama-ansible-image52.png["This screenshot shows the Refresh System screen, including Basic Data of System to be refreshed and the host selection of the target system."]
 
-link:lama-ansible-appendix-provider-script-configuration-and-ansible-playbooks.html[Next: Provider script configuration and Ansible playbooks.]

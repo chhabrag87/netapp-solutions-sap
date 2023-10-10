@@ -4,7 +4,6 @@ permalink: lifecycle/sc-copy-clone-overview-of-sap-system-clone-workflow-with-sn
 keywords: system clone, target host, clone create
 summary: FlexClone technology enables a rapid provisioning process, and provides significant capacity savings, since the repair system is typically only used for a short time.
 ---
-
 = Overview of SAP system clone workflow with SnapCenter
 :hardbreaks:
 :nofooter:
@@ -18,9 +17,11 @@ summary: FlexClone technology enables a rapid provisioning process, and provides
 // 2022-05-23 12:08:56.470258
 //
 
-link:sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html[Previous: Overview of SAP system copy workflow with SnapCenter.]
 
-As discussed in the previous section, SnapCenter can manage clones of data sets from any existing Snapshot backup and can rapidly provision these data sets to any target system. The speed of provisioning production data to a repair system to address logical corruption is critical, since it is often necessary to reset the repair system and to choose a different production data set. FlexClone technology enables a rapid provisioning process, and provides significant capacity savings, since the repair system is typically only used for a short time.
+[.lead]
+As discussed in the previous section, SnapCenter can manage clones of data sets from any existing Snapshot backup and can rapidly provision these data sets to any target system. The speed of provisioning production data to a repair system to address logical corruption is critical, since it is often necessary to reset the repair system and to choose a different production data set. 
+
+FlexClone technology enables a rapid provisioning process, and provides significant capacity savings, since the repair system is typically only used for a short time.
 
 The following figure summarizes the required steps for an SAP system clone operation using SnapCenter.
 
@@ -43,4 +44,4 @@ image:sc-copy-clone-image10.png[Error: Missing Graphic Image]
 
 The section link:sc-copy-clone-sap-system-clone-with-snapcenter.html[“SAP system clone with SnapCenter”] provides a detailed step-by-step description of the system clone workflow.
 
-link:sc-copy-clone-sap-hana-system-refresh-operation-workflows-using-storage-snapshot-backups.html[Next: SAP HANA system refresh operation workflows using storage snapshot backups.]
+

@@ -4,7 +4,6 @@ permalink: bp/saphana-fas-nfs_storage_controller_setup.html
 keywords: storage, controller, setup, efficiency, fabricpool, disk, shelf, aggregate, configuration, hdd, nfs, nfsv3, nfsv4, sap, hana, host, systems
 summary: This section describes the configuration of the NetApp storage system. You must complete the primary installation and setup according to the corresponding ONTAP setup and configuration guides.
 ---
-
 = Storage controller setup
 :hardbreaks:
 :nofooter:
@@ -17,8 +16,8 @@ summary: This section describes the configuration of the NetApp storage system. 
 //
 // 2021-06-16 12:00:07.196466
 //
-link:saphana-fas-nfs_time_synchronization.html[Previous: Time synchronization.]
 
+[.lead]
 This section describes the configuration of the NetApp storage system. You must complete the primary installation and setup according to the corresponding ONTAP setup and configuration guides.
 
 == Storage efficiency
@@ -410,4 +409,4 @@ Starting with HANA 2.0 SPS4, HANA provides parameters to control failover behavi
 
 When a volume is created, the volume must be mounted to the namespace. In this document, we assume that the junction path name is the same as the volume name. By default, the volume is exported with the default policy. The export policy can be adapted if required.
 
-link:saphana-fas-nfs_host_setup.html[Next: Host setup.]
+
