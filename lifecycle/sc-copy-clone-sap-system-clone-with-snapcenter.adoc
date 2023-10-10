@@ -4,7 +4,6 @@ permalink: lifecycle/sc-copy-clone-sap-system-clone-with-snapcenter.html
 keywords: prerequisites, lab setup, target host, users, ports, sap services, file system mounts,
 summary: This section provides a step-by-step description for the SAP system clone operation, which can be used to set up a repair system to address logical corruption.
 ---
-
 = SAP system clone with SnapCenter
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,8 @@ summary: This section provides a step-by-step description for the SAP system clo
 // 2022-05-23 12:08:56.573913
 //
 
-link:sc-copy-clone-sap-hana-system-refresh-with-snapcenter.html[Previous: SAP HANA system refresh with SnapCenter.]
 
+[.lead]
 This section provides a step-by-step description for the SAP system clone operation, which can be used to set up a repair system to address logical corruption.
 
 [NOTE]
@@ -279,4 +278,4 @@ Filesystem                                                       1K-blocks     U
 
 The HANA system is now available and can be used, for example, as a repair system.
 
-link:sc-copy-clone-where-to-find-additional-information.html[Next: Where to find additional information and version history.]
+
