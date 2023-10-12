@@ -98,3 +98,4 @@ image:anf-cba-image77.png["Screenshot of the step being completed."]
 The same name that was used as backup name in CBA is also used as the Snapshot backup name on the ANF volume. The following figure shows the Azure portal and the Snapshot backups for the global non-data volume `software`.
 
 image:anf-cba-image78.png["Screenshot of the step being completed."]
+

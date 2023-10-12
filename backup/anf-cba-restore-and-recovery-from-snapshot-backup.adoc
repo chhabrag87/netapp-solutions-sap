@@ -174,3 +174,4 @@ The SAP HANA system is up and running.
 +
 [NOTE]
 For an SAP HANA MDC system with multiple tenants, you must repeat steps 16 through 25 for each tenant.
+
