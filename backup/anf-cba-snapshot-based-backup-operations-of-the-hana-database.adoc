@@ -91,4 +91,3 @@ The same name that is used as a backup name in CBA is also used as the Snapshot 
 
 image:anf-cba-image47.png["This figure shows the Azure portal and the Snapshot backups for the database data volume."]
 
-link:anf-cba-file-based-backup-operations-of-the-hana-database.html[Next: File-based backup operations of the HANA database.]
