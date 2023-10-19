@@ -380,7 +380,7 @@ The NFSv4 domain ID must be set to the same value on all Linux servers (/`etc/id
 If you are using NFSV4.1, then pNFS can be enabled and used.
 
 
-If SAP HANA multiple Host Systems with Host auto-failover are being used, the failover parameters need to be adjusted within `nameserver.ini` as shown in the following table. Keep the default retry interval of 10 seconds within these sections.
+If SAP HANA multiple-host systems with host auto-failover are being used, the failover parameters need to be adjusted within `nameserver.ini` as shown in the following table. Keep the default retry interval of 10 seconds within these sections.
 |===
 |Section within nameserver.ini |Parameter |Value
 
