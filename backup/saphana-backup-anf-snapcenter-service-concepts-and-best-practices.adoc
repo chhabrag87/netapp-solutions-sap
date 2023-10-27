@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: backup/saphana-backup-anf-snapcenter-service-concepts-and-best-practices.html
 keywords:
-summary:
+summary: "You should be aware of SnapCenter Service concepts and best practices. For example, there are various policies that must be configured for backup operations."
 ---
 = SnapCenter Service concepts and best practices
 :hardbreaks:
@@ -17,7 +17,8 @@ summary:
 // 2021-10-07 09:49:08.426087
 //
 
-link:saphana-backup-anf-snapcenter-service-sap-hana-backup-solution.html[Previous: SnapCenter Service SAP HANA backup solution.]
+[.lead]
+You should be aware of SnapCenter Service concepts and best practices. For example, there are various policies that must be configured for backup operations.
 
 == Data protection strategy
 

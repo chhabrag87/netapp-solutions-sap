@@ -84,8 +84,6 @@ entries:
         url: /backup/saphana-sr-scs-restore-and-recovery-from-a-backup-created-at-the-other-host.html
       - title: Where to find additional information
         url: /backup/saphana-sr-scs-where-to-find-additional-information_overview.html
-      - title: Version history
-        url: /backup/saphana-sr-scs-version-history.html
 
   - title: SAP HANA Disaster Recovery with Azure NetApp Files
     type: solutions
@@ -132,8 +130,6 @@ entries:
             url: /backup/saphana-dr-anf_mount_the_volumes_at_the_target_host.html
           - title: HANA database recovery
             url: /backup/saphana-dr-anf_hana_database_recovery_01.html
-      - title: Update history
-        url: /backup/saphana-dr-anf_update_history.html
 
   - title: SAP HANA Disaster Recovery with Storage Replication
     url: /backup/saphana-dr-sr_pdf_link.html
