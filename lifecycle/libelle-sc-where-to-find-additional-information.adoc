@@ -24,13 +24,3 @@ To learn more about the information that is described in this document, review t
 * NetApp Product Documentation
 +
 https://docs.netapp.com[https://docs.netapp.com^]
-
-=== Version history
-
-|===
-|Version |Date |Document Version History
-
-|Version 1.0
-|April 2022
-|Initial release.
-|===

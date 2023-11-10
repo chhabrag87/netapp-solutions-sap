@@ -32,7 +32,7 @@ entries:
             url: /backup/amazon-fsx-create-a-backup-with-replication.html
           - title: Restore and recover from secondary storage
             url: /backup/amazon-fsx-restore-and-recover-from-secondary-storage.html
-      - title: Where to find additional information and version history
+      - title: Where to find additional information  
         url: /backup/amazon-fsx-where-to-find-additional-information.html
 
   - title: SAP HANA backup and recovery with SnapCenter
@@ -64,7 +64,7 @@ entries:
         url: /backup/saphana-br-scs-restore-and-recovery.html
       - title: Advanced configuration and tuning
         url: /backup/saphana-br-scs-advanced-configuration-and-tuning.html
-      - title: Where to find additional information and version history
+      - title: Where to find additional information 
         url: /backup/saphana-br-scs-where-to-find-additional-information.html
 
   - title: SAP HANA System Replication Backup and Recovery with SnapCenter

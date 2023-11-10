@@ -45,19 +45,3 @@ https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_introducti
 +
 http://www.netapp.com/us/solutions/applications/sap/index.aspx[http://www.netapp.com/us/solutions/applications/sap/index.aspx^]
 
-== Version History
-
-|===
-|Version |Date |Document Version History
-
-|Version 1.0
-|February 2018
-|Initial release.
-|Version 2.0
-|February 2021
-|Complete rewrite covering SnapCenter 4.3 and improved automation scripts.
-New workflow description for system refresh and system clone operations.
-|Version 3.0
-|May 2022
-|Updated workflow for SnapCenter 4.6 P1.
-|===

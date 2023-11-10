@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar
 permalink: backup/saphana-sr-scs-where-to-find-additional-information_overview.html
-keywords: additional information, version history
+keywords: additional information, 
 summary:
 ---
-= Where to find additional information and version history
+= Where to find additional information 
 :hardbreaks:
 :nofooter:
 :icons: font

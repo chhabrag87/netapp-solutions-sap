@@ -4,7 +4,7 @@ permalink: backup/saphana-br-scs-where-to-find-additional-information.html
 keywords:
 summary:
 ---
-= Where to find additional information and version history
+= Where to find additional information 
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -43,49 +43,3 @@ https://www.netapp.com/pdf.html?item=/media/17195-tr4018pdf.pdf[https://www.neta
 * TR-4646: SAP HANA Disaster Recovery with Storage Replication
 +
 https://www.netapp.com/pdf.html?item=/media/8584-tr4646pdf.pdf[https://www.netapp.com/pdf.html?item=/media/8584-tr4646pdf.pdf^]
-
-== Version history
-
-|===
-|Version |Date |Document version history
-
-|Version 1.0
-|July 2017
-a|* Initial release.
-|Version 1.1
-|September 2017
-a|* Added the section “Advanced Configuration and Tuning.”
-* Minor corrections.
-|Version 2.0
-|March 2018
-a|* Updates to cover SnapCenter 4.0:
-New data volume resource
-Improved Single File SnapRestore operation
-|Version 3.0
-|January 2020
-a|* Added the section “SnapCenter Concepts and Best Practices.”
-* Updates to cover SnapCenter 4.3:
-Automatic discovery
-Automated restore and recovery
-Support of HANA MDC multiple tenants
-Single-tenant restore operation
-|Version 3.1
-|July 2020
-a|* Minor updates and corrections:
-NFSv4 support with SnapCenter 4.3.1
-Configuration of SSL communication
-Central plug-in deployment for Linux on IBM Power
-|Version 3.2
-|November 2020
-a|* Added the required database user privileges for HANA 2.0 SPS5.
-|Version 3.3
-|May 2021
-a|* Updated the SSL hdbsql configuration section.
-* Added Linux LVM support.
-|Version 3.4
-|August 2021
-a|* Added the disable auto discovery configuration description.
-|Version 3.5
-|February 2022
-a|* Minor updates to cover SnapCenter 4.6 and auto discovery support for HANA System Replication-enabled HANA systems.
-|===
