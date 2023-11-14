@@ -4,7 +4,6 @@ permalink: lifecycle/lama-ansible-sap-system-clone,-copy,-and-refresh-scenarios.
 keywords:
 summary:
 ---
-
 = SAP system clone, copy, and refresh scenarios
 :hardbreaks:
 :nofooter:
@@ -18,7 +17,7 @@ summary:
 // 2023-01-30 15:53:02.673145
 //
 
-link:lama-ansible-introduction.html[Previous: Introduction.]
+
 
 [.lead]
 The term SAP system copy is often used as a synonym for three different processes: SAP system clone, SAP system copy, or SAP system refresh. It is important to distinguish between the different operations because the workflows and use cases differ for each one.
@@ -31,4 +30,3 @@ The following figure illustrates the main steps that must be performed during a 
 
 image:lama-ansible-image1.png["This graphic depicts three process timelines for System Clone, System Copy, and System Refresh, respectively."]
 
-link:lama-ansible-use-cases-for-system-refresh,-copy,-and-cloning.html[Next: Use cases for system refresh, copy, and cloning.]

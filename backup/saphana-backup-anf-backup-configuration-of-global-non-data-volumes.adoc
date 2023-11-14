@@ -18,8 +18,7 @@ summary: This section lists the steps necessary to perform backup configuration 
 // 2021-10-07 09:49:08.462387
 //
 
-link:saphana-backup-anf-backup-configuration-of-sap-hana-non-data-volumes.html[Previous: Backup configuration of SAP HANA non-data volumes.]
-
+[.lead]
 To set the backup configuration of global non-data volumes, follow these steps:
 
 . Go to SAP HANA Systems and click Add.
@@ -51,4 +50,4 @@ image:saphana-backup-anf-image44.png[Error: Missing Graphic Image]
 +
 image:saphana-backup-anf-image45.png[Error: Missing Graphic Image]
 
-link:saphana-backup-anf-sap-hana-database-snapshot-backups.html[Next: SAP HANA database Snapshot backups.]
+

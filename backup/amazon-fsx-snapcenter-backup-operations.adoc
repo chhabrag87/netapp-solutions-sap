@@ -18,7 +18,8 @@ summary: This section describes how to create an on-demand Snapshot backup and a
 // 2022-05-13 09:40:18.296814
 //
 
-link:amazon-fsx-snapcenter-configuration.html[Previous: SnapCenter configuration.]
+[.lead]
+You can create an on-demand Snapshot backup and an on-demand block integrity check operation.
 
 == Create an on-demand Snapshot backup
 
@@ -112,4 +113,3 @@ drwxr-xr-x 4 pfxadm sapsys       4096 Feb 21 15:02 ..
 hana-1:~ #
 ....
 
-link:amazon-fsx-backup-of-non-data-volumes.html[Next: Backup of non-data volumes.]

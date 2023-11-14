@@ -4,7 +4,6 @@ permalink: backup/saphana-br-scs-snapcenter-initial-configuration.html
 keywords: configuration, storage system, plug-in, hdbsql client
 summary: This section describes initial SnapCenter configuration, including the storage system, credentials, hosts, the hdbsql client, and policies.
 ---
-
 = Initial SnapCenter configuration
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary: This section describes initial SnapCenter configuration, including the 
 // 2022-02-15 15:58:30.841110
 //
 
-link:saphana-br-scs-snapcenter-configuration.html[Previous: SnapCenter configuration.]
-
+[.lead]
 Initial configuration includes the following steps:
 
 . Storage system configuration
@@ -220,4 +218,4 @@ The following figure shows a summary of the configured policies.
 +
 image:saphana-br-scs-image52.png[Error: Missing Graphic Image]
 
-link:saphana-br-scs-snapcenter-resource-specific-configuration-for-sap-hana-database-backups.html[Next: SnapCenter resource-specific configuration for SAP HANA database backups.]
+

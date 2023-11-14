@@ -4,7 +4,6 @@ permalink: lifecycle/sc-copy-clone-sap-hana-system-refresh-with-snapcenter.html
 keywords: prerequisites, lab setup, clone name, sid, clone create, clone delete
 summary: This section provides a step-by-step description for the different system refresh operation options of an SAP HANA database.
 ---
-
 = SAP HANA system refresh with SnapCenter
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,8 @@ summary: This section provides a step-by-step description for the different syst
 // 2022-05-23 12:08:56.496473
 //
 
-link:sc-copy-clone-automation-example-scripts.html[Previous: Automation example scripts.]
 
+[.lead]
 The following section provides a step-by-step description for the different system refresh operation options of an SAP HANA database.
 
 [NOTE]
@@ -546,4 +545,4 @@ Clone delete job has been finshed.
 PS C:\NetApp>
 ....
 
-link:sc-copy-clone-sap-system-clone-with-snapcenter.html[Next: SAP system clone with SnapCenter.]
+

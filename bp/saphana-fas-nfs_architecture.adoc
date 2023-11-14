@@ -4,7 +4,6 @@ permalink: bp/saphana-fas-nfs_architecture.html
 keywords: sap, hana, backup, storage, replication, snapmirror, metrocluster, disaster, recovery
 summary: SAP HANA hosts are connected to storage controllers by using a redundant 10GbE or faster network infrastructure.
 ---
-
 = Architecture
 :hardbreaks:
 :nofooter:
@@ -17,9 +16,11 @@ summary: SAP HANA hosts are connected to storage controllers by using a redundan
 //
 // 2021-06-16 12:00:07.159716
 //
-link:saphana-fas-nfs_introduction.html[Previous: SAP HANA on NetApp All Flash FAS Systems with NFS Configuration Guide.]
 
-SAP HANA hosts are connected to storage controllers by using a redundant 10GbE or faster network infrastructure. Data communication between SAP HANA hosts and storage controllers is based on the NFS protocol. A redundant switching infrastructure is recommended to provide fault-tolerant SAP HANA host- to- storage connectivity in case of switch or network interface card (NIC) failure. The switches might aggregate individual port performance with port channels in order to appear as a single logical entity at the host level.
+[.lead]
+SAP HANA hosts are connected to storage controllers by using a redundant 10GbE or faster network infrastructure. Data communication between SAP HANA hosts and storage controllers is based on the NFS protocol. 
+
+A redundant switching infrastructure is recommended to provide fault-tolerant SAP HANA host- to- storage connectivity in case of switch or network interface card (NIC) failure. The switches might aggregate individual port performance with port channels in order to appear as a single logical entity at the host level.
 
 Different models of the FAS system product family can be mixed and matched at the storage layer to allow for growth and differing performance and capacity needs. The maximum number of SAP HANA hosts that can be attached to the storage system is defined by the SAP HANA performance requirements and the model of NetApp controller used. The number of required disk shelves is only determined by the capacity and performance requirements of the SAP HANA systems. The following figure shows an example configuration with eight SAP HANA hosts attached to a storage high availability (HA) pair.
 
@@ -93,4 +94,4 @@ The following figure shows a high-level overview of the solution. The storage cl
 
 image:saphana-fas-nfs_image8.png[Error: Missing Graphic Image]
 
-link:saphana-fas-nfs_storage_sizing.html[Next: Storage sizing.]
+

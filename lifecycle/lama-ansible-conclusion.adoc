@@ -1,10 +1,9 @@
 ---
 sidebar: sidebar
 permalink: lifecycle/lama-ansible-conclusion.html
-keywords: conclusion, additional information, version history
+keywords: conclusion, additional information
 summary: The integration of a modern automation framework like Ansible into SAP LaMa provisioning workflows gives customers a flexible solution to address standard or more complex infrastructure requirements.
 ---
-
 = Conclusion
 :hardbreaks:
 :nofooter:
@@ -18,7 +17,7 @@ summary: The integration of a modern automation framework like Ansible into SAP 
 // 2023-01-30 15:53:02.817313
 //
 
-link:lama-ansible-appendix-provider-script-configuration-and-ansible-playbooks.html[Previous: Provider script configuration and Ansible playbooks.]
+
 
 [.lead]
 The integration of a modern automation framework like Ansible into SAP LaMa provisioning workflows gives customers a flexible solution to address standard or more complex infrastructure requirements.
@@ -71,12 +70,3 @@ https://help.sap.com/doc/700f9a7e52c7497cad37f7c46023b7ff/3.0.11.0/en-US/737a99e
 +
 https://www.netapp.com/support-and-training/documentation/[https://www.netapp.com/support-and-training/documentation/^]
 
-== Version history
-
-|===
-|Version |Date |Document version history
-
-|Version 1.0
-|January 2023
-|Initial release
-|===

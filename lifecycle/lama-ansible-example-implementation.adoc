@@ -4,7 +4,6 @@ permalink: lifecycle/lama-ansible-example-implementation.html
 keywords: example, template, setup, configuration, scripts
 summary: Due to the large number of options available for system and storage setups, the example implementation should be used as a template your individual system setup and configuration requirements.
 ---
-
 = Example implementation
 :hardbreaks:
 :nofooter:
@@ -18,7 +17,7 @@ summary: Due to the large number of options available for system and storage set
 // 2023-01-30 15:53:02.689176
 //
 
-link:lama-ansible-netapp-sap-lama-integration-using-ansible.html[Previous: NetApp SAP LaMa integration using Ansible.]
+
 
 [lead]
 Due to the large number of options available for system and storage setups, the example implementation should be used as a template your individual system setup and configuration requirements.
@@ -109,5 +108,3 @@ More information about the use of custom hooks can be found in the https://help.
 To enable the custom provisioning workflow for the source system, it must be adapted in the configuration.  The *Use Custom Provisioning Process* checkbox with the corresponding custom provisioning definition must be selected.
 
 image:lama-ansible-image16.png["Screenshot of the SAP LaMa Configuration > Systems> System Details screen. Use Custom Provisioning Process checkbox is highlighted."]
-
-link:lama-ansible-sap-lama-provisioning-workflow-clone-system.html[Next: SAP LaMa provisioning workflow - clone system.]

@@ -4,7 +4,6 @@ permalink: lifecycle/libelle-sc-sap-hana-system-refresh-with-lsc,-azacsnap,-and-
 keywords: prerequisites, limitations, AzAcSnap, systemcopy, sc-system-refresh.sh, configuration, ZSCCOPYSHUTDOWN, ZSCCOPYUMOUNT, ZAZACSNAPRESTORE, ZSCCOPYRECOVER
 summary: Using Azure NetApp Files for SAP HANA, Oracle, and DB2 on Azure provides customers with the advanced data management and data protection features of NetApp ONTAP with the native Microsoft Azure NetApp Files service.
 ---
-
 = SAP HANA system refresh with LSC, AzAcSnap, and Azure NetApp Files
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,8 @@ summary: Using Azure NetApp Files for SAP HANA, Oracle, and DB2 on Azure provide
 // 2022-06-01 15:06:52.276469
 //
 
-link:libelle-sc-sap-hana-system-refresh-with-lsc-and-snapcenter.html[Previous: SAP HANA system refresh with LSC and SnapCenter.]
 
+[.lead]
 Using https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-solution-architectures[Azure NetApp Files for SAP HANA^], Oracle, and DB2 on Azure provides customers with the advanced data management and data protection features of NetApp ONTAP with the native Microsoft Azure NetApp Files service. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azacsnap-introduction[AzAcSnap^] is the foundation for very fast SAP system refresh operations to create application-consistent NetApp Snapshot copies of SAP HANA and Oracle systems (DB2 is not currently supported by AzAcSnap).
 
 Snapshot copy backups, which are created either on-demand or on a regular basis as part of the backup strategy, can then be efficiently cloned to new volumes and used to quickly refresh target systems. AzAcSnap provides the workflows necessary to create backups and clone them to new volumes, while Libelle SystemCopy performs the pre- and post-processing steps necessary for a full end-to-end system refresh.
@@ -224,4 +223,4 @@ After the Copy phase, LSC continues with all the defined steps of the Post phase
 
 image:libelle-sc-image39.jpg[Error: Missing Graphic Image]
 
-link:libelle-sc-where-to-find-additional-information.html[Next: Where to find additional Information and version history.]
+

@@ -4,7 +4,6 @@ permalink: bp/saphana_aff_fc_sap_hana_using_vmware_vsphere.html
 keywords:
 summary:
 ---
-
 = SAP HANA using VMware vSphere
 :hardbreaks:
 :nofooter:
@@ -17,8 +16,8 @@ summary:
 //
 // 2021-05-20 16:47:33.670798
 //
-link:saphana_aff_fc_introduction.html[Previous: TR-4436: SAP HANA on NetApp AFF Systems with Fibre Channel Protocol.]
 
+[.lead]
 There are several options to connect storage to virtual machines (VMs). The preferred one is to connect the storage volumes with NFS directly out of the guest operating system. This option is described in link:http://www.netapp.com/us/media/tr-4435.pdf[SAP HANA on NetApp AFF Systems with NFS].
 
 Raw device mappings (RDM), FCP datastores, or VVOL datastores with FCP are supported as well. For both datastore options, only one SAP HANA data or log volume must be stored within the datastore for productive use cases. In addition, Snapshot-based backup and recovery orchestrated by SnapCenter and solutions based on this, such as SAP System cloning, cannot be implemented.
@@ -31,4 +30,4 @@ https://wiki.scn.sap.com/wiki/display/VIRTUALIZATION/SAP+HANA+on+VMware+vSphere[
 * http://www.vmware.com/files/pdf/sap-hana-scale-out-deployments-on-vsphere.pdf[Best Practices and Recommendations for Scale-Out Deployments of SAP HANA on VMware vSphere^]
 * https://launchpad.support.sap.com/[2161991 - VMware vSphere configuration guidelines - SAP ONE Support Launchpad (Login required)^]
 
-link:saphana_aff_fc_architecture.html[Next: Architecture.]
+

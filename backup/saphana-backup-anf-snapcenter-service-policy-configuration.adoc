@@ -4,7 +4,6 @@ permalink: backup/saphana-backup-anf-snapcenter-service-policy-configuration.htm
 keywords: minimum configuration, policy, service
 summary:
 ---
-
 = SnapCenter Service policy configuration
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary:
 // 2021-10-07 09:49:08.439924
 //
 
-link:saphana-backup-anf-lab-setup-used-for-this-report.html[Previous: Lab setup used for this report.]
-
+[.lead]
 As discussed in the section link:saphana-backup-anf-snapcenter-service-concepts-and-best-practices.html#data-protection-strategy[“Data protection strategy,”] policies are usually configured independently of the resource and can be used by multiple SAP HANA databases.
 
 A typical minimum configuration consists of the following policies:
@@ -70,5 +68,3 @@ image:saphana-backup-anf-image17.png[Error: Missing Graphic Image]
 The following figure shows a summary of the configured policies.
 +
 image:saphana-backup-anf-image18.png[Error: Missing Graphic Image]
-
-link:saphana-backup-anf-snapcenter-service-snapshot-backup-configuration-overview.html[Next: SnapCenter Service Snapshot backup configuration overview.]

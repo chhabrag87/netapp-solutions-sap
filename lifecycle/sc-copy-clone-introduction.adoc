@@ -50,4 +50,3 @@ NetApp SnapCenter with the plug-in for SAP HANA is used to provision the require
 
 A fully automated, end-to-end provision of SAP test systems can be performed by using SAP Landscape Management (LaMa). NetApp Storage Services Connector integrates into SAP LaMa and provides the required operations for SAP LaMa at the storage layer. More details can be found at https://www.netapp.com/us/media/tr-4018.pdf[Integrating NetApp ONTAP Systems with SAP Landscape Management^].
 
-link:sc-copy-clone-sap-system-copy,-refresh,-and-clone-scenarios.html[Next: SAP system copy, refresh, and clone scenarios.]

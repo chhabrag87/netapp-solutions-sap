@@ -4,7 +4,6 @@ permalink: lifecycle/lama-ansible-appendix-provider-script-configuration-and-ans
 keywords: appendix, script, ansible playbook, directory 
 summary: The following provider configuration file, execution script, and Ansible playbooks are used during the sample deployment and workflow execution in this documentation.
 ---
-
 = Provider script configuration and Ansible playbooks
 :hardbreaks:
 :nofooter:
@@ -18,7 +17,6 @@ summary: The following provider configuration file, execution script, and Ansibl
 // 2023-01-30 15:53:02.735739
 //
 
-link:lama-ansible-sap-lama-provisioning-workflow-system-refresh.html[Previous: AP LaMa provisioning workflow - system refresh.]
 
 [.lead]
 The following provider configuration file, execution script, and Ansible playbooks are used during the sample deployment and workflow execution in this documentation.
@@ -490,4 +488,3 @@ ontapservers:
    clonepostfix: "_clone_20221115"
 ....
 
-link:lama-ansible-conclusion.html[Next: Conclusion.]

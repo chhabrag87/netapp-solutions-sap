@@ -4,7 +4,6 @@ permalink: bp/saphana_aff_fc_storage_sizing.html
 keywords:
 summary:
 ---
-
 = Storage sizing
 :hardbreaks:
 :nofooter:
@@ -17,8 +16,8 @@ summary:
 //
 // 2021-05-20 16:47:33.693524
 //
-link:saphana_aff_fc_architecture.html[Previous: Architecture.]
 
+[.lead]
 The following section provides an overview of performance and capacity considerations required for sizing a storage system for SAP HANA.
 
 [NOTE]
@@ -210,4 +209,4 @@ The following figure summarizes the sizing process.
 
 image:saphana_aff_fc_image8.jpg[Error: Missing Graphic Image]
 
-link:saphana_aff_fc_infrastructure_setup_and_configuration_overview.html[Next: Infrastructure setup and configuration.]
+

@@ -18,8 +18,7 @@ summary: This section describes how to add a policy to resource protection.
 // 2022-05-13 09:40:18.370515
 //
 
-link:amazon-fsx-create-a-new-snapcenter-policy-for-backup-replication.html[Previous: Create a new SnapCenter policy for backup replication.]
-
+[.lead]
 You must add the new policy to the HANA resource protection configuration, as shown in the following figure.
 
 image:amazon-fsx-image86.png[Error: Missing Graphic Image]
@@ -28,4 +27,3 @@ A daily schedule is defined in our setup.
 
 image:amazon-fsx-image87.png[Error: Missing Graphic Image]
 
-link:amazon-fsx-create-a-backup-with-replication.html[Next: Create a backup with replication.]

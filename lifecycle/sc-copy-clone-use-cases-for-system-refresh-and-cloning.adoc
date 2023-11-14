@@ -4,7 +4,6 @@ permalink: lifecycle/sc-copy-clone-use-cases-for-system-refresh-and-cloning.html
 keywords: date refresh, qa, test, sandbox, training, logical corruption, dr, disaster recovery, testing
 summary: There are multiple scenarios in which data from a source system must be made available to a target system for testing or training purposes. These test and training systems must be updated with data from the source system on a regular basis to make sure that testing and training is performed with the current data set.
 ---
-
 = Use cases for system refresh and cloning
 :hardbreaks:
 :nofooter:
@@ -18,11 +17,11 @@ summary: There are multiple scenarios in which data from a source system must be
 // 2022-05-23 12:08:56.449347
 //
 
-link:sc-copy-clone-sap-system-copy,-refresh,-and-clone-scenarios.html[Previous: SAP system copy, refresh, and clone scenarios.]
 
-== Data refresh of QA, test, sandbox, or training systems
+[.lead]
+There are multiple scenarios in which data from a source system must be made available to a target system for testing or training purposes. These test and training systems must be updated with data from the source system on a regular basis to make sure that testing and training is performed with the current data set. 
 
-There are multiple scenarios in which data from a source system must be made available to a target system for testing or training purposes. These test and training systems must be updated with data from the source system on a regular basis to make sure that testing and training is performed with the current data set. These system- refresh operations consist of multiple tasks on the infrastructure, database, and application layers, and they can take multiple days depending on the level of automation.
+These system- refresh operations consist of multiple tasks on the infrastructure, database, and application layers, and they can take multiple days depending on the level of automation.
 
 The following figure depicts SAP system refresh, copy, and clone operations.
 
@@ -64,4 +63,4 @@ image:sc-copy-clone-image6.png[Error: Missing Graphic Image]
 
 A detailed step-by-step description can be found in the technical report http://www.netapp.com/us/media/tr-4646.pdf[SAP HANA Disaster Recovery with Storage Replication^].
 
-link:sc-copy-clone-overview-of-sap-system-refresh-workflow-with-snapcenter.html[Next: Overview of SAP system refresh workflow with SnapCenter.]
+

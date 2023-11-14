@@ -4,7 +4,6 @@ permalink: bp/saphana-fas-nfs_storage_sizing.html
 keywords: storage, sizing, sap, hana, fas, nfs, performance, considerations, mixed, workloads, process, capacity
 summary: The following section provides an overview of the required performance and capacity considerations needed for sizing a storage system for SAP HANA.
 ---
-
 = Storage sizing
 :hardbreaks:
 :nofooter:
@@ -17,8 +16,8 @@ summary: The following section provides an overview of the required performance 
 //
 // 2021-06-16 12:00:07.166763
 //
-link:saphana-fas-nfs_architecture.html[Previous: Architecture.]
 
+[.lead]
 The following section provides an overview of the required performance and capacity considerations needed for sizing a storage system for SAP HANA.
 
 [NOTE]
@@ -209,4 +208,3 @@ The following figure summarizes the sizing process.
 
 image:saphana-fas-nfs_image9.jpg[Error: Missing Graphic Image]
 
-link:saphana-fas-nfs_infrastructure_setup_and_configuration_overview.html[Next: Infrastructure setup and configuration.]

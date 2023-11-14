@@ -4,7 +4,6 @@ permalink: bp/saphana-fas-nfs_sap_hana_installation_preparations_for_nfsv4.html
 keywords: sap, hana, installation, preparations, nfsv4, user, authentication, storage, controller, hosts
 summary: NFS version 4 and higher requires user authentication. This authentication can be accomplished by using a central user management tool such as a Lightweight Directory Access Protocol (LDAP) server or with local user accounts.
 ---
-
 = SAP HANA installation preparations for NFSv4
 :hardbreaks:
 :nofooter:
@@ -17,8 +16,8 @@ summary: NFS version 4 and higher requires user authentication. This authenticat
 //
 // 2021-06-16 12:00:07.244304
 //
-link:saphana-fas-nfs_host_setup.html[Previous: Host setup.]
 
+[.lead]
 NFS version 4 and higher requires user authentication. This authentication can be accomplished by using a central user management tool such as a Lightweight Directory Access Protocol (LDAP) server or with local user accounts. The following sections describe how to configure local user accounts.
 
 The administration user `<sidadm>` and the `sapsys` group must be created manually on the SAP HANA hosts and the storage controllers before the installation of the SAP HANA software begins.
@@ -59,4 +58,3 @@ Additionally, set the group ID of the UNIX user root of the SVM to 0.
 vserver services unix-user modify -vserver <vserver> -user root -primary-gid 0
 ....
 
-link:saphana-fas-nfs_i_o_stack_configuration_for_sap_hana.html[Next: I/O stack configuration for SAP HANA.]

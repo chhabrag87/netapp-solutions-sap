@@ -4,7 +4,6 @@ permalink: backup/amazon-fsx-snapcenter-architecture.html
 keywords: snapcenter, scope, data protection strategy, example lab setup
 summary: SnapCenter is a unified, scalable platform for application-consistent data protection. SnapCenter provides centralized control and oversight, while delegating the ability for users to manage application-specific backup, restore, and clone jobs. With SnapCenter, database and storage administrators learn a single tool to manage backup, restore, and cloning operations for a variety of applications and databases.  SnapCenter manages data across endpoints in the data fabric powered by NetApp.
 ---
-
 = SnapCenter architecture
 :hardbreaks:
 :nofooter:
@@ -18,11 +17,10 @@ summary: SnapCenter is a unified, scalable platform for application-consistent d
 // 2022-05-13 09:40:18.248518
 //
 
-link:amazon-fsx-backup-and-recovery-using-amazon-fsx-for-ontap.html[Previous: Backup and recovery using Amazon FSx for ONTAP.]
+[.lead]
+SnapCenter is a unified, scalable platform for application-consistent data protection. SnapCenter provides centralized control and oversight, while delegating the ability for users to manage application-specific backup, restore, and clone jobs. With SnapCenter, database and storage administrators learn a single tool to manage backup, restore, and cloning operations for a variety of applications and databases. 
 
-== SnapCenter overview
-
-SnapCenter is a unified, scalable platform for application-consistent data protection. SnapCenter provides centralized control and oversight, while delegating the ability for users to manage application-specific backup, restore, and clone jobs. With SnapCenter, database and storage administrators learn a single tool to manage backup, restore, and cloning operations for a variety of applications and databases. SnapCenter manages data across endpoints in the data fabric powered by NetApp. You can use SnapCenter to replicate data between on-premises environments;  between on-premises environments and the cloud; and between private, hybrid, or public clouds.
+SnapCenter manages data across endpoints in the data fabric powered by NetApp. You can use SnapCenter to replicate data between on-premises environments;  between on-premises environments and the cloud; and between private, hybrid, or public clouds.
 
 == SnapCenter components
 
@@ -194,4 +192,3 @@ FSx for ONTAP file systems:
 
 image:amazon-fsx-image8.png[Error: Missing Graphic Image]
 
-link:amazon-fsx-snapcenter-configuration.html[Next: SnapCenter configuration.]

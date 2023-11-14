@@ -4,7 +4,6 @@ permalink: backup/saphana-br-scs-block-integrity-check.html
 keywords: snapshot backup, file-based backup, block integrity check
 summary: SAP recommends combining storage-based Snapshot backups with a weekly file-based backup to execute a block integrity check. SnapCenter supports the execution of a block integrity check by using a policy in which file-based backup is selected as the backup type.
 ---
-
 = Block integrity check
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary: SAP recommends combining storage-based Snapshot backups with a weekly f
 // 2022-02-15 15:58:30.915752
 //
 
-link:saphana-br-scs-database-backups.html[Previous: Database backups.]
-
+[.lead]
 SAP recommends combining storage-based Snapshot backups with a weekly file-based backup to execute a block integrity check. SnapCenter supports the execution of a block integrity check by using a policy in which file-based backup is selected as the backup type.
 
 When scheduling backups using this policy, SnapCenter creates a standard SAP HANA file backup for the system and tenant databases.
@@ -98,4 +96,3 @@ drwxr-xr-- 4 ss1adm sapsys       4096 Nov 19 05:11 ..
 -rw-r----- 1 ss1adm sapsys 1577066496 Nov 23 08:46 SnapCenter_SnapCenter_BlockIntegrityCheck_Weekly_11-23-2019_06.00.07.8397_databackup_1_1
 ....
 
-link:saphana-br-scs-restore-and-recovery.html[Next: Restore and recovery.]
