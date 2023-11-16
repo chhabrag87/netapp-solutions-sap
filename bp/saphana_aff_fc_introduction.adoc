@@ -26,11 +26,12 @@ The NetApp AFF A-Series and AFF C-Series product families have been certified fo
 
 This certification is valid for the following models:
 
-* AFF A150, AFF A220, AFF A250, AFF A300, AFF A320, AFF A400, AFF A700s, AFF A700, AFF A800, AFF A900
+* AFF A150, AFF A250, AFF A400, AFF A800, AFF A900
 * AFF C250, AFF C400, AFF C800
-* ASA AFF A220, ASA AFF A250, ASA AFF A400, ASA AFF A700, ASA AFF A800, ASA AFF A900
+* ASA A250, ASA A400, ASA A800, ASA A900
+* ASA C250, ASA C400, ASA C800
 [NOTE]
-NetApp AFF C-Series requires NetApp ONTAP 9.13.1 or later
+NetApp AFF and ASA C-Series requires NetApp ONTAP 9.13.1 or later
 
 For a complete list of NetApp certified storage solutions for SAP HANA, see the https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/#/solutions?filters=v:deCertified;ve:13[Certified and supported SAP HANA hardware directory^].
 
