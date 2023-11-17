@@ -26,9 +26,9 @@ Inline deduplication, cross- volume inline deduplication, inline compression, an
 
 Enabling the storage efficiency features in an HDD configuration is not supported.
 
-== NetApp Volume Encryption
+== NetApp Volume and Aggregate Encryption
 
-The use of NetApp Volume Encryption (NVE) is supported for SAP HANA.
+The use of NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE) are supported with SAP HANA.
 
 == Quality of service
 
