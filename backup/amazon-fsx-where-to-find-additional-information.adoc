@@ -18,8 +18,7 @@ summary:
 // 2022-05-13 09:40:18.384978
 //
 
-link:amazon-fsx-restore-and-recover-from-secondary-storage.html[Previous: Restore and recover from secondary storage.]
-
+[.lead]
 To learn more about the information that is described in this document, review the following documents and/or websites:
 
 * FSx for NetApp ONTAP user guide — What is Amazon FSx for NetApp ONTAP?
@@ -42,12 +41,3 @@ https://www.netapp.com/pdf.html?item=/media/17111-tr4667.pdf
 +
 https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-sr-scs-sap-hana-system-replication-overview.html[https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-sr-scs-sap-hana-system-replication-overview.html^]
 
-== Version history
-
-|===
-|Version |Date |Document version history
-
-|Version 1.0
-|May 2022
-|Initial release.
-|===

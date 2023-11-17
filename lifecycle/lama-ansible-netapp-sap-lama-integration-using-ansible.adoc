@@ -4,7 +4,6 @@ permalink: lifecycle/lama-ansible-netapp-sap-lama-integration-using-ansible.html
 keywords: integration, lama, ansible, 
 summary: The integration approach uses SAP LaMa custom provisioning and operation hooks combined with Ansible playbooks for NetApp storage management. The following figure shows a high-level overview of the configuration on the LaMa side as well as the corresponding components of the example implementation.
 ---
-
 = NetApp SAP LaMa integration using Ansible
 :hardbreaks:
 :nofooter:
@@ -18,7 +17,6 @@ summary: The integration approach uses SAP LaMa custom provisioning and operatio
 // 2023-01-30 15:53:02.684591
 //
  
-link:lama-ansible-use-cases-for-system-refresh,-copy,-and-cloning.html[Previous: Use cases for system refresh, copy, and cloning.]
 
 [.lead]
 The integration approach uses SAP LaMa custom provisioning and operation hooks combined with Ansible playbooks for NetApp storage management. The following figure shows a high-level overview of the configuration on the LaMa side as well as the corresponding components of the example implementation.
@@ -36,4 +34,3 @@ More information on NetApp Ansible modules and the LaMa provider definitions can
 * https://www.ansible.com/integrations/infrastructure/netapp[NetApp Ansible modules^]
 * https://help.sap.com/doc/700f9a7e52c7497cad37f7c46023b7ff/3.0.11.0/en-US/bf6b3e43340a4cbcb0c0f3089715c068.html[SAP LaMa documentation – provider definitions^]
 
-link:lama-ansible-example-implementation.html[Next: Example implementation.]

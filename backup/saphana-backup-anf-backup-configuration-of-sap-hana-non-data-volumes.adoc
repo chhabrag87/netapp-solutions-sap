@@ -4,7 +4,6 @@ permalink: backup/saphana-backup-anf-backup-configuration-of-sap-hana-non-data-v
 keywords: backup, configuration, non-data volumes, snapshot copies
 summary: The backup of non-data volumes is an integrated part of the SnapCenter Service. Protecting the database data volume is sufficient to restore and recover the SAP HANA database to a given point in time provided that the database installation resources and the required logs are still available.
 ---
-
 = Backup configuration of SAP HANA non-data volumes
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary: The backup of non-data volumes is an integrated part of the SnapCenter 
 // 2021-10-07 09:49:08.458609
 //
 
-link:saphana-backup-anf-backup-configuration-of-sap-hana-database-backups.html[Previous: Backup configuration of SAP HANA database backups.]
-
+[.lead]
 The backup of non-data volumes is an integrated part of the SnapCenter Service. Protecting the database data volume is sufficient to restore and recover the SAP HANA database to a given point in time provided that the database installation resources and the required logs are still available.
 
 To recover from situations where other non-data files must be restored, NetApp recommends developing an additional backup strategy for these volumes to augment the SAP HANA database backup. Depending on your specific requirements, the backup of non-data volumes might differ in scheduling frequency and retention settings, and you should consider how frequently files are changed. For instance, the HANA volume `/hana/shared` contains executables but also SAP HANA trace files. Although executables only change when the SAP HANA database is upgraded, the SAP HANA trace files might need a higher backup frequency to support analyzing problem situations with SAP HANA.
@@ -58,4 +56,3 @@ image:saphana-backup-anf-image37.png[Error: Missing Graphic Image]
 +
 image:saphana-backup-anf-image38.png[Error: Missing Graphic Image]
 
-link:saphana-backup-anf-backup-configuration-of-global-non-data-volumes.html[Next: Backup configuration of global non-data volumes.]

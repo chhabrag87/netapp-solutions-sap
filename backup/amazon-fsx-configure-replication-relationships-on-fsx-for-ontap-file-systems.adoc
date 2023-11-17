@@ -18,8 +18,7 @@ summary: This section describes how to peer FSx for ONTAP file systems, peer SVM
 // 2022-05-13 09:40:18.338914
 //
 
-link:amazon-fsx-backup-replication-with-snapvault_overview.html[Previous: Overview - Backup replication with SnapVault.]
-
+[.lead]
 You can find additional information about SnapMirror configuration options in the ONTAP documentation at https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-replication-workflow-concept.html[SnapMirror replication workflow (netapp.com)^].
 
 * Source FSx for ONTAP file system: `FsxId00fa9e3c784b6abbb`
@@ -177,4 +176,3 @@ sapcc-hana-svm:PFX_data_mnt00001
                                       Idle           -         true    -
 ....
 
-link:amazon-fsx-add-a-backup-svm-to-snapcenter.html[Next: Add a backup SVM to SnapCenter.]

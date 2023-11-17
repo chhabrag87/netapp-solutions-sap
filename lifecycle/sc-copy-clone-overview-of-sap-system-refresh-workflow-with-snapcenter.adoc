@@ -4,7 +4,6 @@ permalink: lifecycle/sc-copy-clone-overview-of-sap-system-refresh-workflow-with-
 keywords: overview, sap system refresh, workflow
 summary: SnapCenter provides workflows that allows you to manage clones of data sets from any existing Snapshot backup. This cloned data set, a FlexClone volume, can be used to rapidly provision a HANA data volume from a source system and attach it to a target system. It is therefore a perfect fit for executing system refresh operations for QA, test, sandbox, or training systems.
 ---
-
 = Overview of SAP system refresh workflow with SnapCenter
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,8 @@ summary: SnapCenter provides workflows that allows you to manage clones of data 
 // 2022-05-23 12:08:56.456420
 //
 
-link:sc-copy-clone-use-cases-for-system-refresh-and-cloning.html[Previous: Use cases for system refresh and cloning.]
 
+[.lead]
 SnapCenter provides workflows that allows you to manage clones of data sets from any existing Snapshot backup. This cloned data set, a FlexClone volume, can be used to rapidly provision a HANA data volume from a source system and attach it to a target system. It is therefore a perfect fit for executing system refresh operations for QA, test, sandbox, or training systems.
 
 The SnapCenter cloning workflows handle all required operations on the storage layer and can be extended using scripts to execute host-specific and HANA database-specific operations. In this document, we use a script to execute mount and unmount operations on the target host as well as HANA database recovery and shutdown operations. SnapCenter workflows with further automation using the script handle all required HANA database operations but do not cover any required SAP post-processing steps. SAP post processing must be performed manually or with third party tools.
@@ -60,4 +59,4 @@ image:sc-copy-clone-image8.png[Error: Missing Graphic Image]
 
 The section link:sc-copy-clone-sap-hana-system-refresh-with-snapcenter.html[“SAP HANA system refresh with SnapCenter”] provides a detailed step-by-step description of both system-refresh workflows.
 
-link:sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html[Next: Overview of SAP system copy workflow with SnapCenter.]
+

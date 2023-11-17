@@ -4,7 +4,6 @@ permalink: backup/saphana-dr-anf_hana_database_recovery_01.html
 keywords: recovery, forward, log, backups, system, tenant, database, log, backups, check, consistency, hana, azure
 summary: The following are steps for HANA database recovery.
 ---
-
 = HANA database recovery
 :hardbreaks:
 :nofooter:
@@ -18,7 +17,8 @@ summary: The following are steps for HANA database recovery.
 // 2021-05-24 12:07:40.431085
 //
 
-link:saphana-dr-anf_mount_the_volumes_at_the_target_host.html[Previous: Mount the volumes at the target host.]
+[.lead]
+The following are steps for HANA database recovery.
 
 Start the required SAP services.
 
@@ -126,4 +126,3 @@ The check must be executed for the latest log backup files of the System and the
 
 If the `hdbbackupcheck` tool reports an error for the latest log backups, the latest set of log backups must be removed or deleted.
 
-link:saphana-dr-anf_update_history.html[Next: Update history.]

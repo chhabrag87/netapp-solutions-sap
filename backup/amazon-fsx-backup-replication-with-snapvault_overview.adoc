@@ -18,8 +18,7 @@ summary: In our lab setup, we use a second FSX for ONTAP file system in a second
 // 2022-05-13 09:40:18.331286
 //
 
-link:amazon-fsx-backup-of-non-data-volumes.html[Previous: Backup of non-data volumes.]
-
+[.lead]
 In our lab setup, we use a second FSX for ONTAP file system in a second AWS availability zone to showcase the backup replication for the HANA data volume.
 
 As discussed in chapter link:amazon-fsx-snapcenter-architecture.html#data-protection-strategy[“Data protection strategy”], the replication target must be a second FSx for ONTAP file system in another availability zone to be protected from a failure of the primary FSx for ONTAP file system. Also, the HANA shared volume should be replicated to the secondary FSx for ONTAP file system.
@@ -47,4 +46,3 @@ When volume replication configuration is complete, you must configure the backup
 
 The following chapters describe the individual steps in more detail.
 
-link:amazon-fsx-configure-replication-relationships-on-fsx-for-ontap-file-systems.html[Next: Configure replication relationships on FSx for ONTAP file systems.]

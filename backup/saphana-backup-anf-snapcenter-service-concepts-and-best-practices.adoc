@@ -2,9 +2,8 @@
 sidebar: sidebar
 permalink: backup/saphana-backup-anf-snapcenter-service-concepts-and-best-practices.html
 keywords:
-summary:
+summary: "You should be aware of SnapCenter Service concepts and best practices. For example, there are various policies that must be configured for backup operations."
 ---
-
 = SnapCenter Service concepts and best practices
 :hardbreaks:
 :nofooter:
@@ -18,7 +17,8 @@ summary:
 // 2021-10-07 09:49:08.426087
 //
 
-link:saphana-backup-anf-snapcenter-service-sap-hana-backup-solution.html[Previous: SnapCenter Service SAP HANA backup solution.]
+[.lead]
+You should be aware of SnapCenter Service concepts and best practices. For example, there are various policies that must be configured for backup operations.
 
 == Data protection strategy
 
@@ -209,4 +209,3 @@ You cannot switch off log backup retention management with the current release o
 
 You must consider the higher block change rate on the storage layer relative to the change rate with traditional databases. Due to the HANA table merge process of the column store, the complete table is written to disk, not just the changed blocks. Data from our customer base shows a daily change rate between 20% and 50% if multiple Snapshot backups are taken during the day.
 
-link:saphana-backup-anf-lab-setup-used-for-this-report.html[Next: Lab setup used for this report.]

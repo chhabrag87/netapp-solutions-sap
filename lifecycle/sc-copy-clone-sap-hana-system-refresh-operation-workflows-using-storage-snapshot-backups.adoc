@@ -4,7 +4,6 @@ permalink: lifecycle/sc-copy-clone-sap-hana-system-refresh-operation-workflows-u
 keywords: tenant create, rename, drop, refresh
 summary: The steps required to perform an SAP HANA system refresh depend on the source system tenant configuration and the required tenant name at the target system, as shown in the following figure.
 ---
-
 = SAP HANA system refresh operation workflows using storage snapshot backups
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,8 @@ summary: The steps required to perform an SAP HANA system refresh depend on the 
 // 2022-05-23 12:08:56.476278
 //
 
-link:sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html[Previous: Overview of SAP system clone workflow with SnapCenter.]
 
+[.lead]
 The steps required to perform an SAP HANA system refresh depend on the source system tenant configuration and the required tenant name at the target system, as shown in the following figure.
 
 Since the tenant name is configured in the system database, the tenant name of the source system is also available at the target system after the recovery of the system database. Therefore, the tenant at the target system can only be recovered with the same name as the source tenant as shown in option 1 in the following figure. If the tenant name at the target system must be different, the tenant must first be recovered with the same name as the source tenant and then renamed to the required target tenant name. This is option 2 in the following figure.
@@ -35,4 +34,4 @@ This figure shows the configuration flag for initial MDC single-tenant installat
 
 image:sc-copy-clone-image12.png[Error: Missing Graphic Image]
 
-link:sc-copy-clone-automation-example-scripts.html[Next: Automation example scripts.]
+

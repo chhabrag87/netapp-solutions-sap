@@ -4,7 +4,6 @@ permalink: backup/saphana-dr-anf_configuration_steps_for_anf_cross-region_replic
 keywords: configuration, steps, anf, cross, region, replication, preparation,
 summary: A few preparation steps must be performed at the disaster recovery site before volume replication can be configured.
 ---
-
 = Configuration steps for ANF Cross-Region Replication
 :hardbreaks:
 :nofooter:
@@ -17,9 +16,7 @@ summary: A few preparation steps must be performed at the disaster recovery site
 //
 // 2021-05-24 12:07:40.343010
 //
-
-link:saphana-dr-anf_lab_setup.html[Previous: Lab setup.]
-
+[.lead]
 A few preparation steps must be performed at the disaster recovery site before volume replication can be configured.
 
 * A NetApp account must be available and configured with the same Azure subscription as the source.
@@ -95,4 +92,4 @@ image:saphana-dr-anf_image13.png[Error: Missing Graphic Image]
 
 The same steps must be performed for the HANA shared and the log backup volume.
 
-link:saphana-dr-anf_monitoring_anf_cross-region_replication.html[Next: Monitoring ANF Cross-Region Replication.]
+

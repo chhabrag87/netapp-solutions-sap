@@ -99,4 +99,4 @@ The graph shows the HANA server RAM size. The database size in memory is calcula
 [NOTE]
 The restore and recovery time is calculated based on the following assumptions. The database can be restored at 250MBps. The number of log files per day is 50% of the database size. For example, a 1TB database creates 500MB of log files per day. A recovery can be performed at 100MBps.
 
-link:saphana-br-scs-snapcenter-architecture.html[Next: SnapCenter architecture.]
+

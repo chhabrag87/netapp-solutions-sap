@@ -4,7 +4,6 @@ permalink: backup/saphana-sr-scs-storage-snapshot-backups-and-sap-system-replica
 keywords: Snapshot, storage, backup, primary host, sql
 summary: Backup operations are always performed at the primary SAP HANA host. The required SQL commands for the backup operation cannot be performed at the secondary SAP HANA host.
 ---
-
 = Storage Snapshot backups and SAP System Replication
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary: Backup operations are always performed at the primary SAP HANA host. Th
 // 2022-01-10 18:20:17.311160
 //
 
-link:saphana-sr-scs-sap-hana-system-replication-overview.html[Previous: SAP HANA System Replication overview.]
-
+[.lead]
 Backup operations are always performed at the primary SAP HANA host. The required SQL commands for the backup operation cannot be performed at the secondary SAP HANA host.
 
 For SAP HANA backup operations, the primary and secondary SAP HANA hosts are a single entity. They share the same SAP HANA backup catalog and they use backups for restore and recovery, regardless of whether the backup was created at the primary or secondary SAP HANA host.
@@ -36,4 +34,4 @@ The backup created at host 2 can be restored directly at the storage layer. If y
 
 image:saphana-sr-scs-image4.png[Error: Missing Graphic Image]
 
-link:saphana-sr-scs-snapcenter-configuration-options-for-sap-system-replication.html[Next: SnapCenter configuration options for SAP System Replication.]
+

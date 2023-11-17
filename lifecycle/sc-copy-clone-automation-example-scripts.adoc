@@ -4,7 +4,6 @@ permalink: lifecycle/sc-copy-clone-automation-example-scripts.html
 keywords: example script, automation, clone create, clone delete
 summary: In this document, two scripts are used to further automate SnapCenter clone create and clone delete operations.
 ---
-
 = Automation example scripts
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,7 @@ summary: In this document, two scripts are used to further automate SnapCenter c
 // 2022-05-23 12:08:56.480600
 //
 
-link:sc-copy-clone-sap-hana-system-refresh-operation-workflows-using-storage-snapshot-backups.html[Previous: SAP HANA system refresh operation workflows using storage snapshot backups.]
-
+[.lead]
 In this document, two scripts are used to further automate SnapCenter clone create and clone delete operations.
 
 * The script `sc-system-refresh.sh` is used for the system refresh and the system clone workflow to execute mount and unmount operations for the HANA data volume as well as for recovery and shutdown operations of the HANA database.
@@ -158,4 +156,4 @@ For example:
 CLONED_VOLUMES_MOUNT_PATH=192.168.175.117:/SS1_data_mnt00001_Clone_05112206115489411
 ....
 
-link:sc-copy-clone-sap-hana-system-refresh-with-snapcenter.html[Next: SAP HANA system refresh with SnapCenter.]
+

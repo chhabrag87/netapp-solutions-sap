@@ -18,7 +18,8 @@ summary: This section describes the areas covered by the SnapCenter Service back
 // 2021-10-07 09:49:08.416241
 //
 
-link:saphana-backup-anf-snapcenter-service-architecture.html[Previous: SnapCenter Service architecture.]
+[.lead]
+This section describes the areas covered by the SnapCenter Service backup solution.
 
 == Solution components
 
@@ -88,4 +89,3 @@ Snapshot backup support for MDC systems has been introduced by SAP with HANA 2.0
 
 The combination of data Snapshot backups with SnapCenter Service and log backups with a backint solution is not supported. Log backups must be configured to be written to a file system.
 
-link:saphana-backup-anf-snapcenter-service-concepts-and-best-practices.html[Next: SnapCenter Service concepts and best practices.]

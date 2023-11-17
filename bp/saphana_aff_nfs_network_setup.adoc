@@ -4,7 +4,6 @@ permalink: bp/saphana_aff_nfs_network_setup.html
 keywords: network, setup, nic, nfs, lacp, ifgroup, jumbo frames, vmxnet3, mtu
 summary: This section describes the dedicated storage network setup for SAP HANA hosts.
 ---
-
 = Network setup
 :hardbreaks:
 :nofooter:
@@ -17,7 +16,9 @@ summary: This section describes the dedicated storage network setup for SAP HANA
 //
 // 2021-05-20 16:44:23.315971
 //
-link:saphana_aff_nfs_infrastructure_setup_and_configuration_overview.html[Previous: Infrastructure setup and configuration.]
+
+[.lead]
+This section describes the dedicated storage network setup for SAP HANA hosts.
 
 Use the following guidelines when configuring the network:
 
@@ -55,4 +56,4 @@ LRO (large receive offload) must be turned off for interfaces used for NFS traff
 
 image:saphana_aff_nfs_image12.png[Error: Missing Graphic Image]
 
-link:saphana_aff_nfs_time_synchronization.html[Next: Time synchronization.]
+

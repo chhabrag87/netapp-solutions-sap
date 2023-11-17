@@ -4,7 +4,6 @@ permalink: lifecycle/sc-copy-clone-where-to-find-additional-information.html
 keywords:
 summary:
 ---
-
 = Where to find additional information
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,8 @@ summary:
 // 2022-05-23 12:08:56.606046
 //
 
-link:sc-copy-clone-sap-system-clone-with-snapcenter.html[Previous: SAP system clone with SnapCenter.]
 
+[.lead]
 To learn more about the information described in this document, refer to the following documents and/or websites:
 
 * TR-4614: SAP HANA Backup and Recovery with SnapCenter
@@ -46,19 +45,3 @@ https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_introducti
 +
 http://www.netapp.com/us/solutions/applications/sap/index.aspx[http://www.netapp.com/us/solutions/applications/sap/index.aspx^]
 
-== Version History
-
-|===
-|Version |Date |Document Version History
-
-|Version 1.0
-|February 2018
-|Initial release.
-|Version 2.0
-|February 2021
-|Complete rewrite covering SnapCenter 4.3 and improved automation scripts.
-New workflow description for system refresh and system clone operations.
-|Version 3.0
-|May 2022
-|Updated workflow for SnapCenter 4.6 P1.
-|===

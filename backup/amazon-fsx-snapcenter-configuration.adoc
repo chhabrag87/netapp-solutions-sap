@@ -18,7 +18,8 @@ summary: You must perform the steps in this section for base SnapCenter configur
 // 2022-05-13 09:40:18.263616
 //
 
-link:amazon-fsx-snapcenter-architecture.html[Previous: SnapCenter architecture.]
+[.lead]
+You must perform the steps in this section for base SnapCenter configuration and the protection of the HANA resource.
 
 == Overview configuration steps
 
@@ -305,4 +306,4 @@ The HANA resource configuration is now completed, and you can execute backups.
 
 image:amazon-fsx-image47.png[Error: Missing Graphic Image]
 
-link:amazon-fsx-snapcenter-backup-operations.html[Next: SnapCenter backup operations.]
+

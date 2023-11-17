@@ -4,7 +4,6 @@ permalink: lifecycle/lama-ansible-sap-lama-provisioning-workflow-clone-system.ht
 keywords: provisioning, workflow, clone system, 
 summary: In this section, we go through the complete SAP LaMa system cloning workflow based on the source SAP system HN9 with HANA database H09. The following picture gives an overview of the steps executed during the workflow.
 ---
-
 = SAP LaMa provisioning workflow - clone system
 :hardbreaks:
 :nofooter:
@@ -18,7 +17,7 @@ summary: In this section, we go through the complete SAP LaMa system cloning wor
 // 2023-01-30 15:53:02.704402
 //
 
-link:lama-ansible-example-implementation.html[Previous: Example implementation.]
+
 
 [.lead]
 The following figure highlights the main steps executed with the system clone workflow.
@@ -85,4 +84,3 @@ image:lama-ansible-image31.png["More log information"]
 
 After the workflow has been completed, the cloned SAP system is prepared, started, and ready for use.
 
-link:lama-ansible-sap-lama-deprovisioning-workflow-system-destroy.html[Next: SAP LaMa deprovisioning workflow - system destroy.]

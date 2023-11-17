@@ -4,7 +4,6 @@ permalink: bp/saphana_aff_nfs_storage_sizing.html
 keywords: storage, sizing, performance, sas disk shelf, ns224 nvme, test tool,
 summary: The following section provides an overview of the required performance and capacity considerations needed for sizing a storage system for SAP HANA.
 ---
-
 = Storage sizing
 :hardbreaks:
 :nofooter:
@@ -17,8 +16,8 @@ summary: The following section provides an overview of the required performance 
 //
 // 2021-05-20 16:44:23.296190
 //
-link:saphana_aff_nfs_architecture.html[Previous: Architecture.]
 
+[.lead]
 The following section provides an overview of the required performance and capacity considerations needed for sizing a storage system for SAP HANA.
 
 [NOTE]
@@ -208,4 +207,4 @@ The following figure summarizes the sizing process.
 
 image:saphana_aff_nfs_image9.jpg[Error: Missing Graphic Image]
 
-link:saphana_aff_nfs_infrastructure_setup_and_configuration_overview.html[Next: Infrastructure setup and configuration.]
+

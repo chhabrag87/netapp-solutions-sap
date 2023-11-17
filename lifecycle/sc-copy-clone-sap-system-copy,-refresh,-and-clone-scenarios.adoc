@@ -4,7 +4,6 @@ permalink: lifecycle/sc-copy-clone-sap-system-copy,-refresh,-and-clone-scenarios
 keywords: sap system refresh, system copy, system clone,
 summary: The term SAP system copy is often used as a synonym for three different processes, SAP system refresh, SAP system copy, or SAP system clone operations. It is important to distinguish between the different operations because the workflows and use cases differ for each one.
 ---
-
 = SAP system copy, refresh, and clone scenarios
 :hardbreaks:
 :nofooter:
@@ -18,8 +17,8 @@ summary: The term SAP system copy is often used as a synonym for three different
 // 2022-05-23 12:08:56.439954
 //
 
-link:sc-copy-clone-introduction.html[Previous: Introduction.]
 
+[.lead]
 The term SAP system copy is often used as a synonym for three different processes: SAP system refresh, SAP system copy, or SAP system clone operations. It is important to distinguish between the different operations because the workflows and use cases differ for each one.
 
 * *SAP system refresh.* An SAP system refresh is a refresh of an existing target SAP system with data from a source SAP system. The target system is typically part of an SAP transport landscape, for example a quality assurance system, that is refreshed with data from the production system. The hostname, instance number, and SID are different for the source and target systems.
@@ -34,4 +33,4 @@ NetApp has also worked with Libelle https://www.libelle.com[www.libelle.com^] to
 
 image:sc-copy-clone-image2.png[Error: Missing Graphic Image]
 
-link:sc-copy-clone-use-cases-for-system-refresh-and-cloning.html[Next: Use cases for system refresh and cloning.]
+
