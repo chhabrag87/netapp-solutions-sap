@@ -26,9 +26,9 @@ Inline deduplication, cross- volume inline deduplication, inline compression, an
 
 Enabling storage efficiency features in an HDD-based configuration is not supported.
 
-== NetApp volume encryption
+== NetApp volume and aggregate encryption
 
-The use of NetApp Volume Encryption (NVE) is supported with SAP HANA.
+The use of NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE) are supported with SAP HANA.
 
 == Quality of service
 
@@ -367,6 +367,11 @@ set admin
 |nfs modify -vserver <vserver_name> -v4.1-write-delegation disabled
 |Disable NFSv4 numeric ids
 |nfs modify -vserver <vserver_name> -v4-numeric-ids disabled
+|Change amount of NFSv4.x session slots
+  optional
+|set advanced 
+nfs modify  -vserver hana -v4.x-session-num-slots <value>
+set admin
 |===
 
 [NOTE]
