@@ -358,6 +358,11 @@ set admin
 |nfs modify -vserver <vserver_name> -v4.1-write-delegation disabled
 |Disable NFSv4 numeric ids
 |nfs modify -vserver <vserver_name> -v4-numeric-ids disabled
+|Change amount of NFSv4.x session slots
+  optional
+|set advanced 
+nfs modify  -vserver hana -v4.x-session-num-slots <value>
+set admin
 |===
 
 [NOTE]
@@ -389,5 +394,4 @@ Keep the default retry interval of 10 seconds within these sections..
 == Mount volumes to namespace and set export policies
 
 When a volume is created, the volume must be mounted to the namespace. In this document, we assume that the junction path name is the same as the volume name. By default, the volume is exported with the default policy. The export policy can be adapted if required.
-
 
