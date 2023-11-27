@@ -24,9 +24,9 @@ This section describes the configuration of the NetApp storage system. You must 
 
 Inline deduplication, cross-volume inline deduplication, inline compression, and inline compaction are supported with SAP HANA in an SSD configuration.
 
-== NetApp Volume Encryption
+== NetApp Volume and Aggregate Encryption
 
-The use of NetApp Volume Encryption (NVE) is supported with SAP HANA.
+The use of NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE) are supported with SAP HANA.
 
 == Quality of service
 
