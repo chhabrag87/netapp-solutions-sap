@@ -1,0 +1,1362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+    
+    
+  
+
+  
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-add-a-backup-svm-to-snapcenter.html</loc>
+      
+      <lastmod>2023-09-27T10:42:38+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-add-a-policy-to-resource-protection.html</loc>
+      
+      <lastmod>2023-09-27T10:42:38+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-backup-and-recovery-using-amazon-fsx-for-ontap.html</loc>
+      
+      <lastmod>2023-09-27T10:42:38+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-backup-of-non-data-volumes.html</loc>
+      
+      <lastmod>2023-09-27T10:42:38+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/amazon-fsx-backup-replication-with-snapvault.html</loc>
+      
+      <lastmod>2022-05-13T19:48:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-backup-replication-with-snapvault_overview.html</loc>
+      
+      <lastmod>2023-09-27T10:42:38+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-configure-replication-relationships-on-fsx-for-ontap-file-systems.html</loc>
+      
+      <lastmod>2023-09-28T12:17:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-create-a-backup-with-replication.html</loc>
+      
+      <lastmod>2023-09-28T12:17:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-create-a-new-snapcenter-policy-for-backup-replication.html</loc>
+      
+      <lastmod>2023-09-28T12:17:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-overview.html</loc>
+      
+      <lastmod>2023-10-12T09:33:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-restore-and-recover-from-secondary-storage.html</loc>
+      
+      <lastmod>2023-09-28T12:17:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-snapcenter-architecture.html</loc>
+      
+      <lastmod>2023-10-05T04:54:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-snapcenter-backup-operations.html</loc>
+      
+      <lastmod>2023-09-28T12:17:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-snapcenter-configuration.html</loc>
+      
+      <lastmod>2023-09-28T12:17:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-where-to-find-additional-information.html</loc>
+      
+      <lastmod>2023-11-10T05:30:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/</loc>
+      
+      <lastmod>2023-11-29T09:46:08+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/lama-ansible-appendix-provider-script-configuration-and-ansible-playbooks.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/lama-ansible-conclusion.html</loc>
+      
+      <lastmod>2023-11-10T05:30:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/lama-ansible-example-implementation.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/lama-ansible-introduction.html</loc>
+      
+      <lastmod>2023-10-12T09:33:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/lama-ansible-netapp-sap-lama-integration-using-ansible.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/lama-ansible-sap-lama-deprovisioning-workflow-system-destroy.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/lama-ansible-sap-lama-provisioning-workflow-clone-system.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/lama-ansible-sap-lama-provisioning-workflow-copy-system.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/lama-ansible-sap-lama-provisioning-workflow-system-refresh.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/lama-ansible-sap-system-clone,-copy,-and-refresh-scenarios.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/lama-ansible-use-cases-for-system-refresh,-copy,-and-cloning.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/libelle-sc-overview.html</loc>
+      
+      <lastmod>2023-10-12T09:33:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/libelle-sc-sap-hana-system-refresh-with-lsc,-azacsnap,-and-azure-netapp-files.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/libelle-sc-sap-hana-system-refresh-with-lsc-and-snapcenter.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/libelle-sc-where-to-find-additional-information.html</loc>
+      
+      <lastmod>2023-11-10T05:30:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/reference_legal_notices.html</loc>
+      
+      <lastmod>2021-08-17T14:22:46+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/sap-apps-azure-cvo_pdf_link.html</loc>
+      
+      <lastmod>2022-03-22T19:03:40+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/sap-blogs.html</loc>
+      
+      <lastmod>2021-11-12T18:19:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/sap-bp-blogs.html</loc>
+      
+      <lastmod>2022-07-15T18:34:16+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/sap-bp-tools.html</loc>
+      
+      <lastmod>2021-11-12T17:50:44+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/sap-bp-videos.html</loc>
+      
+      <lastmod>2022-07-15T18:34:16+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/sap-dr-blogs.html</loc>
+      
+      <lastmod>2021-11-16T17:10:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/sap-dr-tools.html</loc>
+      
+      <lastmod>2021-11-12T17:27:13+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/sap-dr-videos.html</loc>
+      
+      <lastmod>2021-11-16T15:57:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/sap-lcm-blogs.html</loc>
+      
+      <lastmod>2022-07-15T18:34:16+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/sap-lcm-tools.html</loc>
+      
+      <lastmod>2021-11-12T17:27:13+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/sap-lcm-videos.html</loc>
+      
+      <lastmod>2022-07-15T18:34:16+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/sap-oracle-snapman_pdf_link.html</loc>
+      
+      <lastmod>2021-08-12T20:19:20+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/sap-sqls-sc_pdf_link.html</loc>
+      
+      <lastmod>2021-08-12T20:19:20+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/sap-videos.html</loc>
+      
+      <lastmod>2021-11-12T18:19:54+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/sap-whatsnew.html</loc>
+      
+      <lastmod>2021-11-16T15:57:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-additional-information.html</loc>
+      
+      <lastmod>2023-10-05T04:54:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-backup-configuration-of-global-non-data-volumes.html</loc>
+      
+      <lastmod>2023-10-05T04:54:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-backup-configuration-of-sap-hana-database-backups.html</loc>
+      
+      <lastmod>2023-10-05T04:54:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-backup-configuration-of-sap-hana-non-data-volumes.html</loc>
+      
+      <lastmod>2023-10-05T04:54:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-file-based-backups-and-block-integrity-check.html</loc>
+      
+      <lastmod>2023-10-05T04:54:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-lab-setup-used-for-this-report.html</loc>
+      
+      <lastmod>2023-10-05T04:54:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-overview.html</loc>
+      
+      <lastmod>2023-10-12T09:33:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-restore-and-recovery.html</loc>
+      
+      <lastmod>2023-10-05T04:54:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-sap-hana-database-snapshot-backups.html</loc>
+      
+      <lastmod>2023-10-05T04:54:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-snapcenter-service-architecture.html</loc>
+      
+      <lastmod>2023-10-05T04:54:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-snapcenter-service-concepts-and-best-practices.html</loc>
+      
+      <lastmod>2023-10-27T11:44:20+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-snapcenter-service-policy-configuration.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-snapcenter-service-sap-hana-backup-solution.html</loc>
+      
+      <lastmod>2023-10-05T04:54:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-snapcenter-service-snapshot-backup-configuration-overview.html</loc>
+      
+      <lastmod>2023-10-05T04:54:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-snapcenter-service-snapshot-backup-configuration.html</loc>
+      
+      <lastmod>2021-10-08T17:43:23+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-the-netapp-solution.html</loc>
+      
+      <lastmod>2023-10-05T04:54:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-backup-anf-version-history.html</loc>
+      
+      <lastmod>2023-10-27T11:44:20+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-bandr-sc_pdf_link.html</loc>
+      
+      <lastmod>2021-08-12T20:19:20+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-advanced-configuration-and-tuning.html</loc>
+      
+      <lastmod>2023-10-05T04:54:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-block-integrity-check.html</loc>
+      
+      <lastmod>2023-10-05T04:54:45+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-database-backups.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-lab-setup-used-for-this-report.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-overview.html</loc>
+      
+      <lastmod>2023-10-12T09:33:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-restore-and-recovery.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-snapcenter-architecture.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-snapcenter-concepts-and-best-practices.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-snapcenter-configuration.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-snapcenter-initial-configuration.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-snapcenter-resource-specific-configuration-for-non-data-volume-backups.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-snapcenter-resource-specific-configuration-for-sap-hana-database-backups.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-snapcenter-sap-hana-backup-solution.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-where-to-find-additional-information.html</loc>
+      
+      <lastmod>2023-11-10T05:30:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-commvault_pdf_link.html</loc>
+      
+      <lastmod>2021-08-16T15:32:02+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_anf_cross-region_replication_with_sap_hana.html</loc>
+      
+      <lastmod>2021-08-05T14:49:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_anf_cross-region_replication_with_sap_hana_overview.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_break_and_delete_replication_peering.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_configuration_options_for_cross-region_replication_with_sap_hana.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_configuration_steps_for_anf_cross-region_replication.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_create_new_volumes_based_on_snapshot_backups_at_the_disaster_recovery_site.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_data_protection_overview.html</loc>
+      
+      <lastmod>2021-08-05T14:49:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_data_protection_overview_overview.html</loc>
+      
+      <lastmod>2023-10-12T09:33:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_disaster_recovery_failover.html</loc>
+      
+      <lastmod>2021-08-05T14:49:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_disaster_recovery_failover_overview.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_disaster_recovery_solution_comparison.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_disaster_recovery_testing.html</loc>
+      
+      <lastmod>2021-08-05T14:49:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_disaster_recovery_testing_overview.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_hana_database_recovery.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_hana_database_recovery_01.html</loc>
+      
+      <lastmod>2023-10-05T10:45:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_lab_setup.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_monitoring_anf_cross-region_replication.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_mount_the_new_volumes_at_the_target_host.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_mount_the_volumes_at_the_target_host.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_prepare_the_target_host.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_prepare_the_target_host_01.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_requirements_and_best_practices.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-anf_update_history.html</loc>
+      
+      <lastmod>2023-10-27T11:44:20+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-dr-sr_pdf_link.html</loc>
+      
+      <lastmod>2021-08-12T20:19:20+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_adding_additional_data_volume_partitions.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_architecture.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_host_setup.html</loc>
+      
+      <lastmod>2023-11-24T15:47:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_i_o_stack_configuration_for_sap_hana.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_infrastructure_setup_and_configuration.html</loc>
+      
+      <lastmod>2021-08-05T14:49:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_introduction.html</loc>
+      
+      <lastmod>2023-10-12T09:33:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_network_setup.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_sap_hana_data_volume_size.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_sap_hana_installation_preparations_for_nfsv4.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_sap_hana_software_installation.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_storage_controller_setup.html</loc>
+      
+      <lastmod>2023-11-24T15:49:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_storage_sizing.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_time_synchronization.html</loc>
+      
+      <lastmod>2023-10-12T09:33:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_update_history.html</loc>
+      
+      <lastmod>2023-10-27T11:44:20+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_where_to_find_additional_information.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-ibm-aff-nfs_pdf_link.html</loc>
+      
+      <lastmod>2021-08-16T15:32:02+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/briefs/saphana-lm-sb_pdf_link.html</loc>
+      
+      <lastmod>2021-08-12T18:22:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-san_pdf_link.html</loc>
+      
+      <lastmod>2021-08-16T15:32:02+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-sr-scs-restore-and-recovery-from-a-backup-created-at-the-other-host.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-sr-scs-sap-hana-system-replication-overview.html</loc>
+      
+      <lastmod>2023-10-12T09:33:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-sr-scs-snapcenter-4.6-configuration-using-a-resource-group.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-sr-scs-snapcenter-configuration-options-for-sap-system-replication.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-sr-scs-snapcenter-configuration-with-a-single-resource.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-sr-scs-storage-snapshot-backups-and-sap-system-replication.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-sr-scs-version-history.html</loc>
+      
+      <lastmod>2023-10-27T11:44:20+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-sr-scs-where-to-find-additional-information_overview.html</loc>
+      
+      <lastmod>2023-11-10T05:30:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-sr_pdf_link.html</loc>
+      
+      <lastmod>2021-08-12T20:19:20+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-vsphere-fas-aff_pdf_link.html</loc>
+      
+      <lastmod>2021-08-16T15:32:02+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_adding_additional_data_volume_partitions_for_sap_hana_single-host_systems.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_architecture.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_architecture_overview.html</loc>
+      
+      <lastmod>2021-08-06T17:06:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_host_setup.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_i_o_stack_configuration_for_sap_hana.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_infrastructure_setup_and_configuration.html</loc>
+      
+      <lastmod>2021-08-05T14:49:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_infrastructure_setup_and_configuration_overview.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_introduction.html</loc>
+      
+      <lastmod>2023-11-14T06:29:02+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_san_fabric_setup.html</loc>
+      
+      <lastmod>2023-10-05T12:25:30+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_sap_hana_software_installation.html</loc>
+      
+      <lastmod>2023-10-05T12:48:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_sap_hana_storage_connector_api.html</loc>
+      
+      <lastmod>2023-10-05T12:48:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_sap_hana_using_vmware_vsphere.html</loc>
+      
+      <lastmod>2023-10-05T12:48:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_storage_controller_setup.html</loc>
+      
+      <lastmod>2023-11-17T08:34:40+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_storage_sizing.html</loc>
+      
+      <lastmod>2023-10-12T10:34:27+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_time_synchronization.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_update_history.html</loc>
+      
+      <lastmod>2023-10-27T11:44:20+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_where_to_find_additional_information.html</loc>
+      
+      <lastmod>2023-10-05T12:48:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_.html</loc>
+      
+      <lastmod>2021-08-05T14:49:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_adding_additional_data_volume_partitions.html</loc>
+      
+      <lastmod>2023-10-05T12:48:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_architecture.html</loc>
+      
+      <lastmod>2023-10-05T12:48:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_host_setup.html</loc>
+      
+      <lastmod>2023-11-24T15:50:01+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_i_o_stack_configuration_for_sap_hana.html</loc>
+      
+      <lastmod>2023-10-05T12:48:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_infrastructure_setup_and_configuration.html</loc>
+      
+      <lastmod>2021-08-05T14:49:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_introduction.html</loc>
+      
+      <lastmod>2023-10-12T09:33:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_network_setup.html</loc>
+      
+      <lastmod>2023-10-05T12:48:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_sap_hana_data_volume_size.html</loc>
+      
+      <lastmod>2023-10-05T12:48:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_sap_hana_installation_preparations_for_nfsv4.html</loc>
+      
+      <lastmod>2023-10-05T12:48:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_sap_hana_software_installation.html</loc>
+      
+      <lastmod>2023-10-05T12:48:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_storage_controller_setup.html</loc>
+      
+      <lastmod>2023-11-24T15:51:32+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_storage_sizing.html</loc>
+      
+      <lastmod>2023-10-12T10:34:27+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_time_synchronization.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_update_history.html</loc>
+      
+      <lastmod>2023-10-27T11:44:20+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_where_to_find_additional_information.html</loc>
+      
+      <lastmod>2023-10-05T12:48:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_adding_additional_data_volume_partitions_for_sap_hana_single-host_systems.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_architecture.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_host_setup.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_i_o_stack_configuration_for_sap_hana.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_infrastructure_setup_and_configuration.html</loc>
+      
+      <lastmod>2021-08-05T14:49:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_infrastructure_setup_and_configuration_overview.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_introduction.html</loc>
+      
+      <lastmod>2023-10-12T09:33:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_san_fabric_setup.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_sap_hana_software_installation.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_sap_hana_storage_connector_api.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_storage_controller_setup.html</loc>
+      
+      <lastmod>2023-11-17T08:34:40+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_storage_sizing.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_time_synchronization.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_update_history.html</loc>
+      
+      <lastmod>2023-10-27T11:44:20+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_where_to_find_additional_information.html</loc>
+      
+      <lastmod>2023-10-09T11:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-automation-example-scripts.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html</loc>
+      
+      <lastmod>2023-10-12T09:33:57+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html</loc>
+      
+      <lastmod>2023-10-10T05:00:58+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html</loc>
+      
+      <lastmod>2023-10-10T09:44:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-refresh-workflow-with-snapcenter.html</loc>
+      
+      <lastmod>2023-10-10T09:44:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-sap-hana-system-refresh-operation-workflows-using-storage-snapshot-backups.html</loc>
+      
+      <lastmod>2023-10-10T09:44:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-sap-hana-system-refresh-with-snapcenter.html</loc>
+      
+      <lastmod>2023-10-10T09:44:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-sap-system-clone-with-snapcenter.html</loc>
+      
+      <lastmod>2023-10-10T09:44:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-sap-system-copy,-refresh,-and-clone-scenarios.html</loc>
+      
+      <lastmod>2023-10-10T09:44:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-use-cases-for-system-refresh-and-cloning.html</loc>
+      
+      <lastmod>2023-10-10T09:44:34+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-where-to-find-additional-information.html</loc>
+      
+      <lastmod>2023-11-10T05:30:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/netapp-solutions-sap//search.html</loc>
+      
+      <lastmod>2023-12-03T16:23:38+00:00</lastmod>
+      
+    </url>
+  
+
+  
+  
+</urlset>
