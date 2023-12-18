@@ -73,7 +73,7 @@ When executing a storage-based Snapshot backup of the SAP HANA database, SnapCen
 
 This document describes the most common SnapCenter configuration option for an SAP HANA MDC single host system with a single tenant on FSx for ONTAP. Other configuration options are possible and, in some cases, required for specific SAP HANA systems, for example, for a multiple host system. For a detailed description about other configuration options, see https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-snapcenter-concepts-and-best-practices.html[SnapCenter concepts and best practices (netapp.com)^].
 
-In this document, we use the Amazon Web Services (AWS) console and the FSx for ONTAP CLI to execute the required configuration steps on the storage layer. You can also use NetApp Cloud Manager to manage FSx for ONTAP,  but this is out of scope for this document. For information about using NetApp Cloud Manager for FSx for ONTAP, see https://docs.netapp.com/us-en/occm/concept_fsx_aws.html[Learn about Amazon FSx for ONTAP (netapp.com)^].
+In this document, we use the Amazon Web Services (AWS) console and the FSx for ONTAP CLI to execute the required configuration steps on the storage layer. You can also use NetApp BlueXP console to manage FSx for ONTAP,  but this is out of scope for this document. For information about using NetApp BlueXP console for FSx for ONTAP, see https://docs.netapp.com/us-en/occm/concept_fsx_aws.html[Learn about Amazon FSx for ONTAP (netapp.com)^].
 
 == Data protection strategy
 
